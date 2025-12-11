@@ -1,5 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
+// Vercel Web Analytics
+import { inject } from "@vercel/analytics";
 // Vercel Speed Insights
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { StrictMode } from "react";
@@ -45,6 +47,9 @@ declare module "@tanstack/react-router" {
 		router: typeof router;
 	}
 }
+
+// Initialize Vercel Web Analytics
+inject();
 
 // Render the app
 const rootElement = document.getElementById("app");
