@@ -1,5 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
+// Vercel Speed Insights
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 
@@ -53,6 +55,7 @@ if (rootElement && !rootElement.innerHTML) {
 			<QueryClientProvider client={queryClient}>
 				<RouterProvider router={router} />
 			</QueryClientProvider>
+			<SpeedInsights />
 		</StrictMode>,
 	);
 }
