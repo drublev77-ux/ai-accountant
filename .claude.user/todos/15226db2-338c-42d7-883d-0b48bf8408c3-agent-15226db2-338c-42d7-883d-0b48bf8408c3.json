@@ -1,0 +1,17 @@
+[
+  {
+    "content": "Check Vercel authorization status",
+    "status": "in_progress",
+    "activeForm": "Checking Vercel authorization status"
+  },
+  {
+    "content": "Deploy application to Vercel",
+    "status": "pending",
+    "activeForm": "Deploying application to Vercel"
+  },
+  {
+    "content": "Verify deployment and get production URL",
+    "status": "pending",
+    "activeForm": "Verifying deployment and getting production URL"
+  }
+]

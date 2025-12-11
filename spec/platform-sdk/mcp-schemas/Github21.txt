@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_SOCIAL_ACCOUNTS_FOR_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_DELETE_SOCIAL_ACCOUNTS_FOR_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"account_urls":{"type":"array","description":"Absolute URLs of the social media profiles to be unlinked from the GitHub profile.","title":"Account Urls","items":{"type":"string","properties":{}},"examples":[["https://twitter.com/username","https://linkedin.com/in/profile"]]}},"required":["account_urls"],"title":"DeleteSocialAccountsForTheAuthenticatedUserRequest","description":"Request schema for deleting social media accounts linked to the authenticated user's GitHub profile."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteSocialAccountsForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_DELETE_SOCIAL_ACCOUNTS_FOR_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_TEAM_DISCUSSION_COMMENT_REACTION
+
+Here is the input and output schema info of Tool GITHUB_DELETE_TEAM_DISCUSSION_COMMENT_REACTION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"comment_number":{"type":"integer","description":"The number that uniquely identifies the comment within the discussion.","title":"Comment Number","examples":["101"]},"discussion_number":{"type":"integer","description":"The number that uniquely identifies the discussion.","title":"Discussion Number","examples":["42"]},"org":{"type":"string","description":"The organization name. The name is not case sensitive.","title":"Org","examples":["octo-org"]},"reaction_id":{"type":"integer","description":"The unique identifier of the reaction to be deleted.","title":"Reaction Id","examples":["1"]},"team_slug":{"type":"string","description":"The slug of the team name (URL-friendly version).","title":"Team Slug","examples":["justice-league"]}},"required":["org","team_slug","discussion_number","comment_number","reaction_id"],"title":"DeleteTeamDiscussionCommentReactionRequest","description":"Request model for deleting a reaction from a specific comment within a team discussion."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Response data. For this operation, a successful deletion (204 No Content) means this field is typically empty.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteTeamDiscussionCommentReactionResponseWrapper"}
+schema info of GITHUB_DELETE_TEAM_DISCUSSION_COMMENT_REACTION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_TEAM_DISCUSSION_REACTION
+
+Here is the input and output schema info of Tool GITHUB_DELETE_TEAM_DISCUSSION_REACTION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"discussion_number":{"type":"integer","description":"The unique number identifying the specific discussion within the team.","title":"Discussion Number","examples":["42"]},"org":{"type":"string","description":"The organization name. This name is not case sensitive.","title":"Org","examples":["octo-org"]},"reaction_id":{"type":"integer","description":"The unique identifier of the reaction to be deleted.","title":"Reaction Id","examples":["1"]},"team_slug":{"type":"string","description":"The slug of the team name, which is a URL-friendly version of the team name.","title":"Team Slug","examples":["justice-league"]}},"required":["org","team_slug","discussion_number","reaction_id"],"title":"DeleteTeamDiscussionReactionRequest","description":"Request model for deleting a reaction from a team discussion."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"An empty dictionary is expected upon successful deletion (HTTP 204 No Content).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteTeamDiscussionReactionResponseWrapper"}
+schema info of GITHUB_DELETE_TEAM_DISCUSSION_REACTION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_WORKFLOW_RUN_LOGS
+
+Here is the input and output schema info of Tool GITHUB_DELETE_WORKFLOW_RUN_LOGS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The account owner of the repository. The name is not case sensitive.","title":"Owner","examples":["octocat","actions"]},"repo":{"type":"string","description":"The name of the repository without the `.git` extension. The name is not case sensitive.","title":"Repo","examples":["hello-world","runner"]},"run_id":{"type":"integer","description":"The unique identifier of the workflow run.","title":"Run Id","examples":["123456789","987654321"]}},"required":["owner","repo","run_id"],"title":"DeleteWorkflowRunLogsRequest","description":"Specifies the target repository and workflow run for log deletion."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteWorkflowRunLogsResponseWrapper"}
+schema info of GITHUB_DELETE_WORKFLOW_RUN_LOGS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DISABLE_A_CUSTOM_PROTECTION_RULE_FOR_AN_ENVIRONMENT
+
+Here is the input and output schema info of Tool GITHUB_DISABLE_A_CUSTOM_PROTECTION_RULE_FOR_AN_ENVIRONMENT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"environment_name":{"type":"string","description":"The name of the environment. This name must be URL encoded; for example, any slashes (`/`) in the name must be replaced with `%2F`.","title":"Environment Name","examples":["production","staging","dev%2Ffeature-branch"]},"owner":{"type":"string","description":"The account owner of the repository (e.g., a user or organization). This name is not case sensitive.","title":"Owner","examples":["octocat","my-company"]},"protection_rule_id":{"type":"integer","description":"The unique integer identifier of the custom deployment protection rule to be disabled.","title":"Protection Rule Id","examples":["12345","9876"]},"repo":{"type":"string","description":"The name of the repository (without the `.git` extension). This name is not case sensitive.","title":"Repo","examples":["my-awesome-project","BackendService"]}},"required":["environment_name","repo","owner","protection_rule_id"],"title":"DisableACustomProtectionRuleForAnEnvironmentRequest","description":"Request schema for disabling a custom deployment protection rule for an environment."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary that may contain response data. Typically, a successful disable operation (HTTP 204 No Content) results in an empty response body, making this field empty or not applicable.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DisableACustomProtectionRuleForAnEnvironmentResponseWrapper"}
+schema info of GITHUB_DISABLE_A_CUSTOM_PROTECTION_RULE_FOR_AN_ENVIRONMENT ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DISABLE_A_WORKFLOW
+
+Here is the input and output schema info of Tool GITHUB_DISABLE_A_WORKFLOW of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The account owner of the repository (username or organization name). This field is not case-sensitive.","title":"Owner","examples":["octocat","github"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["Hello-World","Spoon-Knife"]},"workflow_id":{"type":"integer","description":"The ID of the workflow or the workflow's file name (e.g., `main.yml` or `ci.yaml`). You can obtain the workflow ID by listing workflows in a repository.","title":"Workflow Id","nullable":true,"examples":[1234567,"main.yml"]}},"required":["owner","repo","workflow_id"],"title":"DisableAWorkflowRequest","description":"Request schema for disabling a specific workflow in a GitHub repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"The response body from the GitHub API. For a successful disable operation (HTTP 204 No Content), this will be empty.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DisableAWorkflowResponseWrapper"}
+schema info of GITHUB_DISABLE_A_WORKFLOW ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DISABLE_PRIVATE_VULNERABILITY_REPORTING_FOR_A_REPOSITORY
+
+Here is the input and output schema info of Tool GITHUB_DISABLE_PRIVATE_VULNERABILITY_REPORTING_FOR_A_REPOSITORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The account owner of the repository (e.g., a GitHub username or organization name). This field is not case-sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["Hello-World"]}},"required":["owner","repo"],"title":"DisablePrivateVulnerabilityReportingForARepositoryRequest","description":"Request schema for `DisablePrivateVulnerabilityReportingForARepository`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"An empty dictionary is typically returned on success, as the GitHub API responds with a 204 No Content status for this operation.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DisablePrivateVulnerabilityReportingForARepositoryResponseWrapper"}
+schema info of GITHUB_DISABLE_PRIVATE_VULNERABILITY_REPORTING_FOR_A_REPOSITORY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DISABLE_REPOSITORY_ACTIONS_IN_ORG
+
+Here is the input and output schema info of Tool GITHUB_DISABLE_REPOSITORY_ACTIONS_IN_ORG of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The GitHub organization name (not case-sensitive).","title":"Org","examples":["octo-org"]},"repository_id":{"type":"integer","description":"The unique identifier of the repository.","title":"Repository Id","examples":["1296269"]}},"required":["org","repository_id"],"title":"DisableRepositoryActionsInOrgRequest","description":"Request schema for `DisableRepositoryActionsInOrg`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Typically empty upon successful execution, as a 204 No Content status is returned.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DisableRepositoryActionsInOrgResponseWrapper"}
+schema info of GITHUB_DISABLE_REPOSITORY_ACTIONS_IN_ORG ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DISMISS_A_REVIEW_FOR_A_PULL_REQUEST
+
+Here is the input and output schema info of Tool GITHUB_DISMISS_A_REVIEW_FOR_A_PULL_REQUEST of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"event":{"type":"string","description":"The event type associated with dismissing the review.","title":"Event","enum":["DISMISS"],"examples":["DISMISS"]},"message":{"type":"string","description":"The reason for dismissing the review.","title":"Message","examples":["Outdated comments","All concerns addressed by recent commits."]},"owner":{"type":"string","description":"The username or organization name that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat","my-organization"]},"pull_number":{"type":"integer","description":"The unique number identifying the pull request within the repository.","title":"Pull Number","examples":["1","42","101"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["Spoon-Knife","my-awesome-repo"]},"review_id":{"type":"integer","description":"The unique identifier for the review to be dismissed.","title":"Review Id","examples":["12345","67890"]}},"required":["owner","repo","pull_number","review_id","message"],"title":"DismissAReviewForAPullRequestRequest","description":"Request schema for `DismissAReviewForAPullRequest`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the response data from the API upon successful dismissal of the review. The structure of this dictionary may vary based on the API's response.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DismissAReviewForAPullRequestResponseWrapper"}
+schema info of GITHUB_DISMISS_A_REVIEW_FOR_A_PULL_REQUEST ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DOWNLOAD_AN_ARTIFACT
+
+Here is the input and output schema info of Tool GITHUB_DOWNLOAD_AN_ARTIFACT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"archive_format":{"type":"string","description":"Archive format; must be 'zip' (GitHub API only supports 'zip').","title":"Archive Format","examples":["zip"]},"artifact_id":{"type":"integer","description":"Unique numeric identifier of the artifact.","title":"Artifact Id"},"owner":{"type":"string","description":"Username or organization name of the repository owner (case-insensitive).","title":"Owner"},"repo":{"type":"string","description":"Repository name, without the `.git` extension (case-insensitive).","title":"Repo"}},"required":["owner","repo","artifact_id","archive_format"],"title":"DownloadAnArtifactRequest","description":"Request schema for `DownloadAnArtifact`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Response dictionary containing a temporary download URL (e.g., under 'Location' or 'download_url') for the artifact, valid for 1 minute.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DownloadAnArtifactResponseWrapper"}
+schema info of GITHUB_DOWNLOAD_AN_ARTIFACT ends.

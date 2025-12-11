@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_ORGANIZATION_REPOSITORIES
+
+Here is the input and output schema info of Tool GITHUB_LIST_ORGANIZATION_REPOSITORIES of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"direction":{"type":"string","description":"Sort order: `asc` (ascending) or `desc` (descending). Defaults to `asc` if `sort` is `full_name`, else `desc`.","title":"Direction","enum":["asc","desc"],"examples":["asc","desc"]},"org":{"type":"string","description":"Name of the GitHub organization (not case-sensitive).","title":"Org","examples":["github","microsoft","google"]},"page":{"type":"integer","description":"Page number for pagination (starts from 1).","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results per page (maximum 100).","title":"Per Page","default":1,"examples":["30","50","100"]},"sort":{"type":"string","description":"Property to sort repositories by: `created`, `updated`, `pushed`, or `full_name`.","title":"Sort","default":"created","enum":["created","updated","pushed","full_name"],"examples":["created","updated","pushed","full_name"]},"type":{"type":"string","description":"Specifies the type of repositories to return: `all`, `public`, `private` (requires permissions), `forks`, `sources` (not forks), or `member` (repositories with explicit user access).","title":"Type","default":"all","enum":["all","public","private","forks","sources","member"],"examples":["all","public","private","forks","sources","member"]}},"required":["org"],"title":"ListOrganizationRepositoriesRequest","description":"Request to list repositories for a specified GitHub organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"List of repository objects, each detailing a repository with fields like `id`, `name`, `full_name`, `description`, and `html_url`.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListOrganizationRepositoriesResponseWrapper"}
+schema info of GITHUB_LIST_ORGANIZATION_REPOSITORIES ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_ORGANIZATIONS
+
+Here is the input and output schema info of Tool GITHUB_LIST_ORGANIZATIONS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"per_page":{"type":"integer","description":"Number of results to return per page, max 100.","title":"Per Page","default":30,"examples":[30,50,100]},"since":{"type":"integer","description":"An organization ID. If provided, only organizations with an ID greater than this will be returned, for pagination.","title":"Since","examples":[12345,54321]}},"title":"ListOrganizationsRequest","description":"Request to list GitHub organizations for the authenticated user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"List of GitHub organizations. Each entry typically includes details like 'login', 'id', 'url', 'repos_url', 'avatar_url', and 'description'; exact fields may vary.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListOrganizationsResponseWrapper"}
+schema info of GITHUB_LIST_ORGANIZATIONS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_ORGANIZATION_SECRETS
+
+Here is the input and output schema info of Tool GITHUB_LIST_ORGANIZATION_SECRETS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"Name of the GitHub organization (case-insensitive).","title":"Org","examples":["octocat","github"]},"page":{"type":"integer","description":"Page number for results.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"Number of secrets to return per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]}},"required":["org"],"title":"ListOrganizationSecretsRequest","description":"Request to list GitHub Actions secrets for an organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListOrganizationSecretsResponseWrapper"}
+schema info of GITHUB_LIST_ORGANIZATION_SECRETS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_ORGANIZATIONS_FOR_A_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_ORGANIZATIONS_FOR_A_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Page number of the results to fetch.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"Number of results per page (maximum 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"username":{"type":"string","description":"GitHub username (handle) of the user.","title":"Username","examples":["octocat","torvalds","github"]}},"required":["username"],"title":"ListOrganizationsForAUserRequest","description":"Lists public organizations for a specific GitHub user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response payload containing a list of public organizations for the specified user.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListOrganizationsForAUserResponseWrapper"}
+schema info of GITHUB_LIST_ORGANIZATIONS_FOR_A_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_ORGANIZATIONS_FOR_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_ORGANIZATIONS_FOR_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"The page number of the results to retrieve, used for pagination. Default is 1.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"The number of organization results to return per page. Default is 30, maximum is 100.","title":"Per Page","default":30,"examples":["30","50","100"]}},"title":"ListOrganizationsForTheAuthenticatedUserRequest","description":"Defines the parameters for paginating the list of organizations for the authenticated user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary representing the API response. It includes a list of organizations that the authenticated user is a member of, along with details for each organization.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListOrganizationsForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_LIST_ORGANIZATIONS_FOR_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_ORGANIZATION_VARIABLES
+
+Here is the input and output schema info of Tool GITHUB_LIST_ORGANIZATION_VARIABLES of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The organization name (not case-sensitive).","title":"Org","examples":["github","my-company-org"]},"page":{"type":"integer","description":"Page number of results to fetch (starts at 1).","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results per page (max 30).","title":"Per Page","default":10,"examples":["10","25","30"]}},"required":["org"],"title":"ListOrganizationVariablesRequest","description":"Request schema for listing GitHub Actions variables for an organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response containing the total count and a list of organization variables with their details.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListOrganizationVariablesResponseWrapper"}
+schema info of GITHUB_LIST_ORGANIZATION_VARIABLES ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_ORGANIZATION_WEBHOOKS
+
+Here is the input and output schema info of Tool GITHUB_LIST_ORGANIZATION_WEBHOOKS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The GitHub organization name (not case-sensitive).","title":"Org","examples":["octocat","github"]},"page":{"type":"integer","description":"Page number of results to fetch.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]}},"required":["org"],"title":"ListOrganizationWebhooksRequest","description":"Parameters for listing webhooks for a GitHub organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response data, typically a list of webhook objects.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListOrganizationWebhooksResponseWrapper"}
+schema info of GITHUB_LIST_ORGANIZATION_WEBHOOKS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_ORG_FINE_GRAINED_PERMISSIONS
+
+Here is the input and output schema info of Tool GITHUB_LIST_ORG_FINE_GRAINED_PERMISSIONS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the organization. This name is not case-sensitive.","title":"Org","examples":["github","my-company-org"]}},"required":["org"],"title":"ListOrganizationFineGrainedPermissionsForAnOrganizationRequest","description":"Request schema for `ListOrganizationFineGrainedPermissionsForAnOrganization`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Contains the list of fine-grained permissions, typically under a key (e.g., 'permissions', 'items'). Each permission object includes details like 'name' (e.g., 'actions_read') and 'description' (e.g., 'Read access to Actions').","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListOrganizationFineGrainedPermissionsForAnOrganizationResponseWrapper"}
+schema info of GITHUB_LIST_ORG_FINE_GRAINED_PERMISSIONS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_ORG_ISSUES_FOR_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_ORG_ISSUES_FOR_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"direction":{"type":"string","description":"Direction for sorting results.","title":"Direction","default":"desc","enum":["asc","desc"],"examples":["asc","desc"]},"filter":{"type":"string","description":"Filter indicating the type of issues to return based on user involvement (e.g., `assigned`, `created`, `mentioned`, `subscribed`, or `all`/`repos` for all accessible issues).","title":"Filter","default":"assigned","enum":["assigned","created","mentioned","subscribed","repos","all"],"examples":["assigned","created","mentioned","subscribed","repos","all"]},"labels":{"type":"string","description":"A comma-separated list of label names to filter issues by. For example: `bug,ui,@high`. Issues returned must match all specified labels.","title":"Labels","examples":["bug,documentation","enhancement"]},"org":{"type":"string","description":"The name of the GitHub organization. This name is not case-sensitive.","title":"Org","examples":["my-organization-name"]},"page":{"type":"integer","description":"Page number of the results to retrieve.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of issues to return per page (maximum 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"since":{"type":"string","description":"Only issues updated at or after this time are returned. This is a timestamp in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.","title":"Since","examples":["2023-01-01T00:00:00Z"]},"sort":{"type":"string","description":"Field to sort results by.","title":"Sort","default":"created","enum":["created","updated","comments"],"examples":["created","updated","comments"]},"state":{"type":"string","description":"Filters issues by their state.","title":"State","default":"open","enum":["open","closed","all"],"examples":["open","closed","all"]}},"required":["org"],"title":"ListOrganizationIssuesAssignedToTheAuthenticatedUserRequest","description":"Request schema for listing organization issues for the authenticated user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response containing a list of issue objects with their details, such as `id`, `title`, `user`, `assignees`, `state`, `labels`, and `body`.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListOrganizationIssuesAssignedToTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_LIST_ORG_ISSUES_FOR_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_ORG_LEVEL_CODESPACES_SECRETS
+
+Here is the input and output schema info of Tool GITHUB_LIST_ORG_LEVEL_CODESPACES_SECRETS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The GitHub organization name (case-insensitive).","title":"Org","examples":["github","my-company-org"]},"page":{"type":"integer","description":"Page number for pagination.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]}},"required":["org"],"title":"ListOrgLevelCodespacesSecretsRequest","description":"Request schema for retrieving a list of Codespaces secrets at the organization level."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListOrgLevelCodespacesSecretsResponseWrapper"}
+schema info of GITHUB_LIST_ORG_LEVEL_CODESPACES_SECRETS ends.

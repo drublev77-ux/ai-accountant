@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_RESTORE_A_PACKAGE_FOR_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_RESTORE_A_PACKAGE_FOR_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"package_name":{"type":"string","description":"The unique name of the package to be restored within its namespace and type.","title":"Package Name","examples":["my-library","my-application"]},"package_type":{"type":"string","description":"The type of the package to be restored, specifying its ecosystem. For example, `npm` for Node.js packages, `maven` for Java packages. Special cases: packages in GitHub's Gradle registry use the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) use the type `container`. The `docker` type can be used to find images originally pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if they have been migrated to the Container registry.","title":"Package Type","enum":["npm","maven","rubygems","docker","nuget","container"],"examples":["npm","maven","rubygems","docker","nuget","container"]},"token":{"type":"string","description":"Optional token to identify a specific package version to restore, useful if multiple versions were deleted. If omitted, the most recently deleted version is typically restored.","title":"Token","examples":["1.0.2","version-identifier-string"]}},"required":["package_type","package_name"],"title":"RestoreAPackageForTheAuthenticatedUserRequest","description":"Request schema for restoring a package for the authenticated user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"RestoreAPackageForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_RESTORE_A_PACKAGE_FOR_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_RESTORE_A_PACKAGE_VERSION_FOR_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_RESTORE_A_PACKAGE_VERSION_FOR_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"package_name":{"type":"string","description":"Name of the package.","title":"Package Name","examples":["my-awesome-package","internal-tool-library"]},"package_type":{"type":"string","description":"Specifies the package type. Use `maven` for GitHub's Gradle registry. Use `container` for images in GitHub's Container registry (ghcr.io). `docker` can be used for images previously in GitHub's Docker registry (docker.pkg.github.com), even if migrated.","title":"Package Type","enum":["npm","maven","rubygems","docker","nuget","container"],"examples":["npm","maven","rubygems","docker","nuget","container"]},"package_version_id":{"type":"integer","description":"Unique ID of the package version to restore.","title":"Package Version Id","examples":["102345","98712"]}},"required":["package_type","package_name","package_version_id"],"title":"RestoreAPackageVersionForTheAuthenticatedUserRequest","description":"Parameters to restore a package version for the authenticated user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"RestoreAPackageVersionForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_RESTORE_A_PACKAGE_VERSION_FOR_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_RESTORE_PACKAGE_VERSION_FOR_AN_ORGANIZATION
+
+Here is the input and output schema info of Tool GITHUB_RESTORE_PACKAGE_VERSION_FOR_AN_ORGANIZATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"Organization name (case-insensitive).","title":"Org","examples":["octo-org","github"]},"package_name":{"type":"string","description":"Unique name of the package.","title":"Package Name","examples":["my-package","your-awesome-app"]},"package_type":{"type":"string","description":"The type of package. Supported types include \"npm\", \"maven\", \"rubygems\", \"docker\", \"nuget\", and \"container\". Packages in GitHub's Gradle registry use the `maven` type. Docker images in GitHub's Container registry (`ghcr.io`) use the `container` type. The `docker` type can be used for images previously in GitHub's Docker registry (`docker.pkg.github.com`), even if migrated to the Container registry.","title":"Package Type","enum":["npm","maven","rubygems","docker","nuget","container"],"examples":["npm","maven","rubygems","docker","nuget","container"]},"package_version_id":{"type":"integer","description":"Unique identifier of the package version.","title":"Package Version Id","examples":["12345","67890"]}},"required":["package_type","package_name","org","package_version_id"],"title":"RestorePackageVersionForAnOrganizationRequest","description":"Request to restore a deleted package version for an organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"An empty dictionary indicating successful restoration of the package version. The GitHub API returns a 204 No Content status for this operation, so this field will generally be an empty dictionary if the request is successful.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["successful"],"title":"RestorePackageVersionForAnOrganizationResponseWrapper"}
+schema info of GITHUB_RESTORE_PACKAGE_VERSION_FOR_AN_ORGANIZATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_RESTORE_PACKAGE_VERSION_FOR_A_USER
+
+Here is the input and output schema info of Tool GITHUB_RESTORE_PACKAGE_VERSION_FOR_A_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"package_name":{"type":"string","description":"The name of the package.","title":"Package Name","examples":["my-awesome-package","com.example.my-library"]},"package_type":{"type":"string","description":"Specifies the package type. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. Use `docker` for images from GitHub's Docker registry (`docker.pkg.github.com`), even if migrated to the Container registry.","title":"Package Type","enum":["npm","maven","rubygems","docker","nuget","container"],"examples":["npm","maven","rubygems","docker","nuget","container"]},"package_version_id":{"type":"integer","description":"The unique identifier of the package version to be restored.","title":"Package Version Id","examples":["12345","67890"]},"username":{"type":"string","description":"The GitHub username of the package owner.","title":"Username","examples":["octocat","monalisa"]}},"required":["package_type","package_name","username","package_version_id"],"title":"RestorePackageVersionForAUserRequest","description":"Request schema for restoring a package version for a user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"RestorePackageVersionForAUserResponseWrapper"}
+schema info of GITHUB_RESTORE_PACKAGE_VERSION_FOR_A_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_RETRIEVE_REPO_PUBLIC_KEY_FOR_ENCRYPTION
+
+Here is the input and output schema info of Tool GITHUB_RETRIEVE_REPO_PUBLIC_KEY_FOR_ENCRYPTION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The account owner of the repository. The name is not case sensitive.","title":"Owner","examples":["octocat","my-organization"]},"repo":{"type":"string","description":"The name of the repository without the `.git` extension. The name is not case sensitive.","title":"Repo","examples":["hello-world","my-repo"]}},"required":["owner","repo"],"title":"RetrieveRepoPublicKeyForEncryptionRequest","description":"Request schema for `RetrieveRepoPublicKeyForEncryption`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the public key details. Typically includes 'key_id' (the unique identifier for the public key) and 'key' (the public key itself, Base64 encoded, which you can use to encrypt secrets).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"RetrieveRepoPublicKeyForEncryptionResponseWrapper"}
+schema info of GITHUB_RETRIEVE_REPO_PUBLIC_KEY_FOR_ENCRYPTION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REVIEW_ACCESS_WITH_PERSONAL_TOKEN
+
+Here is the input and output schema info of Tool GITHUB_REVIEW_ACCESS_WITH_PERSONAL_TOKEN of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"action":{"type":"string","description":"The action to take on the personal access token request. Must be 'approve' to approve the request or 'deny' to deny it.","title":"Action","enum":["approve","deny"],"examples":["approve","deny"]},"org":{"type":"string","description":"The name of the GitHub organization. This field is not case-sensitive.","title":"Org","examples":["my-github-org","AnotherOrganization"]},"pat_request_id":{"type":"integer","description":"The unique identifier of the pending fine-grained personal access token request that needs to be reviewed.","title":"Pat Request Id","examples":[123,4567]},"reason":{"type":"string","description":"An optional comment explaining the reason for approving or denying the request. Maximum length is 1024 characters.","title":"Reason","examples":["Approved due to project requirements.","Denied as the scope is too broad."]}},"required":["org","pat_request_id","action"],"title":"ReviewAccessWithPersonalTokenRequest","description":"Request schema for approving or denying a fine-grained personal access token request."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"The API response data. Typically empty for a successful review (which returns a 204 No Content status). In case of errors, this dictionary may contain details about the error.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["successful"],"title":"ReviewAccessWithPersonalTokenResponseWrapper"}
+schema info of GITHUB_REVIEW_ACCESS_WITH_PERSONAL_TOKEN ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REVIEW_DEPLOYMENT_PROTECTION_RULES
+
+Here is the input and output schema info of Tool GITHUB_REVIEW_DEPLOYMENT_PROTECTION_RULES of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"Repository owner's username or organization name (case-insensitive).","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"Repository name, without `.git` extension (case-insensitive).","title":"Repo","examples":["Spoon-Knife"]},"run_id":{"type":"integer","description":"Unique identifier of the workflow run.","title":"Run Id","examples":["123456789"]}},"required":["owner","repo","run_id"],"title":"ReviewCustomDeploymentProtectionRulesForAWorkflowRunRequest","description":"Parameters to identify the repository and workflow run for reviewing deployment protection rules."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response data; structure may vary based on the review outcome.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ReviewCustomDeploymentProtectionRulesForAWorkflowRunResponseWrapper"}
+schema info of GITHUB_REVIEW_DEPLOYMENT_PROTECTION_RULES ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REVIEW_PENDING_DEPLOYMENTS_FOR_A_WORKFLOW_RUN
+
+Here is the input and output schema info of Tool GITHUB_REVIEW_PENDING_DEPLOYMENTS_FOR_A_WORKFLOW_RUN of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"comment":{"type":"string","description":"Comment to include with the review decision.","title":"Comment","examples":["Approving deployment to production.","Rejecting: needs further testing."]},"environment_ids":{"type":"array","description":"Environments targeted by the review; they must be configured for the repository and be part of the pending deployments for this run.","title":"Environment Ids","items":{"type":"integer","properties":{}},"examples":["[67890, 67891]","[12345]"]},"owner":{"type":"string","description":"The account owner of the repository. The name is not case sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository without the `.git` extension. The name is not case sensitive.","title":"Repo","examples":["hello-world"]},"run_id":{"type":"integer","description":"The unique identifier of the workflow run.","title":"Run Id","examples":["123456789"]},"state":{"type":"string","description":"State to apply to the pending deployments.","title":"State","enum":["approved","rejected"],"examples":["approved","rejected"]}},"required":["owner","repo","run_id","environment_ids","state","comment"],"title":"ReviewPendingDeploymentsForAWorkflowRunRequest","description":"Request to approve or reject pending deployments for a workflow run."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response containing the list of deployment objects that were approved or rejected. Refer to GitHub API documentation for deployment object structure.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ReviewPendingDeploymentsForAWorkflowRunResponseWrapper"}
+schema info of GITHUB_REVIEW_PENDING_DEPLOYMENTS_FOR_A_WORKFLOW_RUN ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REVIEW_RESOURCE_REQUESTS_WITH_FINE_GRAINED_TOKENS
+
+Here is the input and output schema info of Tool GITHUB_REVIEW_RESOURCE_REQUESTS_WITH_FINE_GRAINED_TOKENS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"action":{"type":"string","description":"Action to perform on the token requests.","title":"Action","enum":["approve","deny"],"examples":["approve","deny"]},"org":{"type":"string","description":"GitHub organization name (not case-sensitive).","title":"Org","examples":["my-github-org"]},"pat_request_ids":{"type":"array","description":"Unique identifiers (1 to 100) for the fine-grained personal access token requests.","title":"Pat Request Ids","items":{"type":"integer","properties":{}},"examples":["[1, 2, 3]","[101, 102]"]},"reason":{"type":"string","description":"Reason for the action (max 1024 characters).","title":"Reason","examples":["Approved for project X","Access no longer required"]}},"required":["org","action"],"title":"ReviewResourceRequestsWithFineGrainedTokensRequest","description":"Request schema for `ReviewResourceRequestsWithFineGrainedTokens`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response from the review operation.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ReviewResourceRequestsWithFineGrainedTokensResponseWrapper"}
+schema info of GITHUB_REVIEW_RESOURCE_REQUESTS_WITH_FINE_GRAINED_TOKENS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REVOKE_AN_INSTALLATION_ACCESS_TOKEN
+
+Here is the input and output schema info of Tool GITHUB_REVOKE_AN_INSTALLATION_ACCESS_TOKEN of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{},"title":"RevokeAnInstallationAccessTokenRequest","description":"Request model for revoking the current installation access token."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"RevokeAnInstallationAccessTokenResponseWrapper"}
+schema info of GITHUB_REVOKE_AN_INSTALLATION_ACCESS_TOKEN ends.

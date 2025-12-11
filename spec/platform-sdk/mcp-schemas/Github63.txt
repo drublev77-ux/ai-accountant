@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_MOVE_A_PROJECT_CARD
+
+Here is the input and output schema info of Tool GITHUB_MOVE_A_PROJECT_CARD of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"card_id":{"type":"integer","description":"The unique identifier of the project card to be moved.","title":"Card Id"},"column_id":{"type":"integer","description":"The unique identifier of the column to move the card to. If not provided, the card is moved within its current column.","title":"Column Id"},"position":{"type":"string","description":"The target position of the card within a column. Can be 'top' (to place at the top), 'bottom' (to place at the bottom), or 'after:<card_id>' (to place after the card with the specified <card_id>). The <card_id> in 'after:<card_id>' must refer to a card in the target column.","title":"Position","pattern":"^(?:top|bottom|after:\\d+)$","examples":["top","bottom","after:42"]}},"required":["card_id","position"],"title":"MoveAProjectCardRequest","description":"Request schema for moving a project card, specifying its new position and optionally a new column."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"An empty dictionary confirming the card was successfully moved. The HTTP status code (e.g., 201 Created) primarily indicates success.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["successful"],"title":"MoveAProjectCardResponseWrapper"}
+schema info of GITHUB_MOVE_A_PROJECT_CARD ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_MOVE_A_PROJECT_COLUMN
+
+Here is the input and output schema info of Tool GITHUB_MOVE_A_PROJECT_COLUMN of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"column_id":{"type":"integer","description":"The unique identifier of the project column to be moved.","title":"Column Id","examples":[12345]},"position":{"type":"string","description":"The new position of the column in the project. Valid values are: 'first' (to place the column at the beginning), 'last' (to place the column at the end), or 'after:<column_id>' (to place the column after the specified column, e.g., 'after:67890').","title":"Position","pattern":"^(?:first|last|after:\\d+)$","examples":["first","last","after:67890"]}},"required":["column_id","position"],"title":"MoveAProjectColumnRequest","description":"Request schema for moving a project column to a new position within a project."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary representing the response. For this operation, a successful move typically results in an empty response body from the API (HTTP 204 No Content), so this dictionary will usually be empty.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["successful"],"title":"MoveAProjectColumnResponseWrapper"}
+schema info of GITHUB_MOVE_A_PROJECT_COLUMN ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_PING_AN_ORGANIZATION_WEBHOOK
+
+Here is the input and output schema info of Tool GITHUB_PING_AN_ORGANIZATION_WEBHOOK of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"hook_id":{"type":"integer","description":"The unique identifier of the webhook. This ID can be found in the `X-GitHub-Hook-ID` header of a webhook delivery.","title":"Hook Id","examples":["123456789"]},"org":{"type":"string","description":"The name of the organization. This field is not case-sensitive.","title":"Org","examples":["octo-org"]}},"required":["org","hook_id"],"title":"PingAnOrganizationWebhookRequest","description":"Request schema for `PingAnOrganizationWebhook`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"PingAnOrganizationWebhookResponseWrapper"}
+schema info of GITHUB_PING_AN_ORGANIZATION_WEBHOOK ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_PING_A_REPOSITORY_WEBHOOK
+
+Here is the input and output schema info of Tool GITHUB_PING_A_REPOSITORY_WEBHOOK of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"hook_id":{"type":"integer","description":"The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery.","title":"Hook Id","examples":["123456789"]},"owner":{"type":"string","description":"The account owner of the repository. The name is not case sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository without the `.git` extension. The name is not case sensitive.","title":"Repo","examples":["Spoon-Knife"]}},"required":["owner","repo","hook_id"],"title":"PingARepositoryWebhookRequest","description":"Request schema for `PingARepositoryWebhook`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the response data. For a successful ping (HTTP 204 No Content), this dictionary may be empty or represent an empty body.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"PingARepositoryWebhookResponseWrapper"}
+schema info of GITHUB_PING_A_REPOSITORY_WEBHOOK ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_PRIVATELY_REPORT_A_SECURITY_VULNERABILITY
+
+Here is the input and output schema info of Tool GITHUB_PRIVATELY_REPORT_A_SECURITY_VULNERABILITY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"cvss_vector_string":{"type":"string","description":"The CVSS vector string for advisory severity. Mutually exclusive with `severity`.","title":"Cvss Vector String","examples":["CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"]},"cwe_ids":{"type":"array","description":"A list of Common Weakness Enumeration (CWE) identifiers relevant to the vulnerability.","title":"Cwe Ids","items":{"type":"string","properties":{}},"examples":[["CWE-79","CWE-89"]]},"description":{"type":"string","description":"A detailed explanation of the security vulnerability, its impact, and potential mitigations.","title":"Description","examples":["User input in comments is not properly sanitized, allowing for potential XSS attacks when comments are displayed."]},"owner":{"type":"string","description":"The account owner of the repository. This name is not case-sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository without the `.git` extension. This name is not case-sensitive.","title":"Repo","examples":["Spoon-Knife"]},"severity":{"type":"string","description":"The advisory's severity level. Mutually exclusive with `cvss_vector_string`.","title":"Severity","enum":["critical","high","medium","low"]},"start_private_fork":{"type":"boolean","description":"Whether to create a temporary private fork to collaborate on a fix for the reported vulnerability.","title":"Start Private Fork","default":false},"summary":{"type":"string","description":"A short, descriptive summary of the security vulnerability.","title":"Summary","examples":["Cross-site scripting in comment rendering"]},"vulnerabilities":{"type":"array","description":"A list of vulnerability objects detailing the affected packages or products. Each object should specify the package's ecosystem and name, the vulnerable version range, and optionally, patched versions and vulnerable functions.","title":"Vulnerabilities","items":{"type":"object","properties":{},"additionalProperties":true},"examples":["[{\"package\": {\"ecosystem\": \"npm\", \"name\": \"lodash\"}, \"vulnerable_version_range\": \"< 4.17.21\", \"patched_versions\": \">= 4.17.21\"}]"]}},"required":["owner","repo","summary","description"],"title":"PrivatelyReportASecurityVulnerabilityRequest","description":"Request schema for privately reporting a security vulnerability in a repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"PrivatelyReportASecurityVulnerabilityResponseWrapper"}
+schema info of GITHUB_PRIVATELY_REPORT_A_SECURITY_VULNERABILITY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_PULLS_CHECK_IF_MERGED
+
+Here is the input and output schema info of Tool GITHUB_PULLS_CHECK_IF_MERGED of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The account owner of the repository (not case sensitive).","title":"Owner","examples":["octocat"]},"pull_number":{"type":"integer","description":"The number that identifies the pull request.","title":"Pull Number","examples":["1347"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension (not case sensitive).","title":"Repo","examples":["Spoon-Knife"]}},"required":["owner","repo","pull_number"],"title":"CheckIfAPullRequestHasBeenMergedRequest","description":"Request schema for `CheckIfAPullRequestHasBeenMerged`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response data. Merge status is indicated by HTTP status: 204 (merged, empty body) or 404 (not merged/found, body may contain error details).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CheckIfAPullRequestHasBeenMergedResponseWrapper"}
+schema info of GITHUB_PULLS_CHECK_IF_MERGED ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_PULLS_CREATE
+
+Here is the input and output schema info of Tool GITHUB_PULLS_CREATE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"base":{"type":"string","description":"The name of the branch you want the changes pulled into. This must be an existing branch on the current (target) repository. You cannot submit a pull request to one repository that requests a merge to a base branch of another repository. ","title":"Base","examples":["main","develop"]},"body":{"type":"string","description":"The detailed description or contents of the pull request.","title":"Body","examples":["This PR introduces a new feature that does X, Y, and Z.","Fixes #42 by addressing the off-by-one error."]},"draft":{"type":"boolean","description":"Indicates whether the pull request should be created as a draft. Draft pull requests cannot be merged until marked as ready for review.","title":"Draft","examples":["True","False"]},"head":{"type":"string","description":"The name of the branch where your changes are implemented. For cross-repository pull requests, namespace `head` with the source owner and branch, like `username:branch`.","title":"Head","examples":["feature-branch","octocat:my-feature-branch"]},"head_repo":{"type":"string","description":"The name of the repository (e.g., 'octocat/Hello-World') where the changes in the pull request were made. This field is required for cross-repository pull requests if both the source and target repositories are owned by the same organization but are different repositories.","title":"Head Repo","format":"repo.nwo","examples":["octocat/my-forked-repo"]},"issue":{"type":"integer","description":"The number of an existing issue in the repository to convert into a pull request. If provided, the issue's title and body may be used for the pull request. Required if `title` is not specified.","title":"Issue","examples":["123","456"]},"maintainer_can_modify":{"type":"boolean","description":"Indicates whether maintainers of the upstream repository can modify the pull request. This is primarily relevant for pull requests originating from forks.","title":"Maintainer Can Modify","examples":["True","False"]},"owner":{"type":"string","description":"The account owner of the repository. This name is not case-sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case-sensitive.","title":"Repo","examples":["Spoon-Knife"]},"title":{"type":"string","description":"The title of the new pull request. Required unless `issue` is specified.","title":"Title","examples":["Amazing new feature","Fix for critical bug #123"]}},"required":["owner","repo","head","base"],"title":"CreateAPullRequestRequest","description":"Request schema for `CreateAPullRequest`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the full representation of the created pull request.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateAPullRequestResponseWrapper"}
+schema info of GITHUB_PULLS_CREATE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_PULLS_CREATE_REVIEW
+
+Here is the input and output schema info of Tool GITHUB_PULLS_CREATE_REVIEW of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"body":{"type":"string","description":"Review's main body text; required if `event` is `REQUEST_CHANGES` or `COMMENT`.","title":"Body","default":null,"nullable":true,"examples":["This looks great overall!","Please address the comments below."]},"comments":{"type":"array","description":"Inline draft review comments. Each object requires `path` (relative file path) and `body` (comment text). Optionally, specify `line` (or `start_line` for multi-line), and `side` (or `start_side`) for diff location. `position` is deprecated; use `line`. Example: `[{'path': 'file.py', 'line': 10, 'body': 'Refactor this.'}]`","title":"Comments","default":null,"nullable":true,"items":{"type":"object","description":"Schema for individual review comments","title":"ReviewComment","properties":{"body":{"type":"string","description":"The text of the comment","title":"Body"},"line":{"type":"integer","description":"The line number in the diff to comment on (required for single-line comments)","title":"Line","default":null,"nullable":true},"path":{"type":"string","description":"The relative path to the file being commented on","title":"Path"},"side":{"type":"string","description":"The side of the diff to place the comment on (LEFT or RIGHT)","title":"SideEnm","default":null,"nullable":true,"enum":["LEFT","RIGHT"]},"start_line":{"type":"integer","description":"The start line number for multi-line comments","title":"Start Line","default":null,"nullable":true},"start_side":{"type":"string","description":"The side of the diff to start a multi-line comment on","title":"SideEnm","default":null,"nullable":true,"enum":["LEFT","RIGHT"]}},"required":["path","body"]},"examples":["[{\"path\": \"README.md\", \"line\": 5, \"body\": \"Needs more detail here.\"}]","[{\"path\": \"src/main.py\", \"start_line\": 10, \"line\": 12, \"side\": \"RIGHT\", \"body\": \"This logic can be simplified.\"}]"]},"commit_id":{"type":"string","description":"SHA of the commit to review; defaults to the latest pull request commit. Outdated SHAs may lead to stale comments.","title":"Commit Id","default":null,"nullable":true,"examples":["c4d3a6f8a0c2b0e8e2b8f3c9e8b4b0e5b0b0e0e0"]},"event":{"type":"string","description":"Review action type (`APPROVE`, `REQUEST_CHANGES`, `COMMENT`); if omitted, review is `PENDING` and requires later submission.","title":"EventEnm","default":null,"nullable":true,"enum":["APPROVE","REQUEST_CHANGES","COMMENT"],"examples":["APPROVE","REQUEST_CHANGES","COMMENT"]},"owner":{"type":"string","description":"Username of the account owning the repository (case-insensitive).","title":"Owner","examples":["octocat","my-organization"]},"pull_number":{"type":"integer","description":"Identifying number of the pull request.","title":"Pull Number","examples":[1,123]},"repo":{"type":"string","description":"Repository name, without the `.git` extension (case-insensitive).","title":"Repo","examples":["Hello-World","my-private-repo"]}},"required":["owner","repo","pull_number"],"title":"CreateAReviewForAPullRequestRequest","description":"Request schema for `CreateAReviewForAPullRequest`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateAReviewForAPullRequestResponseWrapper"}
+schema info of GITHUB_PULLS_CREATE_REVIEW ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_PULLS_CREATE_REVIEW_COMMENT
+
+Here is the input and output schema info of Tool GITHUB_PULLS_CREATE_REVIEW_COMMENT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"body":{"type":"string","description":"Text content of the review comment.","title":"Body","examples":["This looks great!","Could you clarify this section?"]},"commit_id":{"type":"string","description":"SHA of the commit for the comment. Using an outdated `commit_id` can misplace the comment if lines change.","title":"Commit Id","examples":["c5b97d5ae6c19d5c5df71a34c7fbeeda2479ccbc"]},"in_reply_to":{"type":"integer","description":"ID of an existing review comment to reply to. If provided, other location parameters (except `body`) are ignored.","title":"In Reply To","examples":["8663694"]},"line":{"type":"integer","description":"**Required unless `subject_type` is 'file'**. Line number in the diff for the comment; for multi-line, this is the last line of the range.","title":"Line","examples":["25"]},"owner":{"type":"string","description":"Account owner of the repository (not case sensitive).","title":"Owner","examples":["octocat"]},"path":{"type":"string","description":"Relative path of the file for the comment.","title":"Path","examples":["file1.txt","src/main.py"]},"position":{"type":"integer","description":"**Deprecated: Use `line` instead.** Position in the diff hunk for the comment (not the file line number).","title":"Position"},"pull_number":{"type":"integer","description":"Identifier of the pull request.","title":"Pull Number","examples":["1347"]},"repo":{"type":"string","description":"Repository name without the `.git` extension (not case sensitive).","title":"Repo","examples":["Spoon-Knife"]},"side":{"type":"string","description":"Side of the diff (`LEFT` or `RIGHT`) for the comment in a split diff view; for multi-line comments, refers to the last line of the range.","title":"Side","enum":["LEFT","RIGHT"]},"start_line":{"type":"integer","description":"**Required for multi-line comments unless `in_reply_to` is used.** First line in the diff for a multi-line comment.","title":"Start Line","examples":["20"]},"start_side":{"type":"string","description":"**Required for multi-line comments unless `in_reply_to` is used.** Starting side of the diff (`LEFT` or `RIGHT`) for a multi-line comment.","title":"Start Side","enum":["LEFT","RIGHT","side"]},"subject_type":{"type":"string","description":"Level of the comment target: `line` (specific line) or `file` (entire file). Defaults to `line` if not provided.","title":"Subject Type","enum":["line","file"]}},"required":["owner","repo","pull_number","body","commit_id","path"],"title":"CreateAReviewCommentForAPullRequestRequest","description":"Request schema for `CreateAReviewCommentForAPullRequest`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Details of the newly created pull request review comment.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateAReviewCommentForAPullRequestResponseWrapper"}
+schema info of GITHUB_PULLS_CREATE_REVIEW_COMMENT ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_PULLS_GET
+
+Here is the input and output schema info of Tool GITHUB_PULLS_GET of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username of the account that owns the repository. This value is not case sensitive.","title":"Owner","examples":["octocat"]},"pull_number":{"type":"integer","description":"The number that identifies the specific pull request.","title":"Pull Number","examples":[1347]},"repo":{"type":"string","description":"The name of the repository, without the .git extension. This value is not case sensitive.","title":"Repo","examples":["Hello-World"]}},"required":["owner","repo","pull_number"],"title":"GetAPullRequestRequest","description":"Request schema for `GetAPullRequest`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetAPullRequestResponseWrapper"}
+schema info of GITHUB_PULLS_GET ends.

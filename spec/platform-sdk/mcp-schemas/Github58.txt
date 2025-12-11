@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_REVIEW_COMMENTS_IN_A_REPOSITORY
+
+Here is the input and output schema info of Tool GITHUB_LIST_REVIEW_COMMENTS_IN_A_REPOSITORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"direction":{"type":"string","description":"Sort direction (`asc` or `desc`). Effective only if `sort` is specified.","title":"Direction","enum":["asc","desc"]},"owner":{"type":"string","description":"The username of the account that owns the repository. This name is not case-sensitive.","title":"Owner","examples":["octocat"]},"page":{"type":"integer","description":"Page number for the results to retrieve.","title":"Page","default":1,"examples":["2"]},"per_page":{"type":"integer","description":"Number of review comments per page (max 100).","title":"Per Page","default":30,"examples":["50"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case-sensitive.","title":"Repo","examples":["Spoon-Knife"]},"since":{"type":"string","description":"Filters for comments updated at or after this ISO 8601 timestamp (e.g., `YYYY-MM-DDTHH:MM:SSZ`).","title":"Since","examples":["2023-01-01T00:00:00Z"]},"sort":{"type":"string","description":"Sort field for review comments: `created` (creation time), `updated` (last update time), or `created_at` (creation timestamp). Defaults to API's standard sort order (typically by ID, ascending) if unspecified.","title":"Sort","enum":["created","updated","created_at"]}},"required":["owner","repo"],"title":"ListReviewCommentsInARepositoryRequest","description":"Request schema for `ListReviewCommentsInARepository`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListReviewCommentsInARepositoryResponseWrapper"}
+schema info of GITHUB_LIST_REVIEW_COMMENTS_IN_A_REPOSITORY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_REVIEW_COMMENTS_ON_A_PULL_REQUEST
+
+Here is the input and output schema info of Tool GITHUB_LIST_REVIEW_COMMENTS_ON_A_PULL_REQUEST of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"direction":{"type":"string","description":"Sort direction (`asc` or `desc`); ignored if `sort` is not provided.","title":"DirectionEnm","default":null,"nullable":true,"enum":["asc","desc"],"examples":["desc"]},"owner":{"type":"string","description":"Username of the account owning the repository. Not case sensitive.","title":"Owner","examples":["octocat"]},"page":{"type":"integer","description":"Page number of results to retrieve.","title":"Page","default":1,"examples":[2]},"per_page":{"type":"integer","description":"Number of comments per page (max 100).","title":"Per Page","default":30,"examples":[50]},"pull_number":{"type":"integer","description":"Unique number identifying the pull request.","title":"Pull Number","examples":[1347]},"repo":{"type":"string","description":"Name of the repository, without the `.git` extension. Not case sensitive.","title":"Repo","examples":["Hello-World"]},"since":{"type":"string","description":"Only include comments updated at or after this ISO 8601 timestamp (`YYYY-MM-DDTHH:MM:SSZ`).","title":"Since","default":null,"nullable":true,"examples":["2023-01-15T10:00:00Z"]},"sort":{"type":"string","description":"Sort review comments by `created` or `updated`.","title":"Sort","default":"created","enum":["created","updated"],"examples":["created"]}},"required":["owner","repo","pull_number"],"title":"ListReviewCommentsOnAPullRequestRequest","description":"Lists review comments on a specific pull request in a repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListReviewCommentsOnAPullRequestResponseWrapper"}
+schema info of GITHUB_LIST_REVIEW_COMMENTS_ON_A_PULL_REQUEST ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_REVIEWS_FOR_A_PULL_REQUEST
+
+Here is the input and output schema info of Tool GITHUB_LIST_REVIEWS_FOR_A_PULL_REQUEST of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The account owner of the repository (e.g., a GitHub username or organization name). This name is not case sensitive.","title":"Owner","examples":["octocat","my-organization"]},"page":{"type":"integer","description":"The page number for the set of results to retrieve.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"The number of review results to display per page. Maximum 100.","title":"Per Page","default":30,"examples":["30","50","100"]},"pull_number":{"type":"integer","description":"The unique number identifying the pull request within the repository.","title":"Pull Number","examples":["1347","42"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case sensitive.","title":"Repo","examples":["Hello-World","my-awesome-project"]}},"required":["owner","repo","pull_number"],"title":"ListReviewsForAPullRequestRequest","description":"Request schema for `ListReviewsForAPullRequest`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListReviewsForAPullRequestResponseWrapper"}
+schema info of GITHUB_LIST_REVIEWS_FOR_A_PULL_REQUEST ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_RUNNER_APPLICATIONS_FOR_AN_ORGANIZATION
+
+Here is the input and output schema info of Tool GITHUB_LIST_RUNNER_APPLICATIONS_FOR_AN_ORGANIZATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the GitHub organization. This name is not case-sensitive.","title":"Org","examples":["octo-org"]}},"required":["org"],"title":"ListRunnerApplicationsForAnOrganizationRequest","description":"Request schema for listing runner applications for a GitHub organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"An array of objects, where each object represents an available runner application binary. Each object typically includes details such as the operating system, architecture, download URL, and filename for the runner application.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListRunnerApplicationsForAnOrganizationResponseWrapper"}
+schema info of GITHUB_LIST_RUNNER_APPLICATIONS_FOR_AN_ORGANIZATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_RUNNER_APPLICATIONS_FOR_A_REPOSITORY
+
+Here is the input and output schema info of Tool GITHUB_LIST_RUNNER_APPLICATIONS_FOR_A_REPOSITORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username of the account or the name of the organization that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat","my-organization"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["hello-world","my-awesome-project"]}},"required":["owner","repo"],"title":"ListRunnerApplicationsForARepositoryRequest","description":"Request schema for `ListRunnerApplicationsForARepository`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Dictionary containing a list of runner application objects, each with details like 'os', 'architecture', 'download_url', and 'filename'.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListRunnerApplicationsForARepositoryResponseWrapper"}
+schema info of GITHUB_LIST_RUNNER_APPLICATIONS_FOR_A_REPOSITORY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_SECRETS_FOR_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_SECRETS_FOR_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"The page number of the results to retrieve (starts from 1).","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"The number of secrets to return per page (up to 100).","title":"Per Page","default":30,"examples":["30","50","100"]}},"title":"ListSecretsForTheAuthenticatedUserRequest","description":"Request schema for listing Codespaces secrets for the authenticated user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"The API response body. Contains `total_count`, an integer representing the total number of secrets available, and `secrets`, a list of secret objects. Each secret object includes details such as its `name`, `created_at` timestamp, `updated_at` timestamp, and `visibility` status.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListSecretsForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_LIST_SECRETS_FOR_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_SELECTED_REPOS_FOR_SECRET_ACCESS
+
+Here is the input and output schema info of Tool GITHUB_LIST_SELECTED_REPOS_FOR_SECRET_ACCESS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the GitHub organization. This field is not case-sensitive.","title":"Org","examples":["octo-org","my-company"]},"page":{"type":"integer","description":"The page number of the results to retrieve, starting at 1.","title":"Page","default":1,"examples":[1,2,5]},"per_page":{"type":"integer","description":"The number of results to return per page, with a maximum of 100.","title":"Per Page","default":30,"examples":[30,50,100]},"secret_name":{"type":"string","description":"The name of the Dependabot secret for which to list repository access.","title":"Secret Name","examples":["AWS_ACCESS_KEY","CI_TOKEN"]}},"required":["org","secret_name"],"title":"ListSelectedReposForSecretAccessRequest","description":"Input parameters for listing repositories that have access to a specific organization's Dependabot secret."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the API response. This typically includes `total_count` (the total number of repositories with access to the secret) and `repositories` (a list of repository objects that have been granted access).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListSelectedReposForSecretAccessResponseWrapper"}
+schema info of GITHUB_LIST_SELECTED_REPOS_FOR_SECRET_ACCESS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_SELECTED_REPOSITORIES_FOR_AN_ORGANIZATION_SECRET
+
+Here is the input and output schema info of Tool GITHUB_LIST_SELECTED_REPOSITORIES_FOR_AN_ORGANIZATION_SECRET of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The organization name. The name is not case sensitive.","title":"Org","examples":["octo-org"]},"page":{"type":"integer","description":"Page number of the results to fetch.","title":"Page","default":1,"examples":["1","2"]},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"secret_name":{"type":"string","description":"The name of the secret.","title":"Secret Name","examples":["CODESPACE_SECRET_NAME"]}},"required":["org","secret_name"],"title":"ListSelectedRepositoriesForAnOrganizationSecretRequest","description":"Request schema for `ListSelectedRepositoriesForAnOrganizationSecret`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListSelectedRepositoriesForAnOrganizationSecretResponseWrapper"}
+schema info of GITHUB_LIST_SELECTED_REPOSITORIES_FOR_AN_ORGANIZATION_SECRET ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_SELECTED_REPOSITORIES_FOR_AN_ORGANIZATION_VARIABLE
+
+Here is the input and output schema info of Tool GITHUB_LIST_SELECTED_REPOSITORIES_FOR_AN_ORGANIZATION_VARIABLE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"name":{"type":"string","description":"The name of the variable.","title":"Name","examples":["ACTIONS_VARIABLE_NAME"]},"org":{"type":"string","description":"The organization's name (case-insensitive).","title":"Org","examples":["octo-org"]},"page":{"type":"integer","description":"Page number for pagination.","title":"Page","default":1},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":30}},"required":["org","name"],"title":"ListSelectedRepositoriesForAnOrganizationVariableRequest","description":"Request schema for listing repositories that have access to a specific organization variable."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListSelectedRepositoriesForAnOrganizationVariableResponseWrapper"}
+schema info of GITHUB_LIST_SELECTED_REPOSITORIES_FOR_AN_ORGANIZATION_VARIABLE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_SELECTED_REPOSITORIES_FOR_A_USER_SECRET
+
+Here is the input and output schema info of Tool GITHUB_LIST_SELECTED_REPOSITORIES_FOR_A_USER_SECRET of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"secret_name":{"type":"string","description":"Name of the secret for which to list associated repositories.","title":"Secret Name","examples":["MY_API_TOKEN"]}},"required":["secret_name"],"title":"ListSelectedRepositoriesForAUserSecretRequest","description":"Request to list repositories for a user secret."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListSelectedRepositoriesForAUserSecretResponseWrapper"}
+schema info of GITHUB_LIST_SELECTED_REPOSITORIES_FOR_A_USER_SECRET ends.

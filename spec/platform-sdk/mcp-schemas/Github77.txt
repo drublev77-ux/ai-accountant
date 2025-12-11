@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_UPDATE_A_CODE_SCANNING_ALERT
+
+Here is the input and output schema info of Tool GITHUB_UPDATE_A_CODE_SCANNING_ALERT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"alert_number":{"type":"integer","description":"The number that identifies an alert. Found in the alert's URL or the `number` field of the GET alerts API response.","title":"Alert Number","examples":[42]},"dismissed_comment":{"type":"string","description":"An optional comment to provide further context when dismissing an alert. Maximum 280 characters.","title":"Dismissed Comment","examples":["This vulnerability is mitigated by an external control.","Accepted risk for this specific scenario."]},"dismissed_reason":{"type":"string","description":"The reason for dismissing or closing the alert. **Required if `state` is 'dismissed'.**","title":"Dismissed Reason","enum":["None","false positive","won't fix","used in tests"],"examples":["false positive","won't fix","used in tests","None"]},"owner":{"type":"string","description":"The account owner of the repository. The name is not case sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository without the `.git` extension. The name is not case sensitive.","title":"Repo","examples":["Hello-World"]},"state":{"type":"string","description":"The new state for the code scanning alert. Must be either 'open' or 'dismissed'. If 'dismissed', `dismissed_reason` is mandatory.","title":"State","enum":["open","dismissed"],"examples":["open","dismissed"]}},"required":["owner","repo","alert_number","state"],"title":"UpdateACodeScanningAlertRequest","description":"Request schema for `UpdateACodeScanningAlert`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"UpdateACodeScanningAlertResponseWrapper"}
+schema info of GITHUB_UPDATE_A_CODE_SCANNING_ALERT ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_UPDATE_A_CODE_SCANNING_DEFAULT_SETUP_CONFIGURATION
+
+Here is the input and output schema info of Tool GITHUB_UPDATE_A_CODE_SCANNING_DEFAULT_SETUP_CONFIGURATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"languages":{"type":"array","description":"CodeQL languages for analysis; if omitted, all supported repository languages are analyzed.","title":"Languages","items":{"type":"string","title":"LanguagesEnm","properties":{},"enum":["c-cpp","csharp","go","java-kotlin","javascript-typescript","python","ruby","swift"]},"examples":[["javascript-typescript","python"]]},"owner":{"type":"string","description":"Account owner of the repository (case-insensitive).","title":"Owner","examples":["octocat"]},"query_suite":{"type":"string","description":"CodeQL query suite to be used ('default' for curated, 'extended' for comprehensive queries).","title":"Query Suite","enum":["default","extended"],"examples":["default"]},"repo":{"type":"string","description":"Repository name (case-insensitive, without `.git` extension).","title":"Repo","examples":["hello-world"]},"state":{"type":"string","description":"Specifies whether to enable ('configured') or disable ('not-configured') code scanning default setup.","title":"State","enum":["configured","not-configured"],"examples":["configured"]}},"required":["owner","repo"],"title":"UpdateACodeScanningDefaultSetupConfigurationRequest","description":"Request schema for `UpdateACodeScanningDefaultSetupConfiguration`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"UpdateACodeScanningDefaultSetupConfigurationResponseWrapper"}
+schema info of GITHUB_UPDATE_A_CODE_SCANNING_DEFAULT_SETUP_CONFIGURATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_UPDATE_A_CODESPACE_FOR_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_UPDATE_A_CODESPACE_FOR_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"codespace_name":{"type":"string","description":"The unique name of the codespace to be updated (e.g., 'octocat-codespace-githu-org-name-abcdef12').","title":"Codespace Name","examples":["monalisa-project-x-f1g2h3j4"]},"display_name":{"type":"string","description":"New display name for the codespace.","title":"Display Name","default":null,"nullable":true,"examples":["My Dev Environment","Project X Codespace"]},"machine":{"type":"string","description":"Target machine type for the codespace; must be valid and available for the user or organization.","title":"Machine","default":null,"nullable":true,"examples":["basicLinux","standardLinux","premiumLinux64gb"]},"recent_folders":{"type":"array","description":"Up to three recently opened folder paths (e.g., '/workspaces/project/src') to suggest which folder to load upon opening.","title":"Recent Folders","default":null,"nullable":true,"items":{"type":"string","properties":{}},"examples":["['/workspaces/my-repo/src', '/workspaces/another-project']","['/home/user/project-alpha']"]}},"required":["codespace_name"],"title":"UpdateACodespaceForTheAuthenticatedUserRequest","description":"Request schema for updating an existing codespace for the authenticated user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary representing the updated codespace resource.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"UpdateACodespaceForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_UPDATE_A_CODESPACE_FOR_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_UPDATE_A_COMMIT_COMMENT
+
+Here is the input and output schema info of Tool GITHUB_UPDATE_A_COMMIT_COMMENT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"body":{"type":"string","description":"The new content of the comment.","title":"Body","examples":["This is an updated comment body."]},"comment_id":{"type":"integer","description":"The unique identifier of the comment.","title":"Comment Id","examples":[1]},"owner":{"type":"string","description":"The account owner of the repository. The name is not case sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository without the `.git` extension. The name is not case sensitive. ","title":"Repo","examples":["Hello-World"]}},"required":["owner","repo","comment_id","body"],"title":"UpdateACommitCommentRequest","description":"Request schema for `UpdateACommitComment`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"UpdateACommitCommentResponseWrapper"}
+schema info of GITHUB_UPDATE_A_COMMIT_COMMENT ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_UPDATE_A_CUSTOM_ORGANIZATION_ROLE
+
+Here is the input and output schema info of Tool GITHUB_UPDATE_A_CUSTOM_ORGANIZATION_ROLE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"description":{"type":"string","description":"New short description for the role. Unchanged if omitted.","title":"Description","examples":["Manages billing and payment settings for the organization."]},"name":{"type":"string","description":"New name for the custom role. Unchanged if omitted.","title":"Name","examples":["Billing Manager"]},"org":{"type":"string","description":"The organization name (not case-sensitive).","title":"Org","examples":["my-org"]},"permissions":{"type":"array","description":"New list of GitHub organization permissions for the role, replacing existing ones. An empty list removes all permissions. Unchanged if omitted.","title":"Permissions","items":{"type":"string","properties":{}},"examples":[["manage_billing","manage_organization_settings"]]},"role_id":{"type":"integer","description":"Unique identifier of the custom organization role.","title":"Role Id","examples":[123]}},"required":["org","role_id"],"title":"UpdateACustomOrganizationRoleRequest","description":"Request schema for `UpdateACustomOrganizationRole`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the updated custom organization role.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"UpdateACustomOrganizationRoleResponseWrapper"}
+schema info of GITHUB_UPDATE_A_CUSTOM_ORGANIZATION_ROLE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_UPDATE_A_DEPLOYMENT_BRANCH_POLICY
+
+Here is the input and output schema info of Tool GITHUB_UPDATE_A_DEPLOYMENT_BRANCH_POLICY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"branch_policy_id":{"type":"integer","description":"The unique identifier of the deployment branch policy to be updated.","title":"Branch Policy Id","examples":["123","456"]},"environment_name":{"type":"string","description":"The name of the deployment environment. This name must be URL-encoded if it contains special characters such as slashes (e.g., replace `/` with `%2F`).","title":"Environment Name","examples":["production","staging%2Fasia","develop"]},"name":{"type":"string","description":"The new name pattern that branches must match to deploy to this environment. Wildcard characters (`*`) can be used but will not match `/`. For example, to match branches that begin with `release/` and contain an additional single slash, use `release/*/*`. For more information about pattern matching syntax, refer to the Ruby File.fnmatch documentation (https://ruby-doc.org/core-2.5.1/File.html#method-c-fnmatch).","title":"Name","examples":["main","release/*","feature/*/*","fix/issue-*"]},"owner":{"type":"string","description":"The account owner of the repository. This name is not case-sensitive.","title":"Owner","examples":["octocat","github"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case-sensitive.","title":"Repo","examples":["hello-world","linguist"]}},"required":["owner","repo","environment_name","branch_policy_id","name"],"title":"UpdateADeploymentBranchPolicyRequest","description":"Parameters to update the name pattern of a deployment branch policy."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the full representation of the updated deployment branch policy.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"UpdateADeploymentBranchPolicyResponseWrapper"}
+schema info of GITHUB_UPDATE_A_DEPLOYMENT_BRANCH_POLICY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_UPDATE_A_DISCUSSION
+
+Here is the input and output schema info of Tool GITHUB_UPDATE_A_DISCUSSION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"body":{"type":"string","description":"The new body for the discussion.","title":"Body","examples":["Updated content for the discussion."]},"discussion_number":{"type":"integer","description":"Identifier for the discussion.","title":"Discussion Number","examples":[42]},"org":{"type":"string","description":"The organization name (not case-sensitive).","title":"Org","examples":["octo-org"]},"team_slug":{"type":"string","description":"The slug of the team name.","title":"Team Slug","examples":["justice-league"]},"title":{"type":"string","description":"The new title for the discussion.","title":"Title","examples":["New discussion title"]}},"required":["org","team_slug","discussion_number"],"title":"UpdateADiscussionRequest","description":"Request schema for updating a specific team discussion within an organization. At least one of 'title' or 'body' must be provided."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"The updated team discussion object.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"UpdateADiscussionResponseWrapper"}
+schema info of GITHUB_UPDATE_A_DISCUSSION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_UPDATE_A_DISCUSSION_COMMENT
+
+Here is the input and output schema info of Tool GITHUB_UPDATE_A_DISCUSSION_COMMENT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"body":{"type":"string","description":"The new body text for the discussion comment.","title":"Body","examples":["I disagree with this point, let's discuss further."]},"comment_number":{"type":"integer","description":"The unique number identifying the comment within the discussion.","title":"Comment Number","examples":[12]},"discussion_number":{"type":"integer","description":"The unique number identifying the discussion.","title":"Discussion Number","examples":[42]},"org":{"type":"string","description":"The name of the organization. This is not case sensitive.","title":"Org","examples":["octo-org"]},"team_slug":{"type":"string","description":"The slug of the team name. This is the team name converted to lowercase with spaces replaced by hyphens (e.g., 'justice-league').","title":"Team Slug","examples":["justice-league"]}},"required":["org","team_slug","discussion_number","comment_number","body"],"title":"UpdateADiscussionCommentRequest","description":"Request schema for `UpdateADiscussionComment`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary representing the updated discussion comment resource.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"UpdateADiscussionCommentResponseWrapper"}
+schema info of GITHUB_UPDATE_A_DISCUSSION_COMMENT ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_UPDATE_A_GIST
+
+Here is the input and output schema info of Tool GITHUB_UPDATE_A_GIST of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"description":{"type":"string","description":"A new description for the gist.","title":"Description"},"files":{"type":"object","description":"Specifies changes to gist files. Keys are current filenames (e.g., `hello.py`). For each file: update `content`, assign a new `filename` to rename (or both). To delete a file, set its value to `null` or an object without `content` or `filename`. Files not mentioned are preserved.","title":"Files","additionalProperties":{"type":"object","additionalProperties":true},"examples":["{\"old_filename.txt\": {\"filename\": \"new_filename.txt\", \"content\": \"Updated content...\"}}","{\"file_to_delete.md\": null}","{\"original_name.py\": {\"content\": \"print('New code!')\"}}"]},"gist_id":{"type":"string","description":"The unique identifier of the gist to be updated.","title":"Gist Id"}},"required":["gist_id"],"title":"UpdateAGistRequest","description":"Request schema for `UpdateAGist`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"UpdateAGistResponseWrapper"}
+schema info of GITHUB_UPDATE_A_GIST ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_UPDATE_A_GIST_COMMENT
+
+Here is the input and output schema info of Tool GITHUB_UPDATE_A_GIST_COMMENT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"body":{"type":"string","description":"The updated comment text.","title":"Body","examples":["This is the updated comment on the Gist."]},"comment_id":{"type":"integer","description":"The unique identifier of the comment.","title":"Comment Id","examples":["12345"]},"gist_id":{"type":"string","description":"The unique identifier of the gist. This can be found in the URL of the Gist.","title":"Gist Id","examples":["5555251"]}},"required":["gist_id","comment_id","body"],"title":"UpdateAGistCommentRequest","description":"Request schema for `UpdateAGistComment`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"UpdateAGistCommentResponseWrapper"}
+schema info of GITHUB_UPDATE_A_GIST_COMMENT ends.

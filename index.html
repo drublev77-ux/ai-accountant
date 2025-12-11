@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="theme-color" content="#10b981" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta
+      name="description"
+      content="AI-powered personal accountant supporting 50+ languages and 100+ currencies. Track finances, calculate taxes worldwide, and manage your money with intelligent insights. Accepts credit cards, PayPal, Apple Pay, and Google Pay."
+    />
+    <link rel="apple-touch-icon" href="/creao_icon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/manifest.json" />
+    <title>AI Accountant - Global Financial Assistant (50+ Languages & 100+ Currencies)</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script defer src="/creao-runtime/index.js?t=1764659053&v=f9457b40cf9d64c4328a6ae3894858acfef3e9f2"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=ATSNEXkvPP3_Q5xsRyglLFpFboN47CsRC7XWOxJ211Jy17cdIErbiT9q2Mu2PGHcEfv-HjQec7x5GDR7&currency=USD&components=buttons,applepay,googlepay" defer></script>
+    <script src="https://js.stripe.com/v3/" defer></script>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- PWA Service Worker -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('Service Worker registered:', reg.scope))
+            .catch(err => console.error('Service Worker registration failed:', err));
+        });
+      }
+    </script>
+  </body>
+</html>

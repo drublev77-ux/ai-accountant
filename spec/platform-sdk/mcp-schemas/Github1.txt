@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_ADD_LABELS_TO_AN_ISSUE
+
+Here is the input and output schema info of Tool GITHUB_ADD_LABELS_TO_AN_ISSUE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"issue_number":{"type":"integer","description":"Number that uniquely identifies the issue within the repository.","title":"Issue Number","examples":["42","101"]},"owner":{"type":"string","description":"Username or organization name owning the repository (case-insensitive).","title":"Owner","examples":["octocat","my-organization"]},"repo":{"type":"string","description":"Repository name, without the `.git` extension (case-insensitive).","title":"Repo","examples":["Spoon-Knife","my-awesome-project"]}},"required":["owner","repo","issue_number"],"title":"AddLabelsToAnIssueRequest","description":"Specifies the repository issue to which labels will be added."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"The API response data, which includes all labels currently applied to the issue.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"AddLabelsToAnIssueResponseWrapper"}
+schema info of GITHUB_ADD_LABELS_TO_AN_ISSUE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_ADD_ORG_RUNNER_LABELS
+
+Here is the input and output schema info of Tool GITHUB_ADD_ORG_RUNNER_LABELS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"labels":{"type":"array","description":"A list of custom label names to add to the self-hosted runner. Previously applied labels are not removed.","title":"Labels","items":{"type":"string","properties":{}},"examples":[["new-label","gpu-runner"]]},"org":{"type":"string","description":"The organization's name (case-insensitive).","title":"Org","examples":["my-org-name"]},"runner_id":{"type":"integer","description":"Unique identifier of the self-hosted runner.","title":"Runner Id","examples":[12345]}},"required":["org","runner_id","labels"],"title":"AddOrgRunnerLabelsRequest","description":"Request schema for adding custom labels to a self-hosted runner for an organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the updated list of labels for the runner. This typically includes a 'total_count' of labels and a 'labels' array, where each element is an object detailing a label (e.g., its ID, name, and type).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"AddOrgRunnerLabelsResponseWrapper"}
+schema info of GITHUB_ADD_ORG_RUNNER_LABELS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_ADD_OR_UPDATE_TEAM_MEMBERSHIP_FOR_A_USER
+
+Here is the input and output schema info of Tool GITHUB_ADD_OR_UPDATE_TEAM_MEMBERSHIP_FOR_A_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the GitHub organization. This name is not case-sensitive.","title":"Org","examples":["github-org","octo-corp"]},"role":{"type":"string","description":"The role to assign to the user within the team. A 'maintainer' has broader permissions than a 'member', such as managing team members and settings.","title":"Role","default":"member","enum":["member","maintainer"],"examples":["member","maintainer"]},"team_slug":{"type":"string","description":"The slug (URL-friendly version) of the team's name.","title":"Team Slug","examples":["justice-league","developers","product-team"]},"username":{"type":"string","description":"The GitHub username of the user to add or whose membership to update.","title":"Username","examples":["octocat","mona-lisa-fixed"]}},"required":["org","team_slug","username"],"title":"AddOrUpdateTeamMembershipForAUserRequest","description":"Request schema for `AddOrUpdateTeamMembershipForAUser`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary representing the team membership details for the user, including their role and current membership state (e.g., 'active', 'pending').","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"AddOrUpdateTeamMembershipForAUserResponseWrapper"}
+schema info of GITHUB_ADD_OR_UPDATE_TEAM_MEMBERSHIP_FOR_A_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_ADD_OR_UPDATE_TEAM_PROJECT_PERMISSIONS
+
+Here is the input and output schema info of Tool GITHUB_ADD_OR_UPDATE_TEAM_PROJECT_PERMISSIONS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"Name of the organization (case-insensitive).","title":"Org","examples":["octo-org"]},"permission":{"type":"string","description":"Permission level to grant ('read', 'write', or 'admin'). Uses the team's default permission if not provided.","title":"Permission","enum":["read","write","admin"],"examples":["read","write","admin"]},"project_id":{"type":"integer","description":"Unique identifier of the project.","title":"Project Id","examples":[1002604]},"team_slug":{"type":"string","description":"URL-friendly identifier (slug) for the team.","title":"Team Slug","examples":["justice-league"]}},"required":["org","team_slug","project_id"],"title":"AddOrUpdateTeamProjectPermissionsRequest","description":"Grants or updates a team's permissions for a specific project."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Response data. A successful update (HTTP 204 No Content) typically results in an empty body.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["successful"],"title":"AddOrUpdateTeamProjectPermissionsResponseWrapper"}
+schema info of GITHUB_ADD_OR_UPDATE_TEAM_PROJECT_PERMISSIONS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_ADD_OR_UPDATE_TEAM_REPOSITORY_PERMISSIONS
+
+Here is the input and output schema info of Tool GITHUB_ADD_OR_UPDATE_TEAM_REPOSITORY_PERMISSIONS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"Organization's name (case-insensitive).","title":"Org","examples":["octo-org","github"]},"owner":{"type":"string","description":"Username of the account owning the repository (case-insensitive).","title":"Owner","examples":["octocat","my-organization"]},"permission":{"type":"string","description":"Permission to grant the team. Options: 'pull' (read-only), 'triage' (manage issues/PRs), 'push' (read/write), 'maintain' (manage repo settings, plus push), 'admin' (full control), or a custom repository role name.","title":"Permission","default":"push","examples":["admin","push","maintain","custom-role-123"]},"repo":{"type":"string","description":"Repository name, without the `.git` extension (case-insensitive).","title":"Repo","examples":["hello-world","my-awesome-project"]},"team_slug":{"type":"string","description":"The team's slug (URL-friendly name).","title":"Team Slug","examples":["justice-league","developers"]}},"required":["org","team_slug","owner","repo"],"title":"AddOrUpdateTeamRepositoryPermissionsRequest","description":"Request schema for `AddOrUpdateTeamRepositoryPermissions`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response data. Usually an empty dictionary for successful updates (HTTP 204 No Content).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["successful"],"title":"AddOrUpdateTeamRepositoryPermissionsResponseWrapper"}
+schema info of GITHUB_ADD_OR_UPDATE_TEAM_REPOSITORY_PERMISSIONS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_ADD_PROJECT_COLLABORATOR
+
+Here is the input and output schema info of Tool GITHUB_ADD_PROJECT_COLLABORATOR of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"permission":{"type":"string","description":"Permission level for the collaborator on the project.","title":"Permission","default":"write","enum":["read","write","admin"],"examples":["read","write","admin"]},"project_id":{"type":"integer","description":"The unique identifier of the organization project.","title":"Project Id","examples":["12345"]},"username":{"type":"string","description":"The GitHub username of the user to be added as a collaborator.","title":"Username","examples":["octocat"]}},"required":["project_id","username"],"title":"AddProjectCollaboratorRequest","description":"Request to add a collaborator to an organization project."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response data; typically empty on success (204 No Content).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"AddProjectCollaboratorResponseWrapper"}
+schema info of GITHUB_ADD_PROJECT_COLLABORATOR ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_ACCESS
+
+Here is the input and output schema info of Tool GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_ACCESS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the GitHub organization. This field is not case-sensitive.","title":"Org","examples":["MyOrganization","Octo-Org"]},"repository_id":{"type":"integer","description":"The unique identifier of the repository to be granted access to the organization secret.","title":"Repository Id","examples":[123456789,987654321]},"secret_name":{"type":"string","description":"The name of the organization secret to which the repository will be added.","title":"Secret Name","examples":["MY_API_KEY","DATABASE_PASSWORD"]}},"required":["org","secret_name","repository_id"],"title":"AddRepoToOrgSecretWithSelectedAccessRequest","description":"Request schema for adding a repository to an organization secret with 'selected' access type."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Response data from the API. For a successful operation (which typically returns a 204 No Content status), this field will likely be empty. In case of an error, it may contain error details.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"AddRepoToOrgSecretWithSelectedAccessResponseWrapper"}
+schema info of GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_ACCESS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_VISIBILITY
+
+Here is the input and output schema info of Tool GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_VISIBILITY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The organization's unique identifier (case-insensitive).","title":"Org","examples":["octo-org"]},"repository_id":{"type":"integer","description":"Unique ID of the repository to be granted access to the secret.","title":"Repository Id","examples":[1296269]},"secret_name":{"type":"string","description":"Name of the Dependabot secret; must be alphanumeric or underscore, no spaces (lowercase auto-converts to uppercase).","title":"Secret Name","examples":["MY_SECRET_TOKEN","ARTIFACTORY_PASSWORD"]}},"required":["org","secret_name","repository_id"],"title":"AddRepoToOrgSecretWithSelectedVisibilityRequest","description":"Request schema for assigning a repository to an organization's Dependabot secret."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"AddRepoToOrgSecretWithSelectedVisibilityResponseWrapper"}
+schema info of GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_VISIBILITY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_ADD_RUNNER_LABELS
+
+Here is the input and output schema info of Tool GITHUB_ADD_RUNNER_LABELS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"labels":{"type":"array","description":"Custom label names to add. Appended to existing labels. Names are case-insensitive. Empty list means no changes.","title":"Labels","items":{"type":"string","properties":{}},"examples":["prod","linux-x64","gpu-enabled"]},"owner":{"type":"string","description":"Username or organization name of the repository owner. Case-insensitive.","title":"Owner","examples":["octocat","MyOrganization"]},"repo":{"type":"string","description":"Name of the repository, without the `.git` extension. Case-insensitive.","title":"Repo","examples":["hello-world","my-awesome-project"]},"runner_id":{"type":"integer","description":"Unique ID of the self-hosted runner.","title":"Runner Id","examples":["123","456"]}},"required":["owner","repo","runner_id","labels"],"title":"AddRunnerLabelsRequest","description":"Request schema for `AddCustomLabelsToASelfHostedRunnerForARepository`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Details of all custom labels on the runner after addition, typically including `total_count` and a list of label objects (each with `id`, `name`, `type`).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"AddRunnerLabelsResponseWrapper"}
+schema info of GITHUB_ADD_RUNNER_LABELS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_ADD_SELECTED_REPOSITORY_TO_AN_ORGANIZATION_SECRET
+
+Here is the input and output schema info of Tool GITHUB_ADD_SELECTED_REPOSITORY_TO_AN_ORGANIZATION_SECRET of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the organization. This name is not case sensitive.","title":"Org","examples":["octo-org"]},"repository_id":{"type":"integer","description":"The unique identifier of the repository to add to the secret's access list.","title":"Repository Id","examples":[1296269]},"secret_name":{"type":"string","description":"The name of the secret. Secret names can only contain alphanumeric characters ([A-Z], [a-z], [0-9]) or underscores (_). Spaces are not allowed. Secret names cannot start with GITHUB_ and must be less than 255 characters.","title":"Secret Name","examples":["MY_API_KEY"]}},"required":["org","secret_name","repository_id"],"title":"AddSelectedRepositoryToAnOrganizationSecretRequest","description":"Request schema for `AddSelectedRepositoryToAnOrganizationSecret`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"An empty dictionary, as this operation does not return a response body on success (HTTP 204 No Content).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"AddSelectedRepositoryToAnOrganizationSecretResponseWrapper"}
+schema info of GITHUB_ADD_SELECTED_REPOSITORY_TO_AN_ORGANIZATION_SECRET ends.

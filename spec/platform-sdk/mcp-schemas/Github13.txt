@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CREATE_REACTION_FOR_AN_ISSUE_COMMENT
+
+Here is the input and output schema info of Tool GITHUB_CREATE_REACTION_FOR_AN_ISSUE_COMMENT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"comment_id":{"type":"integer","description":"Unique identifier of the issue comment.","title":"Comment Id","examples":["12345","98765"]},"content":{"type":"string","description":"Reaction content to add to the issue comment. Must be one of the values from `ContentEnm`.","title":"Content","enum":["+1","-1","laugh","confused","heart","hooray","rocket","eyes"],"examples":["+1","heart","rocket"]},"owner":{"type":"string","description":"Username of the account that owns the repository (not case-sensitive).","title":"Owner","examples":["octocat","actions"]},"repo":{"type":"string","description":"Name of the repository, without the `.git` extension (not case-sensitive).","title":"Repo","examples":["Spoon-Knife","runner"]}},"required":["owner","repo","comment_id","content"],"title":"CreateReactionForAnIssueCommentRequest","description":"Request model to create a reaction for an issue comment."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateReactionForAnIssueCommentResponseWrapper"}
+schema info of GITHUB_CREATE_REACTION_FOR_AN_ISSUE_COMMENT ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CREATE_REACTION_FOR_A_PULL_REQUEST_REVIEW_COMMENT
+
+Here is the input and output schema info of Tool GITHUB_CREATE_REACTION_FOR_A_PULL_REQUEST_REVIEW_COMMENT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"comment_id":{"type":"integer","description":"The unique identifier of the pull request review comment to which the reaction will be added.","title":"Comment Id"},"content":{"type":"string","description":"The reaction to add. See the [GitHub API documentation on reactions](https://docs.github.com/rest/reactions/reactions#about-reactions) for more context on reactions.","title":"Content","enum":["+1","-1","laugh","confused","heart","hooray","rocket","eyes"],"examples":["+1","-1","laugh","confused","heart","hooray","rocket","eyes"]},"owner":{"type":"string","description":"The username or organization name that owns the repository. This field is case-insensitive.","title":"Owner"},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is case-insensitive.","title":"Repo"}},"required":["owner","repo","comment_id","content"],"title":"CreateReactionForAPullRequestReviewCommentRequest","description":"Request schema for `CreateReactionForAPullRequestReviewComment`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the details of the created reaction, such as its ID, the user who created it, and the content of the reaction.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateReactionForAPullRequestReviewCommentResponseWrapper"}
+schema info of GITHUB_CREATE_REACTION_FOR_A_PULL_REQUEST_REVIEW_COMMENT ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CREATE_REACTION_FOR_A_RELEASE
+
+Here is the input and output schema info of Tool GITHUB_CREATE_REACTION_FOR_A_RELEASE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"content":{"type":"string","description":"The type of reaction to add to the release.","title":"Content","enum":["+1","laugh","heart","hooray","rocket","eyes"],"examples":["+1","laugh","heart","hooray","rocket","eyes"]},"owner":{"type":"string","description":"The username of the account that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat"]},"release_id":{"type":"integer","description":"The unique identifier (ID) of the release to add a reaction to.","title":"Release Id","examples":[12345]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["Hello-World"]}},"required":["owner","repo","release_id","content"],"title":"CreateReactionForAReleaseRequest","description":"Request schema for creating a reaction to a specific release within a repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the details of the created reaction, such as its ID, user, and content.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateReactionForAReleaseResponseWrapper"}
+schema info of GITHUB_CREATE_REACTION_FOR_A_RELEASE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CREATE_REACTION_FOR_A_TEAM_DISCUSSION
+
+Here is the input and output schema info of Tool GITHUB_CREATE_REACTION_FOR_A_TEAM_DISCUSSION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"content":{"type":"string","description":"The reaction content to add to the team discussion.","title":"Content","enum":["+1","-1","laugh","confused","heart","hooray","rocket","eyes"],"examples":["+1","-1","laugh","confused","heart","hooray","rocket","eyes"]},"discussion_number":{"type":"integer","description":"The unique number identifying the team discussion.","title":"Discussion Number","examples":["42"]},"org":{"type":"string","description":"The name of the GitHub organization. This field is not case-sensitive.","title":"Org","examples":["octo-org"]},"team_slug":{"type":"string","description":"The slug (URL-friendly version) of the team name.","title":"Team Slug","examples":["justice-league"]}},"required":["org","team_slug","discussion_number","content"],"title":"CreateReactionForATeamDiscussionRequest","description":"Request schema for `CreateReactionForATeamDiscussion`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the details of the created reaction, such as its ID, content, and user information as returned by the GitHub API.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateReactionForATeamDiscussionResponseWrapper"}
+schema info of GITHUB_CREATE_REACTION_FOR_A_TEAM_DISCUSSION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CREATE_REACTION_FOR_A_TEAM_DISCUSSION_COMMENT
+
+Here is the input and output schema info of Tool GITHUB_CREATE_REACTION_FOR_A_TEAM_DISCUSSION_COMMENT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"comment_number":{"type":"integer","description":"The unique number identifying the comment within the discussion.","title":"Comment Number","examples":[101]},"content":{"type":"string","description":"The type of reaction to add to the team discussion comment. For more information on reaction types, see the [GitHub API documentation on reactions](https://docs.github.com/rest/reactions/reactions#about-reactions).","title":"Content","enum":["+1","-1","laugh","confused","heart","hooray","rocket","eyes"],"examples":["+1","-1","laugh","confused","heart","hooray","rocket","eyes"]},"discussion_number":{"type":"integer","description":"The unique number identifying the team discussion.","title":"Discussion Number","examples":[42]},"org":{"type":"string","description":"The organization name on GitHub. This name is not case sensitive.","title":"Org","examples":["octo-org"]},"team_slug":{"type":"string","description":"The slug (URL-friendly version) of the team name.","title":"Team Slug","examples":["justice-league"]}},"required":["org","team_slug","discussion_number","comment_number","content"],"title":"CreateReactionForATeamDiscussionCommentRequest","description":"Defines the request parameters for creating a reaction on a team discussion comment."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary representing the created reaction object. This typically includes details like the reaction's ID, the user who created it, the reaction content (e.g., '+1', 'heart'), and timestamps.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateReactionForATeamDiscussionCommentResponseWrapper"}
+schema info of GITHUB_CREATE_REACTION_FOR_A_TEAM_DISCUSSION_COMMENT ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CREATE_UPDATE_ORG_SECRET_WITH_LIB_SODIUM
+
+Here is the input and output schema info of Tool GITHUB_CREATE_UPDATE_ORG_SECRET_WITH_LIB_SODIUM of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"encrypted_value":{"type":"string","description":"Value of the secret, encrypted using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) and the organization's public key (obtained from 'Get an organization public key' endpoint). Required to create or update the secret's value.","title":"Encrypted Value","examples":["vZgX2lZ8v6k6gJ1x7L4w..."]},"key_id":{"type":"string","description":"ID of the public key used for encryption (retrieved from 'Get an organization public key' endpoint). Required if `encrypted_value` is provided.","title":"Key Id","examples":["1234567890"]},"org":{"type":"string","description":"The organization name (case-insensitive).","title":"Org","examples":["octo-org"]},"secret_name":{"type":"string","description":"The secret name (case-insensitive and unique within the organization).","title":"Secret Name","examples":["MY_API_TOKEN"]},"selected_repository_ids":{"type":"array","description":"List of repository IDs that can access the secret; required and used only when `visibility` is `selected`.","title":"Selected Repository Ids","items":{"type":"string","properties":{}},"examples":[["1296269","1296270"]]},"visibility":{"type":"string","description":"Secret visibility: `all` (all repositories), `private` (private repositories), or `selected` (specific repositories designated by `selected_repository_ids`).","title":"Visibility","enum":["all","private","selected"]}},"required":["org","secret_name","visibility"],"title":"CreateUpdateOrgSecretWithLibSodiumRequest","description":"Request schema for creating or updating an organization secret with LibSodium encryption."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateUpdateOrgSecretWithLibSodiumResponseWrapper"}
+schema info of GITHUB_CREATE_UPDATE_ORG_SECRET_WITH_LIB_SODIUM ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CUSTOMIZE_OIDC_SUBJECT_CLAIM_TEMPLATE
+
+Here is the input and output schema info of Tool GITHUB_CUSTOMIZE_OIDC_SUBJECT_CLAIM_TEMPLATE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username or organization name that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat","my-organization"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["hello-world","my-awesome-project"]}},"required":["owner","repo"],"title":"CustomizeOidcSubjectClaimTemplateRequest","description":"Request schema for `CustomizeOidcSubjectClaimTemplate`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Details the OIDC subject claim customization for the repository, indicating whether it uses the default subject claim (e.g., `{'use_default': True}`) or specifies custom claims to include (e.g., `{'include_claim_keys': ['repo', 'context']}`).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CustomizeOidcSubjectClaimTemplateResponseWrapper"}
+schema info of GITHUB_CUSTOMIZE_OIDC_SUBJECT_CLAIM_TEMPLATE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CUSTOM_OIDCSUBJECT_CLAIM_TEMPLATE
+
+Here is the input and output schema info of Tool GITHUB_CUSTOM_OIDCSUBJECT_CLAIM_TEMPLATE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The unique identifier of the GitHub organization. This name is not case-sensitive.","title":"Org","examples":["github","my-actions-org"]}},"required":["org"],"title":"CustomOidcsubjectClaimTemplateRequest","description":"Request schema for retrieving the OpenID Connect (OIDC) subject claim customization template for a GitHub organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary representing the OIDC subject claim customization template. This object will contain either a `use_default: true` field, indicating that the default subject claim customization is used, or an `include_claim_keys: [...]` field, specifying an ordered list of context attributes (e.g., `repo`, `context`, `job_workflow_ref`) to use for the OIDC subject claim.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CustomOidcsubjectClaimTemplateResponseWrapper"}
+schema info of GITHUB_CUSTOM_OIDCSUBJECT_CLAIM_TEMPLATE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CUSTOM_OIDCSUBJECT_CLAIM_TEMPLATE_SETTER
+
+Here is the input and output schema info of Tool GITHUB_CUSTOM_OIDCSUBJECT_CLAIM_TEMPLATE_SETTER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"include_claim_keys":{"type":"array","description":"Array of unique OIDC claim strings (alphanumeric and underscores) for the token. Used only if `use_default` is `false`. Consult GitHub's OIDC documentation for supported claim keys.","title":"Include Claim Keys","items":{"type":"string","properties":{}},"examples":[["repo","actor"],["run_id","environment","job_workflow_ref"]]},"owner":{"type":"string","description":"Owner of the repository (username or organization name, case-insensitive).","title":"Owner","examples":["octocat","my-organization"]},"repo":{"type":"string","description":"Repository name, without the `.git` extension (case-insensitive).","title":"Repo","examples":["hello-world","my-app-repository"]},"use_default":{"type":"boolean","description":"If true, applies the default GitHub-provided OIDC subject claim template (ignoring `include_claim_keys`); if false, a custom template defined by `include_claim_keys` is used.","title":"Use Default","examples":["True","False"]}},"required":["owner","repo","use_default"],"title":"CustomOidcsubjectClaimTemplateSetterRequest","description":"Request schema for `CustomOidcsubjectClaimTemplateSetter`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response. May be empty on success (e.g., 204 No Content) or contain details of the configured template (e.g., 201 Created).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CustomOidcsubjectClaimTemplateSetterResponseWrapper"}
+schema info of GITHUB_CUSTOM_OIDCSUBJECT_CLAIM_TEMPLATE_SETTER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DECLINE_A_REPOSITORY_INVITATION
+
+Here is the input and output schema info of Tool GITHUB_DECLINE_A_REPOSITORY_INVITATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"invitation_id":{"type":"integer","description":"Identifier of the pending repository invitation to decline; obtained by listing the user's pending invitations.","title":"Invitation Id","examples":["123","456","789"]}},"required":["invitation_id"],"title":"DeclineARepositoryInvitationRequest","description":"Input parameters to decline a repository invitation."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Response data. Empty for a successful decline (HTTP 204 No Content); contains error details for failures with a response body (e.g., 4xx errors).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeclineARepositoryInvitationResponseWrapper"}
+schema info of GITHUB_DECLINE_A_REPOSITORY_INVITATION ends.

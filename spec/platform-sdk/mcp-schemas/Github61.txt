@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_USERS
+
+Here is the input and output schema info of Tool GITHUB_LIST_USERS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"per_page":{"type":"integer","description":"Specifies the number of user results to return per page. The maximum allowed value is 100.","title":"Per Page","default":30,"examples":["30","50","100"]},"since":{"type":"integer","description":"A user ID. If provided, only users with an ID greater than this ID will be returned. This parameter facilitates pagination. If omitted, the list starts from the first user.","title":"Since","examples":["1000","500000"]}},"title":"ListUsersRequest","description":"Defines the parameters for the `ListUsers` action, used to retrieve GitHub users with support for pagination."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A list of GitHub user objects. Each object provides publicly available user details such as `login`, `id`, `node_id`, `avatar_url`, `html_url`, and other user-specific information as defined by the GitHub API specification.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListUsersResponseWrapper"}
+schema info of GITHUB_LIST_USERS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_USERS_BLOCKED_BY_AN_ORGANIZATION
+
+Here is the input and output schema info of Tool GITHUB_LIST_USERS_BLOCKED_BY_AN_ORGANIZATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The organization name. This name is not case sensitive.","title":"Org","examples":["octo-org","github"]},"page":{"type":"integer","description":"Specifies the page number of the results to fetch. Default is 1. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\" ","title":"Page","default":1},"per_page":{"type":"integer","description":"Specifies the number of results to return per page, with a maximum of 100. Default is 30. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\" ","title":"Per Page","default":30}},"required":["org"],"title":"ListUsersBlockedByAnOrganizationRequest","description":"Request schema for `ListUsersBlockedByAnOrganization`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"List of 'simple user' objects detailing users blocked by the organization. Each object includes fields such as 'login', 'id', 'node_id', 'avatar_url', and 'html_url'.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListUsersBlockedByAnOrganizationResponseWrapper"}
+schema info of GITHUB_LIST_USERS_BLOCKED_BY_AN_ORGANIZATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_USERS_BLOCKED_BY_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_USERS_BLOCKED_BY_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"The page number of the results to retrieve.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"The number of results per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]}},"title":"ListUsersBlockedByTheAuthenticatedUserRequest","description":"Request schema for `ListUsersBlockedByTheAuthenticatedUser`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListUsersBlockedByTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_LIST_USERS_BLOCKED_BY_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_USERS_THAT_ARE_ASSIGNED_TO_AN_ORGANIZATION_ROLE
+
+Here is the input and output schema info of Tool GITHUB_LIST_USERS_THAT_ARE_ASSIGNED_TO_AN_ORGANIZATION_ROLE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the GitHub organization. This is not case-sensitive.","title":"Org","examples":["octo-org","github"]},"page":{"type":"integer","description":"Page number of results (1-indexed).","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results per page (maximum 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"role_id":{"type":"integer","description":"The unique identifier for the organization role.","title":"Role Id","examples":["123","456"]}},"required":["org","role_id"],"title":"ListUsersThatAreAssignedToAnOrganizationRoleRequest","description":"Request schema for listing users assigned to a specific organization role."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"The API response, expected to contain a list of user objects assigned to the role, with details like 'login', 'id', 'node_id', 'avatar_url'.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListUsersThatAreAssignedToAnOrganizationRoleResponseWrapper"}
+schema info of GITHUB_LIST_USERS_THAT_ARE_ASSIGNED_TO_AN_ORGANIZATION_ROLE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_WATCHERS
+
+Here is the input and output schema info of Tool GITHUB_LIST_WATCHERS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username of the account that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat","my-organization"]},"page":{"type":"integer","description":"Page number of the results to retrieve.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results to return per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["Spoon-Knife","my-project"]}},"required":["owner","repo"],"title":"ListWatchersRequest","description":"Defines the parameters for listing repository watchers."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A list of user objects representing repository watchers, each typically including details like 'login', 'id', and 'avatar_url'.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListWatchersResponseWrapper"}
+schema info of GITHUB_LIST_WATCHERS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_WORKFLOW_RUN_ARTIFACTS
+
+Here is the input and output schema info of Tool GITHUB_LIST_WORKFLOW_RUN_ARTIFACTS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"name":{"type":"string","description":"If specified, filters artifacts by this exact name.","title":"Name","examples":["my-build-artifact","coverage-report"]},"owner":{"type":"string","description":"Account owner of the repository (not case sensitive).","title":"Owner","examples":["octocat","github"]},"page":{"type":"integer","description":"Page number of results to fetch.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"repo":{"type":"string","description":"Repository name, without the `.git` extension (not case sensitive).","title":"Repo","examples":["hello-world","linguist"]},"run_id":{"type":"integer","description":"Unique identifier of the workflow run.","title":"Run Id","examples":["123456789","987654321"]}},"required":["owner","repo","run_id"],"title":"ListWorkflowRunArtifactsRequest","description":"Parameters to list artifacts for a specific workflow run."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListWorkflowRunArtifactsResponseWrapper"}
+schema info of GITHUB_LIST_WORKFLOW_RUN_ARTIFACTS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY
+
+Here is the input and output schema info of Tool GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"actor":{"type":"string","description":"Filter by the actor's login (e.g., the user who triggered the `push`).","title":"Actor","examples":["octocat"]},"branch":{"type":"string","description":"Filter by branch name (e.g., `main` or the branch that triggered the `push`).","title":"Branch","examples":["main","develop"]},"check_suite_id":{"type":"integer","description":"Filter by a specific `check_suite_id`.","title":"Check Suite Id","examples":["123456789"]},"created":{"type":"string","description":"Filter by creation date or date-time range (ISO8601 format: YYYY-MM-DD or YYYY-MM-DDTHH:MM:SSZ). Supports operators like `>`, `<`, `>=`, `<=`, and `..` for ranges.","title":"Created","examples":["2023-01-15",">=2023-01-01T10:00:00Z","2023-01-01..2023-01-31"]},"event":{"type":"string","description":"Filter by the event that triggered the workflow (e.g., `push`, `pull_request`).","title":"Event","examples":["push","pull_request","issue"]},"exclude_pull_requests":{"type":"boolean","description":"Exclude workflow runs triggered by pull request events if `true`.","title":"Exclude Pull Requests","default":false,"examples":["true","false"]},"head_sha":{"type":"string","description":"Filter to include only runs associated with the specified `head_sha` (commit SHA at the head of the branch).","title":"Head Sha","examples":["abcdef1234567890deadbeefabcdef1234567890"]},"owner":{"type":"string","description":"The account owner of the repository (not case-sensitive).","title":"Owner","examples":["octocat"]},"page":{"type":"integer","description":"Page number of the results to fetch.","title":"Page","default":1,"examples":["1","2"]},"per_page":{"type":"integer","description":"Number of results per page (maximum 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension (not case-sensitive).","title":"Repo","examples":["Spoon-Knife"]},"status":{"type":"string","description":"Filter by `status` or `conclusion` (e.g., `success`, `in_progress`). Note: Only GitHub Actions can set `waiting`, `pending`, or `requested`.","title":"Status","enum":["completed","action_required","cancelled","failure","neutral","skipped","stale","success","timed_out","in_progress","queued","requested","waiting","pending"],"examples":["completed","in_progress","queued"]}},"required":["owner","repo"],"title":"ListWorkflowRunsForARepositoryRequest","description":"Request schema for `ListWorkflowRunsForARepository`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response, typically including 'total_count' and an array of 'workflow_runs' objects.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListWorkflowRunsForARepositoryResponseWrapper"}
+schema info of GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_WORKFLOW_RUNS_FOR_A_WORKFLOW
+
+Here is the input and output schema info of Tool GITHUB_LIST_WORKFLOW_RUNS_FOR_A_WORKFLOW of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"actor":{"type":"string","description":"Filter by the GitHub username of the actor who initiated the run.","title":"Actor","examples":["octocat","monalisa"]},"branch":{"type":"string","description":"Filter by branch name, typically for `push` events.","title":"Branch","examples":["main","develop","feature/new-login"]},"check_suite_id":{"type":"integer","description":"Filter by `check_suite_id` (identifier for a collection of check runs).","title":"Check Suite Id","examples":["123456789","987654321"]},"created":{"type":"string","description":"Filter by creation date/time range. For syntax, refer to GitHub's \"Understanding the search syntax\" guide for dates.","title":"Created","examples":["2023-01-15","2023-01-01..2023-01-31",">=2023-03-10T14:00:00Z"]},"event":{"type":"string","description":"Filter by the event that triggered the run (e.g., `push`, `pull_request`). For more event types, see GitHub's documentation on \"Events that trigger workflows\".","title":"Event","examples":["push","pull_request","workflow_dispatch"]},"exclude_pull_requests":{"type":"boolean","description":"If true, exclude workflow runs triggered by pull requests.","title":"Exclude Pull Requests","default":false},"head_sha":{"type":"string","description":"Filter by the head commit's SHA.","title":"Head Sha","examples":["1c2f3a4b5d6e7f8g9h0i1j2k3l4m5n6o7p8q9r0s","abcdef0123456789abcdef0123456789abcdef01"]},"owner":{"type":"string","description":"Account owner of the repository (case-insensitive).","title":"Owner","examples":["octocat","my-organization"]},"page":{"type":"integer","description":"Page number of the results to retrieve.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"repo":{"type":"string","description":"Repository name, without the `.git` extension (case-insensitive).","title":"Repo","examples":["Spoon-Knife","my-awesome-project"]},"status":{"type":"string","description":"Filter by status or conclusion (e.g., `success`, `in_progress`). Note: `waiting`, `pending`, or `requested` statuses are set exclusively by GitHub Actions.","title":"Status","enum":["completed","action_required","cancelled","failure","neutral","skipped","stale","success","timed_out","in_progress","queued","requested","waiting","pending"],"examples":["completed","success","in_progress","queued"]},"workflow_id":{"type":"integer","description":"ID or filename (e.g., `main.yml`) of the workflow.","title":"Workflow Id","examples":["1234567","8901234"]}},"required":["owner","repo","workflow_id"],"title":"ListWorkflowRunsForAWorkflowRequest","description":"Request schema for `ListWorkflowRunsForAWorkflow`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Raw JSON response from the API, usually a list of workflow runs with details.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListWorkflowRunsForAWorkflowResponseWrapper"}
+schema info of GITHUB_LIST_WORKFLOW_RUNS_FOR_A_WORKFLOW ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LOCK_AN_ISSUE
+
+Here is the input and output schema info of Tool GITHUB_LOCK_AN_ISSUE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"issue_number":{"type":"integer","description":"The number that uniquely identifies the issue to be locked within the repository.","title":"Issue Number","examples":["1347"]},"lock_reason":{"type":"string","description":"Optional reason for locking the conversation; if omitted, no reason is displayed.","title":"Lock Reason","enum":["off-topic","too heated","resolved","spam"],"examples":["resolved","off-topic"]},"owner":{"type":"string","description":"The username of the account that owns the repository. This name is not case-sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case-sensitive.","title":"Repo","examples":["Spoon-Knife"]}},"required":["owner","repo","issue_number"],"title":"LockAnIssueRequest","description":"Request schema for locking a GitHub issue's conversation."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary representing the response from the GitHub API. Upon successful locking of an issue (which typically results in a 204 No Content status), this dictionary will be empty.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"LockAnIssueResponseWrapper"}
+schema info of GITHUB_LOCK_AN_ISSUE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_MANAGE_ACCESS_CONTROL_FOR_ORGANIZATION_CODESPACES
+
+Here is the input and output schema info of Tool GITHUB_MANAGE_ACCESS_CONTROL_FOR_ORGANIZATION_CODESPACES of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the GitHub organization. This field is not case-sensitive.","title":"Org","examples":["github","my-awesome-org"]},"selected_usernames":{"type":"array","description":"A list of GitHub usernames who should have access to Codespaces. This field is required and used only when `visibility` is set to `selected_members`. Providing a list here will replace any existing list of selected usernames.","title":"Selected Usernames","items":{"type":"string","properties":{}},"examples":[["monalisa","octocat"],["dependabot"]]},"visibility":{"type":"string","description":"Defines which users can access Codespaces within the organization.\n`disabled`: Codespaces are disabled for all users in the organization.\n`selected_members`: Only users specified in `selected_usernames` can access Codespaces.\n`all_members`: All members of the organization can access Codespaces.\n`all_members_and_outside_collaborators`: All members and outside collaborators can access Codespaces.","title":"Visibility","enum":["disabled","selected_members","all_members","all_members_and_outside_collaborators"],"examples":["disabled","selected_members","all_members","all_members_and_outside_collaborators"]}},"required":["org","visibility"],"title":"ManageAccessControlForOrganizationCodespacesRequest","description":"Request model for managing Codespaces access control within an organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Response data, which is typically empty as a successful (HTTP 204) response has no body.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ManageAccessControlForOrganizationCodespacesResponseWrapper"}
+schema info of GITHUB_MANAGE_ACCESS_CONTROL_FOR_ORGANIZATION_CODESPACES ends.

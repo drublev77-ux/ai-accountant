@@ -1,0 +1,40 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_USERS_LIST_PUBLIC_EMAILS_FOR_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_USERS_LIST_PUBLIC_EMAILS_FOR_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Page number of the results to fetch.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results to return per page. Maximum value is 100.","title":"Per Page","default":30,"examples":["30","50","100"]}},"title":"ListPublicEmailAddressesForTheAuthenticatedUserRequest","description":"Request schema for `ListPublicEmailAddressesForTheAuthenticatedUser`."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListPublicEmailAddressesForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_USERS_LIST_PUBLIC_EMAILS_FOR_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_USERS_LIST_SOCIAL_ACCOUNTS_FOR_USER
+
+Here is the input and output schema info of Tool GITHUB_USERS_LIST_SOCIAL_ACCOUNTS_FOR_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"The page number of the results to fetch when paginating. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"","title":"Page","default":1},"per_page":{"type":"integer","description":"The number of social account results to return per page. Maximum is 100. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"","title":"Per Page","default":30},"username":{"type":"string","description":"The handle (username) of the GitHub user (e.g., 'octocat') for whom to list social media accounts.","title":"Username","examples":["octocat","torvalds"]}},"required":["username"],"title":"ListSocialAccountsForAUserRequest","description":"Input model for the `ListSocialAccountsForAUser` action, specifying the user and pagination parameters."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"List of social account objects, each with 'provider' (e.g., 'linkedin', 'twitter') and 'url' (profile link).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListSocialAccountsForAUserResponseWrapper"}
+schema info of GITHUB_USERS_LIST_SOCIAL_ACCOUNTS_FOR_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_VERIFY_DEV_CONTAINER_PERMISSIONS_ACCEPTED
+
+Here is the input and output schema info of Tool GITHUB_VERIFY_DEV_CONTAINER_PERMISSIONS_ACCEPTED of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"devcontainer_path":{"type":"string","description":"Path to the `devcontainer.json` file in the repository.","title":"Devcontainer Path","examples":[".devcontainer/devcontainer.json","my_configs/devcontainer.json"]},"owner":{"type":"string","description":"Username of the repository owner (case-insensitive).","title":"Owner","examples":["octocat"]},"ref":{"type":"string","description":"Git reference (branch, tag, or commit SHA) for the devcontainer configuration.","title":"Ref","examples":["main","heads/feature-branch","v2.1.0"]},"repo":{"type":"string","description":"Repository name, without `.git` extension (case-insensitive).","title":"Repo","examples":["hello-world"]}},"required":["owner","repo","ref","devcontainer_path"],"title":"VerifyDevContainerPermissionsAcceptedRequest","description":"Request schema for `VerifyDevContainerPermissionsAccepted`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Results of the permission check, including an 'accepted' status, and details about the devcontainer configuration and its required permissions.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"VerifyDevContainerPermissionsAcceptedResponseWrapper"}
+schema info of GITHUB_VERIFY_DEV_CONTAINER_PERMISSIONS_ACCEPTED ends.

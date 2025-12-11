@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CREATE_A_FORK
+
+Here is the input and output schema info of Tool GITHUB_CREATE_A_FORK of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"default_branch_only":{"type":"boolean","description":"Specifies whether to fork only the default branch of the repository. If `True`, only the default branch is copied. If `False` or not specified, all branches are copied.","title":"Default Branch Only","examples":[true]},"name":{"type":"string","description":"The desired name for the newly created fork. If not provided, the new fork will have the same name as the original repository.","title":"Name","examples":["my-awesome-fork"]},"organization":{"type":"string","description":"The GitHub organization name to fork the repository into. If not specified, the fork will be created in the authenticated user's account.","title":"Organization","examples":["my-github-org"]},"owner":{"type":"string","description":"The username or organization name that owns the repository. This field is not case sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case sensitive.","title":"Repo","examples":["Spoon-Knife"]}},"required":["owner","repo"],"title":"CreateAForkRequest","description":"Request schema for `CreateAFork` to create a new fork of a repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary representing the full repository object of the newly created fork. This includes details such as `id`, `node_id`, `name`, `full_name`, `html_url`, `clone_url`, `forks_url`, `commits_url`, etc.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateAForkResponseWrapper"}
+schema info of GITHUB_CREATE_A_FORK ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CREATE_A_GIST
+
+Here is the input and output schema info of Tool GITHUB_CREATE_A_GIST of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"description":{"type":"string","description":"Optional description for the gist.","title":"Description","examples":["My new Python utility functions","Example of API usage"]},"files":{"type":"object","description":"Content for the gist's files. Dictionary where keys are filenames and values are objects, each having a `content` key with the file's raw string data.","title":"Files","additionalProperties":{"type":"object","additionalProperties":true},"examples":["{\"hello_world.txt\": {\"content\": \"Hello, Universe!\"}}","{\"main.py\": {\"content\": \"def main():\\n    print(\\\"Executed\\\")\\nif __name__ == \\\"__main__\\\":\\n    main()\"}, \"README.md\": {\"content\": \"# My Gist\\nThis is a test gist.\"}}"]},"public":{"type":"boolean","description":"Indicates if the gist is public (`true`) or secret (`false`).","title":"Public","default":false,"examples":["true","false"]}},"required":["files"],"title":"CreateAGistRequest","description":"Request schema for `CreateAGist`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateAGistResponseWrapper"}
+schema info of GITHUB_CREATE_A_GIST ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CREATE_A_GIST_COMMENT
+
+Here is the input and output schema info of Tool GITHUB_CREATE_A_GIST_COMMENT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"body":{"type":"string","description":"The text of the comment to be posted on the gist.","title":"Body","examples":["This is a great Gist!","Thanks for sharing this code snippet."]},"gist_id":{"type":"string","description":"The unique identifier of the gist.","title":"Gist Id","examples":["29388372","61e6f882424a427cb27205a22cd758e9"]}},"required":["gist_id","body"],"title":"CreateAGistCommentRequest","description":"Request schema for `CreateAGistComment`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateAGistCommentResponseWrapper"}
+schema info of GITHUB_CREATE_A_GIST_COMMENT ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CREATE_A_GITHUB_APP_FROM_A_MANIFEST
+
+Here is the input and output schema info of Tool GITHUB_CREATE_A_GITHUB_APP_FROM_A_MANIFEST of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"code":{"type":"string","description":"The temporary code provided by GitHub during the app manifest flow. This code is exchanged for the app's configuration.","title":"Code","examples":["ghu_1A2b3C4d5E6f7G8h9I0j","ghu_aSdFgHjKlQwErTyUiOp"]}},"required":["code"],"title":"CreateAGithubAppFromAManifestRequest","description":"Request schema for `CreateAGithubAppFromAManifest`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the configuration details of the newly created GitHub App. This typically includes `id`, `slug`, `node_id`, `owner`, `name`, `description`, `external_url`, `html_url`, `created_at`, `updated_at`, `permissions`, `events`, `client_id`, `client_secret`, `webhook_secret`, and `pem` (the PEM-encoded private key).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateAGithubAppFromAManifestResponseWrapper"}
+schema info of GITHUB_CREATE_A_GITHUB_APP_FROM_A_MANIFEST ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CREATE_A_GITHUB_PAGES_DEPLOYMENT
+
+Here is the input and output schema info of Tool GITHUB_CREATE_A_GITHUB_PAGES_DEPLOYMENT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"artifact_id":{"type":"integer","description":"Identifier of a GitHub Actions artifact (e.g., .zip or .tar) with static assets for deployment. Artifact must belong to the repository. Either this or `artifact_url` is required.","title":"Artifact Id","examples":[123456789]},"artifact_url":{"type":"string","description":"URL of a GitHub Actions artifact (e.g., .zip or .tar) with static assets for deployment. Artifact must belong to the repository. Either this or `artifact_id` is required.","title":"Artifact Url","examples":["https://pipelines.actions.githubusercontent.com/example/artifact_url"]},"environment":{"type":"string","description":"Target environment for this GitHub Pages deployment. Defaults to `github-pages`.","title":"Environment","default":"github-pages","examples":["github-pages","production"]},"oidc_token":{"type":"string","description":"OIDC token from GitHub Actions for deployment authorization, typically from `secrets.GITHUB_TOKEN` with `id-token: write` permission.","title":"Oidc Token"},"owner":{"type":"string","description":"The account owner of the repository (e.g., a GitHub username or organization name). This field is not case-sensitive.","title":"Owner","examples":["octocat"]},"pages_build_version":{"type":"string","description":"Unique string identifying the build version for this deployment, typically the Git commit SHA. Defaults to `GITHUB_SHA`.","title":"Pages Build Version","default":"GITHUB_SHA","examples":["GITHUB_SHA","abc123def456ghi789"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["Hello-World"]}},"required":["owner","repo","oidc_token"],"title":"CreateAGithubPagesDeploymentRequest","description":"Request schema for creating a GitHub Pages deployment."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the details of the created GitHub Pages deployment, typically including the deployment URL.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateAGithubPagesDeploymentResponseWrapper"}
+schema info of GITHUB_CREATE_A_GITHUB_PAGES_DEPLOYMENT ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CREATE_A_GITHUB_PAGES_SITE
+
+Here is the input and output schema info of Tool GITHUB_CREATE_A_GITHUB_PAGES_SITE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"build_type":{"type":"string","description":"Build process for the Pages site: 'legacy' (traditional GitHub Pages build) or 'workflow' (GitHub Actions). If omitted and `source_branch` is provided, defaults to 'legacy'. When 'workflow', `source_branch` and `source_path` are ignored.","title":"Build Type","enum":["legacy","workflow"],"examples":["legacy","workflow"]},"owner":{"type":"string","description":"The username or organization name that owns the repository. This field is case-insensitive.","title":"Owner","examples":["octocat","github"]},"repo":{"type":"string","description":"The name of the repository, without the '.git' extension. This field is case-insensitive.","title":"Repo","examples":["Spoon-Knife","my-docs-site"]},"source__branch":{"type":"string","description":"The branch for GitHub Pages source (e.g., 'main', 'gh-pages'). Required if `build_type` is 'legacy' or not specified. It is ignored if `build_type` is 'workflow'.","title":"Source  Branch","examples":["main","gh-pages","docs"]},"source__path":{"type":"string","description":"Directory within `source_branch` for site source files (e.g., '/' for root, '/docs'). Ignored if `build_type` is 'workflow'.","title":"Source  Path","default":"/","enum":["/","/docs"],"examples":["/","/docs"]}},"required":["owner","repo"],"title":"CreateAGithubPagesSiteRequest","description":"Request model for creating or updating a GitHub Pages site configuration."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"The GitHub Pages site configuration details.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateAGithubPagesSiteResponseWrapper"}
+schema info of GITHUB_CREATE_A_GITHUB_PAGES_SITE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CREATE_A_LABEL
+
+Here is the input and output schema info of Tool GITHUB_CREATE_A_LABEL of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"color":{"type":"string","description":"The hexadecimal color code for the label (e.g., `f29513`), without the leading `#`. If not provided, GitHub will assign a random color.","title":"Color","examples":["d73a4a","0075ca","cfd3d7"]},"description":{"type":"string","description":"A short description of the label. Maximum 100 characters.","title":"Description","examples":["An issue with a bug.","A new feature or request.","Improvements or additions to documentation."]},"name":{"type":"string","description":"The name of the label. Emoji can be added to label names, using either native emoji or colon-style markup. For example, typing `:strawberry:` will render the emoji ![:strawberry:](https://github.githubassets.com/images/icons/emoji/unicode/1f353.png \":strawberry:\"). For a full list of available emoji and codes, see the \"[Emoji cheat sheet](https://github.com/ikatyang/emoji-cheat-sheet).\"","title":"Name","examples":["bug","enhancement","documentation :memo:"]},"owner":{"type":"string","description":"The username of the account that owns the repository. This is not case sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This is not case sensitive.","title":"Repo","examples":["Spoon-Knife"]}},"required":["owner","repo","name"],"title":"CreateALabelRequest","description":"Request schema for creating a new label in a GitHub repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateALabelResponseWrapper"}
+schema info of GITHUB_CREATE_A_LABEL ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CREATE_A_MILESTONE
+
+Here is the input and output schema info of Tool GITHUB_CREATE_A_MILESTONE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"description":{"type":"string","description":"Detailed description of the milestone.","title":"Description","examples":["Tracking all issues and PRs for the upcoming v1.0 release.","Tasks for the third quarter sprint."]},"due_on":{"type":"string","description":"Due date for the milestone (ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`).","title":"Due On","format":"date-time","examples":["2024-12-31T23:59:59Z","2025-03-15T18:30:00Z"]},"owner":{"type":"string","description":"Username of the repository owner (case-insensitive).","title":"Owner","examples":["octocat","github-username"]},"repo":{"type":"string","description":"Repository name, without the `.git` extension (case-insensitive).","title":"Repo","examples":["hello-world","my-repository-name"]},"state":{"type":"string","description":"State of the milestone.","title":"State","default":"open","enum":["open","closed"],"examples":["open","closed"]},"title":{"type":"string","description":"Title for the new milestone.","title":"Title","examples":["v1.0 Release","Q3 Sprint Goals"]}},"required":["owner","repo","title"],"title":"CreateAMilestoneRequest","description":"Request to create a milestone in a GitHub repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Details of the newly created milestone from the GitHub API.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateAMilestoneResponseWrapper"}
+schema info of GITHUB_CREATE_A_MILESTONE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CREATE_AN_AUTOLINK_REFERENCE_FOR_A_REPOSITORY
+
+Here is the input and output schema info of Tool GITHUB_CREATE_AN_AUTOLINK_REFERENCE_FOR_A_REPOSITORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"is_alphanumeric":{"type":"boolean","description":"Specifies if the `<num>` placeholder in `url_template` matches alphanumeric characters (`A-Z` (case-insensitive), `0-9`, and `-`) or only numeric characters (`0-9`).","title":"Is Alphanumeric","default":true,"examples":["True","False"]},"key_prefix":{"type":"string","description":"Prefix that triggers the autolink (e.g., 'JIRA-'). When followed by an identifier, it's converted into a link. Must be non-empty and not contain spaces.","title":"Key Prefix","examples":["JIRA-","TICKET-","DOC-"]},"owner":{"type":"string","description":"The account owner of the repository. This can be a username or an organization name. The name is not case-sensitive.","title":"Owner","examples":["octocat","my-organization"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. The name is not case-sensitive.","title":"Repo","examples":["Spoon-Knife","my-project"]},"url_template":{"type":"string","description":"URL template for the autolink, using `<num>` as a placeholder for the reference identifier (e.g., 'https://example.atlassian.net/browse/<num>'). Behavior of `<num>` is determined by `is_alphanumeric`.","title":"Url Template","examples":["https://example.atlassian.net/browse/<num>","https://tracker.example.com/issues?id=<num>"]}},"required":["owner","repo","key_prefix","url_template"],"title":"CreateAnAutolinkReferenceForARepositoryRequest","description":"Request schema for creating an autolink reference in a repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary representing the autolink reference object that was created. This typically includes fields such as `id`, `key_prefix`, `url_template`, and `is_alphanumeric`.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateAnAutolinkReferenceForARepositoryResponseWrapper"}
+schema info of GITHUB_CREATE_AN_AUTOLINK_REFERENCE_FOR_A_REPOSITORY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CREATE_AN_ENVIRONMENT_VARIABLE
+
+Here is the input and output schema info of Tool GITHUB_CREATE_AN_ENVIRONMENT_VARIABLE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"environment_name":{"type":"string","description":"The name of the environment for which to create the variable. The name must be URL encoded if it contains special characters (e.g., slashes `/` must be replaced with `%2F`).","title":"Environment Name","examples":["production","staging%2Ffeature-branch"]},"name":{"type":"string","description":"The name of the environment variable to create (e.g., `API_KEY`).","title":"Name","examples":["CI_TOKEN","DATABASE_URL"]},"owner":{"type":"string","description":"The username or organization name that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["hello-world"]},"value":{"type":"string","description":"The value of the environment variable (e.g., `your_secret_token`). This value will be encrypted.","title":"Value","examples":["s3cr3t_v4lu3","postgres://user:secret@localhost:5432/mydb"]}},"required":["owner","repo","environment_name","name","value"],"title":"CreateAnEnvironmentVariableRequest","description":"Request schema for creating a new environment variable in a repository's environment."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"An empty dictionary is returned upon successful creation of the environment variable (HTTP 201 Created).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateAnEnvironmentVariableResponseWrapper"}
+schema info of GITHUB_CREATE_AN_ENVIRONMENT_VARIABLE ends.

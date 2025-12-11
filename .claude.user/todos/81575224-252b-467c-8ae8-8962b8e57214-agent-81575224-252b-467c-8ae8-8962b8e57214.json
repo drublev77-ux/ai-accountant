@@ -1,0 +1,17 @@
+[
+  {
+    "content": "Install Vercel CLI",
+    "status": "completed",
+    "activeForm": "Installing Vercel CLI"
+  },
+  {
+    "content": "Authenticate with Vercel",
+    "status": "in_progress",
+    "activeForm": "Authenticating with Vercel"
+  },
+  {
+    "content": "Deploy to production",
+    "status": "pending",
+    "activeForm": "Deploying to production"
+  }
+]

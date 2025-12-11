@@ -1,0 +1,177 @@
+{
+  "id": "102019ae94a70957b18837c824f6cf54946",
+  "version": "102019b0cb388b97545831b5a76f4dd021d",
+  "schema": {
+    "name": "tax_profile",
+    "description": "Stores tax-related information for a user to estimate taxes and filing status.",
+    "fields": [
+      {
+        "name": "id",
+        "description": "Unique identifier for the tax profile.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System identifier"
+        }
+      },
+      {
+        "name": "data_creator",
+        "description": "id of the user who creates the record",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Audit trail"
+        }
+      },
+      {
+        "name": "data_updater",
+        "description": "id of the user who updates the record",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Audit trail"
+        }
+      },
+      {
+        "name": "create_time",
+        "description": "create time in timestamp unix",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System metadata"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "update_time",
+        "description": "update time in timestamp unix",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System metadata"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "user_id",
+        "description": "ID of the user this tax profile belongs to.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Personal financial data association"
+        }
+      },
+      {
+        "name": "jurisdiction",
+        "description": "Tax jurisdiction (e.g., Country, State).",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Location data related to finance"
+        }
+      },
+      {
+        "name": "filing_status",
+        "description": "Tax filing status of the user.",
+        "type": 100,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Sensitive legal/financial status"
+        },
+        "enumeration": [
+          {
+            "value": "Unspecified"
+          },
+          {
+            "number": 1,
+            "value": "Single"
+          },
+          {
+            "number": 2,
+            "value": "MarriedFilingJointly"
+          },
+          {
+            "number": 3,
+            "value": "MarriedFilingSeparately"
+          },
+          {
+            "number": 4,
+            "value": "HeadOfHousehold"
+          }
+        ]
+      },
+      {
+        "name": "dependents",
+        "description": "Number of dependents claimed.",
+        "type": 2,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Family structure information"
+        },
+        "numeric": "uint"
+      },
+      {
+        "name": "estimated_tax_rate",
+        "description": "Estimated tax rate percentage.",
+        "type": 2,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Financial calculation parameter"
+        },
+        "numeric": "float"
+      },
+      {
+        "name": "yearly_income",
+        "description": "Total yearly income for tax purposes.",
+        "type": 2,
+        "compliance": {
+          "confidentiality": 4,
+          "reason": "Highly sensitive financial data"
+        },
+        "numeric": "float"
+      }
+    ],
+    "indexes": [
+      {
+        "fields": [
+          "id"
+        ],
+        "unique": true,
+        "primary": true,
+        "order": false
+      },
+      {
+        "fields": [
+          "data_creator"
+        ],
+        "order": false
+      },
+      {
+        "fields": [
+          "data_updater"
+        ],
+        "order": false
+      },
+      {
+        "fields": [
+          "user_id"
+        ],
+        "unique": true,
+        "order": false
+      }
+    ]
+  },
+  "task": {
+    "id": "693a8c02332fbcb5bc0e621c",
+    "root": "69317a33ad50e9e8016841da",
+    "project": "69317a33ad50e9e8016841d9",
+    "user": "6841d390-b021-7026-f508-2c1990f0e948"
+  },
+  "namespace": {
+    "id": "01987547fc6c72ecb453bd2736bd4ea0",
+    "tenant": 2,
+    "name": "global-1",
+    "default": true
+  },
+  "revision": 1
+}

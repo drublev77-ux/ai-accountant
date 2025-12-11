@@ -1,0 +1,17 @@
+[
+  {
+    "content": "Review current project state",
+    "status": "completed",
+    "activeForm": "Reviewing current project state"
+  },
+  {
+    "content": "Build the project (npm run build)",
+    "status": "completed",
+    "activeForm": "Building the project"
+  },
+  {
+    "content": "Deploy to Vercel (npx vercel --prod)",
+    "status": "in_progress",
+    "activeForm": "Deploying to Vercel"
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "name": "AI Accountant - Personal Financial Assistant",
+  "short_name": "AI Accountant",
+  "description": "Smart financial management with AI-powered insights, tax calculations, and automated bookkeeping",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#10b981",
+  "orientation": "portrait-primary",
+  "categories": ["finance", "productivity", "business"],
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "256x256"
+    },
+    {
+      "src": "creao_icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192 512x512"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Add Transaction",
+      "short_name": "Add",
+      "description": "Quickly add a new transaction",
+      "url": "/?tab=transactions"
+    },
+    {
+      "name": "Tax Calculator",
+      "short_name": "Tax",
+      "description": "Calculate taxes",
+      "url": "/?tab=tax"
+    },
+    {
+      "name": "AI Assistant",
+      "short_name": "AI",
+      "description": "Get AI financial advice",
+      "url": "/?tab=assistant"
+    }
+  ]
+}

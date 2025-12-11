@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_RULES_FOR_A_BRANCH
+
+Here is the input and output schema info of Tool GITHUB_GET_RULES_FOR_A_BRANCH of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"branch":{"type":"string","description":"The name of the branch. Wildcard characters are not supported for this parameter; to use wildcards, refer to the GitHub GraphQL API.","title":"Branch","examples":["main","develop","feature/new-login"]},"owner":{"type":"string","description":"The GitHub account owner of the repository. This name is not case-sensitive.","title":"Owner","examples":["octocat","my-organization"]},"page":{"type":"integer","description":"Page number of results to fetch.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case-sensitive.","title":"Repo","examples":["Spoon-Knife","my-repo"]}},"required":["owner","repo","branch"],"title":"GetRulesForABranchRequest","description":"Request schema for `GetRulesForABranch`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response containing an array of active branch rule objects for the specified branch. Each object details a rule's type, parameters, and enforcement status. Excludes rules in 'evaluate' or 'disabled' status.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetRulesForABranchResponseWrapper"}
+schema info of GITHUB_GET_RULES_FOR_A_BRANCH ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_SINGLE_ORG_SECRET_WITHOUT_DECRYPTION
+
+Here is the input and output schema info of Tool GITHUB_GET_SINGLE_ORG_SECRET_WITHOUT_DECRYPTION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the GitHub organization. This field is case-insensitive.","title":"Org","examples":["octo-org"]},"secret_name":{"type":"string","description":"The name of the Dependabot secret to retrieve.","title":"Secret Name","examples":["MY_API_TOKEN"]}},"required":["org","secret_name"],"title":"GetSingleOrgSecretWithoutDecryptionRequest","description":"Request schema for `GetSingleOrgSecretWithoutDecryption`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the metadata of the organization's Dependabot secret. This includes details such as the secret's name, creation date, update date, and visibility, but excludes its encrypted value.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetSingleOrgSecretWithoutDecryptionResponseWrapper"}
+schema info of GITHUB_GET_SINGLE_ORG_SECRET_WITHOUT_DECRYPTION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_STATUS_CHECKS_PROTECTION
+
+Here is the input and output schema info of Tool GITHUB_GET_STATUS_CHECKS_PROTECTION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"branch":{"type":"string","description":"The name of the branch. Wildcard characters are not supported in branch names for this endpoint; for wildcard support, please refer to the GitHub GraphQL API.","title":"Branch","examples":["main"]},"owner":{"type":"string","description":"The account owner of the repository (e.g., a GitHub username or organization name). This field is not case-sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["Hello-World"]}},"required":["owner","repo","branch"],"title":"GetStatusChecksProtectionRequest","description":"Request schema for retrieving the status check protection settings of a branch."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the status check protection settings. This typically includes a `strict` boolean field (indicating if the branch must be up-to-date before merging) and a `contexts` array (listing the names of required status checks). It may also include a `checks` array if GitHub Apps are used for status checks.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetStatusChecksProtectionResponseWrapper"}
+schema info of GITHUB_GET_STATUS_CHECKS_PROTECTION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_TEAM_MEMBERSHIP_FOR_A_USER
+
+Here is the input and output schema info of Tool GITHUB_GET_TEAM_MEMBERSHIP_FOR_A_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the GitHub organization. This field is not case-sensitive.","title":"Org","examples":["octo-org","github"]},"team_slug":{"type":"string","description":"The URL-friendly version of the team name (slug).","title":"Team Slug","examples":["justice-league","all-developers"]},"username":{"type":"string","description":"The GitHub username of the user.","title":"Username","examples":["octocat","monalisa"]}},"required":["org","team_slug","username"],"title":"GetTeamMembershipForAUserRequest","description":"Request schema for `GetTeamMembershipForAUser`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the membership details of the user in the team. It includes the user's 'role' (e.g., 'member', 'maintainer') and 'state' (e.g., 'active', 'pending') within the team, along with a 'url' pointing to the membership resource.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetTeamMembershipForAUserResponseWrapper"}
+schema info of GITHUB_GET_TEAM_MEMBERSHIP_FOR_A_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_TEAMS_WITH_ACCESS_TO_THE_PROTECTED_BRANCH
+
+Here is the input and output schema info of Tool GITHUB_GET_TEAMS_WITH_ACCESS_TO_THE_PROTECTED_BRANCH of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"branch":{"type":"string","description":"Name of the branch; does not support wildcard characters (for wildcard support, use the GraphQL API).","title":"Branch","examples":["main","develop"]},"owner":{"type":"string","description":"Username of the repository owner; not case-sensitive.","title":"Owner","examples":["octocat","github"]},"repo":{"type":"string","description":"Repository name, without the `.git` extension; not case-sensitive.","title":"Repo","examples":["Hello-World","linguist"]}},"required":["owner","repo","branch"],"title":"GetTeamsWithAccessToTheProtectedBranchRequest","description":"Request to list teams with access to a protected branch."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetTeamsWithAccessToTheProtectedBranchResponseWrapper"}
+schema info of GITHUB_GET_TEAMS_WITH_ACCESS_TO_THE_PROTECTED_BRANCH ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_GET_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{},"title":"GetTheAuthenticatedUserRequest","description":"Request schema for `GetTheAuthenticatedUser`."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Authenticated user's profile information. Common fields include 'login', 'id', 'name', 'email'; contents vary by user settings.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_GET_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_THE_COMBINED_STATUS_FOR_A_SPECIFIC_REFERENCE
+
+Here is the input and output schema info of Tool GITHUB_GET_THE_COMBINED_STATUS_FOR_A_SPECIFIC_REFERENCE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username or organization name that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat"]},"page":{"type":"integer","description":"The page number for the results to retrieve. See \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)\" for more information.","title":"Page","default":1,"examples":["1","5"]},"per_page":{"type":"integer","description":"The number of results to display per page, with a maximum of 100. Details on pagination can be found in \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"","title":"Per Page","default":30,"examples":["30","100"]},"ref":{"type":"string","description":"The specific commit reference to query. This can be a commit SHA, a branch name (e.g., `heads/main`), or a tag name (e.g., `tags/v1.0.0`). See \"[Git References](https://git-scm.com/book/en/v2/Git-Internals-Git-References)\" for more details.","title":"Ref","examples":["main","heads/feature-branch","tags/v1.0.0","069c5735a24b09215071404c2a536657079d3aca"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["Spoon-Knife"]}},"required":["owner","repo","ref"],"title":"GetTheCombinedStatusForASpecificReferenceRequest","description":"Request schema for retrieving the combined status of a commit reference in a GitHub repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the combined status details for the specified reference. Key fields typically include `state` (the overall status: 'failure', 'pending', or 'success'), `statuses` (an array of individual status checks, each with its own context, state, and description), `sha` (the commit SHA), `total_count` (total number of status checks), and `repository` (information about the repository).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetTheCombinedStatusForASpecificReferenceResponseWrapper"}
+schema info of GITHUB_GET_THE_COMBINED_STATUS_FOR_A_SPECIFIC_REFERENCE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_THE_HOURLY_COMMIT_COUNT_FOR_EACH_DAY
+
+Here is the input and output schema info of Tool GITHUB_GET_THE_HOURLY_COMMIT_COUNT_FOR_EACH_DAY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The account owner of the repository. This is typically the username or organization name. The name is not case sensitive.","title":"Owner","examples":["octocat","my-organization"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. The name is not case sensitive.","title":"Repo","examples":["Spoon-Knife","my-awesome-project"]}},"required":["owner","repo"],"title":"GetTheHourlyCommitCountForEachDayRequest","description":"Request schema for retrieving the hourly commit count for each day of the week for a repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary representing the commit activity. The GitHub API for 'punch card' stats returns data as a list of lists, where each inner list typically contains `[day_of_week, hour_of_day, number_of_commits]`. For example, `[0, 14, 5]` would mean 5 commits on Sunday (day 0) during the 2 PM hour (hour 14). The structure within this dictionary may be an internal representation or aggregation of that raw list-based data from the API.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetTheHourlyCommitCountForEachDayResponseWrapper"}
+schema info of GITHUB_GET_THE_HOURLY_COMMIT_COUNT_FOR_EACH_DAY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_THE_LAST_YEAR_OF_COMMIT_ACTIVITY
+
+Here is the input and output schema info of Tool GITHUB_GET_THE_LAST_YEAR_OF_COMMIT_ACTIVITY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username or organization name that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat","kubernetes"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["Spoon-Knife","kubernetes"]}},"required":["owner","repo"],"title":"GetTheLastYearOfCommitActivityRequest","description":"Request schema for retrieving the last year of commit activity for a repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary holding the commit activity for the repository's last 52 weeks, usually as a list of weekly stats. Each weekly stat details 'total' commits, 'week' (start timestamp), and 'days' (an array of commit counts from Sunday to Saturday).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetTheLastYearOfCommitActivityResponseWrapper"}
+schema info of GITHUB_GET_THE_LAST_YEAR_OF_COMMIT_ACTIVITY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_THE_LATEST_RELEASE
+
+Here is the input and output schema info of Tool GITHUB_GET_THE_LATEST_RELEASE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The account owner of the repository (e.g., a GitHub username or organization name). This field is not case-sensitive.","title":"Owner","examples":["octocat","kubernetes"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["Hello-World","community"]}},"required":["owner","repo"],"title":"GetTheLatestReleaseRequest","description":"Request schema for retrieving the latest release of a GitHub repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Details of the latest GitHub release, including `tag_name`, name, body (release notes), `published_at`, assets, and author. For the complete structure, refer to the official GitHub API documentation.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetTheLatestReleaseResponseWrapper"}
+schema info of GITHUB_GET_THE_LATEST_RELEASE ends.

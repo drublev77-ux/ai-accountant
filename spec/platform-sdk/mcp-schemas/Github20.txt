@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_A_THREAD_SUBSCRIPTION
+
+Here is the input and output schema info of Tool GITHUB_DELETE_A_THREAD_SUBSCRIPTION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"thread_id":{"type":"integer","description":"The unique identifier of the notification thread. This ID is obtained from other API calls, such as when listing notifications (e.g., via the `GET /notifications` endpoint). Ensure this ID refers to an active thread to which the user is currently subscribed.","title":"Thread Id"}},"required":["thread_id"],"title":"DeleteAThreadSubscriptionRequest","description":"Request schema for `DeleteAThreadSubscription`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary that is typically empty upon successful unsubscription, as the GitHub API returns a 204 No Content status. In case of errors or other specific scenarios, this field might contain relevant information.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteAThreadSubscriptionResponseWrapper"}
+schema info of GITHUB_DELETE_A_THREAD_SUBSCRIPTION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_A_WORKFLOW_RUN
+
+Here is the input and output schema info of Tool GITHUB_DELETE_A_WORKFLOW_RUN of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The account owner of the repository. The name is not case sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository without the `.git` extension. The name is not case sensitive. ","title":"Repo","examples":["Hello-World"]},"run_id":{"type":"integer","description":"The unique identifier of the workflow run.","title":"Run Id","examples":[12345]}},"required":["owner","repo","run_id"],"title":"DeleteAWorkflowRunRequest","description":"Request schema for `DeleteAWorkflowRun`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteAWorkflowRunResponseWrapper"}
+schema info of GITHUB_DELETE_A_WORKFLOW_RUN ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_BRANCH_PROTECTION
+
+Here is the input and output schema info of Tool GITHUB_DELETE_BRANCH_PROTECTION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"branch":{"type":"string","description":"The name of the branch. Wildcard characters are not supported for this REST API endpoint; use the GitHub GraphQL API for wildcard support.","title":"Branch","examples":["main","develop"]},"owner":{"type":"string","description":"The account owner of the repository. Not case sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. Not case sensitive.","title":"Repo","examples":["Hello-World"]}},"required":["owner","repo","branch"],"title":"DeleteBranchProtectionRequest","description":"Request schema for deleting branch protection rules."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"The response data from the API. For a successful deletion (HTTP 204 No Content), this dictionary is typically empty.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteBranchProtectionResponseWrapper"}
+schema info of GITHUB_DELETE_BRANCH_PROTECTION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_COMMIT_SIGNATURE_PROTECTION
+
+Here is the input and output schema info of Tool GITHUB_DELETE_COMMIT_SIGNATURE_PROTECTION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"branch":{"type":"string","description":"The name of the branch for which commit signature protection will be disabled. Wildcard characters are not supported in the branch name. To use wildcards, refer to the GitHub GraphQL API.","title":"Branch","examples":["main","develop","feature/new-ui"]},"owner":{"type":"string","description":"The account owner of the repository. This is typically the username of the owner (for personal repositories) or the organization name (for organization-owned repositories). The name is not case-sensitive.","title":"Owner","examples":["octocat","my-organization"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. The name is not case-sensitive.","title":"Repo","examples":["my-awesome-project","api-docs"]}},"required":["owner","repo","branch"],"title":"DeleteCommitSignatureProtectionRequest","description":"Request schema for `DeleteCommitSignatureProtection`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response data; usually empty as GitHub typically returns a 204 No Content on successful deletion.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteCommitSignatureProtectionResponseWrapper"}
+schema info of GITHUB_DELETE_COMMIT_SIGNATURE_PROTECTION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_DEPENDEBOT_SECRET_BY_NAME
+
+Here is the input and output schema info of Tool GITHUB_DELETE_DEPENDEBOT_SECRET_BY_NAME of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The account owner of the repository (e.g., username or organization name). This field is not case-sensitive.","title":"Owner","examples":["octocat","github"]},"repo":{"type":"string","description":"The name of the repository without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["hello-world","linguist"]},"secret_name":{"type":"string","description":"The name of the Dependabot secret to delete. Secret names are case-sensitive and can only contain alphanumeric characters ([A-Z], [a-z], [0-9]) or underscores (_); spaces are not allowed.","title":"Secret Name","examples":["MY_SECRET_TOKEN","NPM_TOKEN"]}},"required":["owner","repo","secret_name"],"title":"DeleteDependebotSecretByNameRequest","description":"Request schema for deleting a Dependabot secret from a repository by its name."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Data returned by the API. For a successful deletion, this is typically an empty dictionary as the API returns a 204 No Content status.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteDependebotSecretByNameResponseWrapper"}
+schema info of GITHUB_DELETE_DEPENDEBOT_SECRET_BY_NAME ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_GITHUB_ACTIONS_CACHE_BY_ID
+
+Here is the input and output schema info of Tool GITHUB_DELETE_GITHUB_ACTIONS_CACHE_BY_ID of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"cache_id":{"type":"integer","description":"The unique ID of the GitHub Actions cache to delete.","title":"Cache Id","examples":[123]},"owner":{"type":"string","description":"The username or organization name that owns the repository.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension.","title":"Repo","examples":["hello-world"]}},"required":["owner","repo","cache_id"],"title":"DeleteGithubActionsCacheByIdRequest","description":"Request schema for `DeleteGithubActionsCacheById`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Response from the GitHub API; typically empty for a successful deletion (204 No Content).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteGithubActionsCacheByIdResponseWrapper"}
+schema info of GITHUB_DELETE_GITHUB_ACTIONS_CACHE_BY_ID ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_PACKAGE_VERSION_FOR_AN_ORGANIZATION
+
+Here is the input and output schema info of Tool GITHUB_DELETE_PACKAGE_VERSION_FOR_AN_ORGANIZATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"Organization name (case-insensitive).","title":"Org","examples":["github","my-organization"]},"package_name":{"type":"string","description":"Name of the package.","title":"Package Name","examples":["my-package","your-awesome-app"]},"package_type":{"type":"string","description":"Package ecosystem. Notes:\n- `maven`: For GitHub's Gradle registry packages.\n- `container`: For Docker images in GitHub's Container registry (ghcr.io).\n- `docker`: For images originally in GitHub's Docker registry (docker.pkg.github.com), including migrated ones.","title":"Package Type","enum":["npm","maven","rubygems","docker","nuget","container"],"examples":["npm","maven","rubygems","docker","nuget","container"]},"package_version_id":{"type":"integer","description":"Unique ID of the package version to delete.","title":"Package Version Id","examples":["12345","98760"]}},"required":["package_type","package_name","org","package_version_id"],"title":"DeletePackageVersionForAnOrganizationRequest","description":"Request schema for `DeletePackageVersionForAnOrganization`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeletePackageVersionForAnOrganizationResponseWrapper"}
+schema info of GITHUB_DELETE_PACKAGE_VERSION_FOR_AN_ORGANIZATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_PACKAGE_VERSION_FOR_A_USER
+
+Here is the input and output schema info of Tool GITHUB_DELETE_PACKAGE_VERSION_FOR_A_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"package_name":{"type":"string","description":"The name of the package to which the version belongs.","title":"Package Name","examples":["my-package","your-app-library"]},"package_type":{"type":"string","description":"The type of the package. Supported types include npm, maven, rubygems, docker, nuget, and container. Packages in GitHub's Gradle registry use the `maven` type. Docker images in GitHub's Container registry (ghcr.io) use the `container` type. The `docker` type can be used for images previously in GitHub's Docker registry (docker.pkg.github.com), even if migrated.","title":"Package Type","enum":["npm","maven","rubygems","docker","nuget","container"],"examples":["npm","maven","docker","container"]},"package_version_id":{"type":"integer","description":"The unique identifier of the package version to be deleted.","title":"Package Version Id","examples":[12345,67890]},"username":{"type":"string","description":"The GitHub username of the account that owns the package.","title":"Username","examples":["octocat","your-username"]}},"required":["package_type","package_name","username","package_version_id"],"title":"DeletePackageVersionForAUserRequest","description":"Request schema for deleting a specific version of a package owned by a user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the response data. For successful deletions (HTTP 204 No Content), this will typically be an empty object.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeletePackageVersionForAUserResponseWrapper"}
+schema info of GITHUB_DELETE_PACKAGE_VERSION_FOR_A_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_PULL_REQUEST_REVIEW_PROTECTION
+
+Here is the input and output schema info of Tool GITHUB_DELETE_PULL_REQUEST_REVIEW_PROTECTION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"branch":{"type":"string","description":"Name of the branch to remove pull request review protection from (wildcards not supported; use GraphQL API for wildcards).","title":"Branch","examples":["main"]},"owner":{"type":"string","description":"Username or organization name of the repository owner (not case-sensitive).","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"Name of the repository, without the `.git` extension (not case-sensitive).","title":"Repo","examples":["Hello-World"]}},"required":["owner","repo","branch"],"title":"DeletePullRequestReviewProtectionRequest","description":"Request schema for `DeletePullRequestReviewProtection`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response data; typically empty for a successful deletion (204 No Content).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeletePullRequestReviewProtectionResponseWrapper"}
+schema info of GITHUB_DELETE_PULL_REQUEST_REVIEW_PROTECTION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_REPO_CODESPACE_SECRET_BY_NAME
+
+Here is the input and output schema info of Tool GITHUB_DELETE_REPO_CODESPACE_SECRET_BY_NAME of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username of the account or the name of the organization that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat","github"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["hello-world"]},"secret_name":{"type":"string","description":"The name of the Codespace secret to be deleted.","title":"Secret Name","examples":["MY_API_KEY"]}},"required":["owner","repo","secret_name"],"title":"DeleteRepoCodespaceSecretByNameRequest","description":"Request schema for `DeleteRepoCodespaceSecretByName`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"An empty dictionary or a dictionary containing additional information if the deletion process provides any. Typically, a successful deletion results in an empty response body (e.g., HTTP 204 No Content).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteRepoCodespaceSecretByNameResponseWrapper"}
+schema info of GITHUB_DELETE_REPO_CODESPACE_SECRET_BY_NAME ends.

@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_WORKFLOW_RUN_USAGE
+
+Here is the input and output schema info of Tool GITHUB_GET_WORKFLOW_RUN_USAGE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"Account owner of the repository (username or organization name); not case sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository without the `.git` extension. The name is not case sensitive. ","title":"Repo","examples":["Hello-World"]},"run_id":{"type":"integer","description":"Unique identifier of the workflow run.","title":"Run Id","examples":[123456789]}},"required":["owner","repo","run_id"],"title":"GetWorkflowRunUsageRequest","description":"Request schema for `GetWorkflowRunUsage`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetWorkflowRunUsageResponseWrapper"}
+schema info of GITHUB_GET_WORKFLOW_RUN_USAGE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_WORKFLOW_USAGE
+
+Here is the input and output schema info of Tool GITHUB_GET_WORKFLOW_USAGE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username or organization name that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat","my-organization"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["hello-world","my-project"]},"workflow_id":{"type":"integer","description":"The unique identifier (ID) of the workflow or the workflow's file name (e.g., 'main.yml').","title":"Workflow Id","nullable":true,"examples":[12345,"ci-workflow.yml"]}},"required":["owner","repo","workflow_id"],"title":"GetWorkflowUsageRequest","description":"Request schema for `GetWorkflowUsage`, providing details to identify the specific workflow."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Workflow usage timing information, including total billable milliseconds for each runner environment (e.g., UBUNTU, MACOS, WINDOWS).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetWorkflowUsageResponseWrapper"}
+schema info of GITHUB_GET_WORKFLOW_USAGE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GIST_S_CREATE
+
+Here is the input and output schema info of Tool GITHUB_GIST_S_CREATE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"description":{"type":"string","description":"Optional description for the gist.","title":"Description","examples":["My new Python utility functions","Example of API usage"]},"files":{"type":"object","description":"Content for the gist's files. Dictionary where keys are filenames and values are objects, each having a `content` key with the file's raw string data.","title":"Files","additionalProperties":{"type":"object","additionalProperties":true},"examples":["{\"hello_world.txt\": {\"content\": \"Hello, Universe!\"}}","{\"main.py\": {\"content\": \"def main():\\n    print(\\\"Executed\\\")\\nif __name__ == \\\"__main__\\\":\\n    main()\"}, \"README.md\": {\"content\": \"# My Gist\\nThis is a test gist.\"}}"]},"public":{"type":"boolean","description":"Indicates if the gist is public (`true`) or secret (`false`).","title":"Public","default":false,"examples":["true","false"]}},"required":["files"],"title":"CreateAGistRequest","description":"Request schema for `CreateAGist`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateAGistResponseWrapper"}
+schema info of GITHUB_GIST_S_CREATE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GIST_S_LIST_PUBLIC
+
+Here is the input and output schema info of Tool GITHUB_GIST_S_LIST_PUBLIC of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Page number of the results to fetch for pagination.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"Number of gists to return per page (maximum 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"since":{"type":"string","description":"Filters results to gists last updated at or after this ISO 8601 timestamp (e.g., `YYYY-MM-DDTHH:MM:SSZ`).","title":"Since","examples":["2023-01-15T00:00:00Z"]}},"title":"ListPublicGistsRequest","description":"Input model for the `ListPublicGists` action, defining parameters to filter and paginate public gists."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"The data payload from the API response. For the `/gists/public` endpoint, GitHub returns a list of Gist objects.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListPublicGistsResponseWrapper"}
+schema info of GITHUB_GIST_S_LIST_PUBLIC ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GITHUB_API_ROOT
+
+Here is the input and output schema info of Tool GITHUB_GITHUB_API_ROOT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{},"title":"GithubApiRootRequest","description":"Request schema for retrieving the root endpoint details of the GitHub REST API."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary where keys are descriptive names of GitHub API resources (e.g., 'current_user_url', 'emojis_url') and values are their corresponding API endpoint URLs or URL templates. This map serves as an entry point to discover various functionalities of the GitHub REST API.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GithubApiRootResponseWrapper"}
+schema info of GITHUB_GITHUB_API_ROOT ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GITHUB_GET_REPO_ALLOWED_ACTIONS
+
+Here is the input and output schema info of Tool GITHUB_GITHUB_GET_REPO_ALLOWED_ACTIONS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username or organization name that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["Spoon-Knife"]}},"required":["owner","repo"],"title":"GetAllowedActionsAndReusableWorkflowsForARepositoryRequest","description":"Request schema for `GetAllowedActionsAndReusableWorkflowsForARepository`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the configuration of allowed actions and reusable workflows for the repository. This typically includes fields such as `github_owned_allowed` (boolean, true if actions published by GitHub are allowed), `verified_allowed` (boolean, true if actions published by verified creators are allowed), and `patterns_allowed` (list of strings, specifying patterns of allowed actions and reusable workflows).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetAllowedActionsAndReusableWorkflowsForARepositoryResponseWrapper"}
+schema info of GITHUB_GITHUB_GET_REPO_ALLOWED_ACTIONS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GITHUB_SET_REPO_RUNNER_LABELS
+
+Here is the input and output schema info of Tool GITHUB_GITHUB_SET_REPO_RUNNER_LABELS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"labels":{"type":"array","description":"Custom labels to set for the runner; an empty list removes all custom labels and replaces existing ones.","title":"Labels","items":{"type":"string","properties":{}},"examples":["['prod-runner', 'gpu-enabled']","['ci', 'testing']","[]"]},"owner":{"type":"string","description":"Account owner of the repository (not case-sensitive).","title":"Owner"},"repo":{"type":"string","description":"Name of the repository, without the `.git` extension (not case-sensitive).","title":"Repo"},"runner_id":{"type":"integer","description":"Unique identifier of the self-hosted runner.","title":"Runner Id"}},"required":["owner","repo","runner_id","labels"],"title":"SetCustomLabelsForASelfHostedRunnerForARepositoryRequest","description":"Request to set custom labels for a self-hosted runner in a repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"SetCustomLabelsForASelfHostedRunnerForARepositoryResponseWrapper"}
+schema info of GITHUB_GITHUB_SET_REPO_RUNNER_LABELS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_ISSUES_CREATE
+
+Here is the input and output schema info of Tool GITHUB_ISSUES_CREATE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"assignee":{"type":"string","description":"Login for the user to whom this issue should be assigned. NOTE: Only users with push access can set the assignee; it is silently dropped otherwise. **This field is deprecated in favor of `assignees`.**","title":"Assignee","examples":["octocat","monalisa"]},"assignees":{"type":"array","description":"GitHub login names for users to assign to this issue. NOTE: Only users with push access can set assignees; they are silently dropped otherwise.","title":"Assignees","items":{"type":"string","properties":{}},"examples":[["octocat"],["monalisa","hubot"]]},"body":{"type":"string","description":"The detailed textual contents of the new issue.","title":"Body","examples":["Detailed description of the bug with steps to reproduce.","I think adding a dark mode would improve user experience..."]},"labels":{"type":"array","description":"Label names to associate with this issue (generally case-insensitive). NOTE: Only users with push access can set labels; they are silently dropped otherwise. Pass an empty list to clear all labels.","title":"Labels","items":{"type":"string","properties":{}},"examples":[["bug","critical"],["enhancement","ui"],["documentation"]]},"milestone":{"type":"string","description":"The ID of the milestone to associate this issue with (e.g., \"5\"). NOTE: Only users with push access can set the milestone; it is silently dropped otherwise.","title":"Milestone","examples":["1","5"]},"owner":{"type":"string","description":"The GitHub account owner of the repository (case-insensitive).","title":"Owner","examples":["octocat","torvalds"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension (case-insensitive).","title":"Repo","examples":["Spoon-Knife","linux"]},"title":{"type":"string","description":"The title for the new issue.","title":"Title","examples":["Found a critical bug","Feature request: Add dark mode"]}},"required":["owner","repo","title"],"title":"CreateAnIssueRequest","description":"Request schema for creating a new issue in a GitHub repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the full data representation of the newly created GitHub issue, including its ID, title, body, state, assignees, labels, etc.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateAnIssueResponseWrapper"}
+schema info of GITHUB_ISSUES_CREATE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_ISSUES_CREATE_COMMENT
+
+Here is the input and output schema info of Tool GITHUB_ISSUES_CREATE_COMMENT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"body":{"type":"string","description":"Comment content in GitHub Flavored Markdown.","title":"Body","examples":["This is a **bold** comment!","Thanks for the update :+1:","Fixes #123"]},"issue_number":{"type":"integer","description":"Number identifying the issue or pull request for the comment.","title":"Issue Number","examples":[42,101]},"owner":{"type":"string","description":"Account owner of the repository (username or organization); not case-sensitive.","title":"Owner","examples":["octocat","my-organization"]},"repo":{"type":"string","description":"Name of the repository (without `.git` extension); not case-sensitive.","title":"Repo","examples":["Spoon-Knife","my-awesome-project"]}},"required":["owner","repo","issue_number","body"],"title":"CreateAnIssueCommentRequest","description":"Parameters to create a comment on a GitHub issue or pull request."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Full API response for the created issue comment, including ID, author, body, and timestamps.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateAnIssueCommentResponseWrapper"}
+schema info of GITHUB_ISSUES_CREATE_COMMENT ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_ISSUES_GET
+
+Here is the input and output schema info of Tool GITHUB_ISSUES_GET of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"issue_number":{"type":"integer","description":"The identifying number of the issue.","title":"Issue Number","examples":[1347]},"owner":{"type":"string","description":"Username of the account owning the repository. Not case-sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"Name of the repository (without `.git` extension). Not case-sensitive.","title":"Repo","examples":["Hello-World"]}},"required":["owner","repo","issue_number"],"title":"GetAnIssueRequest","description":"Request schema for `GetAnIssue`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the issue details. Key fields include 'id', 'node_id', 'url', 'repository_url', 'labels_url', 'comments_url', 'events_url', 'html_url', 'number', 'state', 'title', 'body', 'user', 'labels', 'assignee', 'assignees', 'milestone', 'locked', 'active_lock_reason', 'comments', 'pull_request', 'closed_at', 'created_at', 'updated_at', 'closed_by', 'author_association', 'state_reason', and 'reactions'. The API does not return custom fields.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetAnIssueResponseWrapper"}
+schema info of GITHUB_ISSUES_GET ends.
