@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CREATE_OR_UPDATE_AN_ENVIRONMENT_SECRET
+
+Here is the input and output schema info of Tool GITHUB_CREATE_OR_UPDATE_AN_ENVIRONMENT_SECRET of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"encrypted_value":{"type":"string","description":"Value of the secret, encrypted with LibSodium using the public key obtained from the 'Get an environment public key' GitHub API endpoint for the target environment.","title":"Encrypted Value","examples":["yourBase64EncodedEncryptedSecretValue"]},"environment_name":{"type":"string","description":"Name of the environment. Case-sensitive; URL-encode special characters (e.g., `/` becomes `%2F`).","title":"Environment Name","examples":["production","staging%2Ffeature-branch","development_env"]},"key_id":{"type":"string","description":"ID of the public key used for encryption, obtained from the 'Get an environment public key' GitHub API endpoint.","title":"Key Id","examples":["publicKeyIdentifierString12345"]},"owner":{"type":"string","description":"The account owner of the repository. Not case-sensitive.","title":"Owner","examples":["octocat","my-organization"]},"repo":{"type":"string","description":"The name of the repository. Not case-sensitive.","title":"Repo","examples":["hello-world","my-app-repository"]},"secret_name":{"type":"string","description":"Name of the secret. Case-sensitive.","title":"Secret Name","examples":["DATABASE_PASSWORD","API_TOKEN","DEPLOYMENT_KEY"]}},"required":["owner","repo","environment_name","secret_name","encrypted_value","key_id"],"title":"CreateOrUpdateAnEnvironmentSecretRequest","description":"Request schema for `CreateOrUpdateAnEnvironmentSecret`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Empty dictionary indicating successful secret creation (201 status) or update (204 status).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateOrUpdateAnEnvironmentSecretResponseWrapper"}
+schema info of GITHUB_CREATE_OR_UPDATE_AN_ENVIRONMENT_SECRET ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CREATE_OR_UPDATE_AN_ORGANIZATION_SECRET
+
+Here is the input and output schema info of Tool GITHUB_CREATE_OR_UPDATE_AN_ORGANIZATION_SECRET of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"encrypted_value":{"type":"string","description":"Value for the secret, pre-encrypted using LibSodium with the organization's public key (obtained from 'Get an organization public key' endpoint). Required if creating a new secret or updating its value.","title":"Encrypted Value","examples":["VGhpcyBpcyBhbiBleGFtcGxlIG9mIGFuIGVuY3J5cHRlZCB2YWx1ZQ=="]},"key_id":{"type":"string","description":"ID of the public key (from 'Get an organization public key' endpoint) used for encryption. Required if `encrypted_value` is provided.","title":"Key Id","examples":["key_identifier_from_github_12345"]},"org":{"type":"string","description":"The organization name. The name is not case sensitive.","title":"Org","examples":["my-github-organization"]},"secret_name":{"type":"string","description":"The name of the secret.","title":"Secret Name","examples":["ORGANIZATION_API_KEY"]},"selected_repository_ids":{"type":"array","description":"List of repository IDs that can access this secret. Required and only applicable when `visibility` is 'selected'.","title":"Selected Repository Ids","items":{"type":"integer","properties":{}},"examples":["12345","67890","98761"]},"visibility":{"type":"string","description":"Controls which repositories can access the secret. If 'selected', `selected_repository_ids` must be provided.","title":"Visibility","enum":["all","private","selected"],"examples":["all","private","selected"]}},"required":["org","secret_name","visibility"],"title":"CreateOrUpdateAnOrganizationSecretRequest","description":"Request schema for creating or updating an organization secret."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response. Typically an empty body for successful creation (201) or update (204); may contain data for errors.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["successful"],"title":"CreateOrUpdateAnOrganizationSecretResponseWrapper"}
+schema info of GITHUB_CREATE_OR_UPDATE_AN_ORGANIZATION_SECRET ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CREATE_OR_UPDATE_A_REPOSITORY_SECRET
+
+Here is the input and output schema info of Tool GITHUB_CREATE_OR_UPDATE_A_REPOSITORY_SECRET of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"encrypted_value":{"type":"string","description":"Value for the secret, pre-encrypted with the repository's public key using LibSodium (public key is obtained via 'Get a repository public key' endpoint).","title":"Encrypted Value","examples":["ENCRYPTED_STRING_OBTAINED_VIA_LIBSODIUM..."]},"key_id":{"type":"string","description":"ID of the public key used to encrypt `encrypted_value` (obtained with the public key). Required if `encrypted_value` is provided.","title":"Key Id","examples":["1234567890ABCDEF"]},"owner":{"type":"string","description":"The repository owner's username or organization name (case-insensitive).","title":"Owner","examples":["octocat","my-organization"]},"repo":{"type":"string","description":"The repository name, without the `.git` extension (case-insensitive).","title":"Repo","examples":["hello-world","my-action-repo"]},"secret_name":{"type":"string","description":"The name for the secret being created or updated.","title":"Secret Name","examples":["GH_TOKEN","AWS_SECRET_KEY","NPM_TOKEN"]}},"required":["owner","repo","secret_name"],"title":"CreateOrUpdateARepositorySecretRequest","description":"Request schema for `CreateOrUpdateARepositorySecret`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response; typically empty for successful creation (201) or update (204) as GitHub returns an empty response body.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateOrUpdateARepositorySecretResponseWrapper"}
+schema info of GITHUB_CREATE_OR_UPDATE_A_REPOSITORY_SECRET ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CREATE_OR_UPDATE_A_SECRET_FOR_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_CREATE_OR_UPDATE_A_SECRET_FOR_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"encrypted_value":{"type":"string","description":"Secret's value, encrypted using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) with the public key (see `key_id`) obtained from GitHub's 'Get public key for the authenticated user' endpoint.","title":"Encrypted Value"},"key_id":{"type":"string","description":"ID of the public key (from GitHub's 'Get public key for the authenticated user' endpoint) used to encrypt `encrypted_value`.","title":"Key Id","examples":["key_id_12345"]},"secret_name":{"type":"string","description":"The name of the secret. This name must be unique among the user's Codespaces secrets.","title":"Secret Name","examples":["MY_API_KEY","DATABASE_PASSWORD"]},"selected_repository_ids":{"type":"array","description":"Repository IDs that can access this secret. If omitted or empty, accessible to all user's Codespaces-enabled repositories.","title":"Selected Repository Ids","items":{"type":"integer","properties":{}},"examples":["12345","67890"]}},"required":["secret_name","key_id"],"title":"CreateOrUpdateASecretForTheAuthenticatedUserRequest","description":"Request schema for creating or updating a Codespaces secret for the authenticated user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateOrUpdateASecretForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_CREATE_OR_UPDATE_A_SECRET_FOR_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CREATE_OR_UPDATE_CUSTOM_PROPERTIES_FOR_AN_ORGANIZATION
+
+Here is the input and output schema info of Tool GITHUB_CREATE_OR_UPDATE_CUSTOM_PROPERTIES_FOR_AN_ORGANIZATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The case-insensitive organization name.","title":"Org","examples":["my-organization","github"]},"properties":{"type":"array","description":"Definitions for custom properties. Each must include a unique `property_name` (max 75 chars, no spaces) and `value_type`. Optional: `description`, `required`, `default_value`, `allowed_values` (for 'single_select' type).","title":"Properties","items":{"type":"object","properties":{},"additionalProperties":true},"examples":["[{\"property_name\": \"project-priority\", \"value_type\": \"single_select\", \"description\": \"Priority of the project\", \"required\": True, \"allowed_values\": [\"High\", \"Medium\", \"Low\"]}, {\"property_name\": \"environment\", \"value_type\": \"string\", \"description\": \"Deployment environment\"}]"]}},"required":["org","properties"],"title":"CreateOrUpdateCustomPropertiesForAnOrganizationRequest","description":"Request schema for `CreateOrUpdateCustomPropertiesForAnOrganization`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"The organization's complete list of custom property definitions post-operation.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateOrUpdateCustomPropertiesForAnOrganizationResponseWrapper"}
+schema info of GITHUB_CREATE_OR_UPDATE_CUSTOM_PROPERTIES_FOR_AN_ORGANIZATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CREATE_OR_UPDATE_CUSTOM_PROPERTY_VALUES_FOR_A_REPOSITORY
+
+Here is the input and output schema info of Tool GITHUB_CREATE_OR_UPDATE_CUSTOM_PROPERTY_VALUES_FOR_A_REPOSITORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The account owner of the repository. This name is not case sensitive.","title":"Owner","examples":["octocat","my-organization"]},"properties":{"type":"array","description":"A list of custom property objects to create or update for the repository. Each object in the list must contain `property_name` (string identifying the custom property) and `value` (the value for the property, which can be a string, number, or a single-select option, matching the property's defined type).","title":"Properties","items":{"type":"object","properties":{},"additionalProperties":true},"examples":["[{\"property_name\": \"environment\", \"value\": \"production\"}, {\"property_name\": \"project_status\", \"value\": \"active\"}]","[{\"property_name\": \"data_sensitivity\", \"value\": \"high\"}, {\"property_name\": \"internal_tooling\", \"value\": true}]","[{\"property_name\": \"needs_review_by\", \"value\": null}]"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case sensitive.","title":"Repo","examples":["hello-world","my-awesome-app"]}},"required":["owner","repo","properties"],"title":"CreateOrUpdateCustomPropertyValuesForARepositoryRequest","description":"Request schema for `CreateOrUpdateCustomPropertyValuesForARepository`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the API response data. For this operation, a successful request typically returns an HTTP 204 No Content status, which may result in this dictionary being empty or not populated, depending on the API client's handling.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["successful"],"title":"CreateOrUpdateCustomPropertyValuesForARepositoryResponseWrapper"}
+schema info of GITHUB_CREATE_OR_UPDATE_CUSTOM_PROPERTY_VALUES_FOR_A_REPOSITORY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CREATE_OR_UPDATE_FILE_CONTENTS
+
+Here is the input and output schema info of Tool GITHUB_CREATE_OR_UPDATE_FILE_CONTENTS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"author__date":{"type":"string","description":"Author's timestamp (ISO 8601 format). Defaults to committer's date if author details are provided but date is not.","title":"Author  Date","examples":["2023-10-26T11:30:00Z"]},"author__email":{"type":"string","description":"Author's email. If specified, `author_name` is also required. Defaults to committer details; if all committer/author details omitted, GitHub uses authenticated user.","title":"Author  Email","examples":["jane.smith@example.com"]},"author__name":{"type":"string","description":"Author's name. If specified, `author_email` is also required. Defaults to committer details; if all committer/author details omitted, GitHub uses authenticated user.","title":"Author  Name","examples":["Jane Smith"]},"branch":{"type":"string","description":"The branch name. Defaults to the repository’s default branch if omitted.","title":"Branch","examples":["main","develop"]},"committer__date":{"type":"string","description":"Committer's commit timestamp (ISO 8601 format). Defaults to current time if committer details are provided but date is not.","title":"Committer  Date","examples":["2023-10-26T12:00:00Z"]},"committer__email":{"type":"string","description":"Committer's email. If specified, `committer_name` is also required. GitHub uses authenticated user if all committer/author details omitted.","title":"Committer  Email","examples":["john.doe@example.com"]},"committer__name":{"type":"string","description":"Committer's name. If specified, `committer_email` is also required. GitHub uses authenticated user if all committer/author details omitted.","title":"Committer  Name","examples":["John Doe"]},"content":{"type":"string","description":"The new file content, Base64 encoded. For example, to upload the text 'Hello World', use 'SGVsbG8gV29ybGQ='.","title":"Content","examples":["SGVsbG8gV29ybGQ="]},"message":{"type":"string","description":"The commit message for this file creation or update.","title":"Message","examples":["feat: add new documentation","docs: update README"]},"owner":{"type":"string","description":"The account owner of the repository (not case sensitive).","title":"Owner","examples":["octocat"]},"path":{"type":"string","description":"The full path to the file in the repository, including the filename and extension.","title":"Path","examples":["README.md","src/main.js"]},"repo":{"type":"string","description":"The name of the repository (not case sensitive, without the `.git` extension).","title":"Repo","examples":["Spoon-Knife"]},"sha":{"type":"string","description":"The blob SHA of the file being replaced. Required to update an existing file; omit to create a new file.","title":"Sha","examples":["aa218f56b14c9653891f9e74264a383fa43fefbd"]}},"required":["owner","repo","path","message","content"],"title":"CreateOrUpdateFileContentsRequest","description":"Request schema for creating or updating a file's contents in a GitHub repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateOrUpdateFileContentsResponseWrapper"}
+schema info of GITHUB_CREATE_OR_UPDATE_FILE_CONTENTS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CREATE_OR_UPDATE_REPO_SECRET_WITH_ENCRYPTED_VALUE
+
+Here is the input and output schema info of Tool GITHUB_CREATE_OR_UPDATE_REPO_SECRET_WITH_ENCRYPTED_VALUE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"encrypted_value":{"type":"string","description":"Value for your secret. This value must be encrypted with LibSodium, using the public key retrieved from the GitHub API's 'Get a repository public key' endpoint for Dependabot secrets. The resulting encrypted string is typically Base64 encoded.","title":"Encrypted Value"},"key_id":{"type":"string","description":"The ID of the public key that was used to encrypt the secret value. This ID is retrieved from GitHub along with the public key via the 'Get a repository public key' endpoint for Dependabot secrets.","title":"Key Id"},"owner":{"type":"string","description":"The account owner of the repository (e.g., a GitHub username or organization name). This name is not case-sensitive.","title":"Owner","examples":["octocat","github"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case-sensitive.","title":"Repo","examples":["hello-world","my-awesome-app"]},"secret_name":{"type":"string","description":"The name of the Dependabot secret to create or update.","title":"Secret Name","examples":["NPM_TOKEN","DOCKER_REGISTRY_PASSWORD"]}},"required":["owner","repo","secret_name"],"title":"CreateOrUpdateRepoSecretWithEncryptedValueRequest","description":"Request schema for `CreateOrUpdateRepoSecretWithEncryptedValue`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Response data from the API. Upon successful creation (HTTP 201 status) or update (HTTP 204 status) of the secret, this field is typically an empty dictionary. In other cases, such as errors, it may contain relevant details.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateOrUpdateRepoSecretWithEncryptedValueResponseWrapper"}
+schema info of GITHUB_CREATE_OR_UPDATE_REPO_SECRET_WITH_ENCRYPTED_VALUE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CREATE_REACTION_FOR_A_COMMIT_COMMENT
+
+Here is the input and output schema info of Tool GITHUB_CREATE_REACTION_FOR_A_COMMIT_COMMENT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"comment_id":{"type":"integer","description":"Unique ID of the commit comment.","title":"Comment Id","examples":["12345","8675309"]},"content":{"type":"string","description":"The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the commit comment.","title":"Content","enum":["+1","-1","laugh","confused","heart","hooray","rocket","eyes"],"examples":["+1","-1","laugh","confused","heart","hooray","rocket","eyes"]},"owner":{"type":"string","description":"Username of the repository owner. Not case-sensitive.","title":"Owner","examples":["octocat","github"]},"repo":{"type":"string","description":"Name of the repository, without the `.git` extension. Not case-sensitive.","title":"Repo","examples":["Spoon-Knife","linguist"]}},"required":["owner","repo","comment_id","content"],"title":"CreateReactionForACommitCommentRequest","description":"Request schema for `CreateReactionForACommitComment`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Details of the created or existing reaction, including its ID, user, reaction content (e.g., 'heart'), and creation timestamp.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateReactionForACommitCommentResponseWrapper"}
+schema info of GITHUB_CREATE_REACTION_FOR_A_COMMIT_COMMENT ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CREATE_REACTION_FOR_AN_ISSUE
+
+Here is the input and output schema info of Tool GITHUB_CREATE_REACTION_FOR_AN_ISSUE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"content":{"type":"string","description":"The reaction type to add to the issue. See the [GitHub documentation on reactions](https://docs.github.com/rest/reactions/reactions#about-reactions) for full details.","title":"Content","enum":["+1","-1","laugh","confused","heart","hooray","rocket","eyes"],"examples":["+1","-1","laugh","confused","heart","hooray","rocket","eyes"]},"issue_number":{"type":"integer","description":"The number that identifies the issue.","title":"Issue Number","examples":[1347]},"owner":{"type":"string","description":"The account owner of the repository. The name is not case-sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository without the `.git` extension. The name is not case-sensitive.","title":"Repo","examples":["Spoon-Knife"]}},"required":["owner","repo","issue_number","content"],"title":"CreateReactionForAnIssueRequest","description":"Request schema for `CreateReactionForAnIssue`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the details of the created reaction. Key fields typically include `id` (reaction ID), `node_id`, `user` (an object detailing the user who reacted), `content` (the reaction emoji, e.g., '+1'), and `created_at` (timestamp of creation).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CreateReactionForAnIssueResponseWrapper"}
+schema info of GITHUB_CREATE_REACTION_FOR_AN_ISSUE ends.

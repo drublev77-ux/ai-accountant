@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_PACKAGE_VERSIONS_FOR_A_PACKAGE_OWNED_BY_A_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_PACKAGE_VERSIONS_FOR_A_PACKAGE_OWNED_BY_A_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"package_name":{"type":"string","description":"The name of the package as it is registered in GitHub Packages.","title":"Package Name","examples":["my-package","awesome-tool"]},"package_type":{"type":"string","description":"Type of the package. Note: GitHub Gradle registry packages use `maven`. GitHub Container registry (ghcr.io) images use `container`. The `docker` type can find images from the older GitHub Docker registry (docker.pkg.github.com), even if migrated to the Container registry.","title":"Package Type","enum":["npm","maven","rubygems","docker","nuget","container"],"examples":["npm","maven","container","rubygems"]},"username":{"type":"string","description":"The GitHub username of the account that owns the package (e.g., 'octocat').","title":"Username","examples":["octocat","githubuser"]}},"required":["package_type","package_name","username"],"title":"ListPackageVersionsForAPackageOwnedByAUserRequest","description":"Request schema for retrieving all versions of a public package owned by a specific user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response from GitHub detailing package versions. The structure conforms to GitHub's API documentation for this endpoint.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListPackageVersionsForAPackageOwnedByAUserResponseWrapper"}
+schema info of GITHUB_LIST_PACKAGE_VERSIONS_FOR_A_PACKAGE_OWNED_BY_A_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_PENDING_TEAM_INVITATIONS
+
+Here is the input and output schema info of Tool GITHUB_LIST_PENDING_TEAM_INVITATIONS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the organization. This field is not case-sensitive.","title":"Org","examples":["octo-org","my-company"]},"page":{"type":"integer","description":"Page number of results to fetch.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"team_slug":{"type":"string","description":"The slug (URL-friendly version) of the team name. This is typically the lowercase, hyphenated version of the team name.","title":"Team Slug","examples":["justice-league","developers"]}},"required":["org","team_slug"],"title":"ListPendingTeamInvitationsRequest","description":"Request schema for listing pending team invitations in an organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response data, typically a list of objects detailing pending team invitations.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListPendingTeamInvitationsResponseWrapper"}
+schema info of GITHUB_LIST_PENDING_TEAM_INVITATIONS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_PROJECT_CARDS
+
+Here is the input and output schema info of Tool GITHUB_LIST_PROJECT_CARDS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"archived_state":{"type":"string","description":"Filters the project cards based on their archived state. \"all\" returns all cards, \"archived\" returns only archived cards, and \"not_archived\" returns only unarchived cards.","title":"Archived State","default":"not_archived","enum":["all","archived","not_archived"]},"column_id":{"type":"integer","description":"The unique identifier of the project column for which to list cards.","title":"Column Id","examples":[10247084]},"page":{"type":"integer","description":"Page number of results to retrieve.","title":"Page","default":1},"per_page":{"type":"integer","description":"Number of project cards to return per page (maximum 100).","title":"Per Page","default":30}},"required":["column_id"],"title":"ListProjectCardsRequest","description":"Request to list project cards from a specific project column."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A list of project card objects. Each object represents a card in the project column and includes details such as its ID, note, creator, and timestamps.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListProjectCardsResponseWrapper"}
+schema info of GITHUB_LIST_PROJECT_CARDS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_PROJECT_COLLABORATORS
+
+Here is the input and output schema info of Tool GITHUB_LIST_PROJECT_COLLABORATORS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"affiliation":{"type":"string","description":"Filter by affiliation: 'outside' (non-organization members of the project), 'direct' (collaborators with direct project permissions), or 'all' (all collaborators visible to the authenticated user).","title":"Affiliation","default":"all","enum":["outside","direct","all"],"examples":["outside","direct","all"]},"page":{"type":"integer","description":"Page number for the results to fetch.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"Number of results per page (maximum 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"project_id":{"type":"integer","description":"The unique identifier of the project.","title":"Project Id","examples":["1024809"]}},"required":["project_id"],"title":"ListProjectCollaboratorsRequest","description":"Request to list collaborators for a GitHub project."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A list of collaborators associated with the project.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListProjectCollaboratorsResponseWrapper"}
+schema info of GITHUB_LIST_PROJECT_COLLABORATORS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_PROJECT_COLUMNS
+
+Here is the input and output schema info of Tool GITHUB_LIST_PROJECT_COLUMNS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"The page number of the results to fetch. Starts from 1. For more information on pagination, see GitHub's REST API documentation: https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api.","title":"Page","default":1,"examples":[1,2,5]},"per_page":{"type":"integer","description":"The number of results to return per page. The maximum value is 100. For more information on pagination, see GitHub's REST API documentation: https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api.","title":"Per Page","default":30,"examples":[30,50,100]},"project_id":{"type":"integer","description":"The unique identifier of the project for which columns are to be listed.","title":"Project Id","examples":[1001,42]}},"required":["project_id"],"title":"ListProjectColumnsRequest","description":"Request schema for listing columns in a GitHub project."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the API's response. The GitHub API endpoint for listing project columns typically returns a JSON array of column objects. This dictionary is expected to encapsulate this list or represent the full response structure. Each column object usually includes fields such as 'id', 'node_id', 'name', 'url', 'project_url', 'cards_url', 'created_at', and 'updated_at'.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListProjectColumnsResponseWrapper"}
+schema info of GITHUB_LIST_PROJECT_COLUMNS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_PUBLIC_EMAIL_ADDRESSES_FOR_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_PUBLIC_EMAIL_ADDRESSES_FOR_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Page number of the results to fetch.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results to return per page. Maximum value is 100.","title":"Per Page","default":30,"examples":["30","50","100"]}},"title":"ListPublicEmailAddressesForTheAuthenticatedUserRequest","description":"Request schema for `ListPublicEmailAddressesForTheAuthenticatedUser`."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListPublicEmailAddressesForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_LIST_PUBLIC_EMAIL_ADDRESSES_FOR_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_PUBLIC_EVENTS
+
+Here is the input and output schema info of Tool GITHUB_LIST_PUBLIC_EVENTS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Specifies the page number of the results to retrieve. Starts from 1. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Specifies the number of events to return per page. Maximum value is 100. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"","title":"Per Page","default":30,"examples":["30","50","100"]}},"title":"ListPublicEventsRequest","description":"Request schema for `ListPublicEvents`, used to specify pagination parameters."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the response from the GitHub API. This typically includes a list of public GitHub events, where each event object provides details about activities such as code pushes, issue creations, and repository creations across public GitHub repositories.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListPublicEventsResponseWrapper"}
+schema info of GITHUB_LIST_PUBLIC_EVENTS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_PUBLIC_EVENTS_FOR_A_NETWORK_OF_REPOSITORIES
+
+Here is the input and output schema info of Tool GITHUB_LIST_PUBLIC_EVENTS_FOR_A_NETWORK_OF_REPOSITORIES of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The account owner of the repository. This name is not case-sensitive.","title":"Owner","examples":["octocat"]},"page":{"type":"integer","description":"Specifies the page number for the results to be fetched. For further details, consult \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"Sets the number of results to return per page, with a maximum of 100. For further details, consult \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"","title":"Per Page","default":30,"examples":["30","50","100"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case-sensitive.","title":"Repo","examples":["Spoon-Knife"]}},"required":["owner","repo"],"title":"ListPublicEventsForANetworkOfRepositoriesRequest","description":"Parameters to list public events from a GitHub repository network."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListPublicEventsForANetworkOfRepositoriesResponseWrapper"}
+schema info of GITHUB_LIST_PUBLIC_EVENTS_FOR_A_NETWORK_OF_REPOSITORIES ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_PUBLIC_EVENTS_FOR_A_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_PUBLIC_EVENTS_FOR_A_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Page number for paginated results.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"Number of events to return per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"username":{"type":"string","description":"The GitHub username (e.g., 'octocat').","title":"Username","examples":["octocat","torvalds"]}},"required":["username"],"title":"ListPublicEventsForAUserRequest","description":"Parameters to list public events for a GitHub user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A list of public events performed by the user, where each event details a specific activity (e.g., PushEvent, CreateEvent).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListPublicEventsForAUserResponseWrapper"}
+schema info of GITHUB_LIST_PUBLIC_EVENTS_FOR_A_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_PUBLIC_EVENTS_RECEIVED_BY_A_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_PUBLIC_EVENTS_RECEIVED_BY_A_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"The page number for the set of results to be fetched. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"The number of public events to retrieve per page. The maximum value is 100. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"","title":"Per Page","default":30,"examples":["30","50","100"]},"username":{"type":"string","description":"The GitHub username for the user whose received public events are to be listed.","title":"Username","examples":["octocat","torvalds"]}},"required":["username"],"title":"ListPublicEventsReceivedByAUserRequest","description":"Request model detailing the parameters to list public events received by a GitHub user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListPublicEventsReceivedByAUserResponseWrapper"}
+schema info of GITHUB_LIST_PUBLIC_EVENTS_RECEIVED_BY_A_USER ends.

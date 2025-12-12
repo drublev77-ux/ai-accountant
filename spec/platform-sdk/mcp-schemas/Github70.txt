@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REQUEST_A_GITHUB_PAGES_BUILD
+
+Here is the input and output schema info of Tool GITHUB_REQUEST_A_GITHUB_PAGES_BUILD of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The account owner of the repository. This name is not case-sensitive.","title":"Owner","examples":["octocat","github"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case-sensitive.","title":"Repo","examples":["hello-world","Spoon-Knife"]}},"required":["owner","repo"],"title":"RequestAGithubPagesBuildRequest","description":"Request schema for `RequestAGithubPagesBuild`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary representing the status of the GitHub Pages build. Typically includes 'url' (API URL for the build status), 'status' (e.g., 'queued', 'building', 'built'), 'commit' (the commit SHA for the build), and timestamps.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"RequestAGithubPagesBuildResponseWrapper"}
+schema info of GITHUB_REQUEST_A_GITHUB_PAGES_BUILD ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REQUEST_REVIEWERS_FOR_A_PULL_REQUEST
+
+Here is the input and output schema info of Tool GITHUB_REQUEST_REVIEWERS_FOR_A_PULL_REQUEST of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"Account owner of the repository (username or organization name); not case sensitive.","title":"Owner","examples":["octocat","my-organization"]},"pull_number":{"type":"integer","description":"Number identifying the pull request.","title":"Pull Number","examples":[42,101]},"repo":{"type":"string","description":"Name of the repository, without the `.git` extension; not case sensitive.","title":"Repo","examples":["hello-world","my-awesome-project"]},"reviewers":{"type":"array","description":"GitHub user `login` strings (usernames) to request reviews from.","title":"Reviewers","items":{"type":"string","properties":{}},"examples":[["octocat","hubot"],["monalisa"]]},"team_reviewers":{"type":"array","description":"GitHub team `slug` strings (e.g., 'justice-league') to request reviews from. Slugs are typically lowercase and use hyphens for spaces.","title":"Team Reviewers","items":{"type":"string","properties":{}},"examples":[["justice-league","core-developers"],["my-org/team-alpha"]]}},"required":["owner","repo","pull_number"],"title":"RequestReviewersForAPullRequestRequest","description":"Request schema for `RequestReviewersForAPullRequest`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Updated pull request object after reviewers are requested, including details like state, branches, and new `requested_reviewers` and `requested_teams` arrays.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"RequestReviewersForAPullRequestResponseWrapper"}
+schema info of GITHUB_REQUEST_REVIEWERS_FOR_A_PULL_REQUEST ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REREQUEST_A_CHECK_RUN
+
+Here is the input and output schema info of Tool GITHUB_REREQUEST_A_CHECK_RUN of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"check_run_id":{"type":"integer","description":"The unique numerical identifier of the check run to be re-requested.","title":"Check Run Id","examples":["123456789"]},"owner":{"type":"string","description":"The account owner of the repository (username or organization name). This field is case-insensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is case-insensitive. ","title":"Repo","examples":["Hello-World"]}},"required":["owner","repo","check_run_id"],"title":"RerequestACheckRunRequest","description":"Request schema for re-requesting a check run. Specifies the repository and the check run to be re-triggered."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"An empty dictionary indicating a successful rerequest. The HTTP status code will be 201 Created upon success.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"RerequestACheckRunResponseWrapper"}
+schema info of GITHUB_REREQUEST_A_CHECK_RUN ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REREQUEST_A_CHECK_SUITE
+
+Here is the input and output schema info of Tool GITHUB_REREQUEST_A_CHECK_SUITE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"check_suite_id":{"type":"integer","description":"The unique identifier of the check suite.","title":"Check Suite Id","examples":[12345]},"owner":{"type":"string","description":"The account owner of the repository. The name is not case sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository without the `.git` extension. The name is not case sensitive. ","title":"Repo","examples":["Hello-World"]}},"required":["owner","repo","check_suite_id"],"title":"RerequestACheckSuiteRequest","description":"Request schema for `RerequestACheckSuite`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"The response body from the GitHub API. Typically, this is an empty object for a successful request, as the main outcome is the rerequest of the check suite.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"RerequestACheckSuiteResponseWrapper"}
+schema info of GITHUB_REREQUEST_A_CHECK_SUITE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_RE_RUN_A_JOB_FROM_A_WORKFLOW_RUN
+
+Here is the input and output schema info of Tool GITHUB_RE_RUN_A_JOB_FROM_A_WORKFLOW_RUN of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"enable_debug_logging":{"type":"boolean","description":"If `true`, enables additional debug logging for the re-run of the job. Defaults to `false` if not provided.","title":"Enable Debug Logging","default":false,"examples":["true","false"]},"job_id":{"type":"integer","description":"The unique numerical identifier of the job to be re-run. This ID can be obtained by listing jobs for a workflow run.","title":"Job Id","examples":["1234567890"]},"owner":{"type":"string","description":"The account owner of the repository (e.g., a GitHub username or organization name). This name is not case sensitive.","title":"Owner","examples":["octo-org"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case sensitive.","title":"Repo","examples":["octo-repo"]}},"required":["owner","repo","job_id"],"title":"ReRunAJobFromAWorkflowRunRequest","description":"Request schema for re-running a specific job from a workflow run in a GitHub repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"An empty dictionary indicating the successful re-run of the job.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ReRunAJobFromAWorkflowRunResponseWrapper"}
+schema info of GITHUB_RE_RUN_A_JOB_FROM_A_WORKFLOW_RUN ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_RE_RUN_A_WORKFLOW
+
+Here is the input and output schema info of Tool GITHUB_RE_RUN_A_WORKFLOW of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"enable_debug_logging":{"type":"boolean","description":"Set to `true` to enable diagnostic logging for the re-run, helpful for troubleshooting.","title":"Enable Debug Logging","default":false,"examples":["true","false"]},"owner":{"type":"string","description":"Account owner of the repository where the workflow run exists (not case-sensitive).","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"Name of the repository (without the `.git` extension) where the workflow run exists (not case-sensitive).","title":"Repo","examples":["Hello-World"]},"run_id":{"type":"integer","description":"Unique ID of the workflow run to re-execute.","title":"Run Id","examples":["123456789"]}},"required":["owner","repo","run_id"],"title":"ReRunAWorkflowRequest","description":"Input for re-running a specific GitHub Actions workflow run."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Data from the workflow re-run response; usually an empty body (HTTP 201 Created) on success, but captures any API-returned data.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ReRunAWorkflowResponseWrapper"}
+schema info of GITHUB_RE_RUN_A_WORKFLOW ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_RE_RUN_FAILED_JOBS_FROM_A_WORKFLOW_RUN
+
+Here is the input and output schema info of Tool GITHUB_RE_RUN_FAILED_JOBS_FROM_A_WORKFLOW_RUN of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"enable_debug_logging":{"type":"boolean","description":"Set to `true` to enable extensive debug logging for the re-run, providing additional logs to aid in diagnosing issues.","title":"Enable Debug Logging","default":false,"examples":["true","false"]},"owner":{"type":"string","description":"The account owner of the repository (username or organization name); not case-sensitive.","title":"Owner","examples":["octocat","your-organization"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension; not case-sensitive.","title":"Repo","examples":["Hello-World","my-repository"]},"run_id":{"type":"integer","description":"The unique identifier of the workflow run.","title":"Run Id","examples":["123456789","987654321"]}},"required":["owner","repo","run_id"],"title":"ReRunFailedJobsFromAWorkflowRunRequest","description":"Input model to re-run failed jobs from a workflow run."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary, typically empty, returned upon successful acceptance of the re-run request. An empty object `{}` signifies GitHub's acceptance.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ReRunFailedJobsFromAWorkflowRunResponseWrapper"}
+schema info of GITHUB_RE_RUN_FAILED_JOBS_FROM_A_WORKFLOW_RUN ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_RESET_A_TOKEN
+
+Here is the input and output schema info of Tool GITHUB_RESET_A_TOKEN of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"access_token":{"type":"string","description":"The existing OAuth access token that needs to be reset. This token will be invalidated and replaced by a new one.","title":"Access Token","examples":["gho_16C7e42F292c6912E7710c838347Ae178B4a"]},"client_id":{"type":"string","description":"The client ID of the GitHub OAuth App.","title":"Client Id","examples":["Iv1.1234567890abcdef"]}},"required":["client_id","access_token"],"title":"ResetATokenRequest","description":"Request schema for `ResetAToken`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the details of the newly generated OAuth token. Key information typically includes the new `token` string, `scopes` array, `token_type` (e.g., 'bearer'), and other relevant metadata.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ResetATokenResponseWrapper"}
+schema info of GITHUB_RESET_A_TOKEN ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_RESTORE_A_PACKAGE_FOR_AN_ORGANIZATION
+
+Here is the input and output schema info of Tool GITHUB_RESTORE_A_PACKAGE_FOR_AN_ORGANIZATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"Name of the GitHub organization that owns the package (case-insensitive).","title":"Org","examples":["github","my-company"]},"package_name":{"type":"string","description":"Unique name of the package to be restored.","title":"Package Name","examples":["my-awesome-package","com.example.application"]},"package_type":{"type":"string","description":"Type of the package. Gradle packages use `maven`. Docker images in `ghcr.io` use `container`; `docker` finds images from `docker.pkg.github.com`, even if migrated.","title":"Package Type","enum":["npm","maven","rubygems","docker","nuget","container"],"examples":["npm","maven","container","nuget"]},"token":{"type":"string","description":"Optional token for restoring private packages or specific versions requiring special permissions.","title":"Token"}},"required":["package_type","package_name","org"],"title":"RestoreAPackageForAnOrganizationRequest","description":"Request to restore a deleted package in an organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response data. Typically empty on success (HTTP 204 No Content).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"RestoreAPackageForAnOrganizationResponseWrapper"}
+schema info of GITHUB_RESTORE_A_PACKAGE_FOR_AN_ORGANIZATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_RESTORE_A_PACKAGE_FOR_A_USER
+
+Here is the input and output schema info of Tool GITHUB_RESTORE_A_PACKAGE_FOR_A_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"package_name":{"type":"string","description":"Unique name of the package.","title":"Package Name","examples":["my-awesome-package","internal-app-image"]},"package_type":{"type":"string","description":"The package's type. Use `maven` for Gradle packages. `docker` can be used for images migrated from `docker.pkg.github.com` to the Container registry (`ghcr.io`), while `container` is for images originally pushed to `ghcr.io`.","title":"Package Type","enum":["npm","maven","rubygems","docker","nuget","container"],"examples":["npm","maven","rubygems","docker","nuget","container"]},"token":{"type":"string","description":"Optional token, potentially for specific GitHub Enterprise configurations or certain package types/visibilities. Omit if unsure.","title":"Token","examples":["specific-package-restore-token"]},"username":{"type":"string","description":"GitHub username of the package owner.","title":"Username","examples":["octocat","monalisa"]}},"required":["package_type","package_name","username"],"title":"RestoreAPackageForAUserRequest","description":"Request schema for `RestoreAPackageForAUser`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response data. Typically empty for a successful (204 No Content) restoration.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"RestoreAPackageForAUserResponseWrapper"}
+schema info of GITHUB_RESTORE_A_PACKAGE_FOR_A_USER ends.

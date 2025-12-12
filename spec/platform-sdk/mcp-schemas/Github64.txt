@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_PULLS_LIST
+
+Here is the input and output schema info of Tool GITHUB_PULLS_LIST of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"base":{"type":"string","description":"Filter by base branch name.","title":"Base","examples":["main","develop","gh-pages"]},"direction":{"type":"string","description":"Sort direction. Valid values: 'asc', 'desc'. Defaults to 'desc' if sort is 'created' or unspecified, else 'asc'.","title":"Direction","examples":["asc","desc"]},"head":{"type":"string","description":"Filter by head user/org and branch name, e.g., `user:ref-name`.","title":"Head","examples":["octocat:test-branch","github:new-script-format"]},"owner":{"type":"string","description":"Username or organization name of the repository owner.","title":"Owner","examples":["octocat","my-organization"]},"page":{"type":"integer","description":"Page number for results.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results per page (maximum 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"repo":{"type":"string","description":"Name of the repository, without the `.git` extension.","title":"Repo","examples":["Spoon-Knife","my-project"]},"sort":{"type":"string","description":"Sorts results. Valid values: 'created', 'updated', 'popularity', 'long-running'. 'popularity' is by comment count; 'long-running' by age and recent activity.","title":"Sort","default":"created","examples":["created","updated","popularity","long-running"]},"state":{"type":"string","description":"Filter by pull request state. Valid values: 'open', 'closed', 'all'.","title":"State","default":"open","examples":["open","closed","all"]}},"required":["owner","repo"],"title":"ListPullRequestsRequest","description":"Request schema for listing pull requests in a repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Filtered pull request data with only essential information","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListPullRequestsResponseWrapper"}
+schema info of GITHUB_PULLS_LIST ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REDELIVER_A_DELIVERY_FOR_AN_ORGANIZATION_WEBHOOK
+
+Here is the input and output schema info of Tool GITHUB_REDELIVER_A_DELIVERY_FOR_AN_ORGANIZATION_WEBHOOK of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"delivery_id":{"type":"integer","description":"The unique identifier of the specific webhook delivery to be redelivered. This ID is typically obtained from the `X-GitHub-Delivery` header of the original delivery attempt or by listing deliveries for a webhook.","title":"Delivery Id","examples":[987654321]},"hook_id":{"type":"integer","description":"The unique identifier of the webhook. This ID can be found in the `X-GitHub-Hook-ID` header of a webhook delivery or by listing webhooks for an organization.","title":"Hook Id","examples":[123456789]},"org":{"type":"string","description":"The name of the organization. This name is not case-sensitive.","title":"Org","examples":["octo-org"]}},"required":["org","hook_id","delivery_id"],"title":"RedeliverADeliveryForAnOrganizationWebhookRequest","description":"Request schema for redelivering a specific webhook delivery for an organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"The response body from the GitHub API. Typically, this is an empty object {} upon successful redelivery request (HTTP 202 Accepted), or an object containing error details if the request fails.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"RedeliverADeliveryForAnOrganizationWebhookResponseWrapper"}
+schema info of GITHUB_REDELIVER_A_DELIVERY_FOR_AN_ORGANIZATION_WEBHOOK ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REDELIVER_A_DELIVERY_FOR_A_REPOSITORY_WEBHOOK
+
+Here is the input and output schema info of Tool GITHUB_REDELIVER_A_DELIVERY_FOR_A_REPOSITORY_WEBHOOK of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"delivery_id":{"type":"integer","description":"Unique identifier of a specific past delivery for the webhook (obtainable by listing deliveries for that webhook).","title":"Delivery Id","examples":["12345","67890"]},"hook_id":{"type":"integer","description":"Unique identifier of the webhook (e.g., from `X-GitHub-Hook-ID` header or by listing repository webhooks).","title":"Hook Id","examples":["12345678","98765432"]},"owner":{"type":"string","description":"The account username that owns the repository (not case-sensitive).","title":"Owner","examples":["octocat","github"]},"repo":{"type":"string","description":"The repository name, without the `.git` extension (not case-sensitive).","title":"Repo","examples":["Hello-World","linguist"]}},"required":["owner","repo","hook_id","delivery_id"],"title":"RedeliverADeliveryForARepositoryWebhookRequest","description":"Input for redelivering a specific past webhook delivery."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response; typically an empty object on successful redelivery (HTTP 202 Accepted).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"RedeliverADeliveryForARepositoryWebhookResponseWrapper"}
+schema info of GITHUB_REDELIVER_A_DELIVERY_FOR_A_REPOSITORY_WEBHOOK ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REMOVE_A_CUSTOM_PROPERTY_FOR_AN_ORGANIZATION
+
+Here is the input and output schema info of Tool GITHUB_REMOVE_A_CUSTOM_PROPERTY_FOR_AN_ORGANIZATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"custom_property_name":{"type":"string","description":"The name of the custom property to remove. This name is case sensitive.","title":"Custom Property Name","examples":["project_status_tracking_id"]},"org":{"type":"string","description":"The name of the organization. This name is not case sensitive.","title":"Org","examples":["my-org-name"]}},"required":["org","custom_property_name"],"title":"RemoveACustomPropertyForAnOrganizationRequest","description":"Request schema for removing a custom property from an organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"An empty dictionary indicating successful removal of the custom property.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["successful"],"title":"RemoveACustomPropertyForAnOrganizationResponseWrapper"}
+schema info of GITHUB_REMOVE_A_CUSTOM_PROPERTY_FOR_AN_ORGANIZATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REMOVE_A_LABEL_FROM_AN_ISSUE
+
+Here is the input and output schema info of Tool GITHUB_REMOVE_A_LABEL_FROM_AN_ISSUE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"issue_number":{"type":"integer","description":"The number that identifies the issue.","title":"Issue Number","examples":[1347]},"name":{"type":"string","description":"The name of the label to remove from the issue. Emoji reactions will not be removed and names with spaces or special characters must be URL-encoded.","title":"Name","examples":["bug"]},"owner":{"type":"string","description":"The account owner of the repository. The name is not case sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository without the `.git` extension. The name is not case sensitive. ","title":"Repo","examples":["Hello-World"]}},"required":["owner","repo","issue_number","name"],"title":"RemoveALabelFromAnIssueRequest","description":"Request schema for `RemoveALabelFromAnIssue`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"RemoveALabelFromAnIssueResponseWrapper"}
+schema info of GITHUB_REMOVE_A_LABEL_FROM_AN_ISSUE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REMOVE_ALL_LABELS_FROM_AN_ISSUE
+
+Here is the input and output schema info of Tool GITHUB_REMOVE_ALL_LABELS_FROM_AN_ISSUE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"issue_number":{"type":"integer","description":"The unique number that identifies the issue from which all labels will be removed.","title":"Issue Number","examples":[1347]},"owner":{"type":"string","description":"The username of the account that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the '.git' extension. This field is not case-sensitive.","title":"Repo","examples":["Hello-World"]}},"required":["owner","repo","issue_number"],"title":"RemoveAllLabelsFromAnIssueRequest","description":"Request schema for removing all labels from a specific issue within a repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Response data from the API; an empty dictionary is expected on success (HTTP 204 No Content).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["successful"],"title":"RemoveAllLabelsFromAnIssueResponseWrapper"}
+schema info of GITHUB_REMOVE_ALL_LABELS_FROM_AN_ISSUE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REMOVE_ALL_ORGANIZATION_ROLES_FOR_A_TEAM
+
+Here is the input and output schema info of Tool GITHUB_REMOVE_ALL_ORGANIZATION_ROLES_FOR_A_TEAM of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the organization. This field is not case-sensitive.","title":"Org","examples":["github"]},"team_slug":{"type":"string","description":"The slug of the team name. Team slugs are typically all lowercase and replace spaces with hyphens.","title":"Team Slug","examples":["engineering-team"]}},"required":["org","team_slug"],"title":"RemoveAllOrganizationRolesForATeamRequest","description":"Request schema for revoking all organization roles from a team."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Typically an empty dictionary or null, as a successful revocation returns a 204 No Content response.","title":"Data","default":null,"nullable":true,"additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["successful"],"title":"RemoveAllOrganizationRolesForATeamResponseWrapper"}
+schema info of GITHUB_REMOVE_ALL_ORGANIZATION_ROLES_FOR_A_TEAM ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REMOVE_ALL_ORGANIZATION_ROLES_FOR_A_USER
+
+Here is the input and output schema info of Tool GITHUB_REMOVE_ALL_ORGANIZATION_ROLES_FOR_A_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The organization name. This name is not case sensitive.","title":"Org","examples":["github","my-company-org"]},"username":{"type":"string","description":"The handle for the GitHub user account.","title":"Username","examples":["octocat","mona-lisa"]}},"required":["org","username"],"title":"RemoveAllOrganizationRolesForAUserRequest","description":"Request schema for `RemoveAllOrganizationRolesForAUser`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the API response. For successful operations (typically HTTP 204 No Content), this dictionary may be empty or reflect that no content was returned in the response body. If the API returns a JSON payload, it will be parsed here.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"RemoveAllOrganizationRolesForAUserResponseWrapper"}
+schema info of GITHUB_REMOVE_ALL_ORGANIZATION_ROLES_FOR_A_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REMOVE_AN_ORGANIZATION_MEMBER
+
+Here is the input and output schema info of Tool GITHUB_REMOVE_AN_ORGANIZATION_MEMBER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the organization from which to remove the member.","title":"Org","examples":["github-org"]},"username":{"type":"string","description":"The GitHub username of the member to remove.","title":"Username","examples":["octocat"]}},"required":["org","username"],"title":"RemoveAnOrganizationMemberRequest","description":"Request schema for removing a member from a GitHub organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response data; typically empty for a successful removal (HTTP 204 No Content), or contains error details on failure.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"RemoveAnOrganizationMemberResponseWrapper"}
+schema info of GITHUB_REMOVE_AN_ORGANIZATION_MEMBER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REMOVE_AN_ORGANIZATION_ROLE_FROM_A_TEAM
+
+Here is the input and output schema info of Tool GITHUB_REMOVE_AN_ORGANIZATION_ROLE_FROM_A_TEAM of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the organization. This value is not case sensitive.","title":"Org","examples":["octo-org"]},"role_id":{"type":"integer","description":"The unique identifier of the organization role to be removed from the team.","title":"Role Id","examples":["42"]},"team_slug":{"type":"string","description":"The slug (short name) of the team.","title":"Team Slug","examples":["justice-league"]}},"required":["org","team_slug","role_id"],"title":"RemoveAnOrganizationRoleFromATeamRequest","description":"Request schema for removing an organization role from a team."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Response data from the API. For this operation, it is typically empty upon successful removal (HTTP 204 No Content).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["successful"],"title":"RemoveAnOrganizationRoleFromATeamResponseWrapper"}
+schema info of GITHUB_REMOVE_AN_ORGANIZATION_ROLE_FROM_A_TEAM ends.

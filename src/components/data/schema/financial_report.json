@@ -1,0 +1,184 @@
+{
+  "id": "102019ae94a1ae27923b7f835d87a78e744",
+  "version": "102019ae94a1ae2777b9d683d810c664d21",
+  "schema": {
+    "name": "financial_report",
+    "description": "Stores generated financial reports for users.",
+    "fields": [
+      {
+        "name": "id",
+        "description": "Unique identifier for the report.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System identifier"
+        }
+      },
+      {
+        "name": "data_creator",
+        "description": "id of the user who creates the record",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Audit trail"
+        }
+      },
+      {
+        "name": "data_updater",
+        "description": "id of the user who updates the record",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Audit trail"
+        }
+      },
+      {
+        "name": "create_time",
+        "description": "create time in timestamp unix",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System metadata"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "update_time",
+        "description": "update time in timestamp unix",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System metadata"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "user_id",
+        "description": "ID of the user for whom the report is generated.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Personal data association"
+        }
+      },
+      {
+        "name": "report_type",
+        "description": "Type of the financial report.",
+        "type": 100,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Report classification"
+        },
+        "enumeration": [
+          {
+            "value": "Unspecified"
+          },
+          {
+            "number": 1,
+            "value": "IncomeStatement"
+          },
+          {
+            "number": 2,
+            "value": "SpendingAnalysis"
+          },
+          {
+            "number": 3,
+            "value": "TaxSummary"
+          },
+          {
+            "number": 4,
+            "value": "NetWorth"
+          }
+        ]
+      },
+      {
+        "name": "report_data",
+        "description": "The JSON string containing the structured report data.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 4,
+          "reason": "Aggregated sensitive financial data"
+        }
+      },
+      {
+        "name": "start_date",
+        "description": "Start date of the period covered by the report.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Report period info"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "end_date",
+        "description": "End date of the period covered by the report.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Report period info"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "generated_at",
+        "description": "Timestamp when the report content was actually generated.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Operational metadata"
+        },
+        "format": "timestamp"
+      }
+    ],
+    "indexes": [
+      {
+        "fields": [
+          "id"
+        ],
+        "unique": true,
+        "primary": true,
+        "order": false
+      },
+      {
+        "fields": [
+          "data_creator"
+        ],
+        "order": false
+      },
+      {
+        "fields": [
+          "data_updater"
+        ],
+        "order": false
+      },
+      {
+        "fields": [
+          "report_type",
+          "user_id"
+        ],
+        "order": false
+      },
+      {
+        "fields": [
+          "generated_at",
+          "user_id"
+        ],
+        "order": true
+      }
+    ]
+  },
+  "task": {
+    "id": "69317a33ad50e9e8016841da",
+    "root": "69317a33ad50e9e8016841da",
+    "project": "69317a33ad50e9e8016841d9",
+    "user": "6841d390-b021-7026-f508-2c1990f0e948"
+  },
+  "namespace": {
+    "id": "01987547fc6c72ecb453bd2736bd4ea0",
+    "tenant": 2,
+    "name": "global-1",
+    "default": true
+  },
+  "revision": 1
+}

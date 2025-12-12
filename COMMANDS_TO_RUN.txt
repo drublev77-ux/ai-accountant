@@ -1,0 +1,176 @@
+═══════════════════════════════════════════════════════════════
+  🚀 КОМАНДЫ ДЛЯ НАСТРОЙКИ GITHUB AUTO BUILD
+═══════════════════════════════════════════════════════════════
+
+📋 ВАРИАНТ 1: АВТОМАТИЧЕСКИЙ (РЕКОМЕНДУЕТСЯ)
+───────────────────────────────────────────────────────────────
+
+Запустите скрипт (он сделает всё автоматически):
+
+    ./setup-github-auto-build.sh
+
+Скрипт:
+  ✓ Создаст keystore
+  ✓ Конвертирует в Base64
+  ✓ Покажет все секреты для GitHub
+  ✓ Даст инструкции для git push
+
+
+═══════════════════════════════════════════════════════════════
+📋 ВАРИАНТ 2: ВРУЧНУЮ
+═══════════════════════════════════════════════════════════════
+
+ШАГ 1: Создать keystore
+───────────────────────────────────────────────────────────────
+
+keytool -genkey -v -keystore release.keystore \
+  -alias ai-accountant \
+  -keyalg RSA \
+  -keysize 2048 \
+  -validity 10000 \
+  -storepass aiaccountant2024 \
+  -keypass aiaccountant2024 \
+  -dname "CN=AI Accountant, OU=Development, O=AI Accountant Inc, L=San Francisco, S=California, C=US"
+
+
+ШАГ 2: Конвертировать в Base64
+───────────────────────────────────────────────────────────────
+
+Linux/macOS:
+    cat release.keystore | base64 > release.keystore.base64
+
+Windows (PowerShell):
+    [Convert]::ToBase64String([IO.File]::ReadAllBytes("release.keystore")) | Out-File release.keystore.base64
+
+Windows (Git Bash):
+    cat release.keystore | base64 > release.keystore.base64
+
+
+ШАГ 3: Просмотреть Base64
+───────────────────────────────────────────────────────────────
+
+    cat release.keystore.base64
+
+СКОПИРУЙТЕ ВСЁ СОДЕРЖИМОЕ! (это будет длинная строка)
+
+
+ШАГ 4: Создать GitHub репозиторий
+───────────────────────────────────────────────────────────────
+
+1. Перейдите на: https://github.com/new
+2. Название: ai-accountant (или любое другое)
+3. Видимость: Public или Private
+4. НЕ добавляйте README, .gitignore, LICENSE
+5. Нажмите "Create repository"
+
+
+ШАГ 5: Добавить GitHub Secrets
+───────────────────────────────────────────────────────────────
+
+Перейдите: Settings → Secrets and variables → Actions
+
+Добавьте 4 секрета:
+
+1. Секрет: ANDROID_KEYSTORE_BASE64
+   Значение: [Вставьте содержимое release.keystore.base64]
+
+2. Секрет: ANDROID_KEYSTORE_PASSWORD
+   Значение: aiaccountant2024
+
+3. Секрет: ANDROID_KEY_PASSWORD
+   Значение: aiaccountant2024
+
+4. Секрет: ANDROID_KEY_ALIAS
+   Значение: ai-accountant
+
+
+ШАГ 6: Загрузить код на GitHub
+───────────────────────────────────────────────────────────────
+
+ЗАМЕНИТЕ "ВАШ-ПОЛЬЗОВАТЕЛЬ" НА ВАШЕ ИМЯ ПОЛЬЗОВАТЕЛЯ GITHUB!
+
+    git remote add origin https://github.com/ВАШ-ПОЛЬЗОВАТЕЛЬ/ai-accountant.git
+    git push -u origin main
+
+🎉 Автосборка запустится автоматически!
+
+
+═══════════════════════════════════════════════════════════════
+📥 СКАЧАТЬ ГОТОВЫЙ AAB
+═══════════════════════════════════════════════════════════════
+
+После завершения сборки (5-10 минут):
+
+1. GitHub → вкладка Actions
+2. Выберите последний workflow run (с зелёной галочкой ✅)
+3. Пролистайте вниз до раздела "Artifacts"
+4. Скачайте "android-release-aab"
+5. Распакуйте ZIP → внутри файл app-release.aab
+
+
+═══════════════════════════════════════════════════════════════
+🔐 БЕЗОПАСНОСТЬ
+═══════════════════════════════════════════════════════════════
+
+⚠️  НЕ КОММИТЬТЕ В GIT:
+    ❌ release.keystore
+    ❌ release.keystore.base64
+    ❌ github-secrets.txt
+
+✅  .gitignore УЖЕ НАСТРОЕН
+
+💾  СДЕЛАЙТЕ BACKUP:
+    Сохраните release.keystore в надёжное место!
+    (облако, флешка, менеджер паролей)
+
+
+═══════════════════════════════════════════════════════════════
+🆘 ПОМОЩЬ
+═══════════════════════════════════════════════════════════════
+
+Если keytool не найден:
+    macOS:   brew install openjdk
+    Ubuntu:  sudo apt install default-jdk
+    Windows: https://adoptium.net/
+
+Подробная инструкция:
+    cat KEYSTORE_SETUP.md
+
+Автоматический скрипт:
+    ./setup-github-auto-build.sh
+
+
+═══════════════════════════════════════════════════════════════
+✅ CHECKLIST
+═══════════════════════════════════════════════════════════════
+
+[ ] Java/JDK установлен
+[ ] Keystore создан (release.keystore)
+[ ] Конвертация в Base64 выполнена
+[ ] GitHub репозиторий создан
+[ ] 4 секрета добавлены на GitHub
+[ ] Remote origin настроен
+[ ] git push выполнен
+[ ] Сборка запущена
+[ ] AAB файл скачан
+[ ] Backup keystore сохранён
+
+
+═══════════════════════════════════════════════════════════════
+🎯 БЫСТРЫЙ СТАРТ (КОПИРУЙ И ВСТАВЛЯЙ)
+═══════════════════════════════════════════════════════════════
+
+# Шаг 1: Автоматическая настройка
+./setup-github-auto-build.sh
+
+# Шаг 2: После создания репозитория на GitHub (веб)
+git remote add origin https://github.com/ВАШ-ПОЛЬЗОВАТЕЛЬ/ai-accountant.git
+
+# Шаг 3: Загрузить код
+git push -u origin main
+
+# Готово! Смотрите прогресс:
+# https://github.com/ВАШ-ПОЛЬЗОВАТЕЛЬ/ai-accountant/actions
+
+
+═══════════════════════════════════════════════════════════════

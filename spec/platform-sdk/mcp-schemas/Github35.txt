@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_A_WORKFLOW_RUN
+
+Here is the input and output schema info of Tool GITHUB_GET_A_WORKFLOW_RUN of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"exclude_pull_requests":{"type":"boolean","description":"If true, excludes pull request data; the `pull_requests` array in the response will be empty.","title":"Exclude Pull Requests","default":false,"examples":["true","false"]},"owner":{"type":"string","description":"The username or organization name that owns the repository (not case-sensitive).","title":"Owner","examples":["octocat","my-organization"]},"repo":{"type":"string","description":"Name of the repository (case-insensitive, without .git extension).","title":"Repo","examples":["Spoon-Knife","my-awesome-project"]},"run_id":{"type":"integer","description":"Unique ID of the workflow run.","title":"Run Id","examples":["123456789","987654321"]}},"required":["owner","repo","run_id"],"title":"GetAWorkflowRunRequest","description":"Request schema for `GetAWorkflowRun`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Detailed information of the workflow run, including attributes like `id`, `name`, `status`, `conclusion`, `workflow_id`, `event`. The `pull_requests` array is empty if `exclude_pull_requests` was true.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetAWorkflowRunResponseWrapper"}
+schema info of GITHUB_GET_A_WORKFLOW_RUN ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_A_WORKFLOW_RUN_ATTEMPT
+
+Here is the input and output schema info of Tool GITHUB_GET_A_WORKFLOW_RUN_ATTEMPT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"attempt_number":{"type":"integer","description":"The attempt number of the specific workflow run. Each re-run of a workflow creates a new attempt number, starting from 1.","title":"Attempt Number","examples":["1","2"]},"exclude_pull_requests":{"type":"boolean","description":"If `true`, excludes pull request data from the API response; the `pull_requests` array in the response will then be empty.","title":"Exclude Pull Requests","default":false,"examples":["true","false"]},"owner":{"type":"string","description":"The account owner of the repository, such as a GitHub username or organization name. This name is not case sensitive.","title":"Owner","examples":["octocat","my-organization"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case sensitive.","title":"Repo","examples":["Spoon-Knife","my-awesome-project"]},"run_id":{"type":"integer","description":"The unique identifier (ID) of the workflow run. This ID is specific to a repository and can be obtained from API calls that list workflow runs.","title":"Run Id","examples":["123456789"]}},"required":["owner","repo","run_id","attempt_number"],"title":"GetAWorkflowRunAttemptRequest","description":"Request schema for `GetAWorkflowRunAttempt`."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetAWorkflowRunAttemptResponseWrapper"}
+schema info of GITHUB_GET_A_WORKFLOW_RUN_ATTEMPT ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_BRANCH_PROTECTION
+
+Here is the input and output schema info of Tool GITHUB_GET_BRANCH_PROTECTION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"branch":{"type":"string","description":"Name of the branch; wildcard characters are not supported (use GitHub GraphQL API for wildcard matching).","title":"Branch","examples":["main","develop","feature/new-login"]},"owner":{"type":"string","description":"Account owner of the repository (username or organization name); not case-sensitive.","title":"Owner","examples":["octocat","github"]},"repo":{"type":"string","description":"Name of the repository, without the `.git` extension; not case-sensitive.","title":"Repo","examples":["Spoon-Knife","docs"]}},"required":["owner","repo","branch"],"title":"GetBranchProtectionRequest","description":"Specifies the owner, repository, and branch for retrieving branch protection settings."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Dictionary of branch protection settings; its structure varies based on enabled protections. If not enabled, the response may be a 404 or specific message indicating this.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetBranchProtectionResponseWrapper"}
+schema info of GITHUB_GET_BRANCH_PROTECTION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_COMMIT_AUTHORS
+
+Here is the input and output schema info of Tool GITHUB_GET_COMMIT_AUTHORS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username of the account that owns the repository. This name is not case-sensitive.","title":"Owner","examples":["octocat","microsoft"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case-sensitive.","title":"Repo","examples":["Spoon-Knife","vscode"]},"since":{"type":"integer","description":"An optional author ID. If provided, only authors with an ID greater than this specified ID will be returned. This ID refers to the `id` field of an author object in the response, and can be used for paginating through the list of authors.","title":"Since","examples":["0","123"]}},"required":["owner","repo"],"title":"GetCommitAuthorsRequest","description":"Request schema for retrieving commit authors during a repository import."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the API response. This dictionary is expected to hold a list of commit author objects as identified by GitHub during a repository import. Each author object typically includes attributes like `id` (the GitHub user ID if the author is already mapped), `email`, `name`, `import_id` (the internal ID for the author during import), `remote_id` (the author's identifier from the source VCS), and `remote_name` (the author's name from the source VCS).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetCommitAuthorsResponseWrapper"}
+schema info of GITHUB_GET_COMMIT_AUTHORS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_COMMIT_SIGNATURE_PROTECTION
+
+Here is the input and output schema info of Tool GITHUB_GET_COMMIT_SIGNATURE_PROTECTION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"branch":{"type":"string","description":"The name of the branch. Wildcard characters are not allowed. To use wildcard characters in branch names, consider using the GraphQL API.","title":"Branch","examples":["main"]},"owner":{"type":"string","description":"The account owner of the repository. This name is not case sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case sensitive.","title":"Repo","examples":["Hello-World"]}},"required":["owner","repo","branch"],"title":"GetCommitSignatureProtectionRequest","description":"Request schema for retrieving commit signature protection status for a branch."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"The commit signature protection status information.","title":"Data","properties":{"enabled":{"type":"boolean","description":"Indicates whether commit signature protection is enabled for the branch.","title":"Enabled"},"url":{"type":"string","description":"The API URL for the commit signature protection settings of the branch.","title":"Url"}},"required":["url","enabled"],"additionalProperties":false},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetCommitSignatureProtectionResponseWrapper"}
+schema info of GITHUB_GET_COMMIT_SIGNATURE_PROTECTION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_COMMUNITY_PROFILE_METRICS
+
+Here is the input and output schema info of Tool GITHUB_GET_COMMUNITY_PROFILE_METRICS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"Username of the account owning the repository. Not case-sensitive.","title":"Owner","examples":["octocat","google"]},"repo":{"type":"string","description":"Name of the repository, without '.git' extension. Not case-sensitive.","title":"Repo","examples":["Spoon-Knife","guava"]}},"required":["owner","repo"],"title":"GetCommunityProfileMetricsRequest","description":"Specifies the target repository for community health metrics."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Community profile metrics, such as 'health_percentage', 'description', 'documentation', 'files' (detailing presence of README, CODE_OF_CONDUCT, CONTRIBUTING, LICENSE, ISSUE_TEMPLATE, PULL_REQUEST_TEMPLATE, etc.), and 'updated_at'.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetCommunityProfileMetricsResponseWrapper"}
+schema info of GITHUB_GET_COMMUNITY_PROFILE_METRICS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_CONTEXTUAL_INFORMATION_FOR_A_USER
+
+Here is the input and output schema info of Tool GITHUB_GET_CONTEXTUAL_INFORMATION_FOR_A_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"subject_id":{"type":"string","description":"Entity ID for `subject_type` for more specific hovercard context; required if `subject_type` is also given.","title":"Subject Id","examples":["12345","org_id_abc"]},"subject_type":{"type":"string","description":"Entity type for more specific hovercard context (e.g., 'repository'); required if `subject_id` is also given.","title":"Subject Type","enum":["organization","repository","issue","pull_request"],"examples":["organization","repository","issue","pull_request"]},"username":{"type":"string","description":"GitHub username for whom to retrieve hovercard data.","title":"Username","examples":["octocat","torvalds"]}},"required":["username"],"title":"GetContextualInformationForAUserRequest","description":"Request to fetch contextual hovercard information for a GitHub user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetContextualInformationForAUserResponseWrapper"}
+schema info of GITHUB_GET_CONTEXTUAL_INFORMATION_FOR_A_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_DEFAULT_ATTRIBUTES_FOR_A_CODESPACE
+
+Here is the input and output schema info of Tool GITHUB_GET_DEFAULT_ATTRIBUTES_FOR_A_CODESPACE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"client_ip":{"type":"string","description":"Optional IP address to override default location auto-detection (e.g., for proxied requests). If unspecified, location is inferred from source IP.","title":"Client Ip","examples":["192.0.2.1","203.0.113.25"]},"owner":{"type":"string","description":"Username of the account owning the repository (case-insensitive).","title":"Owner","examples":["octocat","github"]},"ref":{"type":"string","description":"Git reference (branch name, tag name, or commit SHA) for devcontainer configuration. If omitted, the repository's default branch is used.","title":"Ref","examples":["main","v1.2.3","c3d0be41ec9ae96945425e2d399739c8998e9afd"]},"repo":{"type":"string","description":"Name of the repository, without the `.git` extension (case-insensitive).","title":"Repo","examples":["hello-world","Spoon-Knife"]}},"required":["owner","repo"],"title":"GetDefaultAttributesForACodespaceRequest","description":"Request schema."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Dictionary with pre-flight data for Codespace creation: billable owner, default location, devcontainer path, available machine types (SKUs), and other configuration details.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetDefaultAttributesForACodespaceResponseWrapper"}
+schema info of GITHUB_GET_DEFAULT_ATTRIBUTES_FOR_A_CODESPACE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_DEFAULT_WORKFLOW_PERMISSIONS_FOR_AN_ORGANIZATION
+
+Here is the input and output schema info of Tool GITHUB_GET_DEFAULT_WORKFLOW_PERMISSIONS_FOR_AN_ORGANIZATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the organization. This name is not case-sensitive.","title":"Org","examples":["my-org-name"]}},"required":["org"],"title":"GetDefaultWorkflowPermissionsForAnOrganizationRequest","description":"Request schema for `GetDefaultWorkflowPermissionsForAnOrganization`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the default workflow permissions. It includes 'default_workflow_permissions' (string) indicating the default permissions for GITHUB_TOKEN (e.g., 'read', 'write'), and 'can_approve_pull_request_reviews' (boolean) indicating if GitHub Actions can approve pull requests (this is applicable to enterprise customers).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetDefaultWorkflowPermissionsForAnOrganizationResponseWrapper"}
+schema info of GITHUB_GET_DEFAULT_WORKFLOW_PERMISSIONS_FOR_AN_ORGANIZATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_DEFAULT_WORKFLOW_PERMISSIONS_FOR_A_REPOSITORY
+
+Here is the input and output schema info of Tool GITHUB_GET_DEFAULT_WORKFLOW_PERMISSIONS_FOR_A_REPOSITORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username or organization name that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["Hello-World"]}},"required":["owner","repo"],"title":"GetDefaultWorkflowPermissionsForARepositoryRequest","description":"Request schema for `GetDefaultWorkflowPermissionsForARepository`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Default workflow permissions for the repository, including `default_workflow_permissions` ('read' or 'write') for GITHUB_TOKEN and `can_approve_pull_request_reviews` (boolean).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetDefaultWorkflowPermissionsForARepositoryResponseWrapper"}
+schema info of GITHUB_GET_DEFAULT_WORKFLOW_PERMISSIONS_FOR_A_REPOSITORY ends.

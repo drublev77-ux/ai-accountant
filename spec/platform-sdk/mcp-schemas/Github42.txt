@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_ISSUES_LIST_ASSIGN_EES
+
+Here is the input and output schema info of Tool GITHUB_ISSUES_LIST_ASSIGN_EES of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username of the account that owns the repository. This is not case-sensitive.","title":"Owner","examples":["octocat"]},"page":{"type":"integer","description":"Page number of results (1-indexed).","title":"Page","default":1,"examples":["1","2"]},"per_page":{"type":"integer","description":"Number of results per page. Max 100.","title":"Per Page","default":30,"examples":["30","100"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This is not case-sensitive.","title":"Repo","examples":["Spoon-Knife"]}},"required":["owner","repo"],"title":"ListAssigneesRequest","description":"Request schema to list assignees for a repository, including pagination."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"List of user objects, each detailing a user assignable to issues (e.g., login, ID, avatar_url).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListAssigneesResponseWrapper"}
+schema info of GITHUB_ISSUES_LIST_ASSIGN_EES ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_ISSUES_LIST_EVENTS_FOR_REPO
+
+Here is the input and output schema info of Tool GITHUB_ISSUES_LIST_EVENTS_FOR_REPO of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"Account owner of the repository (username or organization name); case-insensitive.","title":"Owner","examples":["octocat","kubernetes"]},"page":{"type":"integer","description":"Page number for pagination.","title":"Page","default":1},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":1},"repo":{"type":"string","description":"Repository name, without the `.git` extension; case-insensitive.","title":"Repo","examples":["Spoon-Knife","minikube"]}},"required":["owner","repo"],"title":"ListIssueEventsForARepositoryRequest","description":"Request to list issue events for a repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Raw API response, typically a list of issue events.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListIssueEventsForARepositoryResponseWrapper"}
+schema info of GITHUB_ISSUES_LIST_EVENTS_FOR_REPO ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_ISSUES_LIST_FOR_REPO
+
+Here is the input and output schema info of Tool GITHUB_ISSUES_LIST_FOR_REPO of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"assignee":{"type":"string","description":"Filter issues by assignee's username. Use 'none' for issues with no assignee, or '*' for issues assigned to any user.","title":"Assignee","examples":["codertocat","none","*"]},"creator":{"type":"string","description":"Filter issues by the username of the user who created the issue.","title":"Creator","examples":["octocat"]},"direction":{"type":"string","description":"The direction of the sort.","title":"Direction","default":"desc","enum":["asc","desc"],"examples":["asc","desc"]},"labels":{"type":"string","description":"A comma-separated list of label names to filter issues by. Example: 'bug,ui,@high'.","title":"Labels","examples":["bug,ui,@high","enhancement","help wanted,good first issue"]},"mentioned":{"type":"string","description":"Filter issues by a user mentioned in the issue's description or comments. Provide the username.","title":"Mentioned","examples":["octodocs","hubot"]},"milestone":{"type":"string","description":"Filter issues by milestone. Provide the milestone `number` as a string, '*' for issues with any milestone, or 'none' for issues without a milestone.","title":"Milestone","examples":["1","*","none"]},"owner":{"type":"string","description":"The GitHub account owner of the repository. This name is not case-sensitive.","title":"Owner","examples":["octocat","microsoft"]},"page":{"type":"integer","description":"Page number for the set of results. Refer to GitHub's REST API documentation for pagination details.","title":"Page","default":1,"examples":["1","5"]},"per_page":{"type":"integer","description":"Number of results per page (max 100). Refer to GitHub's REST API documentation for pagination details.","title":"Per Page","default":1,"examples":["30","100"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case-sensitive.","title":"Repo","examples":["Spoon-Knife","vscode"]},"since":{"type":"string","description":"Filters issues to include only those updated at or after the specified time. This should be a timestamp in ISO 8601 format (e.g., `YYYY-MM-DDTHH:MM:SSZ`).","title":"Since","examples":["2023-01-15T10:00:00Z","2024-03-10T00:00:00+05:30"]},"sort":{"type":"string","description":"The field to sort the results by.","title":"Sort","default":"created","enum":["created","updated","comments"],"examples":["created","updated","comments"]},"state":{"type":"string","description":"Filters issues based on their state.","title":"State","default":"open","enum":["open","closed","all"],"examples":["open","closed","all"]}},"required":["owner","repo"],"title":"ListRepositoryIssuesRequest","description":"Defines the parameters for the `ListRepositoryIssues` action, used to filter and paginate issues from a GitHub repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Parsed JSON response from GitHub API, typically a list of issues.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListRepositoryIssuesResponseWrapper"}
+schema info of GITHUB_ISSUES_LIST_FOR_REPO ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_ACCEPTED_ASSIGNMENTS_FOR_AN_ASSIGNMENT
+
+Here is the input and output schema info of Tool GITHUB_LIST_ACCEPTED_ASSIGNMENTS_FOR_AN_ASSIGNMENT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"assignment_id":{"type":"integer","description":"The unique identifier of the classroom assignment for which to list accepted assignments.","title":"Assignment Id","examples":["12345"]},"page":{"type":"integer","description":"Page number of the results to retrieve.","title":"Page","default":1,"examples":["1","2"]},"per_page":{"type":"integer","description":"Number of results to return per page (maximum 100).","title":"Per Page","default":30,"examples":["30","50","100"]}},"required":["assignment_id"],"title":"ListAcceptedAssignmentsForAnAssignmentRequest","description":"Request schema for `ListAcceptedAssignmentsForAnAssignment`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListAcceptedAssignmentsForAnAssignmentResponseWrapper"}
+schema info of GITHUB_LIST_ACCEPTED_ASSIGNMENTS_FOR_AN_ASSIGNMENT ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_APP_INSTALLATIONS_ACCESSIBLE_TO_THE_USER_ACCESS_TOKEN
+
+Here is the input and output schema info of Tool GITHUB_LIST_APP_INSTALLATIONS_ACCESSIBLE_TO_THE_USER_ACCESS_TOKEN of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Page number of results to retrieve.","title":"Page","default":1},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":30}},"title":"ListAppInstallationsAccessibleToTheUserAccessTokenRequest","description":"Request schema for `ListAppInstallationsAccessibleToTheUserAccessToken`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Raw GitHub API response containing `total_count` of accessible installations and a list of `installations`, each with details like `id`, `account`, `app_id`, `permissions`, `repository_selection`, and `access_tokens_url`.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListAppInstallationsAccessibleToTheUserAccessTokenResponseWrapper"}
+schema info of GITHUB_LIST_APP_INSTALLATIONS_ACCESSIBLE_TO_THE_USER_ACCESS_TOKEN ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_ARTIFACTS_FOR_A_REPOSITORY
+
+Here is the input and output schema info of Tool GITHUB_LIST_ARTIFACTS_FOR_A_REPOSITORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"name":{"type":"string","description":"The name of an artifact. If specified, only artifacts with this exact name will be returned. If omitted or null, all artifacts in the repository are listed (subject to pagination).","title":"Name","examples":["my-build-artifact","coverage-report-linux"]},"owner":{"type":"string","description":"The account owner of the repository (username or organization name). This field is not case-sensitive.","title":"Owner","examples":["octocat","my-organization"]},"page":{"type":"integer","description":"The page number of the results to fetch, starting from 1.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"The number of artifacts to return per page; maximum is 100.","title":"Per Page","default":30,"examples":["30","50","100"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["Hello-World","my-awesome-project"]}},"required":["owner","repo"],"title":"ListArtifactsForARepositoryRequest","description":"Request schema for the `ListArtifactsForARepository` action, detailing parameters to list workflow artifacts from a GitHub repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary representing the raw JSON response from the GitHub API. This typically includes a 'total_count' field indicating the total number of artifacts and an 'artifacts' array, where each element is an object detailing a workflow artifact (e.g., its ID, name, size, creation date, and download URL).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListArtifactsForARepositoryResponseWrapper"}
+schema info of GITHUB_LIST_ARTIFACTS_FOR_A_REPOSITORY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_ASSIGNED_ISSUES
+
+Here is the input and output schema info of Tool GITHUB_LIST_ASSIGNED_ISSUES of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"direction":{"type":"string","description":"Sort direction: `asc` (ascending) or `desc` (descending).","title":"Direction","default":"desc","enum":["asc","desc"],"examples":["asc","desc"]},"filter":{"type":"string","description":"Filter by user interaction: `assigned` (issues assigned to the user), `created` (issues created by the user), `mentioned` (issues where the user is mentioned), `subscribed` (issues the user is subscribed to for updates), `repos` (all issues in repositories the user has access to, e.g., owned, member), or `all` (all issues the user can see, regardless of direct participation).","title":"Filter","default":"assigned","enum":["assigned","created","mentioned","subscribed","repos","all"],"examples":["assigned","created","mentioned","subscribed","repos","all"]},"labels":{"type":"string","description":"Comma-separated label names; issues must match *all* specified labels (e.g., `bug,ui,@high`).","title":"Labels","examples":["bug,ui,@high","enhancement","documentation,help wanted"]},"page":{"type":"integer","description":"Page number for paginated results.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results per page (maximum 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"since":{"type":"string","description":"Include issues last updated at or after this ISO 8601 timestamp (e.g., `YYYY-MM-DDTHH:MM:SSZ`).","title":"Since","examples":["2023-01-15T10:00:00Z","2024-07-01T00:00:00+05:30"]},"sort":{"type":"string","description":"Sort field for issues: `created` (by creation date), `updated` (by last update date), or `comments` (by number of comments).","title":"Sort","default":"created","enum":["created","updated","comments"],"examples":["created","updated","comments"]},"state":{"type":"string","description":"Filter issues by state: `open`, `closed`, or `all`.","title":"State","default":"open","enum":["open","closed","all"],"examples":["open","closed","all"]}},"title":"ListUserAccountIssuesAssignedToTheAuthenticatedUserRequest","description":"Request schema for `ListUserAccountIssuesAssignedToTheAuthenticatedUser`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListUserAccountIssuesAssignedToTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_LIST_ASSIGNED_ISSUES ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_ASSIGNEES
+
+Here is the input and output schema info of Tool GITHUB_LIST_ASSIGNEES of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username of the account that owns the repository. This is not case-sensitive.","title":"Owner","examples":["octocat"]},"page":{"type":"integer","description":"Page number of results (1-indexed).","title":"Page","default":1,"examples":["1","2"]},"per_page":{"type":"integer","description":"Number of results per page. Max 100.","title":"Per Page","default":30,"examples":["30","100"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This is not case-sensitive.","title":"Repo","examples":["Spoon-Knife"]}},"required":["owner","repo"],"title":"ListAssigneesRequest","description":"Request schema to list assignees for a repository, including pagination."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"List of user objects, each detailing a user assignable to issues (e.g., login, ID, avatar_url).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListAssigneesResponseWrapper"}
+schema info of GITHUB_LIST_ASSIGNEES ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_ASSIGNMENTS_FOR_A_CLASSROOM
+
+Here is the input and output schema info of Tool GITHUB_LIST_ASSIGNMENTS_FOR_A_CLASSROOM of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"classroom_id":{"type":"integer","description":"The unique identifier of the classroom for which assignments are to be listed.","title":"Classroom Id","examples":["12345","67890"]},"page":{"type":"integer","description":"Specifies the page number of the results to retrieve. For more information, refer to GitHub's documentation on [Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"Specifies the number of results to return per page (maximum is 100). For more information, refer to GitHub's documentation on [Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).","title":"Per Page","default":30,"examples":["30","50","100"]}},"required":["classroom_id"],"title":"ListAssignmentsForAClassroomRequest","description":"Request schema for `ListAssignmentsForAClassroom`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"The JSON response from the API. For this 'List Assignments' endpoint, this is expected to be a list of assignment objects. Each object details an assignment within the classroom, including attributes like ID, title, type (e.g., individual, group), invite link, and status.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListAssignmentsForAClassroomResponseWrapper"}
+schema info of GITHUB_LIST_ASSIGNMENTS_FOR_A_CLASSROOM ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_AVAILABLE_MACHINE_TYPES_FOR_A_REPOSITORY
+
+Here is the input and output schema info of Tool GITHUB_LIST_AVAILABLE_MACHINE_TYPES_FOR_A_REPOSITORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"client_ip":{"type":"string","description":"An IP address used for auto-detecting the location if `location` is not specified. This is particularly useful when requests are proxied, to ensure location-based machine availability is accurate.","title":"Client Ip"},"location":{"type":"string","description":"The geographic location to check for available machine types. If not provided, the location may be inferred. Specifying a location can help find machines in a preferred region.","title":"Location","examples":["EastUs","WestUs","EuropeWest"]},"owner":{"type":"string","description":"The account owner of the repository. This is typically the username (for personal repositories) or the organization name (for organization-owned repositories). The name is not case sensitive.","title":"Owner","examples":["octocat","github"]},"ref":{"type":"string","description":"The Git reference (branch name, tag name, or commit SHA) to check for prebuild availability and devcontainer configuration restrictions. This ensures listed machine types are compatible with the specified repository version.","title":"Ref","examples":["main","develop","v1.0.0","07a006b914801f699926087f317a910f07610547"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. The name is not case sensitive.","title":"Repo","examples":["Spoon-Knife","docs"]}},"required":["owner","repo"],"title":"ListAvailableMachineTypesForARepositoryRequest","description":"Request schema for listing available machine types for GitHub Codespaces in a repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"The raw response from the API. Typically, this dictionary includes a 'total_count' of available machine types and a 'machines' array. Each element in the 'machines' array details a specific machine type, including its name, display name, CPU cores, memory, storage, and operating system.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListAvailableMachineTypesForARepositoryResponseWrapper"}
+schema info of GITHUB_LIST_AVAILABLE_MACHINE_TYPES_FOR_A_REPOSITORY ends.

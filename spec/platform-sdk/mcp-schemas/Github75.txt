@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_SET_USER_ACCESS_RESTRICTIONS
+
+Here is the input and output schema info of Tool GITHUB_SET_USER_ACCESS_RESTRICTIONS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"branch":{"type":"string","description":"Branch name for applying restrictions; wildcards are not permitted via this endpoint (use GraphQL API for wildcard support).","title":"Branch","examples":["main","develop"]},"owner":{"type":"string","description":"Username of the account owning the repository (case-insensitive).","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"Name of the repository, without the `.git` extension (case-insensitive).","title":"Repo","examples":["hello-world"]}},"required":["owner","repo","branch"],"title":"SetUserAccessRestrictionsRequest","description":"Defines the path parameters for setting user access restrictions."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response, typically including a list of user objects with push access to the protected branch after the update.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"SetUserAccessRestrictionsResponseWrapper"}
+schema info of GITHUB_SET_USER_ACCESS_RESTRICTIONS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_SET_WORKFLOW_EXTERNAL_ACCESS
+
+Here is the input and output schema info of Tool GITHUB_SET_WORKFLOW_EXTERNAL_ACCESS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"access_level":{"type":"string","description":"Specifies the level of access workflows outside this repository have to its actions and reusable workflows.\n- `none`: Actions and reusable workflows are accessible only from workflows within this repository.\n- `user`: Actions and reusable workflows can be shared with other private repositories owned by the same user.\n- `organization`: Actions and reusable workflows can be shared with other repositories within the same organization.","title":"Access Level","enum":["none","user","organization"],"examples":["none","user","organization"]},"owner":{"type":"string","description":"Owner's username or organization name. Not case-sensitive.","title":"Owner","examples":["octocat","github"]},"repo":{"type":"string","description":"Repository name, without `.git` extension. Not case-sensitive.","title":"Repo","examples":["hello-world","linguist"]}},"required":["owner","repo","access_level"],"title":"SetWorkflowAccessLevelRequest","description":"Parameters for setting a repository's workflow access level."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response data. Often empty for successful PUT updates (indicated by a 204 HTTP status).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"SetWorkflowAccessLevelResponseWrapper"}
+schema info of GITHUB_SET_WORKFLOW_EXTERNAL_ACCESS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_STAR_A_GIST
+
+Here is the input and output schema info of Tool GITHUB_STAR_A_GIST of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"gist_id":{"type":"string","description":"The unique identifier of the gist. This ID is the string of characters found at the end of a gist's URL.","title":"Gist Id","examples":["5555251","a1b2c3d4e5f6a7b8"]}},"required":["gist_id"],"title":"StarAGistRequest","description":"Request schema for `StarAGist`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response; typically empty as the GitHub API returns a 204 No Content status on successful starring.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"StarAGistResponseWrapper"}
+schema info of GITHUB_STAR_A_GIST ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_STAR_A_REPOSITORY_FOR_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_STAR_A_REPOSITORY_FOR_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username of the account that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat","torvalds"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["hello-world","linux"]}},"required":["owner","repo"],"title":"StarARepositoryForTheAuthenticatedUserRequest","description":"Request schema for starring a repository for the authenticated user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the API response data. Upon a successful star operation (HTTP 204 No Content), this field will typically be an empty dictionary or not populated.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"StarARepositoryForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_STAR_A_REPOSITORY_FOR_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_START_A_CODESPACE_FOR_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_START_A_CODESPACE_FOR_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"codespace_name":{"type":"string","description":"The unique name of the codespace to be started. This is the identifier for the codespace, often system-generated or user-defined.","title":"Codespace Name","examples":["monalisa-glorious-github-template-x79j7wg6q62w7r","my-dev-environment-123"]}},"required":["codespace_name"],"title":"StartACodespaceForTheAuthenticatedUserRequest","description":"Defines the request structure for starting a GitHub Codespace for the authenticated user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Detailed representation of the codespace after the start operation, typically including its name, current state (e.g., 'Starting'), owner, associated Git repository, and machine configuration.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"StartACodespaceForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_START_A_CODESPACE_FOR_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_STOP_A_CODESPACE_FOR_AN_ORGANIZATION_USER
+
+Here is the input and output schema info of Tool GITHUB_STOP_A_CODESPACE_FOR_AN_ORGANIZATION_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"codespace_name":{"type":"string","description":"The unique name of the Codespace to be stopped (e.g., 'monalisa-project-x-g4v969xp96x2rxx6').","title":"Codespace Name","examples":["octocat-literate-space-parakeet-7gwrpvq7g7pcx979","monalisa-project-x-g4v969xp96x2rxx6"]},"org":{"type":"string","description":"The unique identifier for the GitHub organization. This name is not case sensitive.","title":"Org","examples":["github","mercury-actions"]},"username":{"type":"string","description":"The GitHub username of the organization member whose Codespace is to be stopped.","title":"Username","examples":["octocat","monalisa"]}},"required":["org","username","codespace_name"],"title":"StopACodespaceForAnOrganizationUserRequest","description":"Request schema for `StopACodespaceForAnOrganizationUser`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"StopACodespaceForAnOrganizationUserResponseWrapper"}
+schema info of GITHUB_STOP_A_CODESPACE_FOR_AN_ORGANIZATION_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_STOP_A_CODESPACE_FOR_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_STOP_A_CODESPACE_FOR_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"codespace_name":{"type":"string","description":"The unique name of the Codespace to be stopped. This name is assigned by GitHub when the Codespace is created.","title":"Codespace Name","examples":["monalisa-glowing-space-zebra-j7pqx9g9h92x"]}},"required":["codespace_name"],"title":"StopACodespaceForTheAuthenticatedUserRequest","description":"Input to stop a specific GitHub Codespace for the authenticated user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"StopACodespaceForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_STOP_A_CODESPACE_FOR_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_SUBMIT_A_REVIEW_FOR_A_PULL_REQUEST
+
+Here is the input and output schema info of Tool GITHUB_SUBMIT_A_REVIEW_FOR_A_PULL_REQUEST of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"body":{"type":"string","description":"The main textual content of the review. Highly recommended for `COMMENT` events to provide context; can also supplement `APPROVE` or `REQUEST_CHANGES` actions.","title":"Body","examples":["This looks great!","Consider refactoring this part for clarity."]},"event":{"type":"string","description":"The review action: `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. An invalid/omitted event will result in an HTTP 422 error and set the review state to `PENDING`, requiring a subsequent valid submission.","title":"Event","enum":["APPROVE","REQUEST_CHANGES","COMMENT"],"examples":["APPROVE","REQUEST_CHANGES","COMMENT"]},"owner":{"type":"string","description":"The username of the account that owns the repository. Case-insensitive.","title":"Owner","examples":["octocat"]},"pull_number":{"type":"integer","description":"The number that uniquely identifies the pull request.","title":"Pull Number","examples":["1347"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. Case-insensitive.","title":"Repo","examples":["Hello-World"]},"review_id":{"type":"integer","description":"Identifier of the pending review to be submitted. Typically obtained when a review is first created or initiated.","title":"Review Id","examples":["80"]}},"required":["owner","repo","pull_number","review_id","event"],"title":"SubmitAReviewForAPullRequestRequest","description":"Parameters to submit a pending review for a pull request."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"SubmitAReviewForAPullRequestResponseWrapper"}
+schema info of GITHUB_SUBMIT_A_REVIEW_FOR_A_PULL_REQUEST ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_SYNC_A_FORK_BRANCH_WITH_THE_UPSTREAM_REPOSITORY
+
+Here is the input and output schema info of Tool GITHUB_SYNC_A_FORK_BRANCH_WITH_THE_UPSTREAM_REPOSITORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"branch":{"type":"string","description":"The name of the branch in the forked repository that should be updated to match the corresponding branch in the upstream repository.","title":"Branch","examples":["main","develop","feature-branch"]},"owner":{"type":"string","description":"The username or organization name of the account that owns the forked repository. This field is not case-sensitive.","title":"Owner","examples":["octocat","my-organization"]},"repo":{"type":"string","description":"The name of the forked repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["Spoon-Knife","my-forked-project"]}},"required":["owner","repo","branch"],"title":"SyncAForkBranchWithTheUpstreamRepositoryRequest","description":"Request schema for synchronizing a fork branch with its upstream repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Details of the synchronization, typically including a success message, merge type, and base branch, or an error if issues occur.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"SyncAForkBranchWithTheUpstreamRepositoryResponseWrapper"}
+schema info of GITHUB_SYNC_A_FORK_BRANCH_WITH_THE_UPSTREAM_REPOSITORY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_TEST_THE_PUSH_REPOSITORY_WEBHOOK
+
+Here is the input and output schema info of Tool GITHUB_TEST_THE_PUSH_REPOSITORY_WEBHOOK of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"hook_id":{"type":"integer","description":"Unique identifier of the hook, found in the `X-GitHub-Hook-ID` header of a webhook delivery or by listing repository webhooks.","title":"Hook Id","examples":["12345678"]},"owner":{"type":"string","description":"Account owner of the repository (not case-sensitive).","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"Name of the repository, without the `.git` extension (not case-sensitive).","title":"Repo","examples":["Spoon-Knife"]}},"required":["owner","repo","hook_id"],"title":"TestThePushRepositoryWebhookRequest","description":"Request schema for `TestThePushRepositoryWebhook`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response data; typically empty for this operation as a successful test results in a 204 No Content.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"TestThePushRepositoryWebhookResponseWrapper"}
+schema info of GITHUB_TEST_THE_PUSH_REPOSITORY_WEBHOOK ends.

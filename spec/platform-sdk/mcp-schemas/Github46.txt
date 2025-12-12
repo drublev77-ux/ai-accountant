@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_DISCUSSIONS
+
+Here is the input and output schema info of Tool GITHUB_LIST_DISCUSSIONS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"direction":{"type":"string","description":"Sort direction for results. Defaults to 'desc'.","title":"Direction","default":"desc","enum":["asc","desc"],"examples":["asc","desc"]},"org":{"type":"string","description":"The organization's name (case-insensitive).","title":"Org","examples":["octo-org","my-company"]},"page":{"type":"integer","description":"Page number for pagination. Defaults to 1.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results per page (max 100). Defaults to 30.","title":"Per Page","default":30,"examples":["30","50","100"]},"pinned":{"type":"string","description":"Filter for pinned discussions (e.g., '1' or 'true'). Omit to not filter by pinned status.","title":"Pinned","examples":["1","true"]},"team_slug":{"type":"string","description":"The team's slug (URL-friendly name).","title":"Team Slug","examples":["justice-league","engineering-team"]}},"required":["org","team_slug"],"title":"ListDiscussionsRequest","description":"Request to list discussions for a team in an organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListDiscussionsResponseWrapper"}
+schema info of GITHUB_LIST_DISCUSSIONS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_EMAIL_ADDRESSES_FOR_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_EMAIL_ADDRESSES_FOR_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Page number of the results to retrieve.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]}},"title":"ListEmailAddressesForTheAuthenticatedUserRequest","description":"Request schema for listing email addresses for the authenticated user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListEmailAddressesForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_LIST_EMAIL_ADDRESSES_FOR_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_ENVIRONMENT_CUSTOM_DEPLOYMENT_RULES
+
+Here is the input and output schema info of Tool GITHUB_LIST_ENVIRONMENT_CUSTOM_DEPLOYMENT_RULES of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"environment_name":{"type":"string","description":"Name of the environment, which must be URL-encoded (e.g., slashes `/` replaced with `%2F`).","title":"Environment Name","examples":["production","staging%2Fdev","feature%2Fnew-login"]},"owner":{"type":"string","description":"Account owner of the repository (user or organization); not case-sensitive.","title":"Owner","examples":["octocat","my-organization","user123"]},"page":{"type":"integer","description":"Page number of the results to fetch, starting from 1.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"Number of results per page, with a maximum of 100.","title":"Per Page","default":30,"examples":["30","50","100"]},"repo":{"type":"string","description":"Name of the repository, without the `.git` extension; not case-sensitive.","title":"Repo","examples":["my-app","web-platform","DataProcessor"]}},"required":["environment_name","repo","owner"],"title":"ListEnvironmentCustomDeploymentRulesRequest","description":"Request to list custom deployment protection rule integrations for a repository environment."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the API response. This typically includes `total_count` (the total number of custom deployment protection rule integrations available for the environment) and `integrations` (a list of integration objects, each detailing a custom deployment protection rule).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListEnvironmentCustomDeploymentRulesResponseWrapper"}
+schema info of GITHUB_LIST_ENVIRONMENT_CUSTOM_DEPLOYMENT_RULES ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_ENVIRONMENTS
+
+Here is the input and output schema info of Tool GITHUB_LIST_ENVIRONMENTS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username or organization name that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat","my-organization"]},"page":{"type":"integer","description":"The page number of the results to retrieve. Starts from 1.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"The number of results to return per page. Maximum value is 100.","title":"Per Page","default":30,"examples":["30","50","100"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["hello-world","my-action-repo"]}},"required":["owner","repo"],"title":"ListEnvironmentsRequest","description":"Request schema for retrieving all deployment environments for a repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the API response. It includes 'total_count' (the total number of environments) and 'environments' (a list of environment objects detailing each environment, including its name, ID, creation/update timestamps, and any protection rules).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListEnvironmentsResponseWrapper"}
+schema info of GITHUB_LIST_ENVIRONMENTS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_ENVIRONMENT_SECRETS
+
+Here is the input and output schema info of Tool GITHUB_LIST_ENVIRONMENT_SECRETS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"environment_name":{"type":"string","description":"Name of the environment; URL-encode if it contains special characters (e.g., '/' becomes '%2F').","title":"Environment Name","examples":["production","staging%2Fapp-server"]},"owner":{"type":"string","description":"The account owner's username (case-insensitive).","title":"Owner","examples":["octocat","my-organization"]},"page":{"type":"integer","description":"Page number for results (1-indexed).","title":"Page","default":1,"examples":["1","2"]},"per_page":{"type":"integer","description":"Number of secrets per page (maximum 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"repo":{"type":"string","description":"Repository name, without the `.git` extension (case-insensitive).","title":"Repo","examples":["hello-world","my-awesome-project"]}},"required":["owner","repo","environment_name"],"title":"ListEnvironmentSecretsRequest","description":"Request schema for `ListEnvironmentSecrets`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListEnvironmentSecretsResponseWrapper"}
+schema info of GITHUB_LIST_ENVIRONMENT_SECRETS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_ENVIRONMENT_VARIABLES
+
+Here is the input and output schema info of Tool GITHUB_LIST_ENVIRONMENT_VARIABLES of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"environment_name":{"type":"string","description":"The name of the environment. The name must be URL-encoded. For example, any slashes `/` in the name must be replaced with `%2F`. ","title":"Environment Name","examples":["production","development","staging%2Fv1"]},"owner":{"type":"string","description":"The account owner of the repository (e.g., a user or organization). This name is not case-sensitive.","title":"Owner","examples":["octocat","github"]},"page":{"type":"integer","description":"Page number of the results to fetch.","title":"Page","default":1,"examples":["1","2"]},"per_page":{"type":"integer","description":"Number of results per page (maximum 30).","title":"Per Page","default":10,"examples":["10","25","30"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case-sensitive. ","title":"Repo","examples":["hello-world","linguist"]}},"required":["owner","repo","environment_name"],"title":"ListEnvironmentVariablesRequest","description":"Request schema for listing environment variables in a repository's environment."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response, typically including 'total_count' and a 'variables' list with details for each environment variable (e.g., 'name', 'value').","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListEnvironmentVariablesResponseWrapper"}
+schema info of GITHUB_LIST_ENVIRONMENT_VARIABLES ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_EVENTS_FOR_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_EVENTS_FOR_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Page number of the results to fetch.","title":"Page","default":1},"per_page":{"type":"integer","description":"Number of events to return per page (maximum 100).","title":"Per Page","default":30},"username":{"type":"string","description":"The GitHub username for whom to list events. For example, 'octocat' or 'torvalds'.","title":"Username","examples":["octocat","torvalds"]}},"required":["username"],"title":"ListEventsForTheAuthenticatedUserRequest","description":"Request schema for listing events for a specified GitHub user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the list of events for the specified user.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListEventsForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_LIST_EVENTS_FOR_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_EVENTS_RECEIVED_BY_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_EVENTS_RECEIVED_BY_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Indicates the page number of the results to fetch. For more information, see GitHub's REST API pagination guide.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Specifies the number of events to return per page (maximum 100). For more information, see GitHub's REST API pagination guide.","title":"Per Page","default":30,"examples":["30","50","100"]},"username":{"type":"string","description":"The GitHub username for whom to fetch received events.","title":"Username","examples":["octocat","torvalds"]}},"required":["username"],"title":"ListEventsReceivedByTheAuthenticatedUserRequest","description":"Request schema for listing events received by a GitHub user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A list of event objects detailing activities (e.g., PushEvent, IssueCommentEvent), each including details like 'id', 'type', 'actor', 'repo', and a 'payload'.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListEventsReceivedByTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_LIST_EVENTS_RECEIVED_BY_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_FOLLOWERS_OF_A_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_FOLLOWERS_OF_A_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Page number for pagination of results (starts at 1).","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results per page (maximum 100). Used for pagination.","title":"Per Page","default":30,"examples":["30","50","100"]},"username":{"type":"string","description":"The GitHub username (e.g., 'octocat', 'torvalds').","title":"Username","examples":["octocat","torvalds"]}},"required":["username"],"title":"ListFollowersOfAUserRequest","description":"Request schema for listing the followers of a specified GitHub user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListFollowersOfAUserResponseWrapper"}
+schema info of GITHUB_LIST_FOLLOWERS_OF_A_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_FOLLOWERS_OF_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_FOLLOWERS_OF_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Page number of the results to fetch.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]}},"title":"ListFollowersOfTheAuthenticatedUserRequest","description":"Request model for listing followers of the authenticated user, allowing pagination."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A list of user objects, where each object contains follower information (e.g., `login`, `id`). Refer to GitHub API documentation for user object structure.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListFollowersOfTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_LIST_FOLLOWERS_OF_THE_AUTHENTICATED_USER ends.

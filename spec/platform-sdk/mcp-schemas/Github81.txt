@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_UPDATE_REPOSITORY_PREFERENCES_FOR_CHECK_SUITES
+
+Here is the input and output schema info of Tool GITHUB_UPDATE_REPOSITORY_PREFERENCES_FOR_CHECK_SUITES of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"auto_trigger_checks":{"type":"array","description":"A list of preference objects for configuring automatic CheckSuite creation for specific GitHub Apps. Each object in the list must contain an `app_id` (integer: the ID of the GitHub App) and a `setting` (boolean: `true` to enable automatic triggers for that app on code push, `false` to disable). If this field is omitted in the request, the repository's existing `auto_trigger_checks` preferences are not modified by this specific update action.","title":"Auto Trigger Checks","items":{"type":"object","properties":{},"additionalProperties":true},"examples":["[{\"app_id\": 12345, \"setting\": true}]","[{\"app_id\": 54321, \"setting\": false}, {\"app_id\": 98765, \"setting\": true}]"]},"owner":{"type":"string","description":"The account owner of the repository (e.g., username or organization). The name is not case sensitive.","title":"Owner","examples":["octocat","github"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. The name is not case sensitive.","title":"Repo","examples":["Hello-World","my-awesome-app"]}},"required":["owner","repo"],"title":"UpdateRepositoryPreferencesForCheckSuitesRequest","description":"Request schema for the `UpdateRepositoryPreferencesForCheckSuites` action. Specifies the repository and the check suite preferences to update."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the results of the update operation. This typically includes a `preferences` object with the updated `auto_trigger_checks` array, and a `repository` object detailing the repository for which preferences were set.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"UpdateRepositoryPreferencesForCheckSuitesResponseWrapper"}
+schema info of GITHUB_UPDATE_REPOSITORY_PREFERENCES_FOR_CHECK_SUITES ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_UPDATE_RESOURCE_ACCESS_WITH_TOKENS
+
+Here is the input and output schema info of Tool GITHUB_UPDATE_RESOURCE_ACCESS_WITH_TOKENS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"action":{"type":"string","description":"Operation to perform on the fine-grained personal access tokens, resulting in removal of their access.","title":"Action","enum":["revoke"],"examples":["revoke"]},"org":{"type":"string","description":"Organization name (case-insensitive).","title":"Org","examples":["my-github-org","AnotherOrg"]},"pat_ids":{"type":"array","description":"Fine-grained personal access token IDs for which access will be revoked.","title":"Pat Ids","items":{"type":"integer","properties":{}},"examples":["123","456","789"]}},"required":["org","action","pat_ids"],"title":"UpdateResourceAccessWithTokensRequest","description":"Request schema for `UpdateResourceAccessWithTokens`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response. May be empty on successful revocation (HTTP 204) or contain error diagnostics.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"UpdateResourceAccessWithTokensResponseWrapper"}
+schema info of GITHUB_UPDATE_RESOURCE_ACCESS_WITH_TOKENS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_UPDATE_STATUS_CHECK_PROTECTION
+
+Here is the input and output schema info of Tool GITHUB_UPDATE_STATUS_CHECK_PROTECTION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"branch":{"type":"string","description":"The name of the branch. Wildcard characters are not allowed. To use wildcard characters in branch names, please use the GraphQL API.","title":"Branch","examples":["main"]},"checks":{"type":"array","description":"A list of status checks to require in order to merge into this branch. Each check object should have a `context` (string) and an optional `app_id` (integer). Example: `[{\"context\": \"continuous-integration/jenkins\", \"app_id\": 12345}]`","title":"Checks","items":{"type":"object","properties":{},"additionalProperties":true},"examples":[[{"app_id":12345,"context":"continuous-integration/jenkins"}]]},"contexts":{"type":"array","description":"**Deprecated**: A list of status checks to require in order to merge into this branch. If any of these checks were recently set by a particular GitHub App, they will be required to come from that app in the future for the branch to merge. For more fine-grained control, use `checks` instead of `contexts`.","title":"Contexts","items":{"type":"string","properties":{}},"examples":[["ci-test","linter"]]},"owner":{"type":"string","description":"The account owner of the repository. This name is not case-sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case-sensitive.","title":"Repo","examples":["Hello-World"]},"strict":{"type":"boolean","description":"Specifies whether to require branches to be up to date before merging.","title":"Strict","examples":[true]}},"required":["owner","repo","branch"],"title":"UpdateStatusCheckProtectionRequest","description":"Request schema for `UpdateStatusCheckProtection`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"UpdateStatusCheckProtectionResponseWrapper"}
+schema info of GITHUB_UPDATE_STATUS_CHECK_PROTECTION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_UPDATE_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_UPDATE_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"bio":{"type":"string","description":"The new short biography for the user. Provide `null` to clear the existing bio.","title":"Bio","examples":["Full-stack developer and open-source enthusiast."]},"blog":{"type":"string","description":"The new URL for the user's blog. Provide `null` to clear the existing blog URL. For example, 'https://github.blog'.","title":"Blog","examples":["https://github.blog"]},"company":{"type":"string","description":"The new company affiliation for the user. Provide `null` to clear the existing company. For example, 'GitHub'.","title":"Company","examples":["GitHub"]},"email":{"type":"string","description":"The user's new publicly visible email address. This email must be verified on the user's GitHub account. If the provided email is not verified or not set to public, the update for this field might be ignored.","title":"Email","examples":["octocat@github.com"]},"hireable":{"type":"boolean","description":"Indicates whether the user is available for hire. Set to `true` if available, or `false` if not.","title":"Hireable","examples":["true","false"]},"location":{"type":"string","description":"The new geographical location of the user. Provide `null` to clear the existing location. For example, 'San Francisco'.","title":"Location","examples":["San Francisco"]},"name":{"type":"string","description":"The new full name for the user. For example, 'Mona Lisa Octocat'.","title":"Name","examples":["Mona Lisa Octocat"]},"twitter_username":{"type":"string","description":"The user's new Twitter username (without the leading '@'). Provide `null` to clear the existing Twitter username. For example, 'github'.","title":"Twitter Username","examples":["github"]}},"title":"UpdateTheAuthenticatedUserRequest","description":"Request schema for updating the authenticated user's profile information."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"UpdateTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_UPDATE_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_UPDATE_TOKEN_ORG_ACCESS
+
+Here is the input and output schema info of Tool GITHUB_UPDATE_TOKEN_ORG_ACCESS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"action":{"type":"string","description":"Specifies the 'revoke' action, which removes the token's access to the specified organization.","title":"Action","enum":["revoke"],"examples":["revoke"]},"org":{"type":"string","description":"The name of the GitHub organization. This name is not case-sensitive.","title":"Org"},"pat_id":{"type":"integer","description":"The unique identifier (ID) of the fine-grained personal access token.","title":"Pat Id"}},"required":["org","pat_id","action"],"title":"UpdateTokenOrgAccessRequest","description":"Request schema for revoking a fine-grained personal access token's access to an organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the response from the API. For a successful revocation (which typically returns an HTTP 204 No Content status), this dictionary is usually empty.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["successful"],"title":"UpdateTokenOrgAccessResponseWrapper"}
+schema info of GITHUB_UPDATE_TOKEN_ORG_ACCESS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_UPLOAD_AN_ANALYSIS_AS_SARIF_DATA
+
+Here is the input and output schema info of Tool GITHUB_UPLOAD_AN_ANALYSIS_AS_SARIF_DATA of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"checkout_uri":{"type":"string","description":"The base URI of the checkout directory as it appears in the SARIF file. This property is used to convert absolute file paths to relative paths, enabling alerts to be correctly mapped to their location in the repository.","title":"Checkout Uri","format":"uri","examples":["file:///github/workspace/"]},"commit_sha":{"type":"string","description":"The SHA of the commit to which the analysis you are uploading relates. Must be a 40-character Git SHA.","title":"Commit Sha","pattern":"^[0-9a-fA-F]+$","examples":["7638417db6d59f3c431d3e1f261cc637155684cd"]},"owner":{"type":"string","description":"The account owner of the repository. This is case-insensitive.","title":"Owner","examples":["octocat"]},"ref":{"type":"string","description":"The full Git reference for the analysis, formatted as `refs/heads/<branch name>`, `refs/tags/<tag>`, `refs/pull/<number>/merge`, or `refs/pull/<number>/head`.","title":"Ref","pattern":"^refs/(heads|tags|pull)/.*$","examples":["refs/heads/main","refs/tags/v1.0","refs/pull/123/merge"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This is case-insensitive.","title":"Repo","examples":["Hello-World"]},"sarif":{"type":"string","description":"A Base64 encoded string of a gzipped SARIF file. For more information, see '[SARIF support for code scanning](https://docs.github.com/code-security/secure-coding/sarif-support-for-code-scanning)'.","title":"Sarif","examples":["eJzVst... (actual gzipped and Base64 encoded SARIF content)"]},"started_at":{"type":"string","description":"The timestamp indicating when the analysis run began, in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.","title":"Started At","format":"date-time","examples":["2023-01-15T10:30:00Z"]},"tool_name":{"type":"string","description":"Name of the tool that generated the analysis. GitHub defaults this to \"API\" if omitted. A tool GUID in the SARIF can be used for filtering alerts.","title":"Tool Name","examples":["MyCustomScanner"]},"validate":{"type":"boolean","description":"Specifies whether the uploaded SARIF file should be validated against the code scanning specifications. This is useful for integrators to ensure their SARIF files are correctly processed and rendered by GitHub.","title":"Validate"}},"required":["owner","repo","commit_sha","ref","sarif"],"title":"UploadAnAnalysisAsSarifDataRequest","description":"Request schema for `UploadAnAnalysisAsSarifData`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the response from the GitHub API. Upon successful upload, this typically includes an `id` for the SARIF analysis, which can be used to track its status or retrieve details later. It may also include an `url` to access the analysis.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"UploadAnAnalysisAsSarifDataResponseWrapper"}
+schema info of GITHUB_UPLOAD_AN_ANALYSIS_AS_SARIF_DATA ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_USERS_GET_AUTHENTICATED
+
+Here is the input and output schema info of Tool GITHUB_USERS_GET_AUTHENTICATED of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{},"title":"GetTheAuthenticatedUserRequest","description":"Request schema for `GetTheAuthenticatedUser`."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Authenticated user's profile information. Common fields include 'login', 'id', 'name', 'email'; contents vary by user settings.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_USERS_GET_AUTHENTICATED ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_USERS_GET_BY_USERNAME
+
+Here is the input and output schema info of Tool GITHUB_USERS_GET_BY_USERNAME of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"username":{"type":"string","description":"The GitHub username (handle) of the user to retrieve. This is case-sensitive.","title":"Username","examples":["octocat","torvalds","defunkt"]}},"required":["username"],"title":"GetAUserRequest","description":"Request to retrieve a GitHub user's public profile information."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the public profile data for the specified GitHub user, as returned by the GitHub API. This includes various attributes such as login, ID, avatar URL, name, bio, location, public repository count, and more.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetAUserResponseWrapper"}
+schema info of GITHUB_USERS_GET_BY_USERNAME ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_USERS_GET_CONTEXT_FOR_USER
+
+Here is the input and output schema info of Tool GITHUB_USERS_GET_CONTEXT_FOR_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"subject_id":{"type":"string","description":"Entity ID for `subject_type` for more specific hovercard context; required if `subject_type` is also given.","title":"Subject Id","examples":["12345","org_id_abc"]},"subject_type":{"type":"string","description":"Entity type for more specific hovercard context (e.g., 'repository'); required if `subject_id` is also given.","title":"Subject Type","enum":["organization","repository","issue","pull_request"],"examples":["organization","repository","issue","pull_request"]},"username":{"type":"string","description":"GitHub username for whom to retrieve hovercard data.","title":"Username","examples":["octocat","torvalds"]}},"required":["username"],"title":"GetContextualInformationForAUserRequest","description":"Request to fetch contextual hovercard information for a GitHub user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetContextualInformationForAUserResponseWrapper"}
+schema info of GITHUB_USERS_GET_CONTEXT_FOR_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_USERS_LIST_FOLLOWERS_FOR_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_USERS_LIST_FOLLOWERS_FOR_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Page number of the results to fetch.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]}},"title":"ListFollowersOfTheAuthenticatedUserRequest","description":"Request model for listing followers of the authenticated user, allowing pagination."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A list of user objects, where each object contains follower information (e.g., `login`, `id`). Refer to GitHub API documentation for user object structure.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListFollowersOfTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_USERS_LIST_FOLLOWERS_FOR_AUTHENTICATED_USER ends.

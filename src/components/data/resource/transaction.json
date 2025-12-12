@@ -1,0 +1,176 @@
+{
+  "id": "102019ae94a70957797955090c3e0b654c6",
+  "version": "102019b13f7f968713f9fab43b64e02a910",
+  "schema": {
+    "name": "transaction",
+    "description": "Records individual financial transactions including income and expenses.",
+    "fields": [
+      {
+        "name": "id",
+        "description": "Unique identifier for the transaction.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System identifier"
+        }
+      },
+      {
+        "name": "data_creator",
+        "description": "id of the user who creates the record",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Audit trail"
+        }
+      },
+      {
+        "name": "data_updater",
+        "description": "id of the user who updates the record",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Audit trail"
+        }
+      },
+      {
+        "name": "create_time",
+        "description": "create time in timestamp unix",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System metadata"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "update_time",
+        "description": "update time in timestamp unix",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System metadata"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "user_id",
+        "description": "ID of the user to whom this transaction belongs.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Personal financial data association"
+        }
+      },
+      {
+        "name": "type",
+        "description": "The type of transaction (e.g., Income or Expense).",
+        "type": 100,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Financial classification"
+        },
+        "enumeration": [
+          {
+            "value": "Unspecified"
+          },
+          {
+            "number": 1,
+            "value": "Income"
+          },
+          {
+            "number": 2,
+            "value": "Expense"
+          }
+        ]
+      },
+      {
+        "name": "category",
+        "description": "Category of the transaction (e.g., Groceries, Salary, Rent).",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Financial behavior detail"
+        }
+      },
+      {
+        "name": "amount",
+        "description": "Monetary value of the transaction.",
+        "type": 2,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Financial value"
+        },
+        "numeric": "float"
+      },
+      {
+        "name": "description",
+        "description": "Optional details or notes about the transaction.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "User generated content might contain sensitive info"
+        },
+        "nullable": true
+      },
+      {
+        "name": "date",
+        "description": "The date when the transaction occurred.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Financial timing"
+        },
+        "format": "timestamp"
+      }
+    ],
+    "indexes": [
+      {
+        "fields": [
+          "id"
+        ],
+        "unique": true,
+        "primary": true,
+        "order": false
+      },
+      {
+        "fields": [
+          "data_creator"
+        ],
+        "order": false
+      },
+      {
+        "fields": [
+          "data_updater"
+        ],
+        "order": false
+      },
+      {
+        "fields": [
+          "date",
+          "user_id"
+        ],
+        "order": true
+      },
+      {
+        "fields": [
+          "category",
+          "user_id"
+        ],
+        "order": false
+      }
+    ]
+  },
+  "task": {
+    "id": "693c684af9f9f13be389bb2f",
+    "root": "69317a33ad50e9e8016841da",
+    "project": "69317a33ad50e9e8016841d9",
+    "user": "6841d390-b021-7026-f508-2c1990f0e948"
+  },
+  "namespace": {
+    "id": "01987547fc6c72ecb453bd2736bd4ea0",
+    "tenant": 2,
+    "name": "global-1",
+    "default": true
+  },
+  "revision": 1
+}

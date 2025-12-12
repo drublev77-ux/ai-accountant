@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_ENCRYPT_AND_UPDATE_DEV_SECRET
+
+Here is the input and output schema info of Tool GITHUB_ENCRYPT_AND_UPDATE_DEV_SECRET of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"encrypted_value":{"type":"string","description":"Value for your secret, encrypted using the public key retrieved from the GitHub API's 'Get a repository public key for Codespaces' endpoint (`GET /repos/{owner}/{repo}/codespaces/secrets/public-key`).","title":"Encrypted Value","examples":["c2VjcmV0X2VuY3J5cHRlZF92YWx1ZQ=="]},"key_id":{"type":"string","description":"ID of the public key (retrieved from the GitHub API's 'Get a repository public key for Codespaces' endpoint: `GET /repos/{owner}/{repo}/codespaces/secrets/public-key`) used to encrypt the secret's value.","title":"Key Id","examples":["1234567890abcdef"]},"owner":{"type":"string","description":"The account owner of the repository. This name is not case-sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository without the `.git` extension. This name is not case-sensitive.","title":"Repo","examples":["hello-world"]},"secret_name":{"type":"string","description":"The name of the development environment secret.","title":"Secret Name","examples":["MY_API_TOKEN"]}},"required":["owner","repo","secret_name"],"title":"EncryptAndUpdateDevSecretRequest","description":"Request schema for creating or updating a development environment secret with an encrypted value."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary that is typically empty upon successful creation (HTTP 201) or update (HTTP 204) of the secret. In some cases, it might contain metadata about the secret.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"EncryptAndUpdateDevSecretResponseWrapper"}
+schema info of GITHUB_ENCRYPT_AND_UPDATE_DEV_SECRET ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_ENCRYPT_ORG_DEV_ENV_SECRET
+
+Here is the input and output schema info of Tool GITHUB_ENCRYPT_ORG_DEV_ENV_SECRET of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"encrypted_value":{"type":"string","description":"Encrypted secret value, using the public key from 'Get an organization public key'. Required unless only updating visibility.","title":"Encrypted Value"},"key_id":{"type":"string","description":"ID of the public key used for encryption (from 'Get an organization public key').","title":"Key Id"},"org":{"type":"string","description":"The GitHub organization name (case-insensitive).","title":"Org","examples":["my-organization"]},"secret_name":{"type":"string","description":"Name of the secret to create or update.","title":"Secret Name","examples":["MY_API_KEY"]},"selected_repository_ids":{"type":"array","description":"Repository IDs that can access the secret; required if visibility is 'selected'.","title":"Selected Repository Ids","items":{"type":"integer","properties":{}},"examples":["12345","67890"]},"visibility":{"type":"string","description":"Visibility of the secret. 'selected' requires `selected_repository_ids`.","title":"Visibility","enum":["all","private","selected"]}},"required":["org","secret_name","visibility"],"title":"EncryptOrgDevEnvSecretRequest","description":"Request schema for creating or updating an organization's development environment secret with an encrypted value."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"An empty object if the secret was successfully created or updated (e.g., HTTP 201 Created or 204 No Content). In case of an error, this may contain error details.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["successful"],"title":"EncryptOrgDevEnvSecretResponseWrapper"}
+schema info of GITHUB_ENCRYPT_ORG_DEV_ENV_SECRET ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_ENCRYPT_ORG_SECRETS_USING_PUBLIC_KEY
+
+Here is the input and output schema info of Tool GITHUB_ENCRYPT_ORG_SECRETS_USING_PUBLIC_KEY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the GitHub organization. This field is not case-sensitive.","title":"Org","examples":["MyAwesomeOrg","github"]}},"required":["org"],"title":"EncryptOrgSecretsUsingPublicKeyRequest","description":"Request schema for retrieving an organization's public key for encrypting Codespaces secrets."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the public key information, typically including `key_id` (the public key identifier) and `key` (the Base64-encoded public key value).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"EncryptOrgSecretsUsingPublicKeyResponseWrapper"}
+schema info of GITHUB_ENCRYPT_ORG_SECRETS_USING_PUBLIC_KEY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_EXPORT_A_CODESPACE_FOR_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_EXPORT_A_CODESPACE_FOR_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"codespace_name":{"type":"string","description":"Unique name of the codespace to be exported.","title":"Codespace Name","examples":["monalisa-octo-cat-g45w7p9p7vh8qrq"]}},"required":["codespace_name"],"title":"ExportACodespaceForTheAuthenticatedUserRequest","description":"Request schema for `ExportACodespaceForTheAuthenticatedUser`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Details of the codespace export, typically including `id`, `state`, `export_url` (URL to download archive if successful, valid for a limited time), `html_url` for status, and other export/codespace metadata.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ExportACodespaceForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_EXPORT_A_CODESPACE_FOR_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_EXPORT_A_SOFTWARE_BILL_OF_MATERIALS_SBOM_FOR_A_REPOSITORY
+
+Here is the input and output schema info of Tool GITHUB_EXPORT_A_SOFTWARE_BILL_OF_MATERIALS_SBOM_FOR_A_REPOSITORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username or organization name that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat","my-organization"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive. ","title":"Repo","examples":["hello-world","my-awesome-project"]}},"required":["owner","repo"],"title":"ExportASoftwareBillOfMaterialsSbomForARepositoryRequest","description":"Request schema for `ExportASoftwareBillOfMaterialsSbomForARepository`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary representing the software bill of materials (SBOM) in SPDX JSON format.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ExportASoftwareBillOfMaterialsSbomForARepositoryResponseWrapper"}
+schema info of GITHUB_EXPORT_A_SOFTWARE_BILL_OF_MATERIALS_SBOM_FOR_A_REPOSITORY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_FETCH_PUBLIC_KEY_FOR_SECRET_ENCRYPTION
+
+Here is the input and output schema info of Tool GITHUB_FETCH_PUBLIC_KEY_FOR_SECRET_ENCRYPTION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the GitHub organization. This field is not case-sensitive.","title":"Org","examples":["github","microsoft"]}},"required":["org"],"title":"FetchPublicKeyForSecretEncryptionRequest","description":"Request model for fetching the public key used to encrypt Dependabot secrets for an organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the public key details. It includes `key_id` (the unique identifier for the public key) and `key` (the Base64-encoded public key value).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"FetchPublicKeyForSecretEncryptionResponseWrapper"}
+schema info of GITHUB_FETCH_PUBLIC_KEY_FOR_SECRET_ENCRYPTION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_FIND_PULL_REQUESTS
+
+Here is the input and output schema info of Tool GITHUB_FIND_PULL_REQUESTS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"assignee":{"type":"string","description":"Filter by PR assignee username. Use '@me' for current user.","title":"Assignee","examples":["octocat","@me"]},"author":{"type":"string","description":"Filter by PR author username.","title":"Author","examples":["octocat","defunkt"]},"base_branch":{"type":"string","description":"Filter by base branch name.","title":"Base Branch","examples":["main","master","develop","staging"]},"created_since":{"type":"string","description":"Filter PRs created after this date (ISO 8601 format).","title":"Created Since","examples":["2024-01-01","2024-01-01T00:00:00Z"]},"for_authenticated_user":{"type":"boolean","description":"Search in repositories accessible to authenticated user (including private).","title":"For Authenticated User","default":false,"examples":[true,false]},"head_branch":{"type":"string","description":"Filter by head branch name.","title":"Head Branch","examples":["feature/auth","bugfix/login","hotfix/critical"]},"is_merged":{"type":"boolean","description":"Filter by merge status. True for merged PRs, False for unmerged, None for all.","title":"Is Merged","examples":[true,false]},"label":{"type":"string","description":"Filter by label name.","title":"Label","examples":["bug","enhancement","documentation","good first issue"]},"language":{"type":"string","description":"Filter by programming language.","title":"Language","examples":["python","javascript","typescript","go"]},"mentions":{"type":"string","description":"Filter by username mentioned in PR.","title":"Mentions","examples":["octocat","@me"]},"order":{"type":"string","description":"Sort order (ascending or descending).","title":"Order","default":"desc","enum":["desc","asc"],"examples":["desc","asc"]},"owner":{"type":"string","description":"Filter by repository owner (user or organization).","title":"Owner","examples":["facebook","microsoft","octocat"]},"page":{"type":"integer","description":"Page number of results to fetch.","title":"Page","default":1,"examples":[1,2,3]},"per_page":{"type":"integer","description":"Number of results per page (maximum 100).","title":"Per Page","default":20,"examples":[10,20,50]},"query":{"type":"string","description":"Search query for PR title, description, or commit messages.","title":"Query","examples":["bug fix","feature auth","refactor api","fix typescript"]},"raw_response":{"type":"boolean","description":"Return full API response if true, optimized response for AI agents if false.","title":"Raw Response","default":false,"examples":[true,false]},"repo":{"type":"string","description":"Filter by specific repository (owner/repo format).","title":"Repo","examples":["facebook/react","microsoft/vscode","octocat/Hello-World"]},"sort":{"type":"string","description":"Field to sort results by.","title":"Sort","default":"updated","enum":["comments","reactions","interactions","created","updated"],"examples":["updated","created","comments"]},"state":{"type":"string","description":"Filter by PR state: 'open', 'closed', or 'all'.","title":"State","default":"open","examples":["open","closed","all"]},"updated_since":{"type":"string","description":"Filter PRs updated after this date (ISO 8601 format).","title":"Updated Since","examples":["2024-01-01","2024-01-01T00:00:00Z"]}},"required":["query"],"title":"FindPullRequestsRequest","description":"Request schema for finding pull requests with AI-friendly parameters."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Search results with pull request information optimized for AI agents.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"FindPullRequestsResponseWrapper"}
+schema info of GITHUB_FIND_PULL_REQUESTS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_FIND_REPOSITORIES
+
+Here is the input and output schema info of Tool GITHUB_FIND_REPOSITORIES of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"archived":{"type":"boolean","description":"Filter by archived status. None means include both.","title":"Archived","examples":[true,false]},"for_authenticated_user":{"type":"boolean","description":"Search only in repositories accessible to the authenticated user (including private repos).","title":"For Authenticated User","default":false,"examples":[true,false]},"fork_filter":{"type":"string","description":"How to handle forks: 'include' (include forks), 'exclude' (exclude forks), 'only' (only forks).","title":"Fork Filter","default":"exclude","examples":["include","exclude","only"]},"language":{"type":"string","description":"Filter by programming language.","title":"Language","examples":["python","javascript","typescript","go"]},"max_stars":{"type":"integer","description":"Maximum number of stars the repository should have.","title":"Max Stars","examples":[50,500,5000]},"min_forks":{"type":"integer","description":"Minimum number of forks the repository should have.","title":"Min Forks","examples":[5,50,100]},"min_stars":{"type":"integer","description":"Minimum number of stars the repository should have.","title":"Min Stars","examples":[10,100,1000]},"order":{"type":"string","description":"Sort order (ascending or descending).","title":"Order","default":"desc","enum":["desc","asc"],"examples":["desc","asc"]},"owner":{"type":"string","description":"Filter by specific user or organization.","title":"Owner","examples":["facebook","microsoft","torvalds"]},"page":{"type":"integer","description":"Page number of results to fetch.","title":"Page","default":1,"examples":[1,2,3]},"per_page":{"type":"integer","description":"Number of results per page (maximum 100).","title":"Per Page","default":20,"examples":[10,20,50]},"query":{"type":"string","description":"Search query for repository name, description, or README content.","title":"Query","examples":["react typescript","machine learning python","web scraper"]},"raw_response":{"type":"boolean","description":"Return full API response if true, optimized response for AI agents if false.","title":"Raw Response","default":false,"examples":[true,false]},"sort":{"type":"string","description":"Field to sort results by.","title":"Sort","default":"stars","enum":["stars","forks","help-wanted-issues","updated"],"examples":["stars","forks","updated"]},"topic":{"type":"string","description":"Filter by repository topic/tag.","title":"Topic","examples":["web","api","machine-learning","frontend"]}},"required":["query"],"title":"FindRepositoriesRequest","description":"Request schema for finding repositories."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Search results with repository information optimized for AI agents.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"FindRepositoriesResponseWrapper"}
+schema info of GITHUB_FIND_REPOSITORIES ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_FOLLOW_A_USER
+
+Here is the input and output schema info of Tool GITHUB_FOLLOW_A_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"username":{"type":"string","description":"The GitHub username (handle) of the user to be followed by the authenticated user.","title":"Username","examples":["octocat","torvalds"]}},"required":["username"],"title":"FollowAUserRequest","description":"Specifies the GitHub user to follow."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary representing the server's response. Upon successful execution (HTTP 204 No Content), this dictionary is typically empty as GitHub does not return a body for this operation.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"FollowAUserResponseWrapper"}
+schema info of GITHUB_FOLLOW_A_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_FORCE_CANCEL_A_WORKFLOW_RUN
+
+Here is the input and output schema info of Tool GITHUB_FORCE_CANCEL_A_WORKFLOW_RUN of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The account owner of the repository. The name is not case sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository without the `.git` extension. The name is not case sensitive. ","title":"Repo","examples":["Hello-World"]},"run_id":{"type":"integer","description":"The unique identifier of the workflow run.","title":"Run Id","examples":[123456789]}},"required":["owner","repo","run_id"],"title":"ForceCancelAWorkflowRunRequest","description":"Request schema for `ForceCancelAWorkflowRun`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"The response body from the GitHub API, typically an empty object on success.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ForceCancelAWorkflowRunResponseWrapper"}
+schema info of GITHUB_FORCE_CANCEL_A_WORKFLOW_RUN ends.

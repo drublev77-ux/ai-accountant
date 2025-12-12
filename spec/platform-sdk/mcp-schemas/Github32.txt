@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_A_REFERENCE
+
+Here is the input and output schema info of Tool GITHUB_GET_A_REFERENCE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username or organization name that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat","google"]},"ref":{"type":"string","description":"The Git reference to retrieve. This can be a branch name (e.g., `main`), a tag name (e.g., `v1.0.0`), or a fully qualified reference (e.g., `heads/main`, `tags/v1.0.0`). For more information, see \"[Git References](https://git-scm.com/book/en/v2/Git-Internals-Git-References)\" in the Git documentation.","title":"Ref","examples":["main","tags/v1.2.3","heads/feature-branch","refs/pull/123/head"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["Hello-World","mercury"]}},"required":["owner","repo","ref"],"title":"GetAReferenceRequest","description":"Request schema for `GetAReference`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Details of the Git reference: its `ref` string, `node_id`, API `url`, and the referenced `object` (e.g., commit, tag) specifying its `type`, `sha` (SHA-1 hash), and object API `url`.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetAReferenceResponseWrapper"}
+schema info of GITHUB_GET_A_REFERENCE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_A_RELEASE
+
+Here is the input and output schema info of Tool GITHUB_GET_A_RELEASE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username of the account that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat","my-organization"]},"release_id":{"type":"integer","description":"The unique numerical identifier for the release.","title":"Release Id","examples":["1","12345"]},"repo":{"type":"string","description":"The name of the repository, without the '.git' extension. This field is not case-sensitive.","title":"Repo","examples":["Hello-World","my-awesome-project"]}},"required":["owner","repo","release_id"],"title":"GetAReleaseRequest","description":"Request schema for retrieving a specific release from a GitHub repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the full data of the release, including its assets, author, tag name, and other details.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetAReleaseResponseWrapper"}
+schema info of GITHUB_GET_A_RELEASE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_A_RELEASE_ASSET
+
+Here is the input and output schema info of Tool GITHUB_GET_A_RELEASE_ASSET of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"asset_id":{"type":"integer","description":"The unique numeric identifier of the release asset.","title":"Asset Id","examples":["1234567"]},"owner":{"type":"string","description":"The account owner of the repository (GitHub username or organization name). This name is not case sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case sensitive.","title":"Repo","examples":["Spoon-Knife"]}},"required":["owner","repo","asset_id"],"title":"GetAReleaseAssetRequest","description":"Request schema for `GetAReleaseAsset`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the metadata of the release asset. Key fields typically include: `url` (API URL for the asset), `id` (asset's unique ID), `node_id` (GraphQL node ID), `name` (filename of the asset), `label` (optional display name), `uploader` (object with details of the user who uploaded the asset), `content_type` (MIME type of the asset), `state` (e.g., 'uploaded'), `size` (size in bytes), `download_count`, `created_at`, `updated_at`, and `browser_download_url` (the direct URL to download the asset's binary content).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetAReleaseAssetResponseWrapper"}
+schema info of GITHUB_GET_A_RELEASE_ASSET ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_A_RELEASE_BY_TAG_NAME
+
+Here is the input and output schema info of Tool GITHUB_GET_A_RELEASE_BY_TAG_NAME of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"Account owner of the repository (not case sensitive).","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"Name of the repository, without the `.git` extension (not case sensitive).","title":"Repo","examples":["Hello-World"]},"tag":{"type":"string","description":"Tag identifying the release to fetch.","title":"Tag","examples":["v1.0.0"]}},"required":["owner","repo","tag"],"title":"GetAReleaseByTagNameRequest","description":"Request schema for `GetAReleaseByTagName`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetAReleaseByTagNameResponseWrapper"}
+schema info of GITHUB_GET_A_RELEASE_BY_TAG_NAME ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_A_REPOSITORY
+
+Here is the input and output schema info of Tool GITHUB_GET_A_REPOSITORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username of the account that owns the repository. This field is case-insensitive.","title":"Owner","examples":["octocat","kubernetes"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is case-insensitive.","title":"Repo","examples":["Hello-World","kubernetes"]}},"required":["owner","repo"],"title":"GetARepositoryRequest","description":"Request schema for retrieving detailed information about a specific GitHub repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetARepositoryResponseWrapper"}
+schema info of GITHUB_GET_A_REPOSITORY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_A_REPOSITORY_PUBLIC_KEY
+
+Here is the input and output schema info of Tool GITHUB_GET_A_REPOSITORY_PUBLIC_KEY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"Account owner of the repository (case-insensitive).","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"Name of the repository without the `.git` extension (case-insensitive).","title":"Repo","examples":["hello-world"]}},"required":["owner","repo"],"title":"GetARepositoryPublicKeyRequest","description":"Request schema for `GetARepositoryPublicKey`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetARepositoryPublicKeyResponseWrapper"}
+schema info of GITHUB_GET_A_REPOSITORY_PUBLIC_KEY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_A_REPOSITORY_README
+
+Here is the input and output schema info of Tool GITHUB_GET_A_REPOSITORY_README of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The GitHub account owner of the repository. This name is not case-sensitive.","title":"Owner","examples":["octocat","my-organization"]},"ref":{"type":"string","description":"The specific git reference (branch name, tag name, or commit SHA) to retrieve the README from. If omitted, the repository's default branch is used.","title":"Ref","examples":["main","develop","v2.1.0","c23a31f32747a8e2a13f8c11699a5e4e9148f2be"]},"repo":{"type":"string","description":"The name of the repository, excluding the `.git` extension. This name is not case-sensitive.","title":"Repo","examples":["Hello-World","my-project-name"]}},"required":["owner","repo"],"title":"GetARepositoryReadmeRequest","description":"Request schema for `GetARepositoryReadme`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Details of the repository's README, typically including `name`, `path`, `sha`, `size`, `url`, `html_url`, `git_url`, `download_url`, `type`, Base64-encoded `content`, and `encoding`.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetARepositoryReadmeResponseWrapper"}
+schema info of GITHUB_GET_A_REPOSITORY_README ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_A_REPOSITORY_README_FOR_A_DIRECTORY
+
+Here is the input and output schema info of Tool GITHUB_GET_A_REPOSITORY_README_FOR_A_DIRECTORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"dir":{"type":"string","description":"Path to the directory containing the README file.","title":"Dir","examples":["docs","src/my_package"]},"owner":{"type":"string","description":"Username of the account owning the repository (not case sensitive).","title":"Owner","examples":["octocat"]},"ref":{"type":"string","description":"Commit, branch, or tag name; defaults to the repository's default branch if not provided.","title":"Ref","examples":["main","v1.0.0","my-feature-branch"]},"repo":{"type":"string","description":"Name of the repository, without the `.git` extension (not case sensitive).","title":"Repo","examples":["Hello-World"]}},"required":["owner","repo","dir"],"title":"GetARepositoryReadmeForADirectoryRequest","description":"Request schema for `GetARepositoryReadmeForADirectory`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Dictionary with the README file's content (Base64 encoded) and metadata (e.g., name, path, sha, size, type, encoding, URLs).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetARepositoryReadmeForADirectoryResponseWrapper"}
+schema info of GITHUB_GET_A_REPOSITORY_README_FOR_A_DIRECTORY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_A_REPOSITORY_RULESET
+
+Here is the input and output schema info of Tool GITHUB_GET_A_REPOSITORY_RULESET of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"includes_parents":{"type":"boolean","description":"If true, also returns rulesets configured at higher levels (e.g., organization) that apply to this repository.","title":"Includes Parents","default":true},"owner":{"type":"string","description":"Account owner of the repository (username or organization); case-insensitive.","title":"Owner","examples":["octocat","github"]},"repo":{"type":"string","description":"Repository name, excluding `.git` extension; case-insensitive.","title":"Repo","examples":["Spoon-Knife","docs"]},"ruleset_id":{"type":"integer","description":"Unique identifier of the ruleset.","title":"Ruleset Id","examples":[12345,54321]}},"required":["owner","repo","ruleset_id"],"title":"GetARepositoryRulesetRequest","description":"Request to retrieve a specific ruleset for a GitHub repository, which governs interactions with its branches and tags."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Details of the retrieved repository ruleset, including its configuration and rules.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetARepositoryRulesetResponseWrapper"}
+schema info of GITHUB_GET_A_REPOSITORY_RULESET ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_A_REPOSITORY_RULE_SUITE
+
+Here is the input and output schema info of Tool GITHUB_GET_A_REPOSITORY_RULE_SUITE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username of the account or the name of the organization that owns the repository. This name is not case-sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, excluding the `.git` extension. This name is not case-sensitive.","title":"Repo","examples":["hello-world"]},"rule_suite_id":{"type":"integer","description":"The unique identifier of the rule suite. To obtain this ID, you can list rule suites for the repository (e.g., via `GET /repos/{owner}/{repo}/rulesets/rule-suites`) or organization (e.g., via `GET /orgs/{org}/rulesets/rule-suites`).","title":"Rule Suite Id"}},"required":["owner","repo","rule_suite_id"],"title":"GetARepositoryRuleSuiteRequest","description":"Request schema for `GetARepositoryRuleSuite`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Comprehensive details of the repository rule suite, typically including `id`, `actor_name`, `before_sha`, `after_sha`, `ref`, `repository_id`, `result` (e.g., 'pass', 'fail'), and an array of `rule_evaluations` detailing the outcome of each rule.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetARepositoryRuleSuiteResponseWrapper"}
+schema info of GITHUB_GET_A_REPOSITORY_RULE_SUITE ends.

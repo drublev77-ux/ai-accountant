@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_MANAGE_CUSTOM_PROPERTIES_FOR_ORG_REPOS
+
+Here is the input and output schema info of Tool GITHUB_MANAGE_CUSTOM_PROPERTIES_FOR_ORG_REPOS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The organization's name (case-insensitive).","title":"Org","examples":["github"]},"properties":{"type":"array","description":"Custom properties to set. Each must have `property_name` (predefined for the organization) and `value`. Example: `[{\"property_name\": \"project-status\", \"value\": \"active\"}]`.","title":"Properties","items":{"type":"object","properties":{},"additionalProperties":true},"examples":["[{\"property_name\": \"project-status\", \"value\": \"active\"}, {\"property_name\": \"data-sensitivity\", \"value\": \"confidential\"}]"]},"repository_names":{"type":"array","description":"Repository names (max 30) to apply the custom property values to.","title":"Repository Names","items":{"type":"string","properties":{}},"examples":[["my-repo1","another-repo"]]}},"required":["org","repository_names","properties"],"title":"ManageCustomPropertiesForOrgReposRequest","description":"Request schema for `ManageCustomPropertiesForOrgRepos`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ManageCustomPropertiesForOrgReposResponseWrapper"}
+schema info of GITHUB_MANAGE_CUSTOM_PROPERTIES_FOR_ORG_REPOS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_MANAGE_SECRETS_IN_SELECTED_REPOSITORIES_WITH_PROPER_ACCESS
+
+Here is the input and output schema info of Tool GITHUB_MANAGE_SECRETS_IN_SELECTED_REPOSITORIES_WITH_PROPER_ACCESS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the GitHub organization. This name is not case-sensitive.","title":"Org","examples":["octo-org","my-company"]},"page":{"type":"integer","description":"Page number of the results to fetch. Default is 1. See '[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)' for more details.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results to return per page (maximum 100). Default is 30. See '[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)' for more details.","title":"Per Page","default":30,"examples":["30","50","100"]},"secret_name":{"type":"string","description":"The name of the organization secret for which to list accessible repositories.","title":"Secret Name","examples":["MY_API_KEY","NPM_TOKEN"]}},"required":["org","secret_name"],"title":"ManageSecretsInSelectedRepositoriesWithProperAccessRequest","description":"Request schema for `ManageSecretsInSelectedRepositoriesWithProperAccess`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ManageSecretsInSelectedRepositoriesWithProperAccessResponseWrapper"}
+schema info of GITHUB_MANAGE_SECRETS_IN_SELECTED_REPOSITORIES_WITH_PROPER_ACCESS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_MAP_A_COMMIT_AUTHOR
+
+Here is the input and output schema info of Tool GITHUB_MAP_A_COMMIT_AUTHOR of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"author_id":{"type":"integer","description":"Numeric ID of the author to map, identified during a repository import; this ID is specific to the import process.","title":"Author Id","examples":["101","102"]},"email":{"type":"string","description":"New Git author email for the `author_id`. At least one of `email` or `name` must be provided.","title":"Email","examples":["new.author@example.com","updated.user@email.com"]},"name":{"type":"string","description":"New Git author name for the `author_id`. At least one of `email` or `name` must be provided.","title":"Name","examples":["New Author Name","Updated User FullName"]},"owner":{"type":"string","description":"Username of the account owning the repository (not case-sensitive).","title":"Owner","examples":["octocat","github-linguist"]},"repo":{"type":"string","description":"Name of the repository, without the `.git` extension (not case-sensitive).","title":"Repo","examples":["hello-world","linguist"]}},"required":["owner","repo","author_id"],"title":"MapACommitAuthorRequest","description":"Request to update author information for a commit author in a repository import."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Details of the updated commit author mapping, including ID, email, name, and relevant URLs.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"MapACommitAuthorResponseWrapper"}
+schema info of GITHUB_MAP_A_COMMIT_AUTHOR ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_MARK_A_THREAD_AS_DONE
+
+Here is the input and output schema info of Tool GITHUB_MARK_A_THREAD_AS_DONE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"thread_id":{"type":"integer","description":"ID of the notification thread to mark as done. Typically obtained from the `id` field in notification list operations (e.g., `GET /notifications`).","title":"Thread Id","examples":["12345","67890"]}},"required":["thread_id"],"title":"MarkAThreadAsDoneRequest","description":"Request schema for `MarkAThreadAsDone`, used to specify the notification thread to be marked as done."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the response from the GitHub API. For a successful operation that marks a thread as done, the API typically returns a 204 No Content or 205 Reset Content status, in which case this dictionary will likely be empty.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"MarkAThreadAsDoneResponseWrapper"}
+schema info of GITHUB_MARK_A_THREAD_AS_DONE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_MARK_A_THREAD_AS_READ
+
+Here is the input and output schema info of Tool GITHUB_MARK_A_THREAD_AS_READ of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"thread_id":{"type":"integer","description":"The unique identifier of the notification thread. This ID is obtained from a notification's `id` field, for example, via the 'List notifications for the authenticated user' endpoint.","title":"Thread Id","examples":["123","456"]}},"required":["thread_id"],"title":"MarkAThreadAsReadRequest","description":"Request schema for marking a GitHub notification thread as read."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Response data from the API. For this operation, a successful request (HTTP 205 Reset Content) typically results in an empty response body, meaning this dictionary might be empty. An HTTP 304 Not Modified status also indicates success without a body.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"MarkAThreadAsReadResponseWrapper"}
+schema info of GITHUB_MARK_A_THREAD_AS_READ ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_MARK_NOTIFICATIONS_AS_READ
+
+Here is the input and output schema info of Tool GITHUB_MARK_NOTIFICATIONS_AS_READ of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"last_read_at":{"type":"string","description":"If provided, only notifications updated at or before this timestamp are affected. If omitted, all current notifications are targeted.","title":"Last Read At","format":"date-time","examples":["2023-01-15T14:30:00Z"]},"read":{"type":"boolean","description":"Indicates whether to mark targeted notifications as read (`true`) or unread (`false`). Defaults to `true` (mark as read) if not provided.","title":"Read","examples":["true","false"]}},"title":"MarkNotificationsAsReadRequest","description":"Request model to mark notifications, optionally specifying a cutoff time and read/unread status."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API's response dictionary, usually empty on success. GitHub returns 202 (if `last_read_at` omitted) or 205 (if `last_read_at` provided), indicating success with no body content.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"MarkNotificationsAsReadResponseWrapper"}
+schema info of GITHUB_MARK_NOTIFICATIONS_AS_READ ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_MARK_REPOSITORY_NOTIFICATIONS_AS_READ
+
+Here is the input and output schema info of Tool GITHUB_MARK_REPOSITORY_NOTIFICATIONS_AS_READ of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"last_read_at":{"type":"string","description":"Timestamp (ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`). If provided, notifications updated *after* this time will NOT be marked as read. If omitted, all notifications in the repository are marked as read. Defaults to the current time.","title":"Last Read At","format":"date-time","examples":["2023-01-01T12:00:00Z"]},"owner":{"type":"string","description":"Username of the account owning the repository (case-insensitive).","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"Name of the repository, without the `.git` extension (case-insensitive).","title":"Repo","examples":["Spoon-Knife"]}},"required":["owner","repo"],"title":"MarkRepositoryNotificationsAsReadRequest","description":"Request schema for `MarkRepositoryNotificationsAsRead`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"GitHub API response. A successful request (HTTP 202 or 205) usually has an empty body; if data is present, it may be a minimal confirmation.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"MarkRepositoryNotificationsAsReadResponseWrapper"}
+schema info of GITHUB_MARK_REPOSITORY_NOTIFICATIONS_AS_READ ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_MERGE_A_BRANCH
+
+Here is the input and output schema info of Tool GITHUB_MERGE_A_BRANCH of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"base":{"type":"string","description":"The name of the branch to merge the `head` branch into.","title":"Base","examples":["main","master"]},"commit_message":{"type":"string","description":"Commit message for the merge. If omitted, GitHub uses a default message.","title":"Commit Message","examples":["Merge pull request #123 from octocat/feature-branch","Merging feature-xyz into main"]},"head":{"type":"string","description":"Source branch name or full commit SHA to merge into the `base` branch.","title":"Head","examples":["feature-branch","0123456789abcdef0123456789abcdef01234567"]},"owner":{"type":"string","description":"Username or organization name of the repository owner. Not case-sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"Repository name, without the `.git` extension. Not case-sensitive.","title":"Repo","examples":["Spoon-Knife"]}},"required":["owner","repo","base","head"],"title":"MergeABranchRequest","description":"Request schema for merging a branch into another in a repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"MergeABranchResponseWrapper"}
+schema info of GITHUB_MERGE_A_BRANCH ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_MERGE_A_PULL_REQUEST
+
+Here is the input and output schema info of Tool GITHUB_MERGE_A_PULL_REQUEST of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"commit_message":{"type":"string","description":"Additional details for the merge commit message.","title":"Commit Message","examples":["This change updates the project description to be more accurate."]},"commit_title":{"type":"string","description":"Title for the merge commit message.","title":"Commit Title","examples":["Fixing a typo in the README file"]},"merge_method":{"type":"string","description":"Merge strategy: 'merge', 'squash', or 'rebase'. Defaults to repository's setting if unspecified.","title":"Merge Method","enum":["merge","squash","rebase"],"examples":["squash"]},"owner":{"type":"string","description":"Repository owner's username. Not case-sensitive.","title":"Owner","examples":["octocat"]},"pull_number":{"type":"integer","description":"The unique number identifying the pull request.","title":"Pull Number","examples":[1347]},"repo":{"type":"string","description":"Repository name, without the `.git` extension. Not case-sensitive.","title":"Repo","examples":["Hello-World"]},"sha":{"type":"string","description":"SHA of the pull request's head commit. Must match for merge to succeed, ensuring PR hasn't changed since review.","title":"Sha","examples":["c5b97d5ae6c19d5c5df71a34c7fbeeda2479ccbc"]}},"required":["owner","repo","pull_number"],"title":"MergeAPullRequestRequest","description":"Request schema for merging a pull request."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Details of the merge operation, including 'sha' (merge commit SHA), 'merged' (boolean success status), and 'message' (outcome description).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"MergeAPullRequestResponseWrapper"}
+schema info of GITHUB_MERGE_A_PULL_REQUEST ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_META_ROOT
+
+Here is the input and output schema info of Tool GITHUB_META_ROOT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{},"title":"GithubApiRootRequest","description":"Request schema for retrieving the root endpoint details of the GitHub REST API."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary where keys are descriptive names of GitHub API resources (e.g., 'current_user_url', 'emojis_url') and values are their corresponding API endpoint URLs or URL templates. This map serves as an entry point to discover various functionalities of the GitHub REST API.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GithubApiRootResponseWrapper"}
+schema info of GITHUB_META_ROOT ends.

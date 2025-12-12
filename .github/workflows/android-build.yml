@@ -1,0 +1,169 @@
+name: Build Android AAB
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+  workflow_dispatch:
+    inputs:
+      build_type:
+        description: 'Build type (debug or release)'
+        required: true
+        default: 'release'
+        type: choice
+        options:
+          - debug
+          - release
+
+jobs:
+  build-android:
+    name: Build Android App Bundle
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Setup Java JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'gradle'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          api-level: 34
+          build-tools: '34.0.0'
+          cmake-version: '3.22.1'
+          ndk-version: '26.1.10909125'
+
+      - name: Install Android SDK Components
+        run: |
+          echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "platforms;android-34"
+          echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "build-tools;34.0.0"
+          echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "platform-tools"
+          echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "extras;android;m2repository"
+          echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "extras;google;m2repository"
+
+      - name: Verify Android SDK Installation
+        run: |
+          echo "ANDROID_HOME: $ANDROID_HOME"
+          echo "ANDROID_SDK_ROOT: $ANDROID_SDK_ROOT"
+          ls -la $ANDROID_HOME
+          $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --list_installed
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Web App
+        run: npm run build
+        env:
+          NODE_ENV: production
+
+      - name: Sync Capacitor
+        run: npx cap sync android
+
+      - name: Create keystore directory
+        run: mkdir -p android/app/keystore
+
+      - name: Decode Keystore
+        if: github.event_name != 'pull_request'
+        run: |
+          if [ -n "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" ]; then
+            echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 -d > android/app/keystore/release.keystore
+            echo "Keystore decoded successfully"
+          else
+            echo "Warning: ANDROID_KEYSTORE_BASE64 secret not set. Building unsigned AAB."
+          fi
+
+      - name: Create key.properties
+        if: github.event_name != 'pull_request'
+        run: |
+          if [ -n "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" ]; then
+            cat > android/key.properties << EOF
+          storePassword=${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          keyPassword=${{ secrets.ANDROID_KEY_PASSWORD }}
+          keyAlias=${{ secrets.ANDROID_KEY_ALIAS }}
+          storeFile=keystore/release.keystore
+          EOF
+            echo "key.properties created"
+          else
+            echo "Skipping key.properties creation - no keystore configured"
+          fi
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x android/gradlew
+
+      - name: Clean Gradle Cache
+        run: cd android && ./gradlew clean
+
+      - name: Build Debug AAB
+        if: github.event.inputs.build_type == 'debug' || github.event_name == 'pull_request'
+        run: cd android && ./gradlew bundleDebug
+        env:
+          GRADLE_OPTS: -Dorg.gradle.jvmargs="-Xmx2048m -XX:MaxMetaspaceSize=512m"
+
+      - name: Build Release AAB
+        if: github.event.inputs.build_type == 'release' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+        run: cd android && ./gradlew bundleRelease
+        env:
+          GRADLE_OPTS: -Dorg.gradle.jvmargs="-Xmx2048m -XX:MaxMetaspaceSize=512m"
+
+      - name: List build outputs
+        run: find android/app/build/outputs -type f -name "*.aab"
+
+      - name: Upload Debug AAB
+        if: github.event.inputs.build_type == 'debug' || github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-debug-aab
+          path: android/app/build/outputs/bundle/debug/*.aab
+          retention-days: 14
+
+      - name: Upload Release AAB
+        if: github.event.inputs.build_type == 'release' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-release-aab
+          path: android/app/build/outputs/bundle/release/*.aab
+          retention-days: 30
+
+      - name: Upload mapping file (ProGuard)
+        if: github.event.inputs.build_type == 'release' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-mapping
+          path: android/app/build/outputs/mapping/release/mapping.txt
+          retention-days: 90
+          if-no-files-found: ignore
+
+      - name: Build Summary
+        run: |
+          echo "## Build Summary" >> $GITHUB_STEP_SUMMARY
+          echo "**Build Type:** ${{ github.event.inputs.build_type || 'release' }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Branch:** ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ -f "android/app/build/outputs/bundle/release/app-release.aab" ]; then
+            SIZE=$(du -h android/app/build/outputs/bundle/release/app-release.aab | cut -f1)
+            echo "**Release AAB Size:** $SIZE" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          if [ -f "android/app/build/outputs/bundle/debug/app-debug.aab" ]; then
+            SIZE=$(du -h android/app/build/outputs/bundle/debug/app-debug.aab | cut -f1)
+            echo "**Debug AAB Size:** $SIZE" >> $GITHUB_STEP_SUMMARY
+          fi

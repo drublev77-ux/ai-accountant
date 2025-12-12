@@ -1,0 +1,197 @@
+{
+  "id": "102019ae94a709570349fbe96a64e7d8b1c",
+  "version": "102019b13f7f968713f9fab43b64e02a910",
+  "schema": {
+    "name": "financial_reminder",
+    "description": "Reminders for upcoming bills, income events, or other financial deadlines.",
+    "fields": [
+      {
+        "name": "id",
+        "description": "Unique identifier for the reminder.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System identifier"
+        }
+      },
+      {
+        "name": "data_creator",
+        "description": "id of the user who creates the record",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Audit trail"
+        }
+      },
+      {
+        "name": "data_updater",
+        "description": "id of the user who updates the record",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Audit trail"
+        }
+      },
+      {
+        "name": "create_time",
+        "description": "create time in timestamp unix",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System metadata"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "update_time",
+        "description": "update time in timestamp unix",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System metadata"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "user_id",
+        "description": "ID of the user owning the reminder.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Personal data association"
+        }
+      },
+      {
+        "name": "title",
+        "description": "Title of the financial reminder.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "User content"
+        }
+      },
+      {
+        "name": "description",
+        "description": "Detailed description of the reminder.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "User content"
+        },
+        "nullable": true
+      },
+      {
+        "name": "due_date",
+        "description": "The due date for the reminder.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Time sensitive financial info"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "frequency",
+        "description": "Frequency of the reminder occurrence.",
+        "type": 100,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Behavioral pattern info"
+        },
+        "enumeration": [
+          {
+            "value": "Unspecified"
+          },
+          {
+            "number": 1,
+            "value": "OneTime"
+          },
+          {
+            "number": 2,
+            "value": "Daily"
+          },
+          {
+            "number": 3,
+            "value": "Weekly"
+          },
+          {
+            "number": 4,
+            "value": "Monthly"
+          },
+          {
+            "number": 5,
+            "value": "Yearly"
+          }
+        ]
+      },
+      {
+        "name": "is_completed",
+        "description": "Whether the reminder task has been completed.",
+        "type": 3,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Status of financial task"
+        }
+      },
+      {
+        "name": "category",
+        "description": "Category for the reminder (e.g., Bill, Transfer).",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Classification of financial task"
+        },
+        "nullable": true
+      }
+    ],
+    "indexes": [
+      {
+        "fields": [
+          "id"
+        ],
+        "unique": true,
+        "primary": true,
+        "order": false
+      },
+      {
+        "fields": [
+          "data_creator"
+        ],
+        "order": false
+      },
+      {
+        "fields": [
+          "data_updater"
+        ],
+        "order": false
+      },
+      {
+        "fields": [
+          "due_date",
+          "user_id"
+        ],
+        "order": true
+      },
+      {
+        "fields": [
+          "is_completed",
+          "user_id"
+        ],
+        "order": false
+      }
+    ]
+  },
+  "task": {
+    "id": "693c684af9f9f13be389bb2f",
+    "root": "69317a33ad50e9e8016841da",
+    "project": "69317a33ad50e9e8016841d9",
+    "user": "6841d390-b021-7026-f508-2c1990f0e948"
+  },
+  "namespace": {
+    "id": "01987547fc6c72ecb453bd2736bd4ea0",
+    "tenant": 2,
+    "name": "global-1",
+    "default": true
+  },
+  "revision": 1
+}
