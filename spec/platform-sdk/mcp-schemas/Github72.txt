@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_SEARCH_CODE
+
+Here is the input and output schema info of Tool GITHUB_SEARCH_CODE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"order":{"type":"string","description":"DEPRECATED. Order ('asc' or 'desc') for results; effective only if `sort` is specified. Docs: [ranking search results](https://docs.github.com/rest/search/search#ranking-search-results).","title":"Order","default":"desc","enum":["desc","asc"],"examples":["desc","asc"]},"page":{"type":"integer","description":"Page number for results. For pagination details, see GitHub docs: [Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"Results per page (max 100). For pagination details, see GitHub docs: [Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).","title":"Per Page","default":30,"examples":["30","50","100"]},"q":{"type":"string","description":"Code search query, including keywords and qualifiers (e.g., `language:python`, `user:octocat`, `repo:owner/repo`). For full syntax and qualifiers, see GitHub docs: [Constructing a search query](https://docs.github.com/rest/search/search#constructing-a-search-query) and [code search qualifiers](https://docs.github.com/search-github/searching-on-github/searching-code).","title":"Q","examples":["HelloWorld in:file language:python","user:octocat repo:hello-world extension:js","form path:/app/models language:ruby"]},"sort":{"type":"string","description":"DEPRECATED. Valid: 'indexed' (sorts by last indexed time). If unspecified, results sorted by best match. Docs: [ranking search results](https://docs.github.com/rest/search/search#ranking-search-results).","title":"Sort","enum":["indexed"],"examples":["indexed"]}},"required":["q"],"title":"SearchCodeRequest"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Search results. Includes 'total_count', 'incomplete_results' (boolean), and 'items' (list of code objects with 'name', 'path', 'sha', 'repository' etc.).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"SearchCodeResponseWrapper"}
+schema info of GITHUB_SEARCH_CODE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_SEARCH_COMMITS
+
+Here is the input and output schema info of Tool GITHUB_SEARCH_COMMITS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"order":{"type":"string","description":"Sort order. Effective only when 'sort' is specified.","title":"Order","default":"desc","enum":["desc","asc"],"examples":["desc","asc"]},"page":{"type":"integer","description":"Page number of results to retrieve.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results per page (maximum 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"q":{"type":"string","description":"Keywords and qualifiers for filtering commits. Refer to GitHub's commit search documentation for advanced query syntax details.","title":"Q","examples":["fix:bug user:octocat","merge pull request repo:owner/repo path:/src type:pr"]},"sort":{"type":"string","description":"Sorts results by 'author-date' or 'committer-date'. If unspecified, GitHub defaults to 'best match' ranking.","title":"Sort","enum":["author-date","committer-date"],"examples":["author-date","committer-date"]}},"required":["q"],"title":"SearchCommitsRequest","description":"Request schema for `SearchCommits`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Search results, typically including a list of commits and metadata like total_count.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"SearchCommitsResponseWrapper"}
+schema info of GITHUB_SEARCH_COMMITS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_SEARCH_ISSUES_AND_PULL_REQUESTS
+
+Here is the input and output schema info of Tool GITHUB_SEARCH_ISSUES_AND_PULL_REQUESTS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"order":{"type":"string","description":"Order for sorted results (ascending/descending). Effective only if `sort` is also provided.","title":"Order","default":"desc","enum":["desc","asc"],"examples":["desc","asc"]},"page":{"type":"integer","description":"Page number for results (starts at 1). Refer to GitHub's REST API documentation on pagination for details.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results per page (maximum 100). Refer to GitHub's REST API documentation on pagination for details.","title":"Per Page","default":30,"examples":["30","50","100"]},"q":{"type":"string","description":"Search query using GitHub's specific syntax (keywords, qualifiers, operators). Refer to GitHub's search documentation for query construction and available qualifiers.","title":"Q","examples":["repo:octocat/Spoon-Knife is:issue is:open label:\"help wanted\"","mentions:octocat is:pr state:merged"]},"raw_response":{"type":"boolean","description":"Return full API response if true, optimized response for AI agents if false.","title":"Raw Response","default":false,"examples":[true,false]},"sort":{"type":"string","description":"Field for sorting results. GitHub defaults to 'best match' if unspecified.","title":"Sort","enum":["comments","reactions","reactions-+1","reactions--1","reactions-smile","reactions-thinking_face","reactions-heart","reactions-tada","interactions","created","updated"],"examples":["comments","created","updated"]}},"required":["q"],"title":"SearchIssuesAndPullRequestsRequest","description":"Request schema for searching issues and pull requests on GitHub."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Dictionary with search results, including 'total_count', 'incomplete_results' (boolean indicating timeout), and 'items' (list of issue/pull request objects with their details).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"SearchIssuesAndPullRequestsResponseWrapper"}
+schema info of GITHUB_SEARCH_ISSUES_AND_PULL_REQUESTS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_SEARCH_LABELS
+
+Here is the input and output schema info of Tool GITHUB_SEARCH_LABELS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"order":{"type":"string","description":"Determines the sorting order of results, either 'asc' (ascending) or 'desc' (descending). This parameter is only effective when `sort` is also specified. Defaults to 'desc'.","title":"Order","default":"desc","enum":["desc","asc"]},"page":{"type":"integer","description":"The page number of the results to retrieve, starting from 1. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"","title":"Page","default":1,"examples":[2]},"per_page":{"type":"integer","description":"The number of search results to return per page. The maximum value is 100. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"","title":"Per Page","default":30,"examples":[50]},"q":{"type":"string","description":"The search keywords or query to find labels. This endpoint does not accept qualifiers in the query. For more details on query construction, refer to GitHub's documentation on [Constructing a search query](https://docs.github.com/rest/search/search#constructing-a-search-query).","title":"Q","examples":["bug","enhancement critical"]},"repository_id":{"type":"integer","description":"The unique identifier of the repository where labels will be searched.","title":"Repository Id","examples":[1296269]},"sort":{"type":"string","description":"Specifies the field to sort the search results by. Valid options are 'created' or 'updated'. If not provided, results are sorted by best match according to GitHub's default ranking: [best match](https://docs.github.com/rest/search/search#ranking-search-results).","title":"Sort","enum":["created","updated"]}},"required":["repository_id","q"],"title":"SearchLabelsRequest","description":"Request schema for searching labels in a GitHub repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary representing the search results. This typically includes keys such as `total_count` (the total number of labels found), `incomplete_results` (a boolean indicating if the search timed out), and `items` (a list of label objects matching the query). Each label object in the `items` list contains details like `id`, `node_id`, `url`, `name`, `description`, `color` (hexadecimal code without '#'), and `default` (boolean indicating if it's a default label).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"SearchLabelsResponseWrapper"}
+schema info of GITHUB_SEARCH_LABELS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_SEARCH_REPO_S
+
+Here is the input and output schema info of Tool GITHUB_SEARCH_REPO_S of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"order":{"type":"string","description":"Determines the order of search results: `desc` for descending or `asc` for ascending. This parameter is only effective when `sort` is also specified. Defaults to `desc`.","title":"Order","default":"desc","enum":["desc","asc"],"examples":["desc","asc"]},"page":{"type":"integer","description":"The page number for pagination of search results. Defaults to 1. Used in conjunction with `per_page` to fetch subsequent sets of results. See GitHub API documentation for more on pagination.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"The number of repository results to return per page. The maximum value is 100. Defaults to 30. See GitHub API documentation for more on pagination.","title":"Per Page","default":30,"examples":["30","50","100"]},"q":{"type":"string","description":"The search query string. Can contain keywords and qualifiers (e.g., `language:python`, `user:octocat`, `stars:>1000`). Qualifiers help narrow down the search to specific areas of GitHub. Refer to GitHub's official documentation for detailed syntax on constructing search queries and the full list of available qualifiers.","title":"Q","examples":["tensorflow language:python","user:torvalds linux","topic:react stars:>=10000"]},"sort":{"type":"string","description":"Specifies the field to sort the search results by. Options include `stars`, `forks`, `help-wanted-issues`, or `updated` (recency of update). If not provided, results are sorted by GitHub's default 'best match' ranking.","title":"Sort","enum":["stars","forks","help-wanted-issues","updated"],"examples":["stars","forks","help-wanted-issues","updated"]}},"required":["q"],"title":"SearchRepositoriesRequest","description":"Defines the parameters for a GitHub repository search query."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"SearchRepositoriesResponseWrapper"}
+schema info of GITHUB_SEARCH_REPO_S ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_SEARCH_REPOSITORIES
+
+Here is the input and output schema info of Tool GITHUB_SEARCH_REPOSITORIES of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"order":{"type":"string","description":"Determines the order of search results: `desc` for descending or `asc` for ascending. This parameter is only effective when `sort` is also specified. Defaults to `desc`.","title":"Order","default":"desc","enum":["desc","asc"],"examples":["desc","asc"]},"page":{"type":"integer","description":"The page number for pagination of search results. Defaults to 1. Used in conjunction with `per_page` to fetch subsequent sets of results. See GitHub API documentation for more on pagination.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"The number of repository results to return per page. The maximum value is 100. Defaults to 30. See GitHub API documentation for more on pagination.","title":"Per Page","default":30,"examples":["30","50","100"]},"q":{"type":"string","description":"The search query string. Can contain keywords and qualifiers (e.g., `language:python`, `user:octocat`, `stars:>1000`). Qualifiers help narrow down the search to specific areas of GitHub. Refer to GitHub's official documentation for detailed syntax on constructing search queries and the full list of available qualifiers.","title":"Q","examples":["tensorflow language:python","user:torvalds linux","topic:react stars:>=10000"]},"sort":{"type":"string","description":"Specifies the field to sort the search results by. Options include `stars`, `forks`, `help-wanted-issues`, or `updated` (recency of update). If not provided, results are sorted by GitHub's default 'best match' ranking.","title":"Sort","enum":["stars","forks","help-wanted-issues","updated"],"examples":["stars","forks","help-wanted-issues","updated"]}},"required":["q"],"title":"SearchRepositoriesRequest","description":"Defines the parameters for a GitHub repository search query."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"SearchRepositoriesResponseWrapper"}
+schema info of GITHUB_SEARCH_REPOSITORIES ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_SEARCH_TOPICS
+
+Here is the input and output schema info of Tool GITHUB_SEARCH_TOPICS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Page number of the results to retrieve for pagination.","title":"Page","default":1},"per_page":{"type":"integer","description":"Number of topic results per page (maximum 100).","title":"Per Page","default":30},"q":{"type":"string","description":"Search query string. Supports keywords, qualifiers, and GitHub's search syntax; see [Constructing a search query](https://docs.github.com/rest/search/search#constructing-a-search-query).","title":"Q","examples":["machine-learning","is:featured","python language:python","decentralized created:>=2023-01-01"]}},"required":["q"],"title":"SearchTopicsRequest","description":"Request schema to find topics by keywords and qualifiers."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Raw API response from GitHub, including a list of topics matching the search query and pagination information.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"SearchTopicsResponseWrapper"}
+schema info of GITHUB_SEARCH_TOPICS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_SEARCH_USERS
+
+Here is the input and output schema info of Tool GITHUB_SEARCH_USERS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"order":{"type":"string","description":"Sort order for results when `sort` is specified; ignored otherwise.","title":"Order","default":"desc","enum":["desc","asc"],"examples":["asc","desc"]},"page":{"type":"integer","description":"Page number for results (1-indexed).","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of search results per page. Maximum 100.","title":"Per Page","default":30,"examples":["30","50","100"]},"q":{"type":"string","description":"Search query string supporting keywords and qualifiers for user attributes (e.g., `username`, `location`, `followers`). See examples for syntax.","title":"Q","examples":["user:octocat","tom followers:>1000 location:\"San Francisco\"","joined:>=2023-01-01"]},"sort":{"type":"string","description":"Field to sort results by. If not specified, GitHub's 'best match' algorithm is used.","title":"Sort","enum":["followers","repositories","joined"],"examples":["followers","repositories","joined"]}},"required":["q"],"title":"SearchUsersRequest","description":"Parameters for searching users on GitHub."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Dictionary containing search results, typically including a list of user objects, total count, and an incomplete results flag.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"SearchUsersResponseWrapper"}
+schema info of GITHUB_SEARCH_USERS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_SECURITY_ADVISORIES_LIST_GLOBAL_ADVISORIES
+
+Here is the input and output schema info of Tool GITHUB_SECURITY_ADVISORIES_LIST_GLOBAL_ADVISORIES of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"affects":{"type":"array","description":"Filter by affected 'package' or 'package@version'. Max 100 items. Example: `affects=pkg1,pkg2@1.0.0`.","title":"Affects","items":{"type":"string","properties":{}}},"after":{"type":"string","description":"Pagination cursor to retrieve results after this value.","title":"After"},"before":{"type":"string","description":"Pagination cursor to retrieve results before this value.","title":"Before"},"cve_id":{"type":"string","description":"Filter by Common Vulnerabilities and Exposures (CVE) identifier.","title":"Cve Id"},"cwes":{"type":"array","description":"Filter by Common Weakness Enumeration (CWE) identifiers. Accepts comma-separated string or multiple parameters. Example: `cwes=79,284`.","title":"Cwes","items":{"type":"string","properties":{}}},"direction":{"type":"string","description":"Sort direction for results (asc, desc).","title":"Direction","default":"desc","enum":["asc","desc"]},"ecosystem":{"type":"string","description":"Filter by package ecosystem (e.g., npm, pip).","title":"Ecosystem","enum":["rubygems","npm","pip","maven","nuget","composer","go","rust","erlang","actions","pub","other","swift"]},"ghsa_id":{"type":"string","description":"Filter by GitHub Security Advisory (GHSA) identifier.","title":"Ghsa Id"},"is_withdrawn":{"type":"boolean","description":"Filter for withdrawn advisories.","title":"Is Withdrawn"},"modified":{"type":"string","description":"Filter by last modification (update or publication) date or date range. For syntax, see GitHub's 'understanding the search syntax' documentation.","title":"Modified"},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":30},"published":{"type":"string","description":"Filter by publication date or date range. For syntax, see GitHub's 'understanding the search syntax' documentation.","title":"Published"},"severity":{"type":"string","description":"Filter by advisory severity (e.g., high, critical).","title":"Severity","enum":["unknown","low","medium","high","critical"]},"sort":{"type":"string","description":"Property to sort results by (updated, published).","title":"Sort","default":"published","enum":["updated","published"]},"type":{"type":"string","description":"Filter by advisory type (e.g., reviewed, malware). Defaults to 'reviewed'; if this default is active and no other search parameters are used, malware advisories are also excluded.","title":"Type","default":"reviewed","enum":["reviewed","malware","unreviewed"]},"updated":{"type":"string","description":"Filter by update date or date range. For syntax, see GitHub's 'understanding the search syntax' documentation.","title":"Updated"}},"title":"ListGlobalSecurityAdvisoriesRequest","description":"Request schema for `ListGlobalSecurityAdvisories`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListGlobalSecurityAdvisoriesResponseWrapper"}
+schema info of GITHUB_SECURITY_ADVISORIES_LIST_GLOBAL_ADVISORIES ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_SET_ADMIN_BRANCH_PROTECTION
+
+Here is the input and output schema info of Tool GITHUB_SET_ADMIN_BRANCH_PROTECTION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"branch":{"type":"string","description":"Branch name. Wildcards not permitted (use GitHub GraphQL API for wildcard patterns).","title":"Branch","examples":["main","develop","feature/new-login"]},"owner":{"type":"string","description":"Account owner of the repository (user or organization name). Not case sensitive.","title":"Owner","examples":["octocat","my-organization"]},"repo":{"type":"string","description":"Repository name, without the `.git` extension. Not case sensitive.","title":"Repo","examples":["Spoon-Knife","my-awesome-project"]}},"required":["owner","repo","branch"],"title":"SetAdminBranchProtectionRequest","description":"Request schema for `SetAdminBranchProtection`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"SetAdminBranchProtectionResponseWrapper"}
+schema info of GITHUB_SET_ADMIN_BRANCH_PROTECTION ends.

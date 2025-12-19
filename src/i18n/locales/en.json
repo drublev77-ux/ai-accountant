@@ -1,0 +1,273 @@
+{
+  "app": {
+    "title": "AI Accountant",
+    "subtitle": "Your Personal Financial Assistant",
+    "loading": "Loading..."
+  },
+  "tabs": {
+    "dashboard": "Dashboard",
+    "transactions": "Transactions",
+    "invoices": "Invoices",
+    "assistant": "AI Assistant",
+    "tax": "Tax Calculator",
+    "compliance": "Tax Compliance",
+    "reports": "Reports",
+    "reminders": "Reminders",
+    "settings": "Settings"
+  },
+  "pricing": {
+    "title": "Choose Your Plan",
+    "subtitle": "Unlock the full power of AI Accountant",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "save": "Save 20%",
+    "free": {
+      "name": "Free",
+      "price": "$0",
+      "period": "forever",
+      "features": {
+        "transactions": "Up to 10 transactions",
+        "basic": "Basic reporting",
+        "support": "Community support"
+      },
+      "button": "Current Plan"
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$9.99",
+      "priceYearly": "$95.88",
+      "period": "per month",
+      "periodYearly": "per year",
+      "features": {
+        "transactions": "Unlimited transactions",
+        "ai": "AI-powered insights",
+        "tax": "Tax calculator",
+        "reports": "Advanced reports",
+        "reminders": "Smart reminders",
+        "support": "Priority support"
+      },
+      "button": "Get Started",
+      "popular": "Most Popular"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "Custom",
+      "features": {
+        "everything": "Everything in Pro",
+        "api": "API access",
+        "custom": "Custom integrations",
+        "dedicated": "Dedicated support",
+        "sla": "SLA guarantee"
+      },
+      "button": "Contact Sales"
+    },
+    "payments": {
+      "title": "Payment Methods",
+      "secure": "All payments are secure and encrypted"
+    }
+  },
+  "dashboard": {
+    "welcome": "Welcome Back!",
+    "overview": "Here's your financial overview",
+    "totalBalance": "Total Balance",
+    "income": "Income",
+    "expenses": "Expenses",
+    "savings": "Savings",
+    "thisMonth": "This Month",
+    "recentTransactions": "Recent Transactions",
+    "quickActions": "Quick Actions",
+    "addTransaction": "Add Transaction",
+    "viewReports": "View Reports",
+    "setReminder": "Set Reminder",
+    "noTransactions": "No transactions yet"
+  },
+  "transactions": {
+    "title": "Transactions",
+    "add": "Add Transaction",
+    "edit": "Edit Transaction",
+    "delete": "Delete Transaction",
+    "filter": "Filter",
+    "all": "All",
+    "income": "Income",
+    "expense": "Expense",
+    "date": "Date",
+    "description": "Description",
+    "category": "Category",
+    "amount": "Amount",
+    "type": "Type",
+    "search": "Search transactions...",
+    "noResults": "No transactions found",
+    "form": {
+      "description": "Description",
+      "descriptionPlaceholder": "Enter description",
+      "amount": "Amount",
+      "amountPlaceholder": "0.00",
+      "category": "Category",
+      "categoryPlaceholder": "Select category",
+      "type": "Type",
+      "date": "Date",
+      "save": "Save Transaction",
+      "cancel": "Cancel"
+    },
+    "categories": {
+      "salary": "Salary",
+      "freelance": "Freelance",
+      "investment": "Investment",
+      "food": "Food",
+      "transport": "Transport",
+      "entertainment": "Entertainment",
+      "utilities": "Utilities",
+      "healthcare": "Healthcare",
+      "shopping": "Shopping",
+      "other": "Other"
+    }
+  },
+  "assistant": {
+    "title": "AI Assistant",
+    "subtitle": "Ask me anything about your finances",
+    "placeholder": "Type your question here...",
+    "send": "Send",
+    "examples": {
+      "title": "Example Questions:",
+      "spending": "How much did I spend on food this month?",
+      "advice": "What can I do to save more money?",
+      "summary": "Give me a summary of my finances"
+    },
+    "thinking": "Thinking...",
+    "error": "Sorry, I couldn't process your request. Please try again."
+  },
+  "tax": {
+    "title": "Tax Calculator",
+    "subtitle": "Calculate your tax obligations",
+    "income": "Annual Income",
+    "incomePlaceholder": "Enter your annual income",
+    "deductions": "Deductions",
+    "deductionsPlaceholder": "Enter your deductions",
+    "calculate": "Calculate Tax",
+    "results": {
+      "title": "Tax Calculation Results",
+      "grossIncome": "Gross Income",
+      "deductions": "Deductions",
+      "taxableIncome": "Taxable Income",
+      "estimatedTax": "Estimated Tax",
+      "effectiveRate": "Effective Tax Rate",
+      "netIncome": "Net Income After Tax"
+    },
+    "disclaimer": "This is an estimate. Consult a tax professional for accurate calculations."
+  },
+  "reports": {
+    "title": "Financial Reports",
+    "period": "Period",
+    "thisMonth": "This Month",
+    "lastMonth": "Last Month",
+    "thisYear": "This Year",
+    "custom": "Custom",
+    "generate": "Generate Report",
+    "export": "Export",
+    "summary": {
+      "title": "Summary",
+      "totalIncome": "Total Income",
+      "totalExpenses": "Total Expenses",
+      "netSavings": "Net Savings",
+      "avgDaily": "Average Daily Spending"
+    },
+    "byCategory": "Expenses by Category",
+    "trends": "Income vs Expenses Trend",
+    "noData": "No data available for this period"
+  },
+  "reminders": {
+    "title": "Reminders",
+    "add": "Add Reminder",
+    "edit": "Edit Reminder",
+    "delete": "Delete Reminder",
+    "active": "Active",
+    "completed": "Completed",
+    "all": "All",
+    "noReminders": "No reminders yet",
+    "form": {
+      "title": "Title",
+      "titlePlaceholder": "Enter reminder title",
+      "description": "Description",
+      "descriptionPlaceholder": "Enter description",
+      "date": "Due Date",
+      "amount": "Amount (optional)",
+      "amountPlaceholder": "0.00",
+      "recurring": "Recurring",
+      "frequency": "Frequency",
+      "daily": "Daily",
+      "weekly": "Weekly",
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "save": "Save Reminder",
+      "cancel": "Cancel"
+    },
+    "types": {
+      "bill": "Bill Payment",
+      "tax": "Tax Deadline",
+      "subscription": "Subscription",
+      "other": "Other"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "profile": {
+      "title": "Profile",
+      "name": "Name",
+      "email": "Email",
+      "currency": "Currency",
+      "save": "Save Changes"
+    },
+    "language": {
+      "title": "Language",
+      "select": "Select Language",
+      "en": "English",
+      "ru": "Russian"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "email": "Email Notifications",
+      "push": "Push Notifications",
+      "reminders": "Reminder Notifications",
+      "reports": "Weekly Reports"
+    },
+    "data": {
+      "title": "Data Management",
+      "export": "Export Data",
+      "import": "Import Data",
+      "clear": "Clear All Data",
+      "clearWarning": "This will delete all your data. This action cannot be undone."
+    },
+    "about": {
+      "title": "About",
+      "version": "Version",
+      "support": "Support",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    }
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "close": "Close",
+    "confirm": "Confirm",
+    "back": "Back",
+    "next": "Next",
+    "finish": "Finish",
+    "yes": "Yes",
+    "no": "No",
+    "ok": "OK",
+    "error": "Error",
+    "success": "Success",
+    "warning": "Warning",
+    "info": "Info",
+    "loading": "Loading...",
+    "noData": "No data available",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "import": "Import"
+  }
+}

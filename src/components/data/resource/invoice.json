@@ -1,0 +1,210 @@
+{
+  "id": "102019b1614346979379436b5127c20404e",
+  "version": "102019b3885245e74489a6d26d33192e397",
+  "schema": {
+    "name": "invoice",
+    "description": "Entity for managing client invoices.",
+    "fields": [
+      {
+        "name": "id",
+        "description": "Unique identifier for each data of this entity.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System Identifier"
+        }
+      },
+      {
+        "name": "data_creator",
+        "description": "id of the user who creates the record",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Audit Trail"
+        }
+      },
+      {
+        "name": "data_updater",
+        "description": "id of the user who updates the record",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Audit Trail"
+        }
+      },
+      {
+        "name": "create_time",
+        "description": "create time in timestamp unix",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System Metadata"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "update_time",
+        "description": "update time in timestamp unix",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System Metadata"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "user_id",
+        "description": "User who owns the invoice.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Ownership"
+        }
+      },
+      {
+        "name": "invoice_number",
+        "description": "Readable invoice identifier.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Business Data"
+        }
+      },
+      {
+        "name": "client_details",
+        "description": "JSON string storing client name, address, etc.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Client PII"
+        }
+      },
+      {
+        "name": "line_items",
+        "description": "JSON string array of line items.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Financial Detail"
+        }
+      },
+      {
+        "name": "total_amount",
+        "description": "Total amount of the invoice.",
+        "type": 2,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Financial Value"
+        },
+        "numeric": "float"
+      },
+      {
+        "name": "status",
+        "description": "Status of the invoice.",
+        "type": 100,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Business Logic"
+        },
+        "enumeration": [
+          {
+            "value": "Unspecified"
+          },
+          {
+            "number": 1,
+            "value": "Draft"
+          },
+          {
+            "number": 2,
+            "value": "Sent"
+          },
+          {
+            "number": 3,
+            "value": "Paid"
+          },
+          {
+            "number": 4,
+            "value": "Overdue"
+          }
+        ]
+      },
+      {
+        "name": "due_date",
+        "description": "Due date for payment.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Business Term"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "version",
+        "description": "Sync version.",
+        "type": 2,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "Sync Metadata"
+        },
+        "numeric": "int"
+      }
+    ],
+    "indexes": [
+      {
+        "fields": [
+          "id"
+        ],
+        "unique": true,
+        "primary": true,
+        "order": false
+      },
+      {
+        "fields": [
+          "invoice_number",
+          "user_id"
+        ],
+        "unique": true,
+        "order": false
+      },
+      {
+        "fields": [
+          "data_creator"
+        ],
+        "order": false
+      },
+      {
+        "fields": [
+          "data_updater"
+        ],
+        "order": false
+      }
+    ],
+    "relations": [
+      {
+        "referencing_fields": [
+          "user_id"
+        ],
+        "referenced_entity": {
+          "name": "user"
+        },
+        "referenced_fields": [
+          "id"
+        ],
+        "cascade": true
+      }
+    ]
+  },
+  "task": {
+    "id": "6945c3c0ee55246be43e8c7f",
+    "root": "69317a33ad50e9e8016841da",
+    "project": "69317a33ad50e9e8016841d9",
+    "user": "6841d390-b021-7026-f508-2c1990f0e948"
+  },
+  "namespace": {
+    "id": "01987547fc6c72ecb453bd2736bd4ea0",
+    "tenant": 2,
+    "name": "global-1",
+    "default": true
+  },
+  "revision": 1
+}

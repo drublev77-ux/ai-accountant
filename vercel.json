@@ -1,0 +1,25 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "env": {
+    "VITE_SENTRY_DSN": "@sentry-dsn",
+    "VITE_ENVIRONMENT": "production",
+    "SENTRY_AUTH_TOKEN": "@sentry-auth-token"
+  },
+  "build": {
+    "env": {
+      "VITE_SENTRY_DSN": "@sentry-dsn",
+      "VITE_ENVIRONMENT": "production",
+      "SENTRY_AUTH_TOKEN": "@sentry-auth-token"
+    }
+  }
+}

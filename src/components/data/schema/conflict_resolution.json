@@ -1,0 +1,161 @@
+{
+  "id": "102019b1613e72b7178a78c671e810b9d57",
+  "version": "102019b1613e72a7bfba080b6850c048df7",
+  "schema": {
+    "name": "conflict_resolution",
+    "description": "Handles concurrent edit conflicts.",
+    "fields": [
+      {
+        "name": "id",
+        "description": "Unique identifier.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System Identifier"
+        }
+      },
+      {
+        "name": "data_creator",
+        "description": "id of the user who creates the record",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Audit Trail"
+        }
+      },
+      {
+        "name": "data_updater",
+        "description": "id of the user who updates the record",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Audit Trail"
+        }
+      },
+      {
+        "name": "create_time",
+        "description": "create time in timestamp unix",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System Metadata"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "update_time",
+        "description": "update time in timestamp unix",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System Metadata"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "entity_type",
+        "description": "Entity type where conflict occurred.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System Structure"
+        }
+      },
+      {
+        "name": "entity_id",
+        "description": "ID of the conflicted entity.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "Reference"
+        }
+      },
+      {
+        "name": "conflicting_versions",
+        "description": "JSON string containing details of the conflicting versions.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Data Content"
+        }
+      },
+      {
+        "name": "resolution_strategy",
+        "description": "Strategy used to resolve.",
+        "type": 100,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Logic"
+        },
+        "enumeration": [
+          {
+            "value": "Unspecified"
+          },
+          {
+            "number": 1,
+            "value": "LastWriteWins"
+          },
+          {
+            "number": 2,
+            "value": "Manual"
+          },
+          {
+            "number": 3,
+            "value": "Merge"
+          }
+        ]
+      },
+      {
+        "name": "resolved_status",
+        "description": "Whether the conflict is resolved.",
+        "type": 3,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Status"
+        }
+      }
+    ],
+    "indexes": [
+      {
+        "fields": [
+          "id"
+        ],
+        "unique": true,
+        "primary": true,
+        "order": false
+      },
+      {
+        "fields": [
+          "entity_id",
+          "entity_type"
+        ],
+        "order": false
+      },
+      {
+        "fields": [
+          "data_creator"
+        ],
+        "order": false
+      },
+      {
+        "fields": [
+          "data_updater"
+        ],
+        "order": false
+      }
+    ]
+  },
+  "task": {
+    "id": "693cf1d4d8d11c9f70180c71",
+    "root": "69317a33ad50e9e8016841da",
+    "project": "69317a33ad50e9e8016841d9",
+    "user": "6841d390-b021-7026-f508-2c1990f0e948"
+  },
+  "namespace": {
+    "id": "01987547fc6c72ecb453bd2736bd4ea0",
+    "tenant": 2,
+    "name": "global-1",
+    "default": true
+  },
+  "revision": 1
+}

@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_DETAILS_ABOUT_A_CODESPACE_EXPORT
+
+Here is the input and output schema info of Tool GITHUB_GET_DETAILS_ABOUT_A_CODESPACE_EXPORT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"codespace_name":{"type":"string","description":"The unique name of the codespace.","title":"Codespace Name","examples":["monalisa-glorious-space-engine-vx96rp797j92r7x"]},"export_id":{"type":"string","description":"The ID of the export operation. Currently, only 'latest' is supported, which refers to the most recent export for the specified codespace.","title":"Export Id","examples":["latest"]}},"required":["codespace_name","export_id"],"title":"GetDetailsAboutACodespaceExportRequest","description":"Request schema for `GetDetailsAboutACodespaceExport`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing details about the specified codespace export. This typically includes the export's state (e.g., 'succeeded', 'failed', 'in_progress'), an ID, and a URL to download the export archive if the export was successful and the archive is available.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetDetailsAboutACodespaceExportResponseWrapper"}
+schema info of GITHUB_GET_DETAILS_ABOUT_A_CODESPACE_EXPORT ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_EMOJIS
+
+Here is the input and output schema info of Tool GITHUB_GET_EMOJIS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{},"title":"GetEmojisRequest","description":"Request schema for the `GetEmojis` action. This action does not require any parameters."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary where each key is an emoji name (e.g., 'smile') and the corresponding value is the URL of the emoji's image.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetEmojisResponseWrapper"}
+schema info of GITHUB_GET_EMOJIS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_FEEDS
+
+Here is the input and output schema info of Tool GITHUB_GET_FEEDS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{},"title":"GetFeedsRequest","description":"Request schema for the `GetFeeds` action. This action does not require any request parameters."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Dictionary of available GitHub feed URLs relevant to the authenticated user. Keys identify feed types (e.g., 'timeline', 'user', 'current_user_public', 'current_user_actor', 'security_advisories'), and values are their corresponding URLs or URI templates.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetFeedsResponseWrapper"}
+schema info of GITHUB_GET_FEEDS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_GITHUB_ACTIONS_CACHE_USAGE_FOR_AN_ORGANIZATION
+
+Here is the input and output schema info of Tool GITHUB_GET_GITHUB_ACTIONS_CACHE_USAGE_FOR_AN_ORGANIZATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"Name of the organization (case-insensitive).","title":"Org","examples":["octo-org"]}},"required":["org"],"title":"GetGithubActionsCacheUsageForAnOrganizationRequest","description":"Request schema for retrieving the GitHub Actions cache usage for a specific organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Summary of GitHub Actions cache usage for the organization, detailing metrics like `total_active_caches_count` and `total_active_caches_size_in_bytes`.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetGithubActionsCacheUsageForAnOrganizationResponseWrapper"}
+schema info of GITHUB_GET_GITHUB_ACTIONS_CACHE_USAGE_FOR_AN_ORGANIZATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_GITHUB_ACTIONS_CACHE_USAGE_FOR_A_REPOSITORY
+
+Here is the input and output schema info of Tool GITHUB_GET_GITHUB_ACTIONS_CACHE_USAGE_FOR_A_REPOSITORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username or organization name that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["Hello-World"]}},"required":["owner","repo"],"title":"GetGithubActionsCacheUsageForARepositoryRequest","description":"Request schema for `GetGithubActionsCacheUsageForARepository`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the GitHub Actions cache usage statistics for the repository. This typically includes `active_caches_count` (the total number of active caches) and `active_caches_size_in_bytes` (the total size in bytes of all active caches).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetGithubActionsCacheUsageForARepositoryResponseWrapper"}
+schema info of GITHUB_GET_GITHUB_ACTIONS_CACHE_USAGE_FOR_A_REPOSITORY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_GITHUB_ACTIONS_PERMISSIONS_FOR_AN_ORGANIZATION
+
+Here is the input and output schema info of Tool GITHUB_GET_GITHUB_ACTIONS_PERMISSIONS_FOR_AN_ORGANIZATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the GitHub organization. This field is not case-sensitive.","title":"Org","examples":["github","my-company-org"]}},"required":["org"],"title":"GetGithubActionsPermissionsForAnOrganizationRequest","description":"Request to retrieve GitHub Actions permissions for an organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetGithubActionsPermissionsForAnOrganizationResponseWrapper"}
+schema info of GITHUB_GET_GITHUB_ACTIONS_PERMISSIONS_FOR_AN_ORGANIZATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_GITHUB_ACTIONS_PERMISSIONS_FOR_A_REPOSITORY
+
+Here is the input and output schema info of Tool GITHUB_GET_GITHUB_ACTIONS_PERMISSIONS_FOR_A_REPOSITORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username of the account that owns the repository. This is not case-sensitive.","title":"Owner","examples":["octocat","github"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This is not case-sensitive.","title":"Repo","examples":["Spoon-Knife","docs"]}},"required":["owner","repo"],"title":"GetGithubActionsPermissionsForARepositoryRequest","description":"Input schema for GetGithubActionsPermissionsForARepository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetGithubActionsPermissionsForARepositoryResponseWrapper"}
+schema info of GITHUB_GET_GITHUB_ACTIONS_PERMISSIONS_FOR_A_REPOSITORY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_GITHUB_META_INFORMATION
+
+Here is the input and output schema info of Tool GITHUB_GET_GITHUB_META_INFORMATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{},"title":"GetGithubMetaInformationRequest","description":"Request schema for `GetGithubMetaInformation`; does not require any request parameters."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"GitHub's metadata, including IP addresses (IPv4/IPv6) for services (e.g., hooks, web, API, git), domain names, and SSH key fingerprints. Example keys: 'verifiable_password_authentication', 'ssh_key_fingerprints', 'hooks', 'api', 'git', 'actions', 'domains'.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetGithubMetaInformationResponseWrapper"}
+schema info of GITHUB_GET_GITHUB_META_INFORMATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_GITHUB_PAGES_BUILD
+
+Here is the input and output schema info of Tool GITHUB_GET_GITHUB_PAGES_BUILD of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"build_id":{"type":"integer","description":"The unique identifier of the GitHub Pages build to retrieve.","title":"Build Id","examples":[12345,98765]},"owner":{"type":"string","description":"The username or organization name that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat","github"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["Spoon-Knife","linguist"]}},"required":["owner","repo","build_id"],"title":"GetGithubPagesBuildRequest","description":"Request schema for `GetGithubPagesBuild`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the details of the requested GitHub Pages build, including status, commit, duration, and any errors.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetGithubPagesBuildResponseWrapper"}
+schema info of GITHUB_GET_GITHUB_PAGES_BUILD ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_INFORMATION_ABOUT_A_SARIF_UPLOAD
+
+Here is the input and output schema info of Tool GITHUB_GET_INFORMATION_ABOUT_A_SARIF_UPLOAD of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"Username of the account that owns the repository (not case-sensitive).","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"Name of the repository, without the `.git` extension (not case-sensitive).","title":"Repo","examples":["Hello-World"]},"sarif_id":{"type":"string","description":"Unique identifier of the SARIF upload, returned when a SARIF file is successfully uploaded.","title":"Sarif Id","examples":["fb2cce85-340f-4d93-9498-26018bddd7eb"]}},"required":["owner","repo","sarif_id"],"title":"GetInformationAboutASarifUploadRequest","description":"Request schema for getting information about a SARIF upload."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Details of the SARIF upload, including processing status (e.g., 'pending', 'complete', 'failed'), error messages, and the URL to analysis results.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetInformationAboutASarifUploadResponseWrapper"}
+schema info of GITHUB_GET_INFORMATION_ABOUT_A_SARIF_UPLOAD ends.

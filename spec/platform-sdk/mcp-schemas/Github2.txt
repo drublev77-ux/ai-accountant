@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_ADD_SELECTED_REPOSITORY_TO_AN_ORGANIZATION_VARIABLE
+
+Here is the input and output schema info of Tool GITHUB_ADD_SELECTED_REPOSITORY_TO_AN_ORGANIZATION_VARIABLE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"name":{"type":"string","description":"Name of the existing organization-level GitHub Actions variable.","title":"Name","examples":["CI_DEPLOY_KEY","SHARED_SECRET_VALUE"]},"org":{"type":"string","description":"Name of the GitHub organization (case-insensitive).","title":"Org","examples":["octo-org","my-company"]},"repository_id":{"type":"integer","description":"Unique identifier of the repository to grant access.","title":"Repository Id","examples":["1296269","543210"]}},"required":["org","name","repository_id"],"title":"AddSelectedRepositoryToAnOrganizationVariableRequest","description":"Input for adding a selected repository to an organization variable's access list."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"AddSelectedRepositoryToAnOrganizationVariableResponseWrapper"}
+schema info of GITHUB_ADD_SELECTED_REPOSITORY_TO_AN_ORGANIZATION_VARIABLE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_ADD_SOCIAL_ACCOUNTS_FOR_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_ADD_SOCIAL_ACCOUNTS_FOR_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"account_urls":{"type":"array","description":"Full URLs for social media profiles to add to the user's GitHub profile; these will be displayed publicly.","title":"Account Urls","items":{"type":"string","properties":{}},"examples":["https://twitter.com/github","https://www.linkedin.com/in/github/","https://mastodon.social/@github"]}},"required":["account_urls"],"title":"AddSocialAccountsForTheAuthenticatedUserRequest","description":"Specifies the social media accounts to add for the authenticated user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Details of social media accounts successfully added to the authenticated user's profile, typically including platform and URL for each.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"AddSocialAccountsForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_ADD_SOCIAL_ACCOUNTS_FOR_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_ADD_STATUS_CHECK_CONTEXTS
+
+Here is the input and output schema info of Tool GITHUB_ADD_STATUS_CHECK_CONTEXTS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"branch":{"type":"string","description":"The name of the branch to which status check contexts will be added. Branch names cannot contain wildcard characters. To use wildcard characters in branch names, refer to [the GraphQL API](https://docs.github.com/graphql).","title":"Branch","examples":["main","develop"]},"owner":{"type":"string","description":"The account owner of the repository. This name is not case sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case sensitive.","title":"Repo","examples":["Hello-World"]}},"required":["owner","repo","branch"],"title":"AddStatusCheckContextsRequest","description":"Request model detailing the path parameters for adding status check contexts to a protected branch.\nNote: The actual contexts to add are passed in the request body and are not part of this model's explicit fields."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"AddStatusCheckContextsResponseWrapper"}
+schema info of GITHUB_ADD_STATUS_CHECK_CONTEXTS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_ADD_TEAM_ACCESS_RESTRICTIONS
+
+Here is the input and output schema info of Tool GITHUB_ADD_TEAM_ACCESS_RESTRICTIONS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"branch":{"type":"string","description":"The name of the branch to apply restrictions to. Wildcard characters are not supported for this field. To use wildcard characters in branch names, please consult the GitHub GraphQL API (see https://docs.github.com/graphql).","title":"Branch","examples":["main","develop","feature/new-login"]},"owner":{"type":"string","description":"The GitHub username or organization name that owns the repository. This value is not case-sensitive.","title":"Owner","examples":["octocat","github"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This value is not case-sensitive.","title":"Repo","examples":["Spoon-Knife","Hello-World"]}},"required":["owner","repo","branch"],"title":"AddTeamAccessRestrictionsRequest","description":"Request schema for `AddTeamAccessRestrictions`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"AddTeamAccessRestrictionsResponseWrapper"}
+schema info of GITHUB_ADD_TEAM_ACCESS_RESTRICTIONS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_ADD_USER_ACCESS_RESTRICTIONS
+
+Here is the input and output schema info of Tool GITHUB_ADD_USER_ACCESS_RESTRICTIONS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"branch":{"type":"string","description":"The name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, refer to the GitHub GraphQL API documentation.","title":"Branch","examples":["main","develop"]},"owner":{"type":"string","description":"The account owner of the repository. This name is not case-sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case-sensitive.","title":"Repo","examples":["Spoon-Knife"]}},"required":["owner","repo","branch"],"title":"AddUserAccessRestrictionsRequest","description":"Path parameters for adding user access restrictions to a protected branch. The list of usernames must be provided in the request body as a JSON array (e.g., `[\"username1\"]`); an empty array `[]` removes all user restrictions."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"AddUserAccessRestrictionsResponseWrapper"}
+schema info of GITHUB_ADD_USER_ACCESS_RESTRICTIONS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_ADD_USERS_TO_CODESPACES_ACCESS_FOR_AN_ORGANIZATION
+
+Here is the input and output schema info of Tool GITHUB_ADD_USERS_TO_CODESPACES_ACCESS_FOR_AN_ORGANIZATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"Organization's name (case-insensitive).","title":"Org","examples":["github","my-organization"]},"selected_usernames":{"type":"array","description":"Usernames of organization members to be granted Codespaces access billed to the organization. These users must be members of the specified organization.","title":"Selected Usernames","items":{"type":"string","properties":{}},"examples":[["octocat","hubot"],["another-user","dev-user"]]}},"required":["org","selected_usernames"],"title":"AddUsersToCodespacesAccessForAnOrganizationRequest","description":"Request schema for `AddUsersToCodespacesAccessForAnOrganization`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response. May be empty or absent on success (e.g., HTTP 204), or contain error details on failure.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"AddUsersToCodespacesAccessForAnOrganizationResponseWrapper"}
+schema info of GITHUB_ADD_USERS_TO_CODESPACES_ACCESS_FOR_AN_ORGANIZATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_APPROVE_A_WORKFLOW_RUN_FOR_A_FORK_PULL_REQUEST
+
+Here is the input and output schema info of Tool GITHUB_APPROVE_A_WORKFLOW_RUN_FOR_A_FORK_PULL_REQUEST of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The account owner of the repository. The name is not case sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository without the `.git` extension. The name is not case sensitive. ","title":"Repo","examples":["Hello-World"]},"run_id":{"type":"integer","description":"The unique identifier of the workflow run requiring approval.","title":"Run Id","examples":[12345]}},"required":["owner","repo","run_id"],"title":"ApproveAWorkflowRunForAForkPullRequestRequest","description":"Request schema for `ApproveAWorkflowRunForAForkPullRequest`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"An empty object indicating success.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ApproveAWorkflowRunForAForkPullRequestResponseWrapper"}
+schema info of GITHUB_APPROVE_A_WORKFLOW_RUN_FOR_A_FORK_PULL_REQUEST ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_ASSIGN_AN_ORGANIZATION_ROLE_TO_A_TEAM
+
+Here is the input and output schema info of Tool GITHUB_ASSIGN_AN_ORGANIZATION_ROLE_TO_A_TEAM of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the GitHub organization. This field is case-insensitive.","title":"Org","examples":["octo-org"]},"role_id":{"type":"integer","description":"Unique identifier of the organization role to assign to the team (obtainable by listing organization roles).","title":"Role Id","examples":[123,456]},"team_slug":{"type":"string","description":"The slug (URL-friendly version) of the team's name.","title":"Team Slug","examples":["justice-league"]}},"required":["org","team_slug","role_id"],"title":"AssignAnOrganizationRoleToATeamRequest","description":"Request schema for `AssignAnOrganizationRoleToATeam`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"An empty dictionary if the role was assigned successfully. GitHub API returns a 204 No Content status on success.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"AssignAnOrganizationRoleToATeamResponseWrapper"}
+schema info of GITHUB_ASSIGN_AN_ORGANIZATION_ROLE_TO_A_TEAM ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_ASSIGN_AN_ORGANIZATION_ROLE_TO_A_USER
+
+Here is the input and output schema info of Tool GITHUB_ASSIGN_AN_ORGANIZATION_ROLE_TO_A_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The organization's name. This is not case-sensitive.","title":"Org","examples":["github","acme-corp"]},"role_id":{"type":"integer","description":"The unique integer identifier for the organization role. This ID can be obtained by listing the organization's roles.","title":"Role Id","examples":["1","42","101"]},"username":{"type":"string","description":"The GitHub username of the user to whom the role will be assigned.","title":"Username","examples":["octocat","githubuser123"]}},"required":["org","username","role_id"],"title":"AssignAnOrganizationRoleToAUserRequest","description":"Request schema for `AssignAnOrganizationRoleToAUser`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary that is typically empty upon successful role assignment, as the GitHub API returns a 204 No Content status for this operation.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"AssignAnOrganizationRoleToAUserResponseWrapper"}
+schema info of GITHUB_ASSIGN_AN_ORGANIZATION_ROLE_TO_A_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_AUTH_USER_DOCKER_CONFLICT_PACKAGES_LIST
+
+Here is the input and output schema info of Tool GITHUB_AUTH_USER_DOCKER_CONFLICT_PACKAGES_LIST of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{},"title":"AuthUserDockerConflictPackagesListRequest","description":"Request model; no specific parameters are required."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"List of the authenticated user's Docker packages that experienced conflicts during migration, including details for each.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"AuthUserDockerConflictPackagesListResponseWrapper"}
+schema info of GITHUB_AUTH_USER_DOCKER_CONFLICT_PACKAGES_LIST ends.

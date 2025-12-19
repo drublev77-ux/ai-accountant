@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_TRANSFER_A_REPOSITORY
+
+Here is the input and output schema info of Tool GITHUB_TRANSFER_A_REPOSITORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"new_name":{"type":"string","description":"Optional new name for the repository post-transfer; retains current name if unspecified.","title":"New Name","examples":["my-transferred-repo"]},"new_owner":{"type":"string","description":"Target username or organization name for the repository transfer.","title":"New Owner","examples":["new-organization"]},"owner":{"type":"string","description":"Current owner's username or organization name (case-insensitive).","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"Name of the repository to transfer, without `.git` (case-insensitive).","title":"Repo","examples":["Spoon-Knife"]},"team_ids":{"type":"array","description":"List of team IDs to add the repository to if `new_owner` is an organization; teams must belong to the `new_owner`.","title":"Team Ids","items":{"type":"integer","properties":{}},"examples":["[12345, 67890]"]}},"required":["owner","repo","new_owner"],"title":"TransferARepositoryRequest","description":"Request schema for initiating the transfer of a GitHub repository to a new owner."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"TransferARepositoryResponseWrapper"}
+schema info of GITHUB_TRANSFER_A_REPOSITORY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_UNBLOCK_A_USER
+
+Here is the input and output schema info of Tool GITHUB_UNBLOCK_A_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"username":{"type":"string","description":"The GitHub username (handle) of the user to unblock.","title":"Username","examples":["octocat","gemini-coder"]}},"required":["username"],"title":"UnblockAUserRequest","description":"Specifies the GitHub username of the user to unblock."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary which is typically empty upon successful unblocking, as the GitHub API returns a '204 No Content' status in such cases. It may contain data in other scenarios or if an error response with a body is returned.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"UnblockAUserResponseWrapper"}
+schema info of GITHUB_UNBLOCK_A_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_UNBLOCK_A_USER_FROM_AN_ORGANIZATION
+
+Here is the input and output schema info of Tool GITHUB_UNBLOCK_A_USER_FROM_AN_ORGANIZATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the organization. This is case-insensitive.","title":"Org","examples":["octo-org"]},"username":{"type":"string","description":"The GitHub username of the user to unblock.","title":"Username","examples":["octocat"]}},"required":["org","username"],"title":"UnblockAUserFromAnOrganizationRequest","description":"Request schema for `UnblockAUserFromAnOrganization`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"UnblockAUserFromAnOrganizationResponseWrapper"}
+schema info of GITHUB_UNBLOCK_A_USER_FROM_AN_ORGANIZATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_UNFOLLOW_A_USER
+
+Here is the input and output schema info of Tool GITHUB_UNFOLLOW_A_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"username":{"type":"string","description":"The GitHub username (handle) of the user whom the authenticated user wishes to unfollow.","title":"Username","examples":["octocat","torvalds"]}},"required":["username"],"title":"UnfollowAUserRequest","description":"Specifies the GitHub username of the user to unfollow."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary that is typically empty, as an HTTP 204 No Content status (successful unfollow) means no body content is returned.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"UnfollowAUserResponseWrapper"}
+schema info of GITHUB_UNFOLLOW_A_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_UNLOCK_AN_ISSUE
+
+Here is the input and output schema info of Tool GITHUB_UNLOCK_AN_ISSUE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"issue_number":{"type":"integer","description":"The number that uniquely identifies the issue within the repository.","title":"Issue Number","examples":["42","1500"]},"owner":{"type":"string","description":"The username (account) or organization name that owns the repository. This value is not case-sensitive.","title":"Owner","examples":["octocat","microsoft"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This value is not case-sensitive.","title":"Repo","examples":["Hello-World","vscode"]}},"required":["owner","repo","issue_number"],"title":"UnlockAnIssueRequest","description":"Request schema for `UnlockAnIssue` action, specifying the issue to be unlocked."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Contains the API response. For a successful unlock operation (HTTP 204 No Content), this is typically an empty dictionary.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"UnlockAnIssueResponseWrapper"}
+schema info of GITHUB_UNLOCK_AN_ISSUE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_UNLOCK_AN_ORGANIZATION_REPOSITORY
+
+Here is the input and output schema info of Tool GITHUB_UNLOCK_AN_ORGANIZATION_REPOSITORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"migration_id":{"type":"integer","description":"The unique identifier of the migration for which the repository was locked.","title":"Migration Id","examples":["12345","67890"]},"org":{"type":"string","description":"The name of the GitHub organization. This name is not case-sensitive.","title":"Org","examples":["my-organization","github"]},"repo_name":{"type":"string","description":"The name of the repository to unlock.","title":"Repo Name","examples":["my-repository","project-alpha"]}},"required":["org","migration_id","repo_name"],"title":"UnlockAnOrganizationRepositoryRequest","description":"Request schema for `UnlockAnOrganizationRepository`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"UnlockAnOrganizationRepositoryResponseWrapper"}
+schema info of GITHUB_UNLOCK_AN_ORGANIZATION_REPOSITORY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_UNLOCK_A_USER_REPOSITORY
+
+Here is the input and output schema info of Tool GITHUB_UNLOCK_A_USER_REPOSITORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"migration_id":{"type":"integer","description":"The unique identifier of the user migration.","title":"Migration Id","examples":["12345","67890"]},"repo_name":{"type":"string","description":"The name of the repository to unlock.","title":"Repo Name","examples":["my-migrated-repo","old-project-archive"]}},"required":["migration_id","repo_name"],"title":"UnlockAUserRepositoryRequest","description":"Request model to specify the migration and repository for an unlock operation."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"UnlockAUserRepositoryResponseWrapper"}
+schema info of GITHUB_UNLOCK_A_USER_REPOSITORY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_UNSTAR_A_GIST
+
+Here is the input and output schema info of Tool GITHUB_UNSTAR_A_GIST of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"gist_id":{"type":"string","description":"The unique identifier (ID) of the gist to be unstarred. This ID can be retrieved from API endpoints that list gists or from the gist's URL.","title":"Gist Id","examples":["aa5a315d61ae9438b18d","1","0cb0082993736a52f85d453742d266a5"]}},"required":["gist_id"],"title":"UnstarAGistRequest","description":"Request to unstar a GitHub gist."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"UnstarAGistResponseWrapper"}
+schema info of GITHUB_UNSTAR_A_GIST ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_UNSTAR_A_REPOSITORY_FOR_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_UNSTAR_A_REPOSITORY_FOR_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"Username of the repository owner (case-insensitive).","title":"Owner","examples":["octocat","torvalds"]},"repo":{"type":"string","description":"Repository name, without the `.git` extension (case-insensitive).","title":"Repo","examples":["Hello-World","linux"]}},"required":["owner","repo"],"title":"UnstarARepositoryForTheAuthenticatedUserRequest","description":"Specifies the repository to be unstarred by its owner and name."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Response body; typically empty on successful unstar (HTTP 204 No Content).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"UnstarARepositoryForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_UNSTAR_A_REPOSITORY_FOR_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_UPDATE_A_CHECK_RUN
+
+Here is the input and output schema info of Tool GITHUB_UPDATE_A_CHECK_RUN of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"actions":{"type":"array","description":"User-triggerable actions (max 3), each with `label`, `identifier`, and `description`.","title":"Actions","items":{"type":"object","properties":{},"additionalProperties":true}},"check_run_id":{"type":"integer","description":"The unique identifier of the check run.","title":"Check Run Id"},"completed_at":{"type":"string","description":"Timestamp of when the check run completed (ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`).","title":"Completed At","format":"date-time"},"conclusion":{"type":"string","description":"Final conclusion of the check. Required if `completed_at` is provided or `status` is `completed`. Providing `conclusion` sets `status` to `completed`. Users cannot set `stale`.","title":"Conclusion","enum":["action_required","cancelled","failure","neutral","success","skipped","stale","timed_out"]},"details_url":{"type":"string","description":"URL of the integrator's site with full check details.","title":"Details Url"},"external_id":{"type":"string","description":"Reference for the run on the integrator's system.","title":"External Id"},"name":{"type":"string","description":"Name of the check (e.g., \"code-coverage\").","title":"Name"},"output__annotations":{"type":"array","description":"Adds line-specific analysis information, visible in PRs. Max 50 per request (appended to existing). GitHub Actions: 10 warnings/10 errors per step.","title":"Output  Annotations","items":{"type":"object","properties":{},"additionalProperties":true}},"output__images":{"type":"array","description":"Images for the output, displayed in the GitHub PR UI.","title":"Output  Images","items":{"type":"object","properties":{},"additionalProperties":true}},"output__summary":{"type":"string","description":"Summary of the output, can contain Markdown. Required if the `output` object is provided.","title":"Output  Summary"},"output__text":{"type":"string","description":"Text for the output, can contain Markdown.","title":"Output  Text"},"output__title":{"type":"string","description":"Title for the output.","title":"Output  Title"},"owner":{"type":"string","description":"Account owner of the repository (not case sensitive).","title":"Owner"},"repo":{"type":"string","description":"Repository name without the `.git` extension (not case sensitive).","title":"Repo"},"started_at":{"type":"string","description":"Timestamp of when the check run started (ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`).","title":"Started At","format":"date-time"},"status":{"type":"string","description":"Current status of the check run. Only GitHub Actions can set `waiting`, `pending`, or `requested`.","title":"Status","enum":["queued","in_progress","completed","waiting","requested","pending"]}},"required":["owner","repo","check_run_id"],"title":"UpdateACheckRunRequest","description":"Request schema for `UpdateACheckRun`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"UpdateACheckRunResponseWrapper"}
+schema info of GITHUB_UPDATE_A_CHECK_RUN ends.

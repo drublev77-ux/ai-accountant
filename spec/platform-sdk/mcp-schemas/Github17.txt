@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_AN_ORGANIZATION
+
+Here is the input and output schema info of Tool GITHUB_DELETE_AN_ORGANIZATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The unique name of the organization to be deleted. This name is not case-sensitive.","title":"Org","examples":["my-github-org"]}},"required":["org"],"title":"DeleteAnOrganizationRequest","description":"Request schema for deleting a GitHub organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Provides deletion status information for accepted requests (asynchronous processing) or error details on failure; typically empty for successful synchronous deletions (204 No Content).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteAnOrganizationResponseWrapper"}
+schema info of GITHUB_DELETE_AN_ORGANIZATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_AN_ORGANIZATION_SECRET
+
+Here is the input and output schema info of Tool GITHUB_DELETE_AN_ORGANIZATION_SECRET of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the organization. This name is not case-sensitive.","title":"Org","examples":["octo-org"]},"secret_name":{"type":"string","description":"The name of the secret to be deleted.","title":"Secret Name","examples":["CI_DEPLOY_KEY"]}},"required":["org","secret_name"],"title":"DeleteAnOrganizationSecretRequest","description":"Request schema for `DeleteAnOrganizationSecret`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"An empty dictionary. A successful deletion typically results in a 204 No Content response, meaning this field will be empty.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteAnOrganizationSecretResponseWrapper"}
+schema info of GITHUB_DELETE_AN_ORGANIZATION_SECRET ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_AN_ORGANIZATION_VARIABLE
+
+Here is the input and output schema info of Tool GITHUB_DELETE_AN_ORGANIZATION_VARIABLE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"name":{"type":"string","description":"The name of the organization variable to delete. This parameter is not case-sensitive.","title":"Name","examples":["MY_VARIABLE"]},"org":{"type":"string","description":"The name of the organization. This parameter is not case-sensitive.","title":"Org","examples":["my-org-name"]}},"required":["org","name"],"title":"DeleteAnOrganizationVariableRequest","description":"Request schema for `DeleteAnOrganizationVariable`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteAnOrganizationVariableResponseWrapper"}
+schema info of GITHUB_DELETE_AN_ORGANIZATION_VARIABLE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_AN_ORGANIZATION_WEBHOOK
+
+Here is the input and output schema info of Tool GITHUB_DELETE_AN_ORGANIZATION_WEBHOOK of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"hook_id":{"type":"integer","description":"The unique identifier of the webhook. This ID can be retrieved from the `X-GitHub-Hook-ID` header in a webhook delivery or by listing organization webhooks.","title":"Hook Id","examples":[123456789,987654321]},"org":{"type":"string","description":"The name of the organization. This field is not case-sensitive.","title":"Org","examples":["github","my-company-org"]}},"required":["org","hook_id"],"title":"DeleteAnOrganizationWebhookRequest","description":"Request schema for `DeleteAnOrganizationWebhook`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary that might contain response data for non-204 responses or detailed error messages. For a successful deletion (204 No Content), this field is generally not populated as the response body is empty.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteAnOrganizationWebhookResponseWrapper"}
+schema info of GITHUB_DELETE_AN_ORGANIZATION_WEBHOOK ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_A_PACKAGE_FOR_AN_ORGANIZATION
+
+Here is the input and output schema info of Tool GITHUB_DELETE_A_PACKAGE_FOR_AN_ORGANIZATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"Name of the organization owning the package (not case-sensitive).","title":"Org","examples":["octo-org","my-company"]},"package_name":{"type":"string","description":"Unique name of the package to be deleted.","title":"Package Name","examples":["my-package","your-library-name"]},"package_type":{"type":"string","description":"Type of the package to be deleted. Packages in GitHub's Gradle registry have type `maven`. Docker images in GitHub's Container registry (`ghcr.io`) have type `container`. Use type `docker` for images previously in GitHub's Docker registry (`docker.pkg.github.com`), even if migrated to the Container registry.","title":"Package Type","enum":["npm","maven","rubygems","docker","nuget","container"],"examples":["npm","maven","rubygems","docker","nuget","container"]}},"required":["package_type","package_name","org"],"title":"DeleteAPackageForAnOrganizationRequest","description":"Parameters for deleting a specific package within an organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteAPackageForAnOrganizationResponseWrapper"}
+schema info of GITHUB_DELETE_A_PACKAGE_FOR_AN_ORGANIZATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_A_PACKAGE_FOR_A_USER
+
+Here is the input and output schema info of Tool GITHUB_DELETE_A_PACKAGE_FOR_A_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"package_name":{"type":"string","description":"The unique name of the package to be deleted.","title":"Package Name","examples":["my-private-package","internal-tool-cli"]},"package_type":{"type":"string","description":"Ecosystem of the package. Packages in GitHub's Gradle registry use `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) use `container`. The `docker` type can find images from the old Docker registry (`docker.pkg.github.com`), even if migrated.","title":"Package Type","enum":["npm","maven","rubygems","docker","nuget","container"],"examples":["npm","maven","rubygems","docker","nuget","container"]},"username":{"type":"string","description":"The GitHub username of the account that owns the package.","title":"Username","examples":["octocat","your-username"]}},"required":["package_type","package_name","username"],"title":"DeleteAPackageForAUserRequest","description":"Defines the request parameters for deleting a package owned by a user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteAPackageForAUserResponseWrapper"}
+schema info of GITHUB_DELETE_A_PACKAGE_FOR_A_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_A_PACKAGE_FOR_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_DELETE_A_PACKAGE_FOR_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"package_name":{"type":"string","description":"The unique name of the package to be deleted.","title":"Package Name","examples":["my-package-name","your-software-project"]},"package_type":{"type":"string","description":"Specifies package type. Note: GitHub Gradle packages are 'maven'; ghcr.io images are 'container'; 'docker' type helps find images migrated from docker.pkg.github.com.","title":"Package Type","enum":["npm","maven","rubygems","docker","nuget","container"],"examples":["npm","maven","docker","container"]}},"required":["package_type","package_name"],"title":"DeleteAPackageForTheAuthenticatedUserRequest","description":"Request schema for deleting a package for the authenticated user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Contains the API response data. For a successful package deletion, this is typically an empty object or provides minimal confirmation.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteAPackageForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_DELETE_A_PACKAGE_FOR_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_A_PACKAGE_VERSION_FOR_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_DELETE_A_PACKAGE_VERSION_FOR_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"package_name":{"type":"string","description":"The unique name of the package.","title":"Package Name","examples":["my-company-package","internal-tool"]},"package_type":{"type":"string","description":"Type of the package. E.g., `maven` for GitHub Gradle registry, `container` for `ghcr.io` images. The `docker` type covers images from `docker.pkg.github.com` (including migrated ones).","title":"Package Type","enum":["npm","maven","rubygems","docker","nuget","container"],"examples":["npm","maven","rubygems","docker","nuget","container"]},"package_version_id":{"type":"integer","description":"The unique numeric identifier of the specific package version to be deleted.","title":"Package Version Id","examples":["102345","7890"]}},"required":["package_type","package_name","package_version_id"],"title":"DeleteAPackageVersionForTheAuthenticatedUserRequest","description":"Request schema for `DeleteAPackageVersionForTheAuthenticatedUser`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Empty dictionary; the API returns 204 No Content on successful deletion, meaning no response body.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteAPackageVersionForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_DELETE_A_PACKAGE_VERSION_FOR_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_A_PENDING_REVIEW_FOR_A_PULL_REQUEST
+
+Here is the input and output schema info of Tool GITHUB_DELETE_A_PENDING_REVIEW_FOR_A_PULL_REQUEST of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The account owner of the repository. This name is not case-sensitive.","title":"Owner","examples":["octocat","github-linguist"]},"pull_number":{"type":"integer","description":"The number that identifies the pull request.","title":"Pull Number","examples":["1347","100"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case-sensitive.","title":"Repo","examples":["hello-world","octo-repo"]},"review_id":{"type":"integer","description":"The unique identifier of the pending review to be deleted.","title":"Review Id","examples":["80","42"]}},"required":["owner","repo","pull_number","review_id"],"title":"DeleteAPendingReviewForAPullRequestRequest","description":"Request schema for `DeleteAPendingReviewForAPullRequest`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary representing the pull request review object that was deleted.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteAPendingReviewForAPullRequestResponseWrapper"}
+schema info of GITHUB_DELETE_A_PENDING_REVIEW_FOR_A_PULL_REQUEST ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_A_PROJECT
+
+Here is the input and output schema info of Tool GITHUB_DELETE_A_PROJECT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"project_id":{"type":"integer","description":"The unique identifier of the project to be deleted.","title":"Project Id"}},"required":["project_id"],"title":"DeleteAProjectRequest","description":"Request schema for deleting a GitHub project."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Typically an empty dictionary as a successful deletion returns HTTP 204 No Content; contains error details otherwise.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteAProjectResponseWrapper"}
+schema info of GITHUB_DELETE_A_PROJECT ends.

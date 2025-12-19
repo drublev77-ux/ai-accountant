@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CHECK_IF_A_USER_CAN_BE_ASSIGNED_TO_A_ISSUE
+
+Here is the input and output schema info of Tool GITHUB_CHECK_IF_A_USER_CAN_BE_ASSIGNED_TO_A_ISSUE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"assignee":{"type":"string","description":"The GitHub username of the user to check for assignment permissions.","title":"Assignee","examples":["hubot"]},"issue_number":{"type":"integer","description":"The unique number identifying the issue within the repository.","title":"Issue Number","examples":["1347"]},"owner":{"type":"string","description":"The username of the account owning the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["Spoon-Knife"]}},"required":["owner","repo","issue_number","assignee"],"title":"CheckIfAUserCanBeAssignedToAIssueRequest","description":"Request schema for `CheckIfAUserCanBeAssignedToAIssue`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Empty if the user can be assigned; otherwise, contains GitHub error details if the user cannot be assigned or if the issue/repository is not found.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CheckIfAUserCanBeAssignedToAIssueResponseWrapper"}
+schema info of GITHUB_CHECK_IF_A_USER_CAN_BE_ASSIGNED_TO_A_ISSUE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CHECK_IF_A_USER_FOLLOWS_ANOTHER_USER
+
+Here is the input and output schema info of Tool GITHUB_CHECK_IF_A_USER_FOLLOWS_ANOTHER_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"target_user":{"type":"string","description":"The GitHub username of the user to verify if they are followed by the `username`.","title":"Target User","examples":["mercury-tools-bot","github"]},"username":{"type":"string","description":"The GitHub username of the user to check.","title":"Username","examples":["octocat","torvalds"]}},"required":["username","target_user"],"title":"CheckIfAUserFollowsAnotherUserRequest","description":"Request schema for checking if one GitHub user follows another."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"An empty dictionary. The follow status is determined by the HTTP response code (204 for following, 404 for not following), not the content of this field.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CheckIfAUserFollowsAnotherUserResponseWrapper"}
+schema info of GITHUB_CHECK_IF_A_USER_FOLLOWS_ANOTHER_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CHECK_IF_A_USER_IS_A_REPOSITORY_COLLABORATOR
+
+Here is the input and output schema info of Tool GITHUB_CHECK_IF_A_USER_IS_A_REPOSITORY_COLLABORATOR of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The account owner of the repository, typically a GitHub username or an organization name. This name is not case sensitive.","title":"Owner","examples":["octocat","my-github-org"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case sensitive.","title":"Repo","examples":["Spoon-Knife","my-project-repo"]},"username":{"type":"string","description":"The GitHub username of the user whose collaborator status is being checked. This name is not case sensitive.","title":"Username","examples":["gh-user123","another-dev"]}},"required":["owner","repo","username"],"title":"CheckIfAUserIsARepositoryCollaboratorRequest","description":"Request schema for `CheckIfAUserIsARepositoryCollaborator`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CheckIfAUserIsARepositoryCollaboratorResponseWrapper"}
+schema info of GITHUB_CHECK_IF_A_USER_IS_A_REPOSITORY_COLLABORATOR ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CHECK_IF_A_USER_IS_BLOCKED_BY_AN_ORGANIZATION
+
+Here is the input and output schema info of Tool GITHUB_CHECK_IF_A_USER_IS_BLOCKED_BY_AN_ORGANIZATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The organization's GitHub name. This name is not case-sensitive.","title":"Org","examples":["github","octo-org"]},"username":{"type":"string","description":"The GitHub username of the user to check.","title":"Username","examples":["octocat","mona-lisa"]}},"required":["org","username"],"title":"CheckIfAUserIsBlockedByAnOrganizationRequest","description":"Request schema for `CheckIfAUserIsBlockedByAnOrganization`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CheckIfAUserIsBlockedByAnOrganizationResponseWrapper"}
+schema info of GITHUB_CHECK_IF_A_USER_IS_BLOCKED_BY_AN_ORGANIZATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CHECK_IF_A_USER_IS_BLOCKED_BY_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_CHECK_IF_A_USER_IS_BLOCKED_BY_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"username":{"type":"string","description":"The GitHub username (handle) of the user.","title":"Username","examples":["octocat","torvalds"]}},"required":["username"],"title":"CheckIfAUserIsBlockedByTheAuthenticatedUserRequest","description":"Request to check if a user is blocked by the authenticated user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"An empty dictionary, returned when the API signals the user is blocked (204 No Content). This model is not used if the user is not blocked (API returns 404 Not Found).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CheckIfAUserIsBlockedByTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_CHECK_IF_A_USER_IS_BLOCKED_BY_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CHECK_PRIVATE_VULNERABILITY_REPORTING_STATUS
+
+Here is the input and output schema info of Tool GITHUB_CHECK_PRIVATE_VULNERABILITY_REPORTING_STATUS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username or organization name that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat","github"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["hello-world","linguist"]}},"required":["owner","repo"],"title":"CheckPrivateVulnerabilityReportingStatusRequest","description":"Request schema for `CheckPrivateVulnerabilityReportingStatus`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing a boolean field `enabled` which is `true` if private vulnerability reporting is enabled for the repository, and `false` otherwise.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CheckPrivateVulnerabilityReportingStatusResponseWrapper"}
+schema info of GITHUB_CHECK_PRIVATE_VULNERABILITY_REPORTING_STATUS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CHECK_TEAM_PERMISSIONS_FOR_A_PROJECT
+
+Here is the input and output schema info of Tool GITHUB_CHECK_TEAM_PERMISSIONS_FOR_A_PROJECT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the organization. This is case-insensitive.","title":"Org","examples":["octo-org"]},"project_id":{"type":"integer","description":"The unique identifier of the project (classic).","title":"Project Id","examples":[1002604]},"team_slug":{"type":"string","description":"The slug (short name) of the team.","title":"Team Slug","examples":["justice-league"]}},"required":["org","team_slug","project_id"],"title":"CheckTeamPermissionsForAProjectRequest","description":"Request schema for `CheckTeamPermissionsForAProject`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Details of the classic project, returned if the team has 'read', 'write', or 'admin' permissions. Includes project URLs, owner information, and other attributes.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CheckTeamPermissionsForAProjectResponseWrapper"}
+schema info of GITHUB_CHECK_TEAM_PERMISSIONS_FOR_A_PROJECT ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CHECK_TEAM_PERMISSIONS_FOR_A_REPOSITORY
+
+Here is the input and output schema info of Tool GITHUB_CHECK_TEAM_PERMISSIONS_FOR_A_REPOSITORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the organization. This field is not case-sensitive.","title":"Org","examples":["octo-org"]},"owner":{"type":"string","description":"The organization that owns the repository. For this GitHub API endpoint, this value must be the same as the `org` parameter. This field is not case-sensitive.","title":"Owner","examples":["octo-org"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["hello-world","octo-repo"]},"team_slug":{"type":"string","description":"The URL-friendly slug for the team name. It is unique within the organization and typically all lowercase with hyphens instead of spaces.","title":"Team Slug","examples":["justice-league","awesome-developers"]}},"required":["org","team_slug","owner","repo"],"title":"CheckTeamPermissionsForARepositoryRequest","description":"Defines the request parameters for checking a team's permissions for a repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary representing the repository object, which includes the team's permissions for it. Key information includes a `permissions` attribute with boolean flags for `admin`, `maintain`, `push`, `triage`, and `pull` access.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"CheckTeamPermissionsForARepositoryResponseWrapper"}
+schema info of GITHUB_CHECK_TEAM_PERMISSIONS_FOR_A_REPOSITORY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CLEAR_REPOSITORY_CACHE_BY_KEY
+
+Here is the input and output schema info of Tool GITHUB_CLEAR_REPOSITORY_CACHE_BY_KEY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"key":{"type":"string","description":"The exact cache key used to identify specific caches for deletion. This key is often dynamically generated in workflows using expressions (e.g., `${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}`).","title":"Key","examples":["Linux-npm-6a99d79959699e7aa7597179767626e089597a38","Windows-pip-cache-mybranch-py39","macOS-gems-custom-key-v1"]},"owner":{"type":"string","description":"The account owner of the repository. The name is not case sensitive.","title":"Owner","examples":["octocat","my-organization"]},"ref":{"type":"string","description":"The full Git reference for narrowing down the cache deletion. For example, to target caches for a specific branch, use `refs/heads/<branch_name>`. To target caches for a pull request, use `refs/pull/<pull_number>/merge`. If omitted, caches matching the key across all refs are considered.","title":"Ref","examples":["refs/heads/main","refs/pull/123/merge","refs/tags/v1.0.0"]},"repo":{"type":"string","description":"The name of the repository without the `.git` extension. The name is not case sensitive.","title":"Repo","examples":["hello-world","my-awesome-project"]}},"required":["owner","repo","key"],"title":"ClearRepositoryCacheByKeyRequest","description":"Request schema for the `ClearRepositoryCacheByKey` action, defining parameters to identify and delete GitHub Actions caches."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary typically containing `total_count`, the number of caches deleted, and `actions_caches`, an array of the deleted cache objects.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ClearRepositoryCacheByKeyResponseWrapper"}
+schema info of GITHUB_CLEAR_REPOSITORY_CACHE_BY_KEY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_CLEAR_SELF_HOSTED_RUNNER_ORG_LABELS
+
+Here is the input and output schema info of Tool GITHUB_CLEAR_SELF_HOSTED_RUNNER_ORG_LABELS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"Name of the organization (case-insensitive).","title":"Org","examples":["octo-org"]},"runner_id":{"type":"integer","description":"Unique identifier of the self-hosted runner.","title":"Runner Id","examples":[123,456]}},"required":["org","runner_id"],"title":"ClearSelfHostedRunnerOrgLabelsRequest","description":"Request schema for `ClearSelfHostedRunnerOrgLabels`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Dictionary with the total count and list of remaining labels after clearing custom ones; GitHub-assigned default labels are not removed.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ClearSelfHostedRunnerOrgLabelsResponseWrapper"}
+schema info of GITHUB_CLEAR_SELF_HOSTED_RUNNER_ORG_LABELS ends.

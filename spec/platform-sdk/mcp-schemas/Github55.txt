@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_REPO_SECRETS_WITHOUT_VALUES
+
+Here is the input and output schema info of Tool GITHUB_LIST_REPO_SECRETS_WITHOUT_VALUES of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username of the account that owns the repository. This is not case-sensitive.","title":"Owner","examples":["octocat"]},"page":{"type":"integer","description":"Page number of the results to retrieve. Used for pagination.","title":"Page","default":1,"examples":["1","2"]},"per_page":{"type":"integer","description":"Number of secrets to return per page. Maximum value is 100.","title":"Per Page","default":30,"examples":["30","50","100"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This is not case-sensitive.","title":"Repo","examples":["hello-world"]}},"required":["owner","repo"],"title":"ListRepoSecretsWithoutValuesRequest","description":"Request schema for the `ListRepoSecretsWithoutValues` action, specifying the repository and pagination parameters."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListRepoSecretsWithoutValuesResponseWrapper"}
+schema info of GITHUB_LIST_REPO_SECRETS_WITHOUT_VALUES ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_REPOSITORIES_ACCESSIBLE_TO_THE_APP_INSTALLATION
+
+Here is the input and output schema info of Tool GITHUB_LIST_REPOSITORIES_ACCESSIBLE_TO_THE_APP_INSTALLATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Page number of the results to fetch.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]}},"title":"ListRepositoriesAccessibleToTheAppInstallationRequest","description":"Request to list repositories accessible to an app installation."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Raw API response detailing accessible repositories; includes 'total_count', 'repository_selection', and 'repositories' array.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListRepositoriesAccessibleToTheAppInstallationResponseWrapper"}
+schema info of GITHUB_LIST_REPOSITORIES_ACCESSIBLE_TO_THE_APP_INSTALLATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_REPOSITORIES_ACCESSIBLE_TO_THE_USER_ACCESS_TOKEN
+
+Here is the input and output schema info of Tool GITHUB_LIST_REPOSITORIES_ACCESSIBLE_TO_THE_USER_ACCESS_TOKEN of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"installation_id":{"type":"integer","description":"Unique identifier of the GitHub App installation.","title":"Installation Id","examples":["1234567","8765432"]},"page":{"type":"integer","description":"Page number of results to fetch.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]}},"required":["installation_id"],"title":"ListRepositoriesAccessibleToTheUserAccessTokenRequest","description":"Request for listing repositories accessible via a GitHub App installation."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response, including `total_count` and a list of `repositories` accessible by the installation.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListRepositoriesAccessibleToTheUserAccessTokenResponseWrapper"}
+schema info of GITHUB_LIST_REPOSITORIES_ACCESSIBLE_TO_THE_USER_ACCESS_TOKEN ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_REPOSITORIES_FOR_A_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_REPOSITORIES_FOR_A_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"direction":{"type":"string","description":"Sort direction: `asc` or `desc`. Defaults to `asc` for `full_name` sort, `desc` otherwise.","title":"Direction","enum":["asc","desc"],"examples":["asc","desc"]},"page":{"type":"integer","description":"Page number for results (starts from 1). See GitHub REST API pagination docs for more info.","title":"Page","default":1,"examples":[1,2,3]},"per_page":{"type":"integer","description":"Number of results per page (max 100). See GitHub REST API pagination docs for more info.","title":"Per Page","default":30,"examples":[30,50,100]},"sort":{"type":"string","description":"Sort criterion: `created`, `updated`, `pushed`, or `full_name` (repository name).","title":"Sort","default":"full_name","enum":["created","updated","pushed","full_name"],"examples":["created","updated","pushed","full_name"]},"type":{"type":"string","description":"Filter for repository type: `all` (owned or member), `owner` (directly owned), or `member` (user is a public member).","title":"Type","default":"owner","enum":["all","owner","member"],"examples":["all","owner","member"]},"username":{"type":"string","description":"GitHub username, e.g., 'octocat'.","title":"Username"}},"required":["username"],"title":"ListRepositoriesForAUserRequest","description":"Request schema for `ListRepositoriesForAUser`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"The raw JSON response from the GitHub API. The GitHub API endpoint for listing user repositories directly returns a JSON array of repository objects. This `data` field (typed as a dictionary) will contain this response. You should inspect the contents of this dictionary to locate the list of repositories, where each repository is represented as a dictionary containing its details. For the specific structure of repository objects, refer to the official GitHub API documentation.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListRepositoriesForAUserResponseWrapper"}
+schema info of GITHUB_LIST_REPOSITORIES_FOR_A_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_REPOSITORIES_FOR_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_REPOSITORIES_FOR_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"before":{"type":"string","description":"Filters for repositories updated before this specified time. Provide as an ISO 8601 formatted timestamp.","title":"Before","examples":["2024-01-01T00:00:00Z","2024-03-20T18:45:00+00:00"]},"direction":{"type":"string","description":"The direction of the sort. Defaults to `asc` when `sort` is 'full_name', and `desc` otherwise.","title":"Direction","enum":["asc","desc"],"examples":["asc","desc"]},"page":{"type":"integer","description":"Page number of results to fetch.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"The number of results to return per page (maximum 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"raw_response":{"type":"boolean","description":"Return full API response if true, optimized response for AI agents if false.","title":"Raw Response","default":false,"examples":[true,false]},"since":{"type":"string","description":"Filters for repositories updated at or after this specified time. Provide as an ISO 8601 formatted timestamp.","title":"Since","examples":["2023-01-01T00:00:00Z","2023-05-15T10:30:00-07:00"]},"sort":{"type":"string","description":"The repository property by which to sort the results.","title":"Sort","default":"full_name","enum":["created","updated","pushed","full_name"],"examples":["created","full_name","updated"]},"type":{"type":"string","description":"Filters the results to repositories of the specified type.","title":"Type","default":"all","enum":["all","owner","public","private","member"],"examples":["all","owner","member"]}},"title":"ListRepositoriesForTheAuthenticatedUserRequest","description":"Request schema for `ListRepositoriesForTheAuthenticatedUser`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"The response data from the GitHub API. The underlying API endpoint (`GET /user/repos`) returns an array of repository objects. For the detailed structure of these repository objects, consult the official GitHub API documentation for 'repos/list-for-authenticated-user'.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListRepositoriesForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_LIST_REPOSITORIES_FOR_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_REPOSITORIES_STARRED_BY_A_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_REPOSITORIES_STARRED_BY_A_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"direction":{"type":"string","description":"The direction for sorting the results. Can be `asc` for ascending or `desc` for descending.","title":"Direction","default":"desc","enum":["asc","desc"]},"page":{"type":"integer","description":"Page number of the results to retrieve (starts from 1). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\" ","title":"Page","default":1},"per_page":{"type":"integer","description":"The number of results to display per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\" ","title":"Per Page","default":1},"sort":{"type":"string","description":"The criteria for sorting the starred repositories. `created` sorts by the date the repository was starred. `updated` sorts by the date the repository was last pushed to.","title":"Sort","default":"created","enum":["created","updated"]},"username":{"type":"string","description":"The GitHub username of the user whose starred repositories are to be listed.","title":"Username","examples":["octocat","torvalds"]}},"required":["username"],"title":"ListRepositoriesStarredByAUserRequest","description":"Request schema for `ListRepositoriesStarredByAUser`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListRepositoriesStarredByAUserResponseWrapper"}
+schema info of GITHUB_LIST_REPOSITORIES_STARRED_BY_A_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_REPOSITORIES_STARRED_BY_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_REPOSITORIES_STARRED_BY_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"direction":{"type":"string","description":"Sort direction: 'asc' (ascending) or 'desc' (descending).","title":"Direction","default":"desc","enum":["asc","desc"],"examples":["asc","desc"]},"page":{"type":"integer","description":"Page number of results (starts from 1).","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":1,"examples":["30","50","100"]},"sort":{"type":"string","description":"Sorts starred repositories by 'created' (date starred) or 'updated' (date last pushed).","title":"Sort","default":"created","enum":["created","updated"],"examples":["created","updated"]}},"title":"ListRepositoriesStarredByTheAuthenticatedUserRequest","description":"Request schema for `ListRepositoriesStarredByTheAuthenticatedUser`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListRepositoriesStarredByTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_LIST_REPOSITORIES_STARRED_BY_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_REPOSITORIES_WATCHED_BY_A_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_REPOSITORIES_WATCHED_BY_A_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Page number of results (starts from 1).","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"username":{"type":"string","description":"The GitHub username (case-sensitive).","title":"Username","examples":["octocat","torvalds","github_user_123"]}},"required":["username"],"title":"ListRepositoriesWatchedByAUserRequest","description":"Parameters for listing repositories watched by a specific GitHub user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary of watched repository objects, indexed by string representations of numbers.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListRepositoriesWatchedByAUserResponseWrapper"}
+schema info of GITHUB_LIST_REPOSITORIES_WATCHED_BY_A_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_REPOSITORIES_WATCHED_BY_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_REPOSITORIES_WATCHED_BY_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Page number of the results to retrieve.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]}},"title":"ListRepositoriesWatchedByTheAuthenticatedUserRequest","description":"Request schema for listing repositories watched by the authenticated user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response payload containing the list of watched repositories.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListRepositoriesWatchedByTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_LIST_REPOSITORIES_WATCHED_BY_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_REPOSITORY_ACTIVITIES
+
+Here is the input and output schema info of Tool GITHUB_LIST_REPOSITORY_ACTIVITIES of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"activity_type":{"type":"string","description":"Filters activities by a specific type, such as 'push' or 'pr_merge'. If unspecified, all relevant activity types are returned.","title":"Activity Type","enum":["push","force_push","branch_creation","branch_deletion","pr_merge","merge_queue_merge"],"examples":["push","force_push","branch_creation","pr_merge"]},"actor":{"type":"string","description":"The GitHub username of the person who performed the activity. Filters activities to only those performed by this user.","title":"Actor","examples":["monalisa","octocat"]},"after":{"type":"string","description":"A pagination cursor. Returns activity items that occurred after this cursor. This cursor is typically obtained from the `Link` header in a previous API response. For more details, see GitHub's REST API documentation on \"Using pagination in the REST API\" and \"Using Link headers\".","title":"After","examples":["Y3Vyc29yOnYyOpHGAS0A9A=="]},"before":{"type":"string","description":"A pagination cursor. Returns activity items that occurred before this cursor. This cursor is typically obtained from the `Link` header in a previous API response. For more details, see GitHub's REST API documentation on \"Using pagination in the REST API\" and \"Using Link headers\".","title":"Before","examples":["Y3Vyc29yOnYyOpHOBfWMIQ=="]},"direction":{"type":"string","description":"The direction to sort the activity results. Use 'asc' for ascending (oldest first) or 'desc' for descending (newest first).","title":"Direction","default":"desc","enum":["asc","desc"],"examples":["asc","desc"]},"owner":{"type":"string","description":"The account owner of the repository (e.g., a GitHub username or organization name). This name is not case-sensitive.","title":"Owner","examples":["octocat","github"]},"per_page":{"type":"integer","description":"The number of activity results to return per page. Maximum value is 100. For more information, see the GitHub REST API guide on \"Using pagination in the REST API\".","title":"Per Page","default":1},"ref":{"type":"string","description":"The Git reference for which to list activities (e.g., a branch name like `main` or a full ref like `refs/heads/main`). If unspecified, activities from all branches are listed.","title":"Ref","examples":["main","refs/heads/develop","feature-xyz"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case-sensitive.","title":"Repo","examples":["Spoon-Knife","docs"]},"time_period":{"type":"string","description":"Filters activities based on a predefined time period. For example, 'day' retrieves activities from the last 24 hours, and 'week' from the last 7 days (168 hours).","title":"Time Period","enum":["day","week","month","quarter","year"],"examples":["day","week","month","quarter","year"]}},"required":["owner","repo"],"title":"ListRepositoryActivitiesRequest","description":"Request schema for `ListRepositoryActivities`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListRepositoryActivitiesResponseWrapper"}
+schema info of GITHUB_LIST_REPOSITORY_ACTIVITIES ends.

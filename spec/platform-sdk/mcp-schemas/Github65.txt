@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REMOVE_AN_ORGANIZATION_ROLE_FROM_A_USER
+
+Here is the input and output schema info of Tool GITHUB_REMOVE_AN_ORGANIZATION_ROLE_FROM_A_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The GitHub organization's name (not case-sensitive).","title":"Org","examples":["github","my-company-org"]},"role_id":{"type":"integer","description":"Unique ID of the custom organization role to be removed.","title":"Role Id","examples":["42","101"]},"username":{"type":"string","description":"GitHub username of the user.","title":"Username","examples":["octocat","mona-lisa"]}},"required":["org","username","role_id"],"title":"RemoveAnOrganizationRoleFromAUserRequest","description":"Request schema for `RemoveAnOrganizationRoleFromAUser`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Response data, typically empty for a successful (HTTP 204 No Content) removal.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"RemoveAnOrganizationRoleFromAUserResponseWrapper"}
+schema info of GITHUB_REMOVE_AN_ORGANIZATION_ROLE_FROM_A_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REMOVE_APP_ACCESS_RESTRICTIONS
+
+Here is the input and output schema info of Tool GITHUB_REMOVE_APP_ACCESS_RESTRICTIONS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"branch":{"type":"string","description":"The name of the branch from which all app access restrictions will be removed. Wildcard characters are not supported; for branches with wildcards, please use the GraphQL API.","title":"Branch","examples":["main","develop","feature/new-login"]},"owner":{"type":"string","description":"The username of the account that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat","github"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["hello-world","linguist"]}},"required":["owner","repo","branch"],"title":"RemoveAppAccessRestrictionsRequest","description":"Request schema for `RemoveAppAccessRestrictions`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"The API response. Upon success, this field contains a list of app objects detailing the apps whose access restrictions were removed from the branch. An empty list indicates all app restrictions were removed or none were present. For the app object structure, consult the GitHub API documentation.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"RemoveAppAccessRestrictionsResponseWrapper"}
+schema info of GITHUB_REMOVE_APP_ACCESS_RESTRICTIONS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REMOVE_A_PROJECT_FROM_A_TEAM
+
+Here is the input and output schema info of Tool GITHUB_REMOVE_A_PROJECT_FROM_A_TEAM of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The organization name. The name is not case sensitive.","title":"Org","examples":["octo-org","my-company"]},"project_id":{"type":"integer","description":"The unique identifier of the project to be removed from the team.","title":"Project Id","examples":[1023,42]},"team_slug":{"type":"string","description":"The slug of the team name (URL-friendly version, e.g., 'justice-league').","title":"Team Slug","examples":["justice-league","engineering-team"]}},"required":["org","team_slug","project_id"],"title":"RemoveAProjectFromATeamRequest","description":"Request schema for removing a project from a team."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Response data from the API. For a successful removal (HTTP 204 No Content), this field is typically empty. In case of an error, it may contain error details.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"RemoveAProjectFromATeamResponseWrapper"}
+schema info of GITHUB_REMOVE_A_PROJECT_FROM_A_TEAM ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REMOVE_A_REPOSITORY_COLLABORATOR
+
+Here is the input and output schema info of Tool GITHUB_REMOVE_A_REPOSITORY_COLLABORATOR of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The account owner of the repository (not case-sensitive).","title":"Owner","examples":["octocat","github-owner"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension (not case-sensitive).","title":"Repo","examples":["Hello-World","my-awesome-project"]},"username":{"type":"string","description":"The GitHub username of the collaborator to remove.","title":"Username","examples":["hubot","octo-collaborator"]}},"required":["owner","repo","username"],"title":"RemoveARepositoryCollaboratorRequest","description":"Request schema for removing a collaborator from a GitHub repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Response data, expected to be empty upon successful removal (204 No Content).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"RemoveARepositoryCollaboratorResponseWrapper"}
+schema info of GITHUB_REMOVE_A_REPOSITORY_COLLABORATOR ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REMOVE_A_REPOSITORY_FROM_AN_APP_INSTALLATION
+
+Here is the input and output schema info of Tool GITHUB_REMOVE_A_REPOSITORY_FROM_AN_APP_INSTALLATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"installation_id":{"type":"integer","description":"The unique identifier of the GitHub App installation from which to remove the repository.","title":"Installation Id","examples":["1234567"]},"repository_id":{"type":"integer","description":"The unique identifier of the repository to be removed from the installation.","title":"Repository Id","examples":["7654321"]}},"required":["installation_id","repository_id"],"title":"RemoveARepositoryFromAnAppInstallationRequest","description":"Request schema for `RemoveARepositoryFromAnAppInstallation`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"RemoveARepositoryFromAnAppInstallationResponseWrapper"}
+schema info of GITHUB_REMOVE_A_REPOSITORY_FROM_AN_APP_INSTALLATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REMOVE_A_REPOSITORY_FROM_A_TEAM
+
+Here is the input and output schema info of Tool GITHUB_REMOVE_A_REPOSITORY_FROM_A_TEAM of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the organization where the team and repository exist. This field is case-insensitive.","title":"Org","examples":["octo-org"]},"owner":{"type":"string","description":"The username of the account that owns the repository. This field is case-insensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the '.git' extension. This field is case-insensitive.","title":"Repo","examples":["hello-world"]},"team_slug":{"type":"string","description":"The URL-friendly identifier (slug) for the team. Team slugs are typically all lowercase with hyphens instead of spaces (e.g., 'justice-league' for 'Justice League').","title":"Team Slug","examples":["justice-league"]}},"required":["org","team_slug","owner","repo"],"title":"RemoveARepositoryFromATeamRequest","description":"Specifies the target organization, team, and repository to disassociate."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"An empty dictionary is typically returned on successful removal (HTTP 204 No Content). If an error occurs, this may contain error details.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"RemoveARepositoryFromATeamResponseWrapper"}
+schema info of GITHUB_REMOVE_A_REPOSITORY_FROM_A_TEAM ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REMOVE_A_SELECTED_REPOSITORY_FROM_A_USER_SECRET
+
+Here is the input and output schema info of Tool GITHUB_REMOVE_A_SELECTED_REPOSITORY_FROM_A_USER_SECRET of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"repository_id":{"type":"integer","description":"The unique integer identifier of the repository that will lose access to the specified Codespaces secret.","title":"Repository Id","examples":["123456789","987654321"]},"secret_name":{"type":"string","description":"Name of the user's Codespaces secret from which repository access will be revoked.","title":"Secret Name","examples":["AWS_ACCESS_KEY_ID_USER","GH_PAT"]}},"required":["secret_name","repository_id"],"title":"RemoveASelectedRepositoryFromAUserSecretRequest","description":"Request schema for removing a selected repository's access to a user's Codespaces secret."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"RemoveASelectedRepositoryFromAUserSecretResponseWrapper"}
+schema info of GITHUB_REMOVE_A_SELECTED_REPOSITORY_FROM_A_USER_SECRET ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REMOVE_ASSIGNEES_FROM_AN_ISSUE
+
+Here is the input and output schema info of Tool GITHUB_REMOVE_ASSIGNEES_FROM_AN_ISSUE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"assignees":{"type":"array","description":"Usernames to unassign from the issue. Note: Requires push access to the repository; attempts to remove users without permission or those not currently assigned are silently ignored.","title":"Assignees","items":{"type":"string","properties":{}},"examples":[["octocat","monalisa"],["devonzuegel"]]},"issue_number":{"type":"integer","description":"The unique number that identifies the issue within the repository.","title":"Issue Number","examples":["1347","2023"]},"owner":{"type":"string","description":"The account owner of the repository (username or organization name). This name is not case-sensitive.","title":"Owner","examples":["octocat","my-organization"]},"repo":{"type":"string","description":"The name of the repository, excluding the `.git` extension. This name is not case-sensitive.","title":"Repo","examples":["Spoon-Knife","my-project"]}},"required":["owner","repo","issue_number"],"title":"RemoveAssigneesFromAnIssueRequest","description":"Request schema for removing assignees from a GitHub issue."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary representing the GitHub issue resource from which assignees were removed, confirming the successful removal and showing the updated state of the issue.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"RemoveAssigneesFromAnIssueResponseWrapper"}
+schema info of GITHUB_REMOVE_ASSIGNEES_FROM_AN_ISSUE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REMOVE_CUSTOM_LABEL_FROM_REPO_RUNNER
+
+Here is the input and output schema info of Tool GITHUB_REMOVE_CUSTOM_LABEL_FROM_REPO_RUNNER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"name":{"type":"string","description":"Name of the custom label to remove from the self-hosted runner.","title":"Name","examples":["team-alpha-builder","macos-ci-runner"]},"owner":{"type":"string","description":"Account owner of the repository (case-insensitive).","title":"Owner"},"repo":{"type":"string","description":"Repository name, without the `.git` extension (case-insensitive).","title":"Repo"},"runner_id":{"type":"integer","description":"Unique identifier of the self-hosted runner.","title":"Runner Id"}},"required":["owner","repo","runner_id","name"],"title":"RemoveCustomLabelFromRepoRunnerRequest","description":"Request schema for `RemoveCustomLabelFromRepoRunner`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"GitHub API response detailing remaining labels, including `total_count` and a list of `labels` (each with `id`, `name`, `type`).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"RemoveCustomLabelFromRepoRunnerResponseWrapper"}
+schema info of GITHUB_REMOVE_CUSTOM_LABEL_FROM_REPO_RUNNER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_REMOVE_CUSTOM_LABEL_FROM_SELF_HOSTED_RUNNER
+
+Here is the input and output schema info of Tool GITHUB_REMOVE_CUSTOM_LABEL_FROM_SELF_HOSTED_RUNNER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"name":{"type":"string","description":"The name of the custom label to remove from the self-hosted runner.","title":"Name","examples":["prod-runner-label"]},"org":{"type":"string","description":"The name of the organization. This name is not case-sensitive.","title":"Org","examples":["octo-org"]},"runner_id":{"type":"integer","description":"Unique identifier of the self-hosted runner.","title":"Runner Id","examples":["5"]}},"required":["org","runner_id","name"],"title":"RemoveCustomLabelFromSelfHostedRunnerRequest","description":"Request schema for removing a custom label from a self-hosted runner in an organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the remaining custom labels for the self-hosted runner. This typically includes a 'total_count' of labels and a 'labels' list, where each label object has an 'id', 'name', and 'type'.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"RemoveCustomLabelFromSelfHostedRunnerResponseWrapper"}
+schema info of GITHUB_REMOVE_CUSTOM_LABEL_FROM_SELF_HOSTED_RUNNER ends.

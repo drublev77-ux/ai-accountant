@@ -1,0 +1,144 @@
+{
+  "id": "102019b161434697d57bc1f0e539b9cf0b7",
+  "version": "102019b3885245e74489a6d26d33192e397",
+  "schema": {
+    "name": "user",
+    "description": "User entity storing authentication credentials, preferences, and account status.",
+    "fields": [
+      {
+        "name": "id",
+        "description": "Unique identifier for each data of this entity.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System Identifier"
+        }
+      },
+      {
+        "name": "data_creator",
+        "description": "id of the user who creates the record",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Audit Trail"
+        }
+      },
+      {
+        "name": "data_updater",
+        "description": "id of the user who updates the record",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Audit Trail"
+        }
+      },
+      {
+        "name": "create_time",
+        "description": "create time in timestamp unix",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System Metadata"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "update_time",
+        "description": "update time in timestamp unix",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System Metadata"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "email",
+        "description": "User email address used for login and notifications.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "PII"
+        },
+        "taxonomy": {
+          "category": "Identity",
+          "subject": "User"
+        },
+        "format": "email"
+      },
+      {
+        "name": "password_hash",
+        "description": "Hashed password for authentication.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 4,
+          "reason": "Authentication Credential"
+        },
+        "encryption": true
+      },
+      {
+        "name": "oauth_tokens",
+        "description": "JSON string storing OAuth tokens for third-party logins.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 4,
+          "reason": "Authentication Credential"
+        },
+        "nullable": true,
+        "encryption": true
+      },
+      {
+        "name": "preferences",
+        "description": "JSON string storing user settings and UI preferences.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "User Configuration"
+        },
+        "nullable": true
+      }
+    ],
+    "indexes": [
+      {
+        "fields": [
+          "id"
+        ],
+        "unique": true,
+        "primary": true,
+        "order": false
+      },
+      {
+        "fields": [
+          "email"
+        ],
+        "unique": true,
+        "order": false
+      },
+      {
+        "fields": [
+          "data_creator"
+        ],
+        "order": false
+      },
+      {
+        "fields": [
+          "data_updater"
+        ],
+        "order": false
+      }
+    ]
+  },
+  "task": {
+    "id": "6945c3c0ee55246be43e8c7f",
+    "root": "69317a33ad50e9e8016841da",
+    "project": "69317a33ad50e9e8016841d9",
+    "user": "6841d390-b021-7026-f508-2c1990f0e948"
+  },
+  "namespace": {
+    "id": "01987547fc6c72ecb453bd2736bd4ea0",
+    "tenant": 2,
+    "name": "global-1",
+    "default": true
+  },
+  "revision": 1
+}

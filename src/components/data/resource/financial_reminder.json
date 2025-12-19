@@ -1,0 +1,196 @@
+{
+  "id": "102019ae94a709570349fbe96a64e7d8b1c",
+  "version": "102019b3885245e74489a6d26d33192e397",
+  "schema": {
+    "name": "financial_reminder",
+    "description": "Reminders for financial deadlines with sync support.",
+    "fields": [
+      {
+        "name": "id",
+        "description": "Unique identifier for the reminder.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System identifier"
+        }
+      },
+      {
+        "name": "data_creator",
+        "description": "id of the user who creates the record",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Audit trail"
+        }
+      },
+      {
+        "name": "data_updater",
+        "description": "id of the user who updates the record",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Audit trail"
+        }
+      },
+      {
+        "name": "create_time",
+        "description": "create time in timestamp unix",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System metadata"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "update_time",
+        "description": "update time in timestamp unix",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System metadata"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "user_id",
+        "description": "ID of the user owning the reminder.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Personal data association"
+        }
+      },
+      {
+        "name": "title",
+        "description": "Title of the financial reminder.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "User content"
+        }
+      },
+      {
+        "name": "description",
+        "description": "Detailed description.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "User content"
+        },
+        "nullable": true
+      },
+      {
+        "name": "due_date",
+        "description": "The due date for the reminder.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Time sensitive"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "priority",
+        "description": "Priority level.",
+        "type": 100,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Classification"
+        },
+        "enumeration": [
+          {
+            "value": "Unspecified"
+          },
+          {
+            "number": 1,
+            "value": "Low"
+          },
+          {
+            "number": 2,
+            "value": "Medium"
+          },
+          {
+            "number": 3,
+            "value": "High"
+          }
+        ]
+      },
+      {
+        "name": "is_completed",
+        "description": "Completion status.",
+        "type": 3,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Status"
+        }
+      },
+      {
+        "name": "version",
+        "description": "Sync version.",
+        "type": 2,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "Sync Metadata"
+        },
+        "numeric": "int"
+      }
+    ],
+    "indexes": [
+      {
+        "fields": [
+          "id"
+        ],
+        "unique": true,
+        "primary": true,
+        "order": false
+      },
+      {
+        "fields": [
+          "due_date",
+          "user_id"
+        ],
+        "order": true
+      },
+      {
+        "fields": [
+          "data_creator"
+        ],
+        "order": false
+      },
+      {
+        "fields": [
+          "data_updater"
+        ],
+        "order": false
+      }
+    ],
+    "relations": [
+      {
+        "referencing_fields": [
+          "user_id"
+        ],
+        "referenced_entity": {
+          "name": "user"
+        },
+        "referenced_fields": [
+          "id"
+        ],
+        "cascade": true
+      }
+    ]
+  },
+  "task": {
+    "id": "6945c3c0ee55246be43e8c7f",
+    "root": "69317a33ad50e9e8016841da",
+    "project": "69317a33ad50e9e8016841d9",
+    "user": "6841d390-b021-7026-f508-2c1990f0e948"
+  },
+  "namespace": {
+    "id": "01987547fc6c72ecb453bd2736bd4ea0",
+    "tenant": 2,
+    "name": "global-1",
+    "default": true
+  },
+  "revision": 1
+}
