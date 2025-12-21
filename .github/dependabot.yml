@@ -1,0 +1,99 @@
+# Dependabot configuration for automatic dependency updates
+# This file enables Dependabot to create pull requests for:
+# - Security vulnerabilities
+# - Outdated dependencies
+# - Version updates
+
+version: 2
+updates:
+  # Enable version updates for npm (JavaScript/TypeScript dependencies)
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "drublev77-ux"
+    assignees:
+      - "drublev77-ux"
+    labels:
+      - "dependencies"
+      - "npm"
+    versioning-strategy: increase
+    commit-message:
+      prefix: "chore"
+      prefix-development: "chore"
+      include: "scope"
+    # Group minor and patch updates together
+    groups:
+      react-ecosystem:
+        patterns:
+          - "react*"
+          - "@tanstack/*"
+      ui-components:
+        patterns:
+          - "@radix-ui/*"
+          - "lucide-react"
+          - "tailwindcss"
+      build-tools:
+        patterns:
+          - "vite*"
+          - "@vitejs/*"
+          - "typescript"
+          - "eslint*"
+          - "@typescript-eslint/*"
+
+  # Enable version updates for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "drublev77-ux"
+    labels:
+      - "dependencies"
+      - "github-actions"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+
+  # Enable version updates for Gradle (Android dependencies)
+  - package-ecosystem: "gradle"
+    directory: "/android"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "drublev77-ux"
+    labels:
+      - "dependencies"
+      - "android"
+      - "gradle"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+  # Agent dependencies (if separate package.json exists)
+  - package-ecosystem: "npm"
+    directory: "/agent"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "drublev77-ux"
+    labels:
+      - "dependencies"
+      - "agent"
+      - "npm"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
