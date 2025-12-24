@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_PUBLIC_GISTS
+
+Here is the input and output schema info of Tool GITHUB_LIST_PUBLIC_GISTS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Page number of the results to fetch for pagination.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"Number of gists to return per page (maximum 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"since":{"type":"string","description":"Filters results to gists last updated at or after this ISO 8601 timestamp (e.g., `YYYY-MM-DDTHH:MM:SSZ`).","title":"Since","examples":["2023-01-15T00:00:00Z"]}},"title":"ListPublicGistsRequest","description":"Input model for the `ListPublicGists` action, defining parameters to filter and paginate public gists."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"The data payload from the API response. For the `/gists/public` endpoint, GitHub returns a list of Gist objects.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListPublicGistsResponseWrapper"}
+schema info of GITHUB_LIST_PUBLIC_GISTS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_PUBLIC_KEYS_FOR_A_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_PUBLIC_KEYS_FOR_A_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\" ","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"The number of results to return per page (maximum 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\" ","title":"Per Page","default":30,"examples":["30","50","100"]},"username":{"type":"string","description":"The GitHub username (handle) of the user whose public SSH keys are to be listed. For example, 'octocat'.","title":"Username","examples":["octocat","torvalds"]}},"required":["username"],"title":"ListPublicKeysForAUserRequest","description":"Request model for retrieving a list of public SSH keys associated with a specific GitHub user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListPublicKeysForAUserResponseWrapper"}
+schema info of GITHUB_LIST_PUBLIC_KEYS_FOR_A_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_PUBLIC_ORGANIZATION_EVENTS
+
+Here is the input and output schema info of Tool GITHUB_LIST_PUBLIC_ORGANIZATION_EVENTS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The GitHub organization name (case-insensitive).","title":"Org","examples":["github","google","microsoft"]},"page":{"type":"integer","description":"Page number of results to retrieve (starts from 1).","title":"Page","default":1},"per_page":{"type":"integer","description":"Number of results per page (maximum 100).","title":"Per Page","default":30,"examples":["30","50","100"]}},"required":["org"],"title":"ListPublicOrganizationEventsRequest","description":"Defines the parameters for the `ListPublicOrganizationEvents` action."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListPublicOrganizationEventsResponseWrapper"}
+schema info of GITHUB_LIST_PUBLIC_ORGANIZATION_EVENTS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_PUBLIC_ORGANIZATION_MEMBERS
+
+Here is the input and output schema info of Tool GITHUB_LIST_PUBLIC_ORGANIZATION_MEMBERS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the GitHub organization. This field is not case-sensitive.","title":"Org","examples":["github","octodemo","google"]},"page":{"type":"integer","description":"Page number of the results to retrieve.","title":"Page","default":1},"per_page":{"type":"integer","description":"Number of results to return per page (maximum 100).","title":"Per Page","default":1}},"required":["org"],"title":"ListPublicOrganizationMembersRequest","description":"Parameters for listing public members of a GitHub organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListPublicOrganizationMembersResponseWrapper"}
+schema info of GITHUB_LIST_PUBLIC_ORGANIZATION_MEMBERS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_PUBLIC_REPOSITORIES
+
+Here is the input and output schema info of Tool GITHUB_LIST_PUBLIC_REPOSITORIES of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"since":{"type":"integer","description":"A repository ID. Returns only repositories with an ID greater than this value, for pagination.","title":"Since","examples":["1296269","1500000"]}},"title":"ListPublicRepositoriesRequest","description":"Request model to list public repositories, optionally starting after a specific repository ID."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListPublicRepositoriesResponseWrapper"}
+schema info of GITHUB_LIST_PUBLIC_REPOSITORIES ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_PULL_REQUESTS
+
+Here is the input and output schema info of Tool GITHUB_LIST_PULL_REQUESTS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"base":{"type":"string","description":"Filter by base branch name.","title":"Base","examples":["main","develop","gh-pages"]},"direction":{"type":"string","description":"Sort direction. Valid values: 'asc', 'desc'. Defaults to 'desc' if sort is 'created' or unspecified, else 'asc'.","title":"Direction","examples":["asc","desc"]},"head":{"type":"string","description":"Filter by head user/org and branch name, e.g., `user:ref-name`.","title":"Head","examples":["octocat:test-branch","github:new-script-format"]},"owner":{"type":"string","description":"Username or organization name of the repository owner.","title":"Owner","examples":["octocat","my-organization"]},"page":{"type":"integer","description":"Page number for results.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results per page (maximum 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"repo":{"type":"string","description":"Name of the repository, without the `.git` extension.","title":"Repo","examples":["Spoon-Knife","my-project"]},"sort":{"type":"string","description":"Sorts results. Valid values: 'created', 'updated', 'popularity', 'long-running'. 'popularity' is by comment count; 'long-running' by age and recent activity.","title":"Sort","default":"created","examples":["created","updated","popularity","long-running"]},"state":{"type":"string","description":"Filter by pull request state. Valid values: 'open', 'closed', 'all'.","title":"State","default":"open","examples":["open","closed","all"]}},"required":["owner","repo"],"title":"ListPullRequestsRequest","description":"Request schema for listing pull requests in a repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Filtered pull request data with only essential information","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListPullRequestsResponseWrapper"}
+schema info of GITHUB_LIST_PULL_REQUESTS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_PULL_REQUESTS_ASSOCIATED_WITH_A_COMMIT
+
+Here is the input and output schema info of Tool GITHUB_LIST_PULL_REQUESTS_ASSOCIATED_WITH_A_COMMIT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"commit_sha":{"type":"string","description":"SHA of the commit to list associated pull requests for.","title":"Commit Sha","examples":["c5b97d5ae6c19d5c5df71a34c7fbeeda2479ccbc","0000000000000000000000000000000000000000"]},"owner":{"type":"string","description":"Account owner of the repository (GitHub username or organization name, case-insensitive).","title":"Owner","examples":["octocat","github"]},"page":{"type":"integer","description":"Page number of results to retrieve.","title":"Page","default":1,"examples":["1","2"]},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":30,"examples":["30","100"]},"repo":{"type":"string","description":"Repository name, without the `.git` extension (case-insensitive).","title":"Repo","examples":["Hello-World","linguist"]}},"required":["owner","repo","commit_sha"],"title":"ListPullRequestsAssociatedWithACommitRequest","description":"Request schema for `ListPullRequestsAssociatedWithACommit`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response payload, typically a list of pull requests associated with the commit.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListPullRequestsAssociatedWithACommitResponseWrapper"}
+schema info of GITHUB_LIST_PULL_REQUESTS_ASSOCIATED_WITH_A_COMMIT ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_PULL_REQUESTS_FILES
+
+Here is the input and output schema info of Tool GITHUB_LIST_PULL_REQUESTS_FILES of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The account owner of the repository (e.g., a GitHub username or organization name). This field is not case sensitive.","title":"Owner","examples":["octocat","my-organization"]},"page":{"type":"integer","description":"Page number of the results to retrieve for pagination.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"Number of file results to return per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"pull_number":{"type":"integer","description":"The numeric identifier of the pull request whose files are to be listed.","title":"Pull Number","examples":["1","123","42"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case sensitive.","title":"Repo","examples":["Hello-World","my-cool-project"]}},"required":["owner","repo","pull_number"],"title":"ListPullRequestsFilesRequest","description":"Defines the parameters required to list files for a specific pull request in a repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListPullRequestsFilesResponseWrapper"}
+schema info of GITHUB_LIST_PULL_REQUESTS_FILES ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_REACTIONS_FOR_A_COMMIT_COMMENT
+
+Here is the input and output schema info of Tool GITHUB_LIST_REACTIONS_FOR_A_COMMIT_COMMENT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"comment_id":{"type":"integer","description":"Identifier of the commit comment.","title":"Comment Id","examples":["42","101"]},"content":{"type":"string","description":"Filter by reaction type. If unspecified, all reaction types for the comment are returned.","title":"Content","enum":["+1","-1","laugh","confused","heart","hooray","rocket","eyes"],"examples":["+1","laugh","heart"]},"owner":{"type":"string","description":"Owner of the repository (username or organization, case-insensitive).","title":"Owner","examples":["octocat","my-organization"]},"page":{"type":"integer","description":"Page number for the results (1-indexed).","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results per page (maximum 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"repo":{"type":"string","description":"Repository name, excluding the '.git' extension (case-insensitive).","title":"Repo","examples":["Spoon-Knife","my-awesome-project"]}},"required":["owner","repo","comment_id"],"title":"ListReactionsForACommitCommentRequest","description":"Request schema for `ListReactionsForACommitComment`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListReactionsForACommitCommentResponseWrapper"}
+schema info of GITHUB_LIST_REACTIONS_FOR_A_COMMIT_COMMENT ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_REACTIONS_FOR_AN_ISSUE
+
+Here is the input and output schema info of Tool GITHUB_LIST_REACTIONS_FOR_AN_ISSUE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"content":{"type":"string","description":"Filters reactions by a specific type. If omitted, all reactions to the issue are listed.","title":"Content","enum":["+1","-1","laugh","confused","heart","hooray","rocket","eyes"],"examples":["+1","laugh","heart"]},"issue_number":{"type":"integer","description":"The unique number identifying the issue within the repository.","title":"Issue Number","examples":["1347"]},"owner":{"type":"string","description":"The username of the account that owns the repository. This is not case-sensitive.","title":"Owner","examples":["octocat"]},"page":{"type":"integer","description":"The page number of the results to fetch for pagination.","title":"Page","default":1},"per_page":{"type":"integer","description":"The number of results to return per page, up to a maximum of 100.","title":"Per Page","default":30},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This is not case-sensitive.","title":"Repo","examples":["Spoon-Knife"]}},"required":["owner","repo","issue_number"],"title":"ListReactionsForAnIssueRequest","description":"Request schema for the `ListReactionsForAnIssue` action. Specifies the repository, issue, and optional filters for listing reactions."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListReactionsForAnIssueResponseWrapper"}
+schema info of GITHUB_LIST_REACTIONS_FOR_AN_ISSUE ends.

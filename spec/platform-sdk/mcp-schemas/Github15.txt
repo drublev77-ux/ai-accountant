@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_A_DISCUSSION
+
+Here is the input and output schema info of Tool GITHUB_DELETE_A_DISCUSSION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"discussion_number":{"type":"integer","description":"The unique number identifying the discussion to be deleted.","title":"Discussion Number","examples":[42]},"org":{"type":"string","description":"Case-insensitive name of the organization.","title":"Org","examples":["octo-org"]},"team_slug":{"type":"string","description":"URL-friendly version (slug) of the team name.","title":"Team Slug","examples":["justice-league"]}},"required":["org","team_slug","discussion_number"],"title":"DeleteADiscussionRequest","description":"Defines the parameters to delete a specific team discussion."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Data from the response. Typically an empty dictionary for a successful deletion (204 No Content) as no content is returned.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["successful"],"title":"DeleteADiscussionResponseWrapper"}
+schema info of GITHUB_DELETE_A_DISCUSSION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_A_DISCUSSION_COMMENT
+
+Here is the input and output schema info of Tool GITHUB_DELETE_A_DISCUSSION_COMMENT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"comment_number":{"type":"integer","description":"Unique number identifying the comment.","title":"Comment Number","examples":["101"]},"discussion_number":{"type":"integer","description":"Unique number identifying the discussion.","title":"Discussion Number","examples":["42"]},"org":{"type":"string","description":"The organization name (not case sensitive).","title":"Org","examples":["octo-org"]},"team_slug":{"type":"string","description":"The slug of the team name (URL-friendly version).","title":"Team Slug","examples":["justice-league"]}},"required":["org","team_slug","discussion_number","comment_number"],"title":"DeleteADiscussionCommentRequest","description":"Request model for deleting a specific comment from a team discussion."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Response data; typically empty for a successful deletion (HTTP 204 No Content).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteADiscussionCommentResponseWrapper"}
+schema info of GITHUB_DELETE_A_DISCUSSION_COMMENT ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_ADMIN_BRANCH_PROTECTION
+
+Here is the input and output schema info of Tool GITHUB_DELETE_ADMIN_BRANCH_PROTECTION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"branch":{"type":"string","description":"The name of the branch. Cannot contain wildcard characters.","title":"Branch"},"owner":{"type":"string","description":"The account owner of the repository. The name is not case sensitive.","title":"Owner"},"repo":{"type":"string","description":"The name of the repository without the `.git` extension. The name is not case sensitive. ","title":"Repo"}},"required":["owner","repo","branch"],"title":"DeleteAdminBranchProtectionRequest","description":"Request schema for `DeleteAdminBranchProtection`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteAdminBranchProtectionResponseWrapper"}
+schema info of GITHUB_DELETE_ADMIN_BRANCH_PROTECTION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_A_FILE
+
+Here is the input and output schema info of Tool GITHUB_DELETE_A_FILE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"author__email":{"type":"string","description":"Email address of the commit author for the deletion; defaults to the committer's email.","title":"Author  Email","examples":["mona@example.com"]},"author__name":{"type":"string","description":"Name of the commit author for the deletion; defaults to the committer's name.","title":"Author  Name","examples":["Mona Lisa"]},"branch":{"type":"string","description":"Branch from which the file will be deleted; defaults to the repository's default branch.","title":"Branch","examples":["main","develop"]},"committer__email":{"type":"string","description":"Email address of the user committing the deletion; defaults to the authenticated user's email.","title":"Committer  Email","examples":["mona@example.com"]},"committer__name":{"type":"string","description":"Name of the user committing the deletion; defaults to the authenticated user's name.","title":"Committer  Name","examples":["Mona Lisa"]},"message":{"type":"string","description":"Commit message for the deletion.","title":"Message","examples":["Delete old script"]},"owner":{"type":"string","description":"The account owner of the repository (not case-sensitive).","title":"Owner","examples":["octocat"]},"path":{"type":"string","description":"Path to the file to be deleted within the repository.","title":"Path","examples":["notes/important.txt"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension (not case-sensitive).","title":"Repo","examples":["Hello-World"]},"sha":{"type":"string","description":"Blob SHA of the file being deleted, required to ensure the correct file version.","title":"Sha","examples":["d670460b4b4aece5915caf5c68d12f560a9fe3e4"]}},"required":["owner","repo","path","message","sha"],"title":"DeleteAFileRequest","description":"Request schema for deleting a file from a GitHub repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteAFileResponseWrapper"}
+schema info of GITHUB_DELETE_A_FILE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_A_GIST
+
+Here is the input and output schema info of Tool GITHUB_DELETE_A_GIST of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"gist_id":{"type":"string","description":"The unique identifier of the gist to be deleted.","title":"Gist Id","examples":["aa5a315d61ae9438b18d","44f08d44327a40d2ab309a349bebec57"]}},"required":["gist_id"],"title":"DeleteAGistRequest","description":"Request schema for the action to delete a GitHub gist."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"An empty dictionary, as a successful deletion typically returns a 204 No Content status with no body.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteAGistResponseWrapper"}
+schema info of GITHUB_DELETE_A_GIST ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_A_GIST_COMMENT
+
+Here is the input and output schema info of Tool GITHUB_DELETE_A_GIST_COMMENT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"comment_id":{"type":"integer","description":"The unique identifier of the comment to be deleted.","title":"Comment Id","examples":["129642021"]},"gist_id":{"type":"string","description":"The unique identifier of the Gist from which the comment will be deleted.","title":"Gist Id","examples":["aa5a315d61ae9438b18d79546350ada7"]}},"required":["gist_id","comment_id"],"title":"DeleteAGistCommentRequest","description":"Request model for deleting a comment from a specific Gist."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary that is empty for a successful deletion. In case of an error, this may contain details about the error.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["successful"],"title":"DeleteAGistCommentResponseWrapper"}
+schema info of GITHUB_DELETE_A_GIST_COMMENT ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_A_GITHUB_PAGES_SITE
+
+Here is the input and output schema info of Tool GITHUB_DELETE_A_GITHUB_PAGES_SITE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The account owner of the repository (e.g., a user or organization). This name is not case-sensitive.","title":"Owner","examples":["octocat","github"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case-sensitive.","title":"Repo","examples":["Hello-World","docs"]}},"required":["owner","repo"],"title":"DeleteAGithubPagesSiteRequest","description":"Request to delete a GitHub Pages site for a repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteAGithubPagesSiteResponseWrapper"}
+schema info of GITHUB_DELETE_A_GITHUB_PAGES_SITE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_A_LABEL
+
+Here is the input and output schema info of Tool GITHUB_DELETE_A_LABEL of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"name":{"type":"string","description":"The name of the label to delete. Label names are case-insensitive. If the label name contains spaces or special characters, ensure it is correctly URL-encoded (e.g., 'help wanted' becomes 'help%20wanted').","title":"Name","examples":["bug","enhancement","help%20wanted","good%20first%20issue"]},"owner":{"type":"string","description":"The username or organization name that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat","my-organization"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["Hello-World","my-awesome-project"]}},"required":["owner","repo","name"],"title":"DeleteALabelRequest","description":"Request schema for `DeleteALabel`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Typically an empty dictionary. A successful deletion operation returns a 204 No Content HTTP status, meaning there is no body in the response from the API.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["successful"],"title":"DeleteALabelResponseWrapper"}
+schema info of GITHUB_DELETE_A_LABEL ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_A_MILESTONE
+
+Here is the input and output schema info of Tool GITHUB_DELETE_A_MILESTONE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"milestone_number":{"type":"integer","description":"The unique number that identifies the milestone to be deleted.","title":"Milestone Number"},"owner":{"type":"string","description":"The username or organization name that owns the repository. This name is not case-sensitive.","title":"Owner"},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case-sensitive. ","title":"Repo"}},"required":["owner","repo","milestone_number"],"title":"DeleteAMilestoneRequest","description":"Request schema for `DeleteAMilestone`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A placeholder for response data. Since a successful milestone deletion (HTTP 204 No Content) does not return a body, this field will generally be empty or not applicable.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteAMilestoneResponseWrapper"}
+schema info of GITHUB_DELETE_A_MILESTONE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_DELETE_AN_APP_AUTHORIZATION
+
+Here is the input and output schema info of Tool GITHUB_DELETE_AN_APP_AUTHORIZATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"access_token":{"type":"string","description":"The specific OAuth access token to be revoked.","title":"Access Token","examples":["gho_aBcDeFgHiJkLmNoPqRsTuVwXyZ1234567890"]},"client_id":{"type":"string","description":"The client ID of the OAuth App for which the token grant is being revoked.","title":"Client Id","examples":["Iv1.1234567890abcdef"]}},"required":["client_id","access_token"],"title":"DeleteAnAppAuthorizationRequest","description":"Request schema for `DeleteAnAppAuthorization`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"The response data from the API. For a successful revocation, which typically returns a 204 No Content status, this field will be empty or not applicable as no response body is returned.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"DeleteAnAppAuthorizationResponseWrapper"}
+schema info of GITHUB_DELETE_AN_APP_AUTHORIZATION ends.

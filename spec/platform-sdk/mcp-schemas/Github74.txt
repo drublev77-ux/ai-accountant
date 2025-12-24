@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_SET_LABELS_FOR_AN_ISSUE
+
+Here is the input and output schema info of Tool GITHUB_SET_LABELS_FOR_AN_ISSUE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"issue_number":{"type":"integer","description":"The number that identifies the issue within the repository.","title":"Issue Number","examples":["1347","101"]},"labels":{"type":"array","description":"A list of label names to apply to the issue. This replaces all existing labels on the issue. Providing an empty list will remove all labels from the issue.","title":"Labels","items":{"type":"string","properties":{}},"examples":[["bug","enhancement"],["documentation","help wanted"],[]]},"owner":{"type":"string","description":"The account owner of the repository. The name is not case sensitive.","title":"Owner","examples":["octocat","my-organization"]},"repo":{"type":"string","description":"The name of the repository without the `.git` extension. The name is not case sensitive.","title":"Repo","examples":["Hello-World","my-awesome-project"]}},"required":["owner","repo","issue_number","labels"],"title":"SetLabelsForAnIssueRequest","description":"Request schema for `SetLabelsForAnIssue`, detailing parameters to set or replace labels on a GitHub issue."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"The raw response from the GitHub API. Typically, this is a list of label objects representing the labels applied to the issue.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"SetLabelsForAnIssueResponseWrapper"}
+schema info of GITHUB_SET_LABELS_FOR_AN_ISSUE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_SET_ORG_ALLOWED_ACTIONS
+
+Here is the input and output schema info of Tool GITHUB_SET_ORG_ALLOWED_ACTIONS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"github_owned_allowed":{"type":"boolean","description":"Whether GitHub-owned actions (e.g., from the `actions` organization) are allowed.","title":"Github Owned Allowed","examples":["true","false"]},"org":{"type":"string","description":"The name of the organization. This name is not case-sensitive.","title":"Org","examples":["my-organization","github"]},"patterns_allowed":{"type":"array","description":"String-matching patterns for allowed actions/workflows from public repositories (e.g., `monalisa/octocat@*`, `monalisa/*`); supports wildcards, tags, SHAs.","title":"Patterns Allowed","items":{"type":"string","properties":{}},"examples":["monalisa/octocat@*","your-org/repository-name@v1.0.0","actions/checkout@main"]},"verified_allowed":{"type":"boolean","description":"Whether actions from GitHub Marketplace verified creators are allowed.","title":"Verified Allowed","examples":["true","false"]}},"required":["org"],"title":"SetAllowedActionsAndReusableWorkflowsForAnOrganizationRequest","description":"Request schema for `SetAllowedActionsAndReusableWorkflowsForAnOrganization`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"The API response data. For this action, a successful update typically results in a 204 No Content HTTP status, meaning this dictionary may be empty or not applicable in such cases.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"SetAllowedActionsAndReusableWorkflowsForAnOrganizationResponseWrapper"}
+schema info of GITHUB_SET_ORG_ALLOWED_ACTIONS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_SET_ORG_RUNNER_LABELS
+
+Here is the input and output schema info of Tool GITHUB_SET_ORG_RUNNER_LABELS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"labels":{"type":"array","description":"A list of custom label names to set for the runner. This replaces all existing custom labels. Provide an empty list to remove all custom labels from the runner.","title":"Labels","items":{"type":"string","properties":{}},"examples":[["gpu","linux","x64"],[]]},"org":{"type":"string","description":"The name of the organization. This name is not case-sensitive.","title":"Org","examples":["octo-org"]},"runner_id":{"type":"integer","description":"Unique identifier of the self-hosted runner.","title":"Runner Id","examples":[123]}},"required":["org","runner_id","labels"],"title":"SetCustomLabelsForASelfHostedRunnerForAnOrganizationRequest","description":"Request schema for `SetCustomLabelsForASelfHostedRunnerForAnOrganization`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the details of the updated labels for the self-hosted runner. This typically includes 'total_count' (the total number of labels applied to the runner) and 'labels' (a list of label objects, each detailing a label's 'id', 'name', and 'type').","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"SetCustomLabelsForASelfHostedRunnerForAnOrganizationResponseWrapper"}
+schema info of GITHUB_SET_ORG_RUNNER_LABELS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_SET_PRIMARY_EMAIL_VISIBILITY_FOR_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_SET_PRIMARY_EMAIL_VISIBILITY_FOR_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"visibility":{"type":"string","description":"Desired visibility for the authenticated user's primary email. Use 'public' to make the email visible on the user's profile, or 'private' to hide it.","title":"Visibility","enum":["public","private"],"examples":["public","private"]}},"required":["visibility"],"title":"SetPrimaryEmailVisibilityForTheAuthenticatedUserRequest","description":"Request to set the visibility for the authenticated user's primary email address."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A list of all email addresses associated with the authenticated user. Each entry details the email address, its primary status (true/false), verification status (true/false), and current visibility ('public' or 'private').","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"SetPrimaryEmailVisibilityForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_SET_PRIMARY_EMAIL_VISIBILITY_FOR_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_SET_REPO_ALLOWED_ACTIONS
+
+Here is the input and output schema info of Tool GITHUB_SET_REPO_ALLOWED_ACTIONS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"github_owned_allowed":{"type":"boolean","description":"Determines if GitHub-owned actions (e.g., from the `actions` organization) are allowed.","title":"Github Owned Allowed"},"owner":{"type":"string","description":"The account owner of the repository. The name is not case-sensitive.","title":"Owner","examples":["octocat","my-organization"]},"patterns_allowed":{"type":"array","description":"String-matching patterns (wildcards, tags, SHAs allowed) for specific actions/workflows; **Note**: Only applies to public repositories.","title":"Patterns Allowed","items":{"type":"string","properties":{}},"examples":["monalisa/octocat@*","monalisa/octocat@v2","monalisa/*","actions/checkout@v3","your-org/your-repo/.github/workflows/main.yml@refs/heads/main"]},"repo":{"type":"string","description":"The name of the repository without the `.git` extension. The name is not case-sensitive.","title":"Repo","examples":["hello-world","my-actions-repo"]},"verified_allowed":{"type":"boolean","description":"Determines if actions from GitHub Marketplace verified creators are allowed.","title":"Verified Allowed"}},"required":["owner","repo"],"title":"SetAllowedActionsAndReusableWorkflowsForARepositoryRequest","description":"Request schema for `SetAllowedActionsAndReusableWorkflowsForARepository`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"SetAllowedActionsAndReusableWorkflowsForARepositoryResponseWrapper"}
+schema info of GITHUB_SET_REPO_ALLOWED_ACTIONS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_SET_SELECTED_REPOSITORIES_FOR_AN_ORGANIZATION_SECRET
+
+Here is the input and output schema info of Tool GITHUB_SET_SELECTED_REPOSITORIES_FOR_AN_ORGANIZATION_SECRET of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the GitHub organization. This name is not case-sensitive.","title":"Org","examples":["github","my-company-org"]},"secret_name":{"type":"string","description":"The name of the organization secret whose repository access list is being updated.","title":"Secret Name","examples":["CI_TOKEN","NPM_AUTH_TOKEN"]},"selected_repository_ids":{"type":"array","description":"An array of unique integer IDs for repositories that will be granted access to the organization secret. Use dedicated actions to add or remove individual repositories without replacing the entire list.","title":"Selected Repository Ids","items":{"type":"integer","properties":{}},"examples":["[1296269, 1296270]","[789012]","[]"]}},"required":["org","secret_name","selected_repository_ids"],"title":"SetSelectedRepositoriesForAnOrganizationSecretRequest","description":"Request schema for `SetSelectedRepositoriesForAnOrganizationSecret`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary that would contain response data. However, for this specific operation (setting selected repositories), a successful request typically returns an HTTP 204 No Content status with an empty body. Therefore, this dictionary is expected to be empty on success.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"SetSelectedRepositoriesForAnOrganizationSecretResponseWrapper"}
+schema info of GITHUB_SET_SELECTED_REPOSITORIES_FOR_AN_ORGANIZATION_SECRET ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_SET_SELECTED_REPOSITORIES_FOR_AN_ORGANIZATION_VARIABLE
+
+Here is the input and output schema info of Tool GITHUB_SET_SELECTED_REPOSITORIES_FOR_AN_ORGANIZATION_VARIABLE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"name":{"type":"string","description":"The name of the organization variable for which to set repository access.","title":"Name","examples":["CI_ENVIRONMENT_SECRET","DEPLOY_API_KEY"]},"org":{"type":"string","description":"The slug or name of the GitHub organization. This value is not case-sensitive.","title":"Org","examples":["my-github-org","OctoCorp"]},"selected_repository_ids":{"type":"array","description":"A list of unique integer identifiers for the repositories that can access the organization variable. This list will replace any current selection of repositories. An empty list will remove access for all repositories.","title":"Selected Repository Ids","items":{"type":"integer","properties":{}},"examples":["[12345, 67890, 101112]","[98765]"]}},"required":["org","name","selected_repository_ids"],"title":"SetSelectedRepositoriesForAnOrganizationVariableRequest","description":"Request schema for `SetSelectedRepositoriesForAnOrganizationVariable`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"An empty dictionary. This endpoint typically returns a 204 No Content response upon successful execution, indicating no response body.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["successful"],"title":"SetSelectedRepositoriesForAnOrganizationVariableResponseWrapper"}
+schema info of GITHUB_SET_SELECTED_REPOSITORIES_FOR_AN_ORGANIZATION_VARIABLE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_SET_SELECTED_REPOSITORIES_FOR_A_USER_SECRET
+
+Here is the input and output schema info of Tool GITHUB_SET_SELECTED_REPOSITORIES_FOR_A_USER_SECRET of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"secret_name":{"type":"string","description":"The name of the Codespaces secret for which to set repository access. This secret must already exist for the authenticated user.","title":"Secret Name","examples":["PERSONAL_API_TOKEN","AWS_SECRET_KEY"]},"selected_repository_ids":{"type":"array","description":"A list of repository IDs to which the secret will be granted access. This list completely replaces any existing set of repositories for the secret. Each repository ID must correspond to a repository accessible by the authenticated user.","title":"Selected Repository Ids","items":{"type":"integer","properties":{}},"examples":["[1296269, 1530601]","[987654, 1234567]"]}},"required":["secret_name","selected_repository_ids"],"title":"SetSelectedRepositoriesForAUserSecretRequest","description":"Request schema for `SetSelectedRepositoriesForAUserSecret`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"SetSelectedRepositoriesForAUserSecretResponseWrapper"}
+schema info of GITHUB_SET_SELECTED_REPOSITORIES_FOR_A_USER_SECRET ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_SET_STATUS_CHECK_CONTEXTS
+
+Here is the input and output schema info of Tool GITHUB_SET_STATUS_CHECK_CONTEXTS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"branch":{"type":"string","description":"The name of the branch for which to set status check contexts; cannot contain wildcard characters.","title":"Branch","examples":["main"]},"contexts":{"type":"array","description":"Names of the status checks to require; an empty array removes all required status checks.","title":"Contexts","items":{"type":"string","properties":{}},"examples":[["continuous-integration/jenkins","security/snyk"]]},"owner":{"type":"string","description":"The account owner (username or organization) of the repository; not case sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension; not case sensitive.","title":"Repo","examples":["Hello-World"]}},"required":["owner","repo","branch","contexts"],"title":"SetStatusCheckContextsRequest","description":"Parameters to set or overwrite the required status check contexts for a protected branch."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"array","description":"Names of status check contexts successfully set or updated for the branch.","title":"Data","items":{"type":"string","properties":{}}},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"SetStatusCheckContextsResponseWrapper"}
+schema info of GITHUB_SET_STATUS_CHECK_CONTEXTS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_SET_TEAM_ACCESS_RESTRICTIONS
+
+Here is the input and output schema info of Tool GITHUB_SET_TEAM_ACCESS_RESTRICTIONS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"branch":{"type":"string","description":"The name of the branch to apply restrictions to. Wildcard characters are not supported for this field. For wildcard branch protection, please use the GraphQL API.","title":"Branch","examples":["main"]},"owner":{"type":"string","description":"The account owner of the repository. This name is not case sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case sensitive.","title":"Repo","examples":["Spoon-Knife"]}},"required":["owner","repo","branch"],"title":"SetTeamAccessRestrictionsRequest","description":"Request schema for configuring team access restrictions on a protected branch."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A list of team objects granted push access to the protected branch, each including details like team ID, slug, name, and permissions.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"SetTeamAccessRestrictionsResponseWrapper"}
+schema info of GITHUB_SET_TEAM_ACCESS_RESTRICTIONS ends.

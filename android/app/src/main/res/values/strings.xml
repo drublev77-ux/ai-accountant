@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">AI Accountant</string>
+    <string name="title_activity_main">AI Accountant</string>
+    <string name="package_name">com.ai.accountant</string>
+    <string name="custom_url_scheme">com.ai.accountant</string>
+</resources>

@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_FORKS
+
+Here is the input and output schema info of Tool GITHUB_LIST_FORKS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username of the account that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat","microsoft"]},"page":{"type":"integer","description":"The page number of the results to retrieve, used for pagination. Defaults to 1.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"The number of fork results to return per page. Maximum value is 100. Defaults to 30.","title":"Per Page","default":30,"examples":["30","50","100"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["Spoon-Knife","vscode"]},"sort":{"type":"string","description":"The sort order for the returned forks. `stargazers` sorts by the number of stars. Defaults to `newest`.","title":"Sort","default":"newest","enum":["newest","oldest","stargazers","watchers"],"examples":["newest","oldest","stargazers","watchers"]}},"required":["owner","repo"],"title":"ListForksRequest","description":"Parameters for listing repository forks."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary holding the raw response from the GitHub API. This typically contains an array of fork objects, each detailing a fork of the repository.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListForksResponseWrapper"}
+schema info of GITHUB_LIST_FORKS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_GIST_COMMENTS
+
+Here is the input and output schema info of Tool GITHUB_LIST_GIST_COMMENTS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"gist_id":{"type":"string","description":"The unique identifier of the Gist for which comments are to be listed.","title":"Gist Id","examples":["039c1767462645fe28f1489919486795"]},"page":{"type":"integer","description":"Page number of the results to fetch.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of comments to return per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]}},"required":["gist_id"],"title":"ListGistCommentsRequest","description":"Request parameters to list comments on a GitHub Gist."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A list of comment objects for the Gist, including details such as ID, author, content ('body'), and timestamps.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListGistCommentsResponseWrapper"}
+schema info of GITHUB_LIST_GIST_COMMENTS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_GIST_COMMITS
+
+Here is the input and output schema info of Tool GITHUB_LIST_GIST_COMMITS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"gist_id":{"type":"string","description":"The unique identifier of the gist.","title":"Gist Id","examples":["aa5a315d61ae9438b18d"]},"page":{"type":"integer","description":"Page number of the results to fetch.","title":"Page","default":1,"examples":[1,2,3]},"per_page":{"type":"integer","description":"Number of results per page (maximum 100).","title":"Per Page","default":30,"examples":[30,50,100]}},"required":["gist_id"],"title":"ListGistCommitsRequest","description":"Request schema for `ListGistCommits`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListGistCommitsResponseWrapper"}
+schema info of GITHUB_LIST_GIST_COMMITS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_GIST_FORKS
+
+Here is the input and output schema info of Tool GITHUB_LIST_GIST_FORKS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"gist_id":{"type":"string","description":"The unique identifier (ID) of the gist for which to list forks.","title":"Gist Id","examples":["aa5a315d61ae9438b18d","gist_identifier_123"]},"page":{"type":"integer","description":"The page number of the results to retrieve, starting from 1. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"The number of fork results to display per page. Maximum value is 100. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"","title":"Per Page","default":30,"examples":["30","50","100"]}},"required":["gist_id"],"title":"ListGistForksRequest","description":"Request schema for listing forks of a GitHub gist."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"The API response payload, containing the collection of gist forks. Each fork object provides details such as the forking user, URLs, and creation/update timestamps.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListGistForksResponseWrapper"}
+schema info of GITHUB_LIST_GIST_FORKS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_GISTS_FOR_A_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_GISTS_FOR_A_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Indicates the page number of the results to retrieve.","title":"Page","default":1,"examples":[1,2,5]},"per_page":{"type":"integer","description":"Specifies the number of gists to return per page. Maximum value is 100.","title":"Per Page","default":30,"examples":[20,50,100]},"since":{"type":"string","description":"Filters gists to those updated on or after this ISO 8601 timestamp (e.g., `YYYY-MM-DDTHH:MM:SSZ`).","title":"Since","examples":["2023-01-15T10:00:00Z"]},"username":{"type":"string","description":"The GitHub username of the user whose gists are to be listed.","title":"Username","examples":["octocat","torvalds"]}},"required":["username"],"title":"ListGistsForAUserRequest","description":"Request schema for `ListGistsForAUser`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Raw JSON response from the API, typically a list of gists for the specified user. Each gist object usually includes details like 'id', 'html_url', 'files', 'public', 'created_at', 'description', and 'owner'.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListGistsForAUserResponseWrapper"}
+schema info of GITHUB_LIST_GISTS_FOR_A_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_GISTS_FOR_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_GISTS_FOR_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Page number of results to retrieve.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of gists to return per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"since":{"type":"string","description":"Filters gists to include only those updated at or after this ISO 8601 timestamp (e.g., `YYYY-MM-DDTHH:MM:SSZ`).","title":"Since","examples":["2023-01-01T00:00:00Z"]}},"title":"ListGistsForTheAuthenticatedUserRequest","description":"Request schema for `ListGistsForTheAuthenticatedUser`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListGistsForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_LIST_GISTS_FOR_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_GITHUB_ACTIONS_CACHES_FOR_A_REPOSITORY
+
+Here is the input and output schema info of Tool GITHUB_LIST_GITHUB_ACTIONS_CACHES_FOR_A_REPOSITORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"direction":{"type":"string","description":"Direction for sorting results: `asc` (ascending) or `desc` (descending).","title":"Direction","default":"desc","enum":["asc","desc"],"examples":["asc","desc"]},"key":{"type":"string","description":"An explicit key or a prefix to filter caches that match the key or start with the prefix.","title":"Key","examples":["linux-npm-cache-","runner-node-modules-"]},"owner":{"type":"string","description":"Username of the account owning the repository (case-insensitive).","title":"Owner","examples":["octocat","my-organization"]},"page":{"type":"integer","description":"Page number of results to retrieve (starts from 1).","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of cache entries per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"ref":{"type":"string","description":"Full Git reference for filtering caches (e.g., `refs/heads/<branch_name>` or `refs/pull/<pull_request_number>/merge`).","title":"Ref","examples":["refs/heads/main","refs/pull/123/merge"]},"repo":{"type":"string","description":"Name of the repository, without the `.git` extension (case-insensitive).","title":"Repo","examples":["hello-world","my-repo-name"]},"sort":{"type":"string","description":"Property for sorting results: `created_at` (creation time), `last_accessed_at` (last access time), or `size_in_bytes` (cache size).","title":"Sort","default":"last_accessed_at","enum":["created_at","last_accessed_at","size_in_bytes"],"examples":["created_at","last_accessed_at","size_in_bytes"]}},"required":["owner","repo"],"title":"ListGithubActionsCachesForARepositoryRequest","description":"Parameters for listing GitHub Actions caches for a repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response payload containing `total_count` (total matching caches) and `actions_caches` (an array of cache objects).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListGithubActionsCachesForARepositoryResponseWrapper"}
+schema info of GITHUB_LIST_GITHUB_ACTIONS_CACHES_FOR_A_REPOSITORY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_GITHUB_PAGES_BUILDS
+
+Here is the input and output schema info of Tool GITHUB_LIST_GITHUB_PAGES_BUILDS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The account owner of the repository (e.g., username or organization). This name is not case-sensitive.","title":"Owner","examples":["octocat","github"]},"page":{"type":"integer","description":"The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\" ","title":"Page","default":1},"per_page":{"type":"integer","description":"The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\" ","title":"Per Page","default":30},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case-sensitive.","title":"Repo","examples":["Spoon-Knife","docs"]}},"required":["owner","repo"],"title":"ListGithubPagesBuildsRequest","description":"Request model for listing GitHub Pages builds for a repository. Specifies the repository and pagination parameters."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Contains GitHub Pages builds data, typically a list of build objects. For structure details, refer to the GitHub API documentation for 'List GitHub Pages builds'.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListGithubPagesBuildsResponseWrapper"}
+schema info of GITHUB_LIST_GITHUB_PAGES_BUILDS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_GLOBAL_SECURITY_ADVISORIES
+
+Here is the input and output schema info of Tool GITHUB_LIST_GLOBAL_SECURITY_ADVISORIES of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"affects":{"type":"array","description":"Filter by affected 'package' or 'package@version'. Max 100 items. Example: `affects=pkg1,pkg2@1.0.0`.","title":"Affects","items":{"type":"string","properties":{}}},"after":{"type":"string","description":"Pagination cursor to retrieve results after this value.","title":"After"},"before":{"type":"string","description":"Pagination cursor to retrieve results before this value.","title":"Before"},"cve_id":{"type":"string","description":"Filter by Common Vulnerabilities and Exposures (CVE) identifier.","title":"Cve Id"},"cwes":{"type":"array","description":"Filter by Common Weakness Enumeration (CWE) identifiers. Accepts comma-separated string or multiple parameters. Example: `cwes=79,284`.","title":"Cwes","items":{"type":"string","properties":{}}},"direction":{"type":"string","description":"Sort direction for results (asc, desc).","title":"Direction","default":"desc","enum":["asc","desc"]},"ecosystem":{"type":"string","description":"Filter by package ecosystem (e.g., npm, pip).","title":"Ecosystem","enum":["rubygems","npm","pip","maven","nuget","composer","go","rust","erlang","actions","pub","other","swift"]},"ghsa_id":{"type":"string","description":"Filter by GitHub Security Advisory (GHSA) identifier.","title":"Ghsa Id"},"is_withdrawn":{"type":"boolean","description":"Filter for withdrawn advisories.","title":"Is Withdrawn"},"modified":{"type":"string","description":"Filter by last modification (update or publication) date or date range. For syntax, see GitHub's 'understanding the search syntax' documentation.","title":"Modified"},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":30},"published":{"type":"string","description":"Filter by publication date or date range. For syntax, see GitHub's 'understanding the search syntax' documentation.","title":"Published"},"severity":{"type":"string","description":"Filter by advisory severity (e.g., high, critical).","title":"Severity","enum":["unknown","low","medium","high","critical"]},"sort":{"type":"string","description":"Property to sort results by (updated, published).","title":"Sort","default":"published","enum":["updated","published"]},"type":{"type":"string","description":"Filter by advisory type (e.g., reviewed, malware). Defaults to 'reviewed'; if this default is active and no other search parameters are used, malware advisories are also excluded.","title":"Type","default":"reviewed","enum":["reviewed","malware","unreviewed"]},"updated":{"type":"string","description":"Filter by update date or date range. For syntax, see GitHub's 'understanding the search syntax' documentation.","title":"Updated"}},"title":"ListGlobalSecurityAdvisoriesRequest","description":"Request schema for `ListGlobalSecurityAdvisories`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListGlobalSecurityAdvisoriesResponseWrapper"}
+schema info of GITHUB_LIST_GLOBAL_SECURITY_ADVISORIES ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_INSTALLATION_REQUESTS_FOR_THE_AUTHENTICATED_APP
+
+Here is the input and output schema info of Tool GITHUB_LIST_INSTALLATION_REQUESTS_FOR_THE_AUTHENTICATED_APP of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Page number of the results to retrieve.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"Number of results to return per page (maximum 100).","title":"Per Page","default":30,"examples":["30","50","100"]}},"title":"ListInstallationRequestsForTheAuthenticatedAppRequest","description":"Request schema for listing pending installation requests for the authenticated GitHub App."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListInstallationRequestsForTheAuthenticatedAppResponseWrapper"}
+schema info of GITHUB_LIST_INSTALLATION_REQUESTS_FOR_THE_AUTHENTICATED_APP ends.

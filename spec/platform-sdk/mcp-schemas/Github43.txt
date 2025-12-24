@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_BRANCHES
+
+Here is the input and output schema info of Tool GITHUB_LIST_BRANCHES of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"Account owner's username (case-insensitive).","title":"Owner","examples":["octocat","torvalds"]},"page":{"type":"integer","description":"Page number for paginated results.","title":"Page","default":1},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":30},"protected":{"type":"boolean","description":"Filter by protection status: `true` for protected, `false` for unprotected; omit for all branches.","title":"Protected"},"repo":{"type":"string","description":"Repository name, excluding `.git` extension (case-insensitive).","title":"Repo","examples":["Spoon-Knife","linux"]}},"required":["owner","repo"],"title":"ListBranchesRequest","description":"Request schema for listing branches in a GitHub repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response containing a list of branches, each with details like name, commit, and protection status.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListBranchesResponseWrapper"}
+schema info of GITHUB_LIST_BRANCHES ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_BRANCHES_FOR_HEAD_COMMIT
+
+Here is the input and output schema info of Tool GITHUB_LIST_BRANCHES_FOR_HEAD_COMMIT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"commit_sha":{"type":"string","description":"The full SHA-1 hash of the commit. This action will find branches where this commit is the most recent one (the head).","title":"Commit Sha","examples":["c5b97d5ae6c19d5c5df71a34c7fbeeda2479ccbc","0123456789abcdef0123456789abcdef01234567"]},"owner":{"type":"string","description":"The account owner of the repository (e.g., a user or organization). This name is not case-sensitive.","title":"Owner","examples":["octocat","my-github-org"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case-sensitive.","title":"Repo","examples":["Hello-World","my-repository"]}},"required":["owner","repo","commit_sha"],"title":"ListBranchesForHeadCommitRequest","description":"Request schema to list branches where a specific commit is the head."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListBranchesForHeadCommitResponseWrapper"}
+schema info of GITHUB_LIST_BRANCHES_FOR_HEAD_COMMIT ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_CHECK_RUN_ANNOTATIONS
+
+Here is the input and output schema info of Tool GITHUB_LIST_CHECK_RUN_ANNOTATIONS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"check_run_id":{"type":"integer","description":"The unique identifier of the check run for which annotations are to be listed.","title":"Check Run Id","examples":[21031067,12345]},"owner":{"type":"string","description":"The account owner of the repository. This is typically the username or organization name. The name is not case sensitive.","title":"Owner","examples":["octocat","github"]},"page":{"type":"integer","description":"The page number of the results to fetch. See \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)\" for more details.","title":"Page","default":1,"examples":[1,2,5]},"per_page":{"type":"integer","description":"The number of results per page (maximum 100). See \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)\" for more details.","title":"Per Page","default":30,"examples":[30,50,100]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. The name is not case sensitive.","title":"Repo","examples":["Spoon-Knife","docs"]}},"required":["owner","repo","check_run_id"],"title":"ListCheckRunAnnotationsRequest","description":"Request schema for listing annotations for a check run in a GitHub repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"List of annotation objects detailing code points (e.g., lint errors, test failures). Key properties: `path`, `start_line`, `end_line`, `annotation_level` ('notice', 'warning', 'failure'), `message`, `title`.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListCheckRunAnnotationsResponseWrapper"}
+schema info of GITHUB_LIST_CHECK_RUN_ANNOTATIONS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_CHECK_RUNS_FOR_A_GIT_REFERENCE
+
+Here is the input and output schema info of Tool GITHUB_LIST_CHECK_RUNS_FOR_A_GIT_REFERENCE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"app_id":{"type":"integer","description":"Filter check runs by the ID of the creating GitHub App.","title":"App Id","examples":[15368,24032]},"check_name":{"type":"string","description":"Return only check runs with this specific name.","title":"Check Name","examples":["my-check-suite"]},"filter":{"type":"string","description":"Filter logic for check runs: `latest` returns the most recent for each unique check name, `all` returns all.","title":"Filter","default":"latest","enum":["latest","all"],"examples":["latest","all"]},"owner":{"type":"string","description":"Account owner of the repository (case-insensitive).","title":"Owner","examples":["octocat"]},"page":{"type":"integer","description":"Page number of the results to fetch.","title":"Page","default":1,"examples":[1,2,3]},"per_page":{"type":"integer","description":"Number of results per page for pagination (max 100).","title":"Per Page","default":30,"examples":[30,50,100]},"ref":{"type":"string","description":"Git reference: a commit SHA, branch name (e.g., `heads/main`), or tag name (e.g., `tags/v1.0.0`).","title":"Ref","examples":["main","heads/develop","tags/v1.2.3","0c036a3586c193726887c0e79dc1ff94361176cb"]},"repo":{"type":"string","description":"Repository name, without the `.git` extension (case-insensitive).","title":"Repo","examples":["Hello-World"]},"status":{"type":"string","description":"Filter check runs by their status.","title":"Status","enum":["queued","in_progress","completed"]}},"required":["owner","repo","ref"],"title":"ListCheckRunsForAGitReferenceRequest","description":"Specifies the repository, Git reference, and optional filters for listing check runs."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Raw API response data, including check runs and their details.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListCheckRunsForAGitReferenceResponseWrapper"}
+schema info of GITHUB_LIST_CHECK_RUNS_FOR_A_GIT_REFERENCE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_CHECK_RUNS_IN_A_CHECK_SUITE
+
+Here is the input and output schema info of Tool GITHUB_LIST_CHECK_RUNS_IN_A_CHECK_SUITE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"check_name":{"type":"string","description":"Filter check runs by this name; returns all names if omitted.","title":"Check Name","examples":["LinterTest","unit-tests"]},"check_suite_id":{"type":"integer","description":"Numeric ID of the check suite.","title":"Check Suite Id","examples":["1234567890"]},"filter":{"type":"string","description":"Filter by `completed_at` timestamp: 'latest' for most recent, 'all' for all check runs.","title":"Filter","default":"latest","enum":["latest","all"],"examples":["latest","all"]},"owner":{"type":"string","description":"Username or organization name of the repository owner (case-insensitive).","title":"Owner","examples":["octocat","github"]},"page":{"type":"integer","description":"Page number of results to fetch (starts at 1).","title":"Page","default":1},"per_page":{"type":"integer","description":"Number of check runs per page (max 100).","title":"Per Page","default":30},"repo":{"type":"string","description":"Repository name, without the `.git` extension (case-insensitive).","title":"Repo","examples":["Spoon-Knife","docs"]},"status":{"type":"string","description":"Filter check runs by status; returns all statuses if omitted.","title":"Status","enum":["queued","in_progress","completed"],"examples":["queued","in_progress","completed"]}},"required":["owner","repo","check_suite_id"],"title":"ListCheckRunsInACheckSuiteRequest","description":"Request schema for `ListCheckRunsInACheckSuite`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response including `total_count` of matching check runs and an array `check_runs` detailing individual runs.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListCheckRunsInACheckSuiteResponseWrapper"}
+schema info of GITHUB_LIST_CHECK_RUNS_IN_A_CHECK_SUITE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_CHECK_SUITES_FOR_A_GIT_REFERENCE
+
+Here is the input and output schema info of Tool GITHUB_LIST_CHECK_SUITES_FOR_A_GIT_REFERENCE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"app_id":{"type":"integer","description":"Filters check suites by the `id` of the GitHub App that created them. If omitted, check suites from all apps are returned.","title":"App Id"},"check_name":{"type":"string","description":"Filters check suites by the name of a check run. Only check suites that contain at least one check run with this name will be returned. If omitted, check suites are not filtered by check run name.","title":"Check Name"},"owner":{"type":"string","description":"The account owner of the repository (username or organization name). This name is not case-sensitive.","title":"Owner","examples":["octocat","github"]},"page":{"type":"integer","description":"Page number of results to fetch (1-indexed).","title":"Page","default":1},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":30},"ref":{"type":"string","description":"Git reference (commit SHA, branch name like `heads/BRANCH_NAME` or `BRANCH_NAME`, or tag name like `tags/TAG_NAME` or `TAG_NAME`) to list check suites for.","title":"Ref","examples":["main","heads/feature-branch","tags/v1.2.3","066d8ef129c1eb7c2756098a52604399d4577551"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case-sensitive.","title":"Repo","examples":["Spoon-Knife","docs"]}},"required":["owner","repo","ref"],"title":"ListCheckSuitesForAGitReferenceRequest","description":"Request schema for `ListCheckSuitesForAGitReference`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the API response. This typically includes `total_count`, an integer indicating the total number of check suites found that match the query, and `check_suites`, a list of check suite objects. Each check suite object provides details about the suite, such as its status, conclusion, and associated check runs.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListCheckSuitesForAGitReferenceResponseWrapper"}
+schema info of GITHUB_LIST_CHECK_SUITES_FOR_A_GIT_REFERENCE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_CHILD_TEAMS
+
+Here is the input and output schema info of Tool GITHUB_LIST_CHILD_TEAMS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The organization name (not case-sensitive).","title":"Org","examples":["octo-org"]},"page":{"type":"integer","description":"Page number of the results to retrieve.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"Number of results per page (maximum 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"team_slug":{"type":"string","description":"The slug (URL-friendly version) of the parent team's name.","title":"Team Slug","examples":["justice-league"]}},"required":["org","team_slug"],"title":"ListChildTeamsRequest","description":"Request schema for listing immediate child teams of a parent team within an organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"The raw API response data, typically a list of child team objects.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListChildTeamsResponseWrapper"}
+schema info of GITHUB_LIST_CHILD_TEAMS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_CLASSROOMS
+
+Here is the input and output schema info of Tool GITHUB_LIST_CLASSROOMS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Page number for the results.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results per page (maximum 100).","title":"Per Page","default":30,"examples":["30","50","100"]}},"title":"ListClassroomsRequest","description":"Pagination parameters for listing classrooms."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListClassroomsResponseWrapper"}
+schema info of GITHUB_LIST_CLASSROOMS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_CODEOWNERS_ERRORS
+
+Here is the input and output schema info of Tool GITHUB_LIST_CODEOWNERS_ERRORS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"Username of the account owning the repository (not case-sensitive).","title":"Owner","examples":["octocat"]},"ref":{"type":"string","description":"Branch name, tag, or commit SHA for the CODEOWNERS file; defaults to the repository's default branch if unspecified.","title":"Ref","examples":["main","v1.0.0","c7615726cb55b377c824671ea10ea0e7c695b5f7"]},"repo":{"type":"string","description":"Name of the repository, without the `.git` extension (not case-sensitive).","title":"Repo","examples":["Hello-World"]}},"required":["owner","repo"],"title":"ListCodeownersErrorsRequest","description":"Parameters to specify the repository and the ref for checking its CODEOWNERS file."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Dictionary, typically with an 'errors' key mapping to a list of syntax error objects (each detailing line, kind, and message). An empty list for 'errors' or a success message indicates no errors found.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListCodeownersErrorsResponseWrapper"}
+schema info of GITHUB_LIST_CODEOWNERS_ERRORS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_CODE_QL_DATABASES_FOR_A_REPOSITORY
+
+Here is the input and output schema info of Tool GITHUB_LIST_CODE_QL_DATABASES_FOR_A_REPOSITORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"Username of the account owning the repository (not case-sensitive).","title":"Owner","examples":["octocat","my-organization"]},"repo":{"type":"string","description":"Name of the repository, without the `.git` extension (not case-sensitive).","title":"Repo","examples":["hello-world","my-awesome-project"]}},"required":["owner","repo"],"title":"ListCodeQlDatabasesForARepositoryRequest","description":"Request model for listing CodeQL databases for a repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListCodeQlDatabasesForARepositoryResponseWrapper"}
+schema info of GITHUB_LIST_CODE_QL_DATABASES_FOR_A_REPOSITORY ends.

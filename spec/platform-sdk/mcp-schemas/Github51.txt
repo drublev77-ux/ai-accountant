@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_ORG_PACKAGE_VERSIONS
+
+Here is the input and output schema info of Tool GITHUB_LIST_ORG_PACKAGE_VERSIONS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"Name of the GitHub organization owning the package (case-insensitive).","title":"Org","examples":["my-company","github"]},"package_name":{"type":"string","description":"Unique package name within its ecosystem.","title":"Package Name","examples":["my-web-app","com.example.database-connector"]},"package_type":{"type":"string","description":"Package's ecosystem. Important notes: GitHub Gradle packages use `maven`; images in ghcr.io use `container`; `docker` type can find images from docker.pkg.github.com, including those migrated to ghcr.io.","title":"Package Type","enum":["npm","maven","rubygems","docker","nuget","container"],"examples":["npm","maven","rubygems","docker","nuget","container"]},"page":{"type":"integer","description":"Page number for results (starts at 1).","title":"Page","default":1},"per_page":{"type":"integer","description":"Results per page (max 100).","title":"Per Page","default":30},"state":{"type":"string","description":"Filters package versions by state.","title":"State","default":"active","enum":["active","deleted"],"examples":["active","deleted"]}},"required":["package_type","package_name","org"],"title":"ListPackageVersionsForAPackageOwnedByAnOrganizationRequest","description":"Lists all versions of a specific package owned by a GitHub organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Raw API response from GitHub, typically a list of package version objects. Refer to GitHub API documentation for detailed structure.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListPackageVersionsForAPackageOwnedByAnOrganizationResponseWrapper"}
+schema info of GITHUB_LIST_ORG_PACKAGE_VERSIONS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_ORG_REPOS_WITHGITHUB_ACTIONS_ENABLED
+
+Here is the input and output schema info of Tool GITHUB_LIST_ORG_REPOS_WITHGITHUB_ACTIONS_ENABLED of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The organization name. The name is not case sensitive.","title":"Org","examples":["octocat","my-company-org"]},"page":{"type":"integer","description":"The page number of the results to fetch.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"The number of results per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]}},"required":["org"],"title":"ListOrgReposWithgithubActionsEnabledRequest","description":"Request schema for `ListOrgReposWithgithubActionsEnabled`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the API response from GitHub. This typically includes a 'total_count' field representing the total number of repositories explicitly selected and enabled for GitHub Actions in the organization, and a 'repositories' field which is an array of objects, each detailing such a repository.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListOrgReposWithgithubActionsEnabledResponseWrapper"}
+schema info of GITHUB_LIST_ORG_REPOS_WITHGITHUB_ACTIONS_ENABLED ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_ORG_RESOURCE_ACCESS_TOKENS
+
+Here is the input and output schema info of Tool GITHUB_LIST_ORG_RESOURCE_ACCESS_TOKENS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"direction":{"type":"string","description":"Sort direction.","title":"Direction","default":"desc","enum":["asc","desc"],"examples":["asc","desc"]},"last_used_after":{"type":"string","description":"Filter for tokens last used after this ISO 8601 timestamp (YYYY-MM-DDTHH:MM:SSZ).","title":"Last Used After","examples":["2024-01-01T00:00:00Z"]},"last_used_before":{"type":"string","description":"Filter for tokens last used before this ISO 8601 timestamp (YYYY-MM-DDTHH:MM:SSZ).","title":"Last Used Before","examples":["2023-01-01T00:00:00Z"]},"org":{"type":"string","description":"Name of the GitHub organization (not case-sensitive).","title":"Org","examples":["my-organization"]},"owner":{"type":"array","description":"Filter by a list of owner usernames.","title":"Owner","items":{"type":"string","properties":{}},"examples":[["user1","user2"]]},"page":{"type":"integer","description":"Page number of results to fetch (starts from 1).","title":"Page","default":1,"examples":[1,2,5]},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":30,"examples":[30,50,100]},"permission":{"type":"string","description":"Filter by permission string (e.g., 'issues:read'). See GitHub docs for valid strings.","title":"Permission","examples":["actions:read","issues:write"]},"repository":{"type":"string","description":"Filter by repository name.","title":"Repository","examples":["my-repo"]},"sort":{"type":"string","description":"Property to sort results by.","title":"Sort","default":"created_at","enum":["created_at"],"examples":["created_at"]}},"required":["org"],"title":"ListOrgResourceAccessTokensRequest","description":"Request schema for listing fine-grained personal access tokens with access to organization resources."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListOrgResourceAccessTokensResponseWrapper"}
+schema info of GITHUB_LIST_ORG_RESOURCE_ACCESS_TOKENS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_ORG_RESOURCES_WITH_PERSONAL_TOKENS
+
+Here is the input and output schema info of Tool GITHUB_LIST_ORG_RESOURCES_WITH_PERSONAL_TOKENS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"direction":{"type":"string","description":"Sort direction: 'asc' for ascending or 'desc' for descending.","title":"Direction","default":"desc","enum":["asc","desc"],"examples":["asc","desc"]},"last_used_after":{"type":"string","description":"Filters for tokens last used after this ISO 8601 timestamp.","title":"Last Used After","examples":["2023-01-15T12:30:00Z"]},"last_used_before":{"type":"string","description":"Filters for tokens last used before this ISO 8601 timestamp.","title":"Last Used Before","examples":["2023-01-01T00:00:00Z"]},"org":{"type":"string","description":"The GitHub organization name (case-insensitive).","title":"Org","examples":["my-organization","github"]},"owner":{"type":"array","description":"Filter by a list of token owner GitHub usernames.","title":"Owner","items":{"type":"string","properties":{}},"examples":["octocat","monalisa"]},"page":{"type":"integer","description":"Page number for results (1-based).","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"permission":{"type":"string","description":"Filters requests by the specific permission granted to the token.","title":"Permission","examples":["issues:read","pull_requests:write","admin:org"]},"repository":{"type":"string","description":"Filter by repository name for tokens that access this repository.","title":"Repository","examples":["my-cool-repo","octocat/Spoon-Knife"]},"sort":{"type":"string","description":"Sorts results by 'created_at' (currently the only supported property).","title":"Sort","default":"created_at","enum":["created_at"],"examples":["created_at"]}},"required":["org"],"title":"ListOrgResourcesWithPersonalTokensRequest","description":"Request schema for listing fine-grained personal access token requests within an organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Raw API response, typically a list of an organization's fine-grained personal access token requests. Refer to GitHub API documentation for structure.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListOrgResourcesWithPersonalTokensResponseWrapper"}
+schema info of GITHUB_LIST_ORG_RESOURCES_WITH_PERSONAL_TOKENS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_ORG_SECRETS_WITHOUT_VALUES
+
+Here is the input and output schema info of Tool GITHUB_LIST_ORG_SECRETS_WITHOUT_VALUES of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The unique identifier of the GitHub organization. This name is not case-sensitive.","title":"Org","examples":["my-org-name"]},"page":{"type":"integer","description":"The page number of the results to fetch. Starts from 1. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\" ","title":"Page","default":1},"per_page":{"type":"integer","description":"The number of results to return per page. The maximum value is 100. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\" ","title":"Per Page","default":30}},"required":["org"],"title":"ListOrgSecretsWithoutValuesRequest","description":"Request schema for listing Dependabot secrets for an organization without their encrypted values."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the list of secrets. The dictionary includes a 'total_count' field indicating the total number of secrets and a 'secrets' field which is a list of secret objects. Each secret object contains details like 'name', 'created_at', and 'updated_at', but not the encrypted value of the secret.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListOrgSecretsWithoutValuesResponseWrapper"}
+schema info of GITHUB_LIST_ORG_SECRETS_WITHOUT_VALUES ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_OUTSIDE_COLLABORATORS_FOR_AN_ORGANIZATION
+
+Here is the input and output schema info of Tool GITHUB_LIST_OUTSIDE_COLLABORATORS_FOR_AN_ORGANIZATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"filter":{"type":"string","description":"Filter for the list: '2fa_disabled' for those without two-factor authentication, 'all' for every collaborator.","title":"Filter","default":"all","enum":["2fa_disabled","all"],"examples":["2fa_disabled","all"]},"org":{"type":"string","description":"The GitHub organization name (not case-sensitive).","title":"Org","examples":["mercury-labs","github"]},"page":{"type":"integer","description":"Page number for pagination.","title":"Page","default":1,"examples":[1,2,5]},"per_page":{"type":"integer","description":"Number of results per page (maximum 100).","title":"Per Page","default":30,"examples":[30,50,100]}},"required":["org"],"title":"ListOutsideCollaboratorsForAnOrganizationRequest","description":"Request schema for listing outside collaborators of a GitHub organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"User objects representing the outside collaborators, typically including details like 'login', 'id', 'avatar_url', and 'html_url'.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListOutsideCollaboratorsForAnOrganizationResponseWrapper"}
+schema info of GITHUB_LIST_OUTSIDE_COLLABORATORS_FOR_AN_ORGANIZATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_OWNED_PACKAGE_VERSIONS
+
+Here is the input and output schema info of Tool GITHUB_LIST_OWNED_PACKAGE_VERSIONS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"package_name":{"type":"string","description":"Unique name of the package.","title":"Package Name","examples":["my-github-package","another-repo-package"]},"package_type":{"type":"string","description":"Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. Use `docker` to find images from GitHub's Docker registry (`docker.pkg.github.com`), even if migrated.","title":"Package Type","enum":["npm","maven","rubygems","docker","nuget","container"],"examples":["npm","maven","rubygems","docker","nuget","container"]},"page":{"type":"integer","description":"Page number of the results to fetch, starting from 1.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"Number of results per page (maximum 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"state":{"type":"string","description":"Filters package versions by state.","title":"State","default":"active","enum":["active","deleted"],"examples":["active","deleted"]}},"required":["package_type","package_name"],"title":"ListOwnedPackageVersionsRequest","description":"Request schema for `ListOwnedPackageVersions`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListOwnedPackageVersionsResponseWrapper"}
+schema info of GITHUB_LIST_OWNED_PACKAGE_VERSIONS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_PACKAGES_FOR_AN_ORGANIZATION
+
+Here is the input and output schema info of Tool GITHUB_LIST_PACKAGES_FOR_AN_ORGANIZATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"Name of the GitHub organization (case-insensitive).","title":"Org","examples":["github","my-company-org"]},"package_type":{"type":"string","description":"Package type to filter by. Note: Gradle packages use 'maven'; ghcr.io Docker images use 'container'; 'docker' type finds images from docker.pkg.github.com.","title":"Package Type","enum":["npm","maven","rubygems","docker","nuget","container"],"examples":["npm","maven","rubygems","docker","nuget","container"]},"page":{"type":"integer","description":"Page number for paginated results.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"Number of results per page (maximum 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"visibility":{"type":"string","description":"Filter packages by visibility. 'internal' is for registries with granular permissions; otherwise, it's treated as 'private'.","title":"Visibility","enum":["public","private","internal"],"examples":["public","private","internal"]}},"required":["package_type","org"],"title":"ListPackagesForAnOrganizationRequest","description":"Request to list packages for a GitHub organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Raw API response, typically a list of package objects.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListPackagesForAnOrganizationResponseWrapper"}
+schema info of GITHUB_LIST_PACKAGES_FOR_AN_ORGANIZATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_PACKAGES_FOR_A_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_PACKAGES_FOR_A_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"package_type":{"type":"string","description":"Filters by package type. Note: GitHub's Gradle packages are type `maven`. Images in `ghcr.io` (Container registry) are `container`. Use `docker` for images from `docker.pkg.github.com`, including those migrated to the Container registry.","title":"Package Type","enum":["npm","maven","rubygems","docker","nuget","container"],"examples":["npm","maven","rubygems","docker","nuget","container"]},"page":{"type":"integer","description":"Page number of the results to retrieve.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results to return per page (maximum 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"username":{"type":"string","description":"The GitHub username of the account whose packages are to be listed.","title":"Username","examples":["octocat","torvalds"]},"visibility":{"type":"string","description":"Filters packages by visibility. The `internal` visibility is supported only for GitHub Packages registries allowing granular permissions; for others, `internal` is synonymous with `private`.","title":"Visibility","enum":["public","private","internal"],"examples":["public","private","internal"]}},"required":["package_type","username"],"title":"ListPackagesForAUserRequest","description":"Request schema for `ListPackagesForAUser`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the list of packages for the specified user, matching the filter criteria.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListPackagesForAUserResponseWrapper"}
+schema info of GITHUB_LIST_PACKAGES_FOR_A_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_PACKAGES_FOR_THE_AUTHENTICATED_USER_S_NAMESPACE
+
+Here is the input and output schema info of Tool GITHUB_LIST_PACKAGES_FOR_THE_AUTHENTICATED_USER_S_NAMESPACE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"package_type":{"type":"string","description":"The type of package to list. For GitHub's Gradle registry, use 'maven'; for Docker images from GitHub's Container registry (ghcr.io), use 'container'. 'docker' finds images from the original Docker registry (docker.pkg.github.com), even if migrated.","title":"Package Type","enum":["npm","maven","rubygems","docker","nuget","container"],"examples":["npm","maven","rubygems","docker","nuget","container"]},"page":{"type":"integer","description":"Page number of the results to fetch.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"Number of results to return per page, maximum 100.","title":"Per Page","default":30,"examples":["30","50","100"]},"visibility":{"type":"string","description":"Filters packages by visibility. 'internal' is specific to GitHub Packages registries with granular permissions; for others, it's treated as 'private'.","title":"Visibility","enum":["public","private","internal"],"examples":["public","private","internal"]}},"required":["package_type"],"title":"ListPackagesForTheAuthenticatedUserSNamespaceRequest","description":"Defines the parameters for listing packages in the authenticated user's namespace."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListPackagesForTheAuthenticatedUserSNamespaceResponseWrapper"}
+schema info of GITHUB_LIST_PACKAGES_FOR_THE_AUTHENTICATED_USER_S_NAMESPACE ends.

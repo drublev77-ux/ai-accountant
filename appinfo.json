@@ -1,0 +1,20 @@
+{
+  "id": "com.aiaccountant.app",
+  "version": "1.0.0",
+  "vendor": "AI Accountant Team",
+  "type": "web",
+  "main": "index.html",
+  "title": "AI Accountant",
+  "icon": "icon.png",
+  "largeIcon": "largeIcon.png",
+  "splashBackground": "splashBackground.png",
+  "resolution": "1920x1080",
+  "requiredPermissions": ["time.query", "application.operation"],
+  "bgImage": "background.png",
+  "iconColor": "#10b981",
+  "largeIcon": "largeIcon.png",
+  "transparent": false,
+  "vendor": "AI Accountant",
+  "vendorUrl": "https://aiaccountant.app",
+  "supportEmail": "support@aiaccountant.app"
+}

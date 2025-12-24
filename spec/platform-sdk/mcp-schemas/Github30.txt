@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_AN_ISSUE
+
+Here is the input and output schema info of Tool GITHUB_GET_AN_ISSUE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"issue_number":{"type":"integer","description":"The identifying number of the issue.","title":"Issue Number","examples":[1347]},"owner":{"type":"string","description":"Username of the account owning the repository. Not case-sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"Name of the repository (without `.git` extension). Not case-sensitive.","title":"Repo","examples":["Hello-World"]}},"required":["owner","repo","issue_number"],"title":"GetAnIssueRequest","description":"Request schema for `GetAnIssue`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the issue details. Key fields include 'id', 'node_id', 'url', 'repository_url', 'labels_url', 'comments_url', 'events_url', 'html_url', 'number', 'state', 'title', 'body', 'user', 'labels', 'assignee', 'assignees', 'milestone', 'locked', 'active_lock_reason', 'comments', 'pull_request', 'closed_at', 'created_at', 'updated_at', 'closed_by', 'author_association', 'state_reason', and 'reactions'. The API does not return custom fields.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetAnIssueResponseWrapper"}
+schema info of GITHUB_GET_AN_ISSUE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_AN_ISSUE_COMMENT
+
+Here is the input and output schema info of Tool GITHUB_GET_AN_ISSUE_COMMENT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"comment_id":{"type":"integer","description":"The unique identifier of the issue comment.","title":"Comment Id","examples":["123456789"]},"owner":{"type":"string","description":"The username of the account that owns the repository. This field is not case sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case sensitive.","title":"Repo","examples":["Spoon-Knife"]}},"required":["owner","repo","comment_id"],"title":"GetAnIssueCommentRequest","description":"Request schema for `GetAnIssueComment`. Defines the parameters to identify and retrieve a specific issue comment."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Dictionary containing the details of the issue comment, such as 'id', 'body', 'user', 'created_at', and 'updated_at'. For the complete structure, consult the GitHub API documentation for issue comments.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetAnIssueCommentResponseWrapper"}
+schema info of GITHUB_GET_AN_ISSUE_COMMENT ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_AN_ISSUE_EVENT
+
+Here is the input and output schema info of Tool GITHUB_GET_AN_ISSUE_EVENT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"event_id":{"type":"integer","description":"Unique identifier for the issue event.","title":"Event Id","examples":["1234567"]},"owner":{"type":"string","description":"Username of the account owning the repository. Not case-sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"Name of the repository, without the `.git` extension. Not case-sensitive.","title":"Repo","examples":["Spoon-Knife"]}},"required":["owner","repo","event_id"],"title":"GetAnIssueEventRequest","description":"Request schema for `GetAnIssueEvent`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Detailed information of the specified issue event.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetAnIssueEventResponseWrapper"}
+schema info of GITHUB_GET_AN_ISSUE_EVENT ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_AN_ORGANIZATION
+
+Here is the input and output schema info of Tool GITHUB_GET_AN_ORGANIZATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the organization. This name is not case-sensitive.","title":"Org","examples":["github","microsoft","google"]}},"required":["org"],"title":"GetAnOrganizationRequest","description":"Request schema for retrieving a GitHub organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the organization's details. Common keys include `login`, `id`, `name`, `company`, `blog`, `location`, `email`, `public_repos`, `created_at`, and `type`.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetAnOrganizationResponseWrapper"}
+schema info of GITHUB_GET_AN_ORGANIZATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_AN_ORGANIZATION_PUBLIC_KEY
+
+Here is the input and output schema info of Tool GITHUB_GET_AN_ORGANIZATION_PUBLIC_KEY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"Organization name (case-insensitive).","title":"Org","examples":["octo-org"]}},"required":["org"],"title":"GetAnOrganizationPublicKeyRequest","description":"Request for `GetAnOrganizationPublicKey`."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Data from the action execution","title":"Data","properties":{"key":{"type":"string","description":"Base64-encoded public key.","title":"Key"},"key_id":{"type":"string","description":"Unique ID of the public key.","title":"Key Id"}},"required":["key_id","key"],"additionalProperties":false},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetAnOrganizationPublicKeyResponseWrapper"}
+schema info of GITHUB_GET_AN_ORGANIZATION_PUBLIC_KEY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_AN_ORGANIZATION_ROLE
+
+Here is the input and output schema info of Tool GITHUB_GET_AN_ORGANIZATION_ROLE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the GitHub organization. This name is not case-sensitive.","title":"Org","examples":["github","my-company-org"]},"role_id":{"type":"integer","description":"The unique numerical identifier of the role within the organization.","title":"Role Id","examples":["123","456"]}},"required":["org","role_id"],"title":"GetAnOrganizationRoleRequest","description":"Request schema for retrieving a specific organization role by its ID."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Dictionary representing the organization role, conforming to the GitHub API structure.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetAnOrganizationRoleResponseWrapper"}
+schema info of GITHUB_GET_AN_ORGANIZATION_ROLE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_AN_ORGANIZATION_SECRET
+
+Here is the input and output schema info of Tool GITHUB_GET_AN_ORGANIZATION_SECRET of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"Organization name (case-insensitive).","title":"Org","examples":["octo-org"]},"secret_name":{"type":"string","description":"Name of the secret.","title":"Secret Name","examples":["MY_API_TOKEN"]}},"required":["org","secret_name"],"title":"GetAnOrganizationSecretRequest","description":"Request schema for `GetAnOrganizationSecret`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Secret's metadata, such as 'name', 'created_at', 'updated_at', and 'visibility'; the encrypted value is not included.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetAnOrganizationSecretResponseWrapper"}
+schema info of GITHUB_GET_AN_ORGANIZATION_SECRET ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_AN_ORGANIZATION_VARIABLE
+
+Here is the input and output schema info of Tool GITHUB_GET_AN_ORGANIZATION_VARIABLE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"name":{"type":"string","description":"Name of the organization variable.","title":"Name","examples":["CI_ENVIRONMENT"]},"org":{"type":"string","description":"Name of the organization (case-insensitive).","title":"Org","examples":["octo-org"]}},"required":["org","name"],"title":"GetAnOrganizationVariableRequest","description":"Request schema for `GetAnOrganizationVariable`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Details of the organization variable, including 'name', 'value' (potentially masked for security), 'visibility' ('all', 'private', or 'selected'), 'created_at', and 'updated_at'; 'selected_repositories_url' is present if visibility is 'selected'.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetAnOrganizationVariableResponseWrapper"}
+schema info of GITHUB_GET_AN_ORGANIZATION_VARIABLE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_AN_ORGANIZATION_WEBHOOK
+
+Here is the input and output schema info of Tool GITHUB_GET_AN_ORGANIZATION_WEBHOOK of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"hook_id":{"type":"integer","description":"The unique identifier of the webhook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery.","title":"Hook Id","examples":["123456789"]},"org":{"type":"string","description":"The name of the GitHub organization. This field is not case-sensitive.","title":"Org","examples":["octo-org"]}},"required":["org","hook_id"],"title":"GetAnOrganizationWebhookRequest","description":"Request model for fetching an organization webhook's details."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Full configuration details for the organization webhook, including ID, name, active status, subscribed events, and settings (e.g., URL, content type, secret).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetAnOrganizationWebhookResponseWrapper"}
+schema info of GITHUB_GET_AN_ORGANIZATION_WEBHOOK ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_A_PACKAGE_FOR_AN_ORGANIZATION
+
+Here is the input and output schema info of Tool GITHUB_GET_A_PACKAGE_FOR_AN_ORGANIZATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"Name of the GitHub organization (case-insensitive).","title":"Org","examples":["my-organization"]},"package_name":{"type":"string","description":"The unique name of the package.","title":"Package Name","examples":["my-package-name"]},"package_type":{"type":"string","description":"Type of the package. GitHub Gradle packages use `maven` type. Images from `ghcr.io` (Container registry) use `container` type. Use `docker` for images from `docker.pkg.github.com` (Docker registry), even if migrated to the Container registry.","title":"Package Type","enum":["npm","maven","rubygems","docker","nuget","container"],"examples":["npm","maven","rubygems","docker","nuget","container"]}},"required":["package_type","package_name","org"],"title":"GetAPackageForAnOrganizationRequest","description":"Request schema for retrieving a specific package from a GitHub organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary with comprehensive details of the retrieved package.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetAPackageForAnOrganizationResponseWrapper"}
+schema info of GITHUB_GET_A_PACKAGE_FOR_AN_ORGANIZATION ends.

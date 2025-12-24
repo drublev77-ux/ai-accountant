@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_SELF_HOSTED_RUNNERS_FOR_AN_ORGANIZATION
+
+Here is the input and output schema info of Tool GITHUB_LIST_SELF_HOSTED_RUNNERS_FOR_AN_ORGANIZATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"name":{"type":"string","description":"Name to filter the list of self-hosted runners.","title":"Name","examples":["my-primary-runner","gpu-runner-1"]},"org":{"type":"string","description":"The GitHub organization name (case-insensitive).","title":"Org","examples":["octo-org","my-company"]},"page":{"type":"integer","description":"Page number for results retrieval (starts at 1).","title":"Page","default":1},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":30}},"required":["org"],"title":"ListSelfHostedRunnersForAnOrganizationRequest","description":"Request schema for `ListSelfHostedRunnersForAnOrganization`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Raw JSON response containing 'total_count' and a 'runners' array with runner details (e.g., id, name, os, status, labels).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListSelfHostedRunnersForAnOrganizationResponseWrapper"}
+schema info of GITHUB_LIST_SELF_HOSTED_RUNNERS_FOR_AN_ORGANIZATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_SELF_HOSTED_RUNNERS_FOR_A_REPOSITORY
+
+Here is the input and output schema info of Tool GITHUB_LIST_SELF_HOSTED_RUNNERS_FOR_A_REPOSITORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"name":{"type":"string","description":"The name of a specific self-hosted runner to filter by. If not provided, all runners for the repository are listed.","title":"Name","examples":["my-runner-1","linux-stable-runner"]},"owner":{"type":"string","description":"The account owner of the repository. The name is not case sensitive.","title":"Owner","examples":["octocat","my-organization"]},"page":{"type":"integer","description":"The page number of the results to fetch, starting from 1. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"","title":"Page","default":1},"per_page":{"type":"integer","description":"The number of results per page (maximum 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"","title":"Per Page","default":30},"repo":{"type":"string","description":"The name of the repository without the `.git` extension. The name is not case sensitive.","title":"Repo","examples":["hello-world","my-awesome-project"]}},"required":["owner","repo"],"title":"ListSelfHostedRunnersForARepositoryRequest","description":"Request schema for `ListSelfHostedRunnersForARepository`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the response from the GitHub API. This typically includes a `total_count` of runners and a `runners` key, which is a list of self-hosted runner objects.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListSelfHostedRunnersForARepositoryResponseWrapper"}
+schema info of GITHUB_LIST_SELF_HOSTED_RUNNERS_FOR_A_REPOSITORY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_SOCIAL_ACCOUNTS_FOR_A_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_SOCIAL_ACCOUNTS_FOR_A_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"The page number of the results to fetch when paginating. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"","title":"Page","default":1},"per_page":{"type":"integer","description":"The number of social account results to return per page. Maximum is 100. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"","title":"Per Page","default":30},"username":{"type":"string","description":"The handle (username) of the GitHub user (e.g., 'octocat') for whom to list social media accounts.","title":"Username","examples":["octocat","torvalds"]}},"required":["username"],"title":"ListSocialAccountsForAUserRequest","description":"Input model for the `ListSocialAccountsForAUser` action, specifying the user and pagination parameters."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"List of social account objects, each with 'provider' (e.g., 'linkedin', 'twitter') and 'url' (profile link).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListSocialAccountsForAUserResponseWrapper"}
+schema info of GITHUB_LIST_SOCIAL_ACCOUNTS_FOR_A_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_SOCIAL_ACCOUNTS_FOR_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_SOCIAL_ACCOUNTS_FOR_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Page number of the results to retrieve.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of social accounts to return per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]}},"title":"ListSocialAccountsForTheAuthenticatedUserRequest","description":"Request schema for `ListSocialAccountsForTheAuthenticatedUser`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListSocialAccountsForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_LIST_SOCIAL_ACCOUNTS_FOR_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_STARGAZERS
+
+Here is the input and output schema info of Tool GITHUB_LIST_STARGAZERS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"Username of the account owner (user or organization) of the repository; case-insensitive.","title":"Owner","examples":["octocat","google"]},"page":{"type":"integer","description":"Page number of the results to fetch.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"Number of results to display per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"repo":{"type":"string","description":"Name of the repository, without the `.git` extension; case-insensitive.","title":"Repo","examples":["Spoon-Knife","mercury"]}},"required":["owner","repo"],"title":"ListStargazersRequest","description":"Specifies the target repository and pagination preferences for listing stargazers."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListStargazersResponseWrapper"}
+schema info of GITHUB_LIST_STARGAZERS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_STARRED_GISTS
+
+Here is the input and output schema info of Tool GITHUB_LIST_STARRED_GISTS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Page number of the results to fetch.","title":"Page","default":1,"examples":["1","2","3"]},"per_page":{"type":"integer","description":"Number of results per page (maximum 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"since":{"type":"string","description":"Timestamp in ISO 8601 format (`YYYY-MM-DDTHH:MM:SSZ`) to filter gists updated after this time.","title":"Since","examples":["2023-01-01T12:00:00Z"]}},"title":"ListStarredGistsRequest","description":"Request schema for `ListStarredGists`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListStarredGistsResponseWrapper"}
+schema info of GITHUB_LIST_STARRED_GISTS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_SUBSCRIPTIONS_FOR_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_SUBSCRIPTIONS_FOR_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Page number of the results to fetch.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]}},"title":"ListSubscriptionsForTheAuthenticatedUserRequest","description":"Request schema for `ListSubscriptionsForTheAuthenticatedUser`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A list of the authenticated user's marketplace subscriptions, including details for each subscription such as account information, billing cycle, unit count, trial status, and plan information.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListSubscriptionsForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_LIST_SUBSCRIPTIONS_FOR_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_SUBSCRIPTIONS_FOR_THE_AUTHENTICATED_USER_STUBBED
+
+Here is the input and output schema info of Tool GITHUB_LIST_SUBSCRIPTIONS_FOR_THE_AUTHENTICATED_USER_STUBBED of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Page number of results to fetch (starts from 1).","title":"Page","default":1,"examples":["1","2","3"]},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":30,"examples":["20","30","50"]}},"title":"ListSubscriptionsForTheAuthenticatedUserStubbedRequest","description":"Request to list the authenticated user's stubbed (test/example data) GitHub Marketplace subscriptions."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListSubscriptionsForTheAuthenticatedUserStubbedResponseWrapper"}
+schema info of GITHUB_LIST_SUBSCRIPTIONS_FOR_THE_AUTHENTICATED_USER_STUBBED ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_TAG_PROTECTION_STATES_FOR_A_REPOSITORY
+
+Here is the input and output schema info of Tool GITHUB_LIST_TAG_PROTECTION_STATES_FOR_A_REPOSITORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The account owner of the repository. This name is not case sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case sensitive.","title":"Repo","examples":["Hello-World"]}},"required":["owner","repo"],"title":"ListTagProtectionStatesForARepositoryRequest","description":"Specifies the repository for which to list tag protection states."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"The list of tag protection states. Each state includes its ID, the pattern string defining the protected tag, and whether the protection rule is enabled.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListTagProtectionStatesForARepositoryResponseWrapper"}
+schema info of GITHUB_LIST_TAG_PROTECTION_STATES_FOR_A_REPOSITORY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_TEAM_MEMBERS
+
+Here is the input and output schema info of Tool GITHUB_LIST_TEAM_MEMBERS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"Organization name (case-insensitive).","title":"Org","examples":["octo-org"]},"page":{"type":"integer","description":"Page number for results.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results per page (maximum 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"role":{"type":"string","description":"Filters members by their role in the team.","title":"Role","default":"all","enum":["member","maintainer","all"],"examples":["member","maintainer","all"]},"team_slug":{"type":"string","description":"Team slug (URL-friendly name).","title":"Team Slug","examples":["justice-league","developers"]}},"required":["org","team_slug"],"title":"ListTeamMembersRequest","description":"Request schema for `ListTeamMembers`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"List of team member objects, each detailing user information such as 'login', 'id', and 'avatar_url'.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListTeamMembersResponseWrapper"}
+schema info of GITHUB_LIST_TEAM_MEMBERS ends.

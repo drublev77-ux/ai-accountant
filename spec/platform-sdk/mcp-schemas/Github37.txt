@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_INTERACTION_RESTRICTIONS_FOR_AN_ORGANIZATION
+
+Here is the input and output schema info of Tool GITHUB_GET_INTERACTION_RESTRICTIONS_FOR_AN_ORGANIZATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The name of the organization. This name is not case-sensitive.","title":"Org","examples":["github"]}},"required":["org"],"title":"GetInteractionRestrictionsForAnOrganizationRequest","description":"Request schema for `GetInteractionRestrictionsForAnOrganization`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetInteractionRestrictionsForAnOrganizationResponseWrapper"}
+schema info of GITHUB_GET_INTERACTION_RESTRICTIONS_FOR_AN_ORGANIZATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_INTERACTION_RESTRICTIONS_FOR_A_REPOSITORY
+
+Here is the input and output schema info of Tool GITHUB_GET_INTERACTION_RESTRICTIONS_FOR_A_REPOSITORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username of the account that owns the repository. This is case-insensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This is case-insensitive.","title":"Repo","examples":["Spoon-Knife"]}},"required":["owner","repo"],"title":"GetInteractionRestrictionsForARepositoryRequest","description":"Request schema for retrieving interaction restrictions for a repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the interaction restrictions. Key fields typically include 'limit' (specifying the type of users allowed to interact, e.g., 'collaborators_only', 'contributors_only', 'existing_users'), 'origin' (indicating the source of the restriction, e.g., 'repository'), and 'expires_at' (the ISO 8601 timestamp for when the restriction expires).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetInteractionRestrictionsForARepositoryResponseWrapper"}
+schema info of GITHUB_GET_INTERACTION_RESTRICTIONS_FOR_A_REPOSITORY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_INTERACTION_RESTRICTIONS_FOR_YOUR_PUBLIC_REPOSITORIES
+
+Here is the input and output schema info of Tool GITHUB_GET_INTERACTION_RESTRICTIONS_FOR_YOUR_PUBLIC_REPOSITORIES of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{},"title":"GetInteractionRestrictionsForYourPublicRepositoriesRequest","description":"Request schema for `GetInteractionRestrictionsForYourPublicRepositories`. This action does not require any request parameters."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary representing the interaction restrictions. If restrictions are set, it typically includes 'limit' (e.g., 'collaborators_only'), 'origin', and 'expires_at'. An empty dictionary or a 204 No Content response may be returned if no restrictions are in place.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetInteractionRestrictionsForYourPublicRepositoriesResponseWrapper"}
+schema info of GITHUB_GET_INTERACTION_RESTRICTIONS_FOR_YOUR_PUBLIC_REPOSITORIES ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_LARGE_FILES
+
+Here is the input and output schema info of Tool GITHUB_GET_LARGE_FILES of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username or organization name that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat","github"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["Spoon-Knife","docs"]}},"required":["owner","repo"],"title":"GetLargeFilesRequest","description":"Request schema for `GetLargeFiles`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Information about files larger than 100MB identified during a repository import, including path, OID, and size.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetLargeFilesResponseWrapper"}
+schema info of GITHUB_GET_LARGE_FILES ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_LATEST_PAGES_BUILD
+
+Here is the input and output schema info of Tool GITHUB_GET_LATEST_PAGES_BUILD of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username of the account or the name of the organization that owns the repository. This name is not case-sensitive.","title":"Owner","examples":["octocat","github"]},"repo":{"type":"string","description":"The name of the repository, without the '.git' extension. This name is not case-sensitive.","title":"Repo","examples":["Spoon-Knife","docs"]}},"required":["owner","repo"],"title":"GetLatestPagesBuildRequest","description":"Request schema for `GetLatestPagesBuild`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetLatestPagesBuildResponseWrapper"}
+schema info of GITHUB_GET_LATEST_PAGES_BUILD ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_OCTOCAT
+
+Here is the input and output schema info of Tool GITHUB_GET_OCTOCAT of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"s":{"type":"string","description":"Custom message for Octocat's speech bubble. If omitted, a default or empty bubble may be shown.","title":"S","examples":["Hello, Octocat!","GitHub is awesome!","Keep on coding!"]}},"title":"GetOctocatRequest","description":"Specifies an optional custom message for Octocat's speech bubble in the ASCII art."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetOctocatResponseWrapper"}
+schema info of GITHUB_GET_OCTOCAT ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_ORG_ALLOWED_ACTIONS
+
+Here is the input and output schema info of Tool GITHUB_GET_ORG_ALLOWED_ACTIONS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The unique identifier or name of the organization. This field is not case sensitive.","title":"Org","examples":["my-organization","github"]}},"required":["org"],"title":"GetAllowedActionsAndReusableWorkflowsForAnOrganizationRequest","description":"Request schema for retrieving the settings for allowed actions and reusable workflows in an organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary detailing the GitHub Actions permissions for the organization. It typically includes: 'github_owned_allowed' (boolean): Whether GitHub-owned actions are allowed. 'verified_allowed' (boolean): Whether actions from GitHub Marketplace verified creators are allowed. 'patterns_allowed' (list of strings): Specific actions or reusable workflows that are allowed, potentially using wildcards (e.g., 'actions/checkout@*', 'my-org/my-repo/.github/workflows/my-workflow.yml@*').","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetAllowedActionsAndReusableWorkflowsForAnOrganizationResponseWrapper"}
+schema info of GITHUB_GET_ORG_ALLOWED_ACTIONS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_ORG_DEV_ENVIRONMENT_SECRET_SAFELY
+
+Here is the input and output schema info of Tool GITHUB_GET_ORG_DEV_ENVIRONMENT_SECRET_SAFELY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The unique identifier of the GitHub organization. This name is not case-sensitive.","title":"Org","examples":["my-organization"]},"secret_name":{"type":"string","description":"The name of the development environment secret to retrieve.","title":"Secret Name","examples":["MY_API_KEY"]}},"required":["org","secret_name"],"title":"GetOrgDevEnvironmentSecretSafelyRequest","description":"Request schema for retrieving metadata for an organization's Codespaces secret."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Metadata for the secret, including name, creation/update dates, and visibility; the encrypted value is not exposed. Keys include 'name', 'created_at', 'updated_at', 'visibility', and 'selected_repositories_url' if visibility is 'selected'.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetOrgDevEnvironmentSecretSafelyResponseWrapper"}
+schema info of GITHUB_GET_ORG_DEV_ENVIRONMENT_SECRET_SAFELY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_PAGE_VIEWS
+
+Here is the input and output schema info of Tool GITHUB_GET_PAGE_VIEWS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username of the account that owns the repository. This field is case-insensitive.","title":"Owner","examples":["octocat"]},"per":{"type":"string","description":"The time unit for which to aggregate page views.","title":"Per","default":"day","enum":["day","week"],"examples":["day","week"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is case-insensitive.","title":"Repo","examples":["Spoon-Knife"]}},"required":["owner","repo"],"title":"GetPageViewsRequest","description":"Request schema for retrieving repository page view statistics."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Page view traffic data for the repository over the last 14 days, detailing total views, unique visitors, and a list of 'views' objects, each with 'timestamp', 'count', and 'uniques' for that period.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetPageViewsResponseWrapper"}
+schema info of GITHUB_GET_PAGE_VIEWS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_PENDING_DEPLOYMENTS_FOR_A_WORKFLOW_RUN
+
+Here is the input and output schema info of Tool GITHUB_GET_PENDING_DEPLOYMENTS_FOR_A_WORKFLOW_RUN of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"Account owner of the repository (user or organization); not case-sensitive.","title":"Owner","examples":["octocat","my-organization"]},"repo":{"type":"string","description":"Name of the repository, without the `.git` extension; not case-sensitive.","title":"Repo","examples":["Spoon-Knife","my-awesome-project"]},"run_id":{"type":"integer","description":"Unique numerical identifier of the workflow run.","title":"Run Id","examples":["12345","67890"]}},"required":["owner","repo","run_id"],"title":"GetPendingDeploymentsForAWorkflowRunRequest","description":"Request model for retrieving pending deployments for a specific workflow run."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response data containing pending deployment environments, typically as a list of objects awaiting approval due to protection rules.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetPendingDeploymentsForAWorkflowRunResponseWrapper"}
+schema info of GITHUB_GET_PENDING_DEPLOYMENTS_FOR_A_WORKFLOW_RUN ends.

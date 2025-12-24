@@ -1,0 +1,175 @@
+{
+  "id": "102019b1614346877efacb71bc87d71517a",
+  "version": "102019b505b2cc97c4e87e620b193838a68",
+  "schema": {
+    "name": "device_registration",
+    "description": "Manages user devices for sync and push notifications.",
+    "fields": [
+      {
+        "name": "id",
+        "description": "Unique identifier.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System Identifier"
+        }
+      },
+      {
+        "name": "data_creator",
+        "description": "id of the user who creates the record",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Audit Trail"
+        }
+      },
+      {
+        "name": "data_updater",
+        "description": "id of the user who updates the record",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Audit Trail"
+        }
+      },
+      {
+        "name": "create_time",
+        "description": "create time in timestamp unix",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System Metadata"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "update_time",
+        "description": "update time in timestamp unix",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System Metadata"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "user_id",
+        "description": "Owner of the device.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Ownership"
+        }
+      },
+      {
+        "name": "device_id",
+        "description": "Hardware or installation ID.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Device tracking"
+        }
+      },
+      {
+        "name": "device_name",
+        "description": "Friendly name of the device.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "User Info"
+        }
+      },
+      {
+        "name": "os_type",
+        "description": "Operating system (iOS, Android, Web).",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Technical Info"
+        }
+      },
+      {
+        "name": "last_active_timestamp",
+        "description": "Last time device connected.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Status"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "push_token",
+        "description": "Token for push notifications.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Communication routing"
+        },
+        "nullable": true
+      }
+    ],
+    "indexes": [
+      {
+        "fields": [
+          "id"
+        ],
+        "unique": true,
+        "primary": true,
+        "order": false
+      },
+      {
+        "fields": [
+          "device_id"
+        ],
+        "unique": true,
+        "order": false
+      },
+      {
+        "fields": [
+          "user_id"
+        ],
+        "order": false
+      },
+      {
+        "fields": [
+          "data_creator"
+        ],
+        "order": false
+      },
+      {
+        "fields": [
+          "data_updater"
+        ],
+        "order": false
+      }
+    ],
+    "relations": [
+      {
+        "referencing_fields": [
+          "user_id"
+        ],
+        "referenced_entity": {
+          "name": "user"
+        },
+        "referenced_fields": [
+          "id"
+        ],
+        "cascade": true
+      }
+    ]
+  },
+  "task": {
+    "id": "694bdde12e0faedc96c1c26c",
+    "root": "69317a33ad50e9e8016841da",
+    "project": "69317a33ad50e9e8016841d9",
+    "user": "6841d390-b021-7026-f508-2c1990f0e948"
+  },
+  "namespace": {
+    "id": "01987547fc6c72ecb453bd2736bd4ea0",
+    "tenant": 2,
+    "name": "global-1",
+    "default": true
+  },
+  "revision": 1
+}

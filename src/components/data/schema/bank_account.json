@@ -1,0 +1,225 @@
+{
+  "id": "102019b1613e72a7e1fa4b364fa545428d9",
+  "version": "102019b1613e72a7bfba080b6850c048df7",
+  "schema": {
+    "name": "bank_account",
+    "description": "Represents individual bank accounts linked to a connection.",
+    "fields": [
+      {
+        "name": "id",
+        "description": "Unique identifier for each data of this entity.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System Identifier"
+        }
+      },
+      {
+        "name": "data_creator",
+        "description": "id of the user who creates the record",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Audit Trail"
+        }
+      },
+      {
+        "name": "data_updater",
+        "description": "id of the user who updates the record",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Audit Trail"
+        }
+      },
+      {
+        "name": "create_time",
+        "description": "create time in timestamp unix",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System Metadata"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "update_time",
+        "description": "update time in timestamp unix",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System Metadata"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "bank_connection_id",
+        "description": "Reference to the parent BankConnection.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Data Structure"
+        }
+      },
+      {
+        "name": "user_id",
+        "description": "ID of the user owning the account.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Data Ownership"
+        }
+      },
+      {
+        "name": "account_number",
+        "description": "The bank account number or IBAN.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 4,
+          "reason": "Sensitive Financial Info"
+        },
+        "encryption": true
+      },
+      {
+        "name": "type",
+        "description": "Type of the bank account.",
+        "type": 100,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Financial Classification"
+        },
+        "enumeration": [
+          {
+            "value": "Unspecified"
+          },
+          {
+            "number": 1,
+            "value": "Checking"
+          },
+          {
+            "number": 2,
+            "value": "Savings"
+          },
+          {
+            "number": 3,
+            "value": "Credit"
+          },
+          {
+            "number": 4,
+            "value": "Investment"
+          }
+        ]
+      },
+      {
+        "name": "institution_name",
+        "description": "Name of the financial institution.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Informational"
+        }
+      },
+      {
+        "name": "current_balance",
+        "description": "Current balance of the account.",
+        "type": 2,
+        "compliance": {
+          "confidentiality": 3,
+          "reason": "Financial Value"
+        },
+        "numeric": "float"
+      },
+      {
+        "name": "currency",
+        "description": "Currency code (e.g., USD, EUR).",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Financial Metadata"
+        }
+      },
+      {
+        "name": "sync_status",
+        "description": "Status of synchronization (e.g., Synced, Pending).",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "System Metadata"
+        }
+      }
+    ],
+    "indexes": [
+      {
+        "fields": [
+          "id"
+        ],
+        "unique": true,
+        "primary": true,
+        "order": false
+      },
+      {
+        "fields": [
+          "bank_connection_id"
+        ],
+        "order": false
+      },
+      {
+        "fields": [
+          "user_id"
+        ],
+        "order": false
+      },
+      {
+        "fields": [
+          "data_creator"
+        ],
+        "order": false
+      },
+      {
+        "fields": [
+          "data_updater"
+        ],
+        "order": false
+      }
+    ],
+    "relations": [
+      {
+        "referencing_fields": [
+          "bank_connection_id"
+        ],
+        "referenced_entity": {
+          "name": "bank_connection"
+        },
+        "referenced_fields": [
+          "id"
+        ],
+        "cascade": true
+      },
+      {
+        "referencing_fields": [
+          "user_id"
+        ],
+        "referenced_entity": {
+          "name": "user"
+        },
+        "referenced_fields": [
+          "id"
+        ],
+        "cascade": true
+      }
+    ]
+  },
+  "task": {
+    "id": "693cf1d4d8d11c9f70180c71",
+    "root": "69317a33ad50e9e8016841da",
+    "project": "69317a33ad50e9e8016841d9",
+    "user": "6841d390-b021-7026-f508-2c1990f0e948"
+  },
+  "namespace": {
+    "id": "01987547fc6c72ecb453bd2736bd4ea0",
+    "tenant": 2,
+    "name": "global-1",
+    "default": true
+  },
+  "revision": 1
+}

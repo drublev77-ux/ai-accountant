@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_CODE_SCANNING_ALERTS_FOR_AN_ORGANIZATION
+
+Here is the input and output schema info of Tool GITHUB_LIST_CODE_SCANNING_ALERTS_FOR_AN_ORGANIZATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"after":{"type":"string","description":"A pagination cursor to retrieve results appearing after this.","title":"After","examples":["Y3Vyc29yOnYyOpHAAexM3A=="]},"before":{"type":"string","description":"A pagination cursor to retrieve results appearing before this.","title":"Before","examples":["Y3Vyc29yOnYyOpHPRb_PyQ=="]},"direction":{"type":"string","description":"Sort direction.","title":"Direction","default":"desc","enum":["asc","desc"]},"org":{"type":"string","description":"The GitHub organization name (case-insensitive).","title":"Org","examples":["github","my-company-org"]},"page":{"type":"integer","description":"Page number for results. Used if `before` or `after` cursors are not provided.","title":"Page","default":1,"examples":["1","5","10"]},"per_page":{"type":"integer","description":"Number of results per page (maximum 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"severity":{"type":"string","description":"Filter alerts by severity.","title":"Severity","enum":["critical","high","medium","low","warning","note","error"]},"sort":{"type":"string","description":"Sort field.","title":"Sort","default":"created","enum":["created","updated"]},"state":{"type":"string","description":"Filter alerts by state.","title":"State","enum":["open","closed","dismissed","fixed"]},"tool_guid":{"type":"string","description":"GUID of the code scanning tool. Some tools may not report a GUID. Cannot be used with `tool_name`.","title":"Tool Guid","examples":["cb192f00-main-32f9-4383-87e8-0f1813000619"]},"tool_name":{"type":"string","description":"Name of the code scanning tool (e.g., 'CodeQL'). Cannot be used with `tool_guid`.","title":"Tool Name","examples":["CodeQL","Snyk"]}},"required":["org"],"title":"ListCodeScanningAlertsForAnOrganizationRequest","description":"Defines the parameters for listing code scanning alerts within a GitHub organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Raw JSON response from the GitHub API, typically a list of alert objects. Refer to GitHub API documentation for the alert object schema.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListCodeScanningAlertsForAnOrganizationResponseWrapper"}
+schema info of GITHUB_LIST_CODE_SCANNING_ALERTS_FOR_AN_ORGANIZATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_CODE_SCANNING_ALERTS_FOR_A_REPOSITORY
+
+Here is the input and output schema info of Tool GITHUB_LIST_CODE_SCANNING_ALERTS_FOR_A_REPOSITORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"direction":{"type":"string","description":"Sort direction: `asc` (ascending) or `desc` (descending).","title":"Direction","default":"desc","enum":["asc","desc"]},"owner":{"type":"string","description":"The account owner of the repository (username or organization name); not case-sensitive.","title":"Owner","examples":["octocat","github"]},"page":{"type":"integer","description":"Page number for paginated results, starting at 1.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"ref":{"type":"string","description":"Git reference (branch, tag, or pull request merge reference, e.g., `refs/pull/42/merge`) for retrieving alerts; defaults to the repository's default branch if unspecified.","title":"Ref","examples":["refs/heads/main","develop","refs/pull/123/merge"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension; not case-sensitive.","title":"Repo","examples":["Hello-World","linguist"]},"severity":{"type":"string","description":"Filters alerts by severity.","title":"Severity","enum":["critical","high","medium","low","warning","note","error"]},"sort":{"type":"string","description":"Sort property: `created` (alert creation time) or `updated` (last update time).","title":"Sort","default":"created","enum":["created","updated"]},"state":{"type":"string","description":"Filters alerts by state.","title":"State","enum":["open","closed","dismissed","fixed"]},"tool_guid":{"type":"string","description":"The GUID of a code scanning tool to filter alerts by; use either `tool_guid` or `tool_name`, not both. Some tools may not provide a GUID.","title":"Tool Guid","examples":["01234567-89ab-cdef-0123-456789abcdef"]},"tool_name":{"type":"string","description":"The name of a code scanning tool to filter alerts by; use either `tool_name` or `tool_guid`, not both.","title":"Tool Name","examples":["CodeQL","Semgrep"]}},"required":["owner","repo"],"title":"ListCodeScanningAlertsForARepositoryRequest","description":"Request schema for `ListCodeScanningAlertsForARepository`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"List of code scanning alert objects matching the query, filters, and pagination.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListCodeScanningAlertsForARepositoryResponseWrapper"}
+schema info of GITHUB_LIST_CODE_SCANNING_ALERTS_FOR_A_REPOSITORY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_CODE_SCANNING_ANALYSES_FOR_A_REPOSITORY
+
+Here is the input and output schema info of Tool GITHUB_LIST_CODE_SCANNING_ANALYSES_FOR_A_REPOSITORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"direction":{"type":"string","description":"Direction to sort results. 'asc' for ascending, 'desc' for descending.","title":"Direction","default":"desc","enum":["asc","desc"]},"owner":{"type":"string","description":"The account owner of the repository. This name is not case-sensitive.","title":"Owner"},"page":{"type":"integer","description":"Page number of the results to retrieve.","title":"Page","default":1},"per_page":{"type":"integer","description":"Number of results to return per page (maximum 100).","title":"Per Page","default":30},"ref":{"type":"string","description":"The Git reference for which to list analyses. This can be a branch name (e.g., 'main' or 'refs/heads/main') or a pull request merge reference (e.g., 'refs/pull/123/merge').","title":"Ref","examples":["main","refs/heads/develop","refs/pull/42/merge"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case-sensitive.","title":"Repo"},"sarif_id":{"type":"string","description":"Filter analyses to those associated with a specific SARIF upload ID.","title":"Sarif Id"},"sort":{"type":"string","description":"Property by which to sort the results. Currently, only 'created' is a supported sort field.","title":"Sort","default":"created","enum":["created"]},"tool_guid":{"type":"string","description":"The GUID of a code scanning tool used to filter analyses. Only results from this tool will be listed. Some tools may not provide a GUID. Mutually exclusive with `tool_name`.","title":"Tool Guid","examples":["01234567-89ab-cdef-0123-456789abcdef"]},"tool_name":{"type":"string","description":"The name of a code scanning tool used to filter analyses. Only results from this tool will be listed. Mutually exclusive with `tool_guid`.","title":"Tool Name","examples":["CodeQL","Dependabot","Snyk"]}},"required":["owner","repo"],"title":"ListCodeScanningAnalysesForARepositoryRequest","description":"Request schema for `ListCodeScanningAnalysesForARepository`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListCodeScanningAnalysesForARepositoryResponseWrapper"}
+schema info of GITHUB_LIST_CODE_SCANNING_ANALYSES_FOR_A_REPOSITORY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_CODESPACES_FOR_A_USER_IN_ORGANIZATION
+
+Here is the input and output schema info of Tool GITHUB_LIST_CODESPACES_FOR_A_USER_IN_ORGANIZATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"Name of the GitHub organization (case-insensitive).","title":"Org","examples":["github","my-company-org"]},"page":{"type":"integer","description":"Page number of the results to retrieve (starts from 1).","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of codespaces to return per page (maximum 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"username":{"type":"string","description":"GitHub username of the organization member.","title":"Username","examples":["octocat","john-doe"]}},"required":["org","username"],"title":"ListCodespacesForAUserInOrganizationRequest","description":"Request schema for `ListCodespacesForAUserInOrganization`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListCodespacesForAUserInOrganizationResponseWrapper"}
+schema info of GITHUB_LIST_CODESPACES_FOR_A_USER_IN_ORGANIZATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_CODESPACES_FOR_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_CODESPACES_FOR_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Page number for results (starts at 1). For pagination details, see: https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"Number of codespaces per page (max 100). For pagination details, see: https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api.","title":"Per Page","default":30,"examples":["30","50","100"]},"repository_id":{"type":"integer","description":"If provided, filters codespaces to this repository ID.","title":"Repository Id","examples":["12345678","98765432"]}},"title":"ListCodespacesForTheAuthenticatedUserRequest","description":"Parameters for listing GitHub Codespaces accessible to the authenticated user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response including 'total_count' and a 'codespaces' list, where each codespace object has details like ID, name, state, and repository.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListCodespacesForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_LIST_CODESPACES_FOR_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_CODESPACES_FOR_THE_ORGANIZATION
+
+Here is the input and output schema info of Tool GITHUB_LIST_CODESPACES_FOR_THE_ORGANIZATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"Non-case-sensitive unique identifier of the GitHub organization.","title":"Org","examples":["github","my-organization"]},"page":{"type":"integer","description":"Page number of results. Details: '[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)'.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results per page (max 100). Details: '[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)'.","title":"Per Page","default":30,"examples":["30","50","100"]}},"required":["org"],"title":"ListCodespacesForTheOrganizationRequest","description":"Request to list Codespaces for a GitHub organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"API response with `total_count` of organization codespaces and a `codespaces` list, each with full details.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListCodespacesForTheOrganizationResponseWrapper"}
+schema info of GITHUB_LIST_CODESPACES_FOR_THE_ORGANIZATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_COMMENTS_FOR_A_PULL_REQUEST_REVIEW
+
+Here is the input and output schema info of Tool GITHUB_LIST_COMMENTS_FOR_A_PULL_REQUEST_REVIEW of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username or organization name that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat"]},"page":{"type":"integer","description":"Page number of the results to fetch. See GitHub's [pagination guide](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).","title":"Page","default":1,"examples":["1"]},"per_page":{"type":"integer","description":"Number of comments to retrieve per page (max 100). See GitHub's [pagination guide](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).","title":"Per Page","default":30,"examples":["50"]},"pull_number":{"type":"integer","description":"The unique number that identifies the pull request within the repository.","title":"Pull Number","examples":["123"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive.","title":"Repo","examples":["Spoon-Knife"]},"review_id":{"type":"integer","description":"The unique identifier of the pull request review.","title":"Review Id","examples":["42"]}},"required":["owner","repo","pull_number","review_id"],"title":"ListCommentsForAPullRequestReviewRequest","description":"Input model for listing comments on a pull request review."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListCommentsForAPullRequestReviewResponseWrapper"}
+schema info of GITHUB_LIST_COMMENTS_FOR_A_PULL_REQUEST_REVIEW ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_COMMIT_COMMENTS
+
+Here is the input and output schema info of Tool GITHUB_LIST_COMMIT_COMMENTS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"commit_sha":{"type":"string","description":"The SHA hash of the commit for which comments are to be listed.","title":"Commit Sha","examples":["a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0"]},"owner":{"type":"string","description":"The account owner of the repository. This name is not case-sensitive.","title":"Owner","examples":["octocat"]},"page":{"type":"integer","description":"The page number of the results to retrieve. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"","title":"Page","default":1},"per_page":{"type":"integer","description":"The number of comments to return per page. Maximum value is 100. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"","title":"Per Page","default":30},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case-sensitive.","title":"Repo","examples":["Spoon-Knife"]}},"required":["owner","repo","commit_sha"],"title":"ListCommitCommentsRequest","description":"Request schema for listing comments on a specific commit in a repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A list of commit comments. Each comment object provides details such as its ID, author information (user), comment body, HTML URL, and creation/update timestamps.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListCommitCommentsResponseWrapper"}
+schema info of GITHUB_LIST_COMMIT_COMMENTS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_COMMIT_COMMENTS_FOR_A_REPOSITORY
+
+Here is the input and output schema info of Tool GITHUB_LIST_COMMIT_COMMENTS_FOR_A_REPOSITORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The account owner of the repository (not case-sensitive).","title":"Owner","examples":["octocat","kubernetes"]},"page":{"type":"integer","description":"Page number of the results to fetch (starts at 1).","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"Number of results to return per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension (not case-sensitive).","title":"Repo","examples":["Spoon-Knife","website"]}},"required":["owner","repo"],"title":"ListCommitCommentsForARepositoryRequest","description":"Request schema for `ListCommitCommentsForARepository`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListCommitCommentsForARepositoryResponseWrapper"}
+schema info of GITHUB_LIST_COMMIT_COMMENTS_FOR_A_REPOSITORY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_COMMITS
+
+Here is the input and output schema info of Tool GITHUB_LIST_COMMITS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"author":{"type":"string","description":"Filter commits by the commit author's GitHub login or email address.","title":"Author","examples":["octocat","mona@github.com"]},"committer":{"type":"string","description":"Filter commits by the commit committer's GitHub login or email address. The committer is the user who applied the patch and may differ from the original author.","title":"Committer","examples":["web-flow","octocat@github.com"]},"owner":{"type":"string","description":"The account owner of the repository. The name is not case sensitive.","title":"Owner","examples":["octocat","my-organization"]},"page":{"type":"integer","description":"Page number of the results to fetch when using pagination.","title":"Page","default":1,"examples":["1","2"]},"path":{"type":"string","description":"Only commits modifying this specific file path will be returned.","title":"Path","examples":["README.md","src/utils/helpers.py"]},"per_page":{"type":"integer","description":"Number of results to return per page (max 100).","title":"Per Page","default":1,"examples":["30","100"]},"repo":{"type":"string","description":"The name of the repository without the `.git` extension. The name is not case sensitive.","title":"Repo","examples":["Spoon-Knife","my-project"]},"sha":{"type":"string","description":"SHA hash or branch name to start listing commits from. If not provided, the GitHub API uses the repository's default branch (usually `main` or `master`).","title":"Sha","examples":["main","develop","a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0"]},"since":{"type":"string","description":"Only commits created on or after this timestamp will be returned. This is a timestamp in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.","title":"Since","examples":["2023-01-01T00:00:00Z"]},"until":{"type":"string","description":"Only commits created before this timestamp will be returned. This is a timestamp in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.","title":"Until","examples":["2023-12-31T23:59:59Z"]}},"required":["owner","repo"],"title":"ListCommitsRequest","description":"Request schema for `ListCommits`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the API response, typically a list of commit objects and related information.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListCommitsResponseWrapper"}
+schema info of GITHUB_LIST_COMMITS ends.

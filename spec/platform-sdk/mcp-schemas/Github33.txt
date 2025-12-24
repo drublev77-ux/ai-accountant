@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_A_REPOSITORY_SECRET
+
+Here is the input and output schema info of Tool GITHUB_GET_A_REPOSITORY_SECRET of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username or organization name that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat","github"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This field is not case-sensitive. ","title":"Repo","examples":["Spoon-Knife","docs"]},"secret_name":{"type":"string","description":"The name of the secret to retrieve.","title":"Secret Name","examples":["GH_TOKEN","API_KEY"]}},"required":["owner","repo","secret_name"],"title":"GetARepositorySecretRequest","description":"Request schema for `GetARepositorySecret`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the metadata of the secret, such as its name, creation date (`created_at`), and last update date (`updated_at`). The encrypted value of the secret is not included.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetARepositorySecretResponseWrapper"}
+schema info of GITHUB_GET_A_REPOSITORY_SECRET ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_A_REPOSITORY_SUBSCRIPTION
+
+Here is the input and output schema info of Tool GITHUB_GET_A_REPOSITORY_SUBSCRIPTION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username of the account that owns the repository. This is not case-sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This is not case-sensitive.","title":"Repo","examples":["Spoon-Knife"]}},"required":["owner","repo"],"title":"GetARepositorySubscriptionRequest","description":"Request schema for `GetARepositorySubscription`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Repository subscription details for the authenticated user, including status (`subscribed`, `ignored`), `reason`, `created_at` timestamp, and relevant URLs.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetARepositorySubscriptionResponseWrapper"}
+schema info of GITHUB_GET_A_REPOSITORY_SUBSCRIPTION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_A_REPOSITORY_VARIABLE
+
+Here is the input and output schema info of Tool GITHUB_GET_A_REPOSITORY_VARIABLE of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"name":{"type":"string","description":"The name of the GitHub Actions variable to retrieve.","title":"Name","examples":["CI_TOKEN","DEPLOYMENT_SERVER_URL"]},"owner":{"type":"string","description":"The username or organization that owns the repository.","title":"Owner","examples":["octocat","my-organization"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension.","title":"Repo","examples":["hello-world","my-private-repo"]}},"required":["owner","repo","name"],"title":"GetARepositoryVariableRequest","description":"Request schema for `GetARepositoryVariable`."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the details of the repository variable. Expected keys include 'name' (the variable's name), 'value' (the variable's value), 'created_at' (timestamp of creation), and 'updated_at' (timestamp of last update).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetARepositoryVariableResponseWrapper"}
+schema info of GITHUB_GET_A_REPOSITORY_VARIABLE ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_A_REPOSITORY_WEBHOOK
+
+Here is the input and output schema info of Tool GITHUB_GET_A_REPOSITORY_WEBHOOK of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"hook_id":{"type":"integer","description":"The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery.","title":"Hook Id","examples":["12345678","87654321"]},"owner":{"type":"string","description":"The account owner of the repository (e.g., a user or organization). The name is not case-sensitive.","title":"Owner","examples":["octocat","microsoft"]},"repo":{"type":"string","description":"The name of the repository without the `.git` extension. The name is not case-sensitive.","title":"Repo","examples":["Spoon-Knife","docs"]}},"required":["owner","repo","hook_id"],"title":"GetARepositoryWebhookRequest","description":"Request schema for `GetARepositoryWebhook`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetARepositoryWebhookResponseWrapper"}
+schema info of GITHUB_GET_A_REPOSITORY_WEBHOOK ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_A_REVIEW_COMMENT_FOR_A_PULL_REQUEST
+
+Here is the input and output schema info of Tool GITHUB_GET_A_REVIEW_COMMENT_FOR_A_PULL_REQUEST of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"comment_id":{"type":"integer","description":"Unique identifier of the pull request review comment.","title":"Comment Id","examples":["12345"]},"owner":{"type":"string","description":"The account owner of the repository (GitHub username or organization name). Not case-sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository (without the `.git` extension). Not case-sensitive.","title":"Repo","examples":["Hello-World"]}},"required":["owner","repo","comment_id"],"title":"GetAReviewCommentForAPullRequestRequest","description":"Specifies the repository owner, repository name, and comment ID to retrieve a pull request review comment."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetAReviewCommentForAPullRequestResponseWrapper"}
+schema info of GITHUB_GET_A_REVIEW_COMMENT_FOR_A_PULL_REQUEST ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_A_REVIEW_FOR_A_PULL_REQUEST
+
+Here is the input and output schema info of Tool GITHUB_GET_A_REVIEW_FOR_A_PULL_REQUEST of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username of the account that owns the repository. This is not case sensitive.","title":"Owner","examples":["octocat"]},"pull_number":{"type":"integer","description":"The numeric identifier of the pull request.","title":"Pull Number","examples":[42]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This is not case sensitive.","title":"Repo","examples":["Hello-World"]},"review_id":{"type":"integer","description":"The unique numeric identifier of the review.","title":"Review Id","examples":[80]}},"required":["owner","repo","pull_number","review_id"],"title":"GetAReviewForAPullRequestRequest","description":"Request schema for retrieving a specific review for a pull request."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary representing the pull request review object. This typically includes details like the review ID, user who submitted the review, the body of the review, the state (e.g., 'COMMENTED', 'APPROVED', 'CHANGES_REQUESTED'), and a link to the review.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetAReviewForAPullRequestResponseWrapper"}
+schema info of GITHUB_GET_A_REVIEW_FOR_A_PULL_REQUEST ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_A_SECRET_FOR_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_GET_A_SECRET_FOR_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"secret_name":{"type":"string","description":"The name of the secret to retrieve. This is case-sensitive.","title":"Secret Name","examples":["GH_PAT","AWS_SECRET_ACCESS_KEY","MY_CUSTOM_SECRET"]}},"required":["secret_name"],"title":"GetASecretForTheAuthenticatedUserRequest","description":"Request schema for `GetASecretForTheAuthenticatedUser`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetASecretForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_GET_A_SECRET_FOR_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_A_SELF_HOSTED_RUNNER_FOR_AN_ORGANIZATION
+
+Here is the input and output schema info of Tool GITHUB_GET_A_SELF_HOSTED_RUNNER_FOR_AN_ORGANIZATION of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"org":{"type":"string","description":"The login name of the GitHub organization. This name is not case-sensitive.","title":"Org","examples":["octo-org"]},"runner_id":{"type":"integer","description":"Unique identifier (ID) of the self-hosted runner.","title":"Runner Id","examples":["123","42"]}},"required":["org","runner_id"],"title":"GetASelfHostedRunnerForAnOrganizationRequest","description":"Specifies the parameters to retrieve a specific self-hosted runner for an organization."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetASelfHostedRunnerForAnOrganizationResponseWrapper"}
+schema info of GITHUB_GET_A_SELF_HOSTED_RUNNER_FOR_AN_ORGANIZATION ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_A_SELF_HOSTED_RUNNER_FOR_A_REPOSITORY
+
+Here is the input and output schema info of Tool GITHUB_GET_A_SELF_HOSTED_RUNNER_FOR_A_REPOSITORY of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username of the account that owns the repository. This is not case-sensitive.","title":"Owner","examples":["octocat"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This is not case-sensitive.","title":"Repo","examples":["hello-world"]},"runner_id":{"type":"integer","description":"The unique identifier (ID) of the self-hosted runner.","title":"Runner Id","examples":["5"]}},"required":["owner","repo","runner_id"],"title":"GetASelfHostedRunnerForARepositoryRequest","description":"Request schema for retrieving details of a specific self-hosted runner within a repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the details of the self-hosted runner. Common fields include `id`, `name`, `os` (operating system), and `status` (e.g., 'online', 'offline').","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetASelfHostedRunnerForARepositoryResponseWrapper"}
+schema info of GITHUB_GET_A_SELF_HOSTED_RUNNER_FOR_A_REPOSITORY ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_GET_ASSIGNMENT_GRADES
+
+Here is the input and output schema info of Tool GITHUB_GET_ASSIGNMENT_GRADES of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"assignment_id":{"type":"integer","description":"The unique identifier for the classroom assignment whose grades are to be retrieved.","title":"Assignment Id","examples":[101,20345]}},"required":["assignment_id"],"title":"GetAssignmentGradesRequest","description":"Request schema for retrieving grades for a specific GitHub Classroom assignment."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary containing the grades for the specified assignment. The structure typically includes student identifiers and their corresponding scores or grade information.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"GetAssignmentGradesResponseWrapper"}
+schema info of GITHUB_GET_ASSIGNMENT_GRADES ends.

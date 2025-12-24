@@ -1,0 +1,138 @@
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_REPOSITORY_COLLABORATORS
+
+Here is the input and output schema info of Tool GITHUB_LIST_REPOSITORY_COLLABORATORS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"affiliation":{"type":"string","description":"Filter collaborators by affiliation: 'outside' (collaborators of an organization-owned repository not part of the org), 'direct' (collaborators with direct permissions to an organization-owned repository), or 'all' (all collaborators visible to the authenticated user).","title":"Affiliation","default":"all","enum":["outside","direct","all"]},"owner":{"type":"string","description":"The username of the account that owns the repository. This value is not case sensitive.","title":"Owner","examples":["octocat","google"]},"page":{"type":"integer","description":"The page number of the results to retrieve.","title":"Page","default":1},"per_page":{"type":"integer","description":"The number of results to return per page. Maximum value is 100.","title":"Per Page","default":30},"permission":{"type":"string","description":"Filter collaborators by their repository permission level.","title":"Permission","enum":["pull","triage","push","maintain","admin"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This value is not case sensitive.","title":"Repo","examples":["hello-world","mercury"]}},"required":["owner","repo"],"title":"ListRepositoryCollaboratorsRequest","description":"Request schema for listing repository collaborators, allowing filtering by affiliation and permission."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A list of collaborator objects.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListRepositoryCollaboratorsResponseWrapper"}
+schema info of GITHUB_LIST_REPOSITORY_COLLABORATORS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_REPOSITORY_CONTRIBUTORS
+
+Here is the input and output schema info of Tool GITHUB_LIST_REPOSITORY_CONTRIBUTORS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"anon":{"type":"string","description":"Set to '1' or 'true' to include anonymous contributors. If omitted, anonymous contributors are not included.","title":"Anon","examples":["1","true"]},"owner":{"type":"string","description":"Username of the account owning the repository. Not case-sensitive.","title":"Owner","examples":["octocat"]},"page":{"type":"integer","description":"Page number of results to retrieve (1-based indexing).","title":"Page","default":1},"per_page":{"type":"integer","description":"Number of contributor results per page. Maximum value is 100.","title":"Per Page","default":30},"repo":{"type":"string","description":"Name of the repository (without `.git` extension). Not case-sensitive.","title":"Repo","examples":["Spoon-Knife"]}},"required":["owner","repo"],"title":"ListRepositoryContributorsRequest","description":"Defines the parameters used to list contributors for a GitHub repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListRepositoryContributorsResponseWrapper"}
+schema info of GITHUB_LIST_REPOSITORY_CONTRIBUTORS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_REPOSITORY_EVENTS
+
+Here is the input and output schema info of Tool GITHUB_LIST_REPOSITORY_EVENTS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"Owner's username or organization name (not case-sensitive).","title":"Owner","examples":["octocat","github"]},"page":{"type":"integer","description":"Page number for paginating results.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of events to return per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"repo":{"type":"string","description":"Repository name, without the `.git` extension (not case-sensitive).","title":"Repo","examples":["Spoon-Knife","docs"]}},"required":["owner","repo"],"title":"ListRepositoryEventsRequest","description":"Request schema for `ListRepositoryEvents`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Parsed JSON response from the API, which is a list of event objects. For event object structure, refer to GitHub API documentation.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListRepositoryEventsResponseWrapper"}
+schema info of GITHUB_LIST_REPOSITORY_EVENTS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_REPOSITORY_INVITATIONS
+
+Here is the input and output schema info of Tool GITHUB_LIST_REPOSITORY_INVITATIONS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username of the account that owns the repository. This field is not case-sensitive.","title":"Owner","examples":["octocat","github"]},"page":{"type":"integer","description":"Page number of the results to retrieve.","title":"Page","default":1,"examples":["1","2","10"]},"per_page":{"type":"integer","description":"Number of results to return per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"repo":{"type":"string","description":"The name of the repository, without the '.git' extension. This field is not case-sensitive.","title":"Repo","examples":["docs","Spoon-Knife"]}},"required":["owner","repo"],"title":"ListRepositoryInvitationsRequest","description":"Request model for listing repository invitations, specifying the target repository and pagination."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"List of repository invitation objects, each detailing the invitation ID, invitee, repository, permissions, and creation date.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListRepositoryInvitationsResponseWrapper"}
+schema info of GITHUB_LIST_REPOSITORY_INVITATIONS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_REPOSITORY_INVITATIONS_FOR_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_REPOSITORY_INVITATIONS_FOR_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"page":{"type":"integer","description":"Page number of the results to retrieve.","title":"Page","default":1,"examples":["1","2","5"]},"per_page":{"type":"integer","description":"Number of results to return per page. Maximum allowed value is 100.","title":"Per Page","default":30,"examples":["30","50","100"]}},"title":"ListRepositoryInvitationsForTheAuthenticatedUserRequest","description":"Parameters for listing repository invitations for the authenticated user."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"List of repository invitations. Each invitation details its ID, repository information (e.g., name, owner), inviter, invitee, granted permissions (e.g., read, write), and creation timestamp.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListRepositoryInvitationsForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_LIST_REPOSITORY_INVITATIONS_FOR_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_REPOSITORY_ISSUES
+
+Here is the input and output schema info of Tool GITHUB_LIST_REPOSITORY_ISSUES of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"assignee":{"type":"string","description":"Filter issues by assignee's username. Use 'none' for issues with no assignee, or '*' for issues assigned to any user.","title":"Assignee","examples":["codertocat","none","*"]},"creator":{"type":"string","description":"Filter issues by the username of the user who created the issue.","title":"Creator","examples":["octocat"]},"direction":{"type":"string","description":"The direction of the sort.","title":"Direction","default":"desc","enum":["asc","desc"],"examples":["asc","desc"]},"labels":{"type":"string","description":"A comma-separated list of label names to filter issues by. Example: 'bug,ui,@high'.","title":"Labels","examples":["bug,ui,@high","enhancement","help wanted,good first issue"]},"mentioned":{"type":"string","description":"Filter issues by a user mentioned in the issue's description or comments. Provide the username.","title":"Mentioned","examples":["octodocs","hubot"]},"milestone":{"type":"string","description":"Filter issues by milestone. Provide the milestone `number` as a string, '*' for issues with any milestone, or 'none' for issues without a milestone.","title":"Milestone","examples":["1","*","none"]},"owner":{"type":"string","description":"The GitHub account owner of the repository. This name is not case-sensitive.","title":"Owner","examples":["octocat","microsoft"]},"page":{"type":"integer","description":"Page number for the set of results. Refer to GitHub's REST API documentation for pagination details.","title":"Page","default":1,"examples":["1","5"]},"per_page":{"type":"integer","description":"Number of results per page (max 100). Refer to GitHub's REST API documentation for pagination details.","title":"Per Page","default":1,"examples":["30","100"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case-sensitive.","title":"Repo","examples":["Spoon-Knife","vscode"]},"since":{"type":"string","description":"Filters issues to include only those updated at or after the specified time. This should be a timestamp in ISO 8601 format (e.g., `YYYY-MM-DDTHH:MM:SSZ`).","title":"Since","examples":["2023-01-15T10:00:00Z","2024-03-10T00:00:00+05:30"]},"sort":{"type":"string","description":"The field to sort the results by.","title":"Sort","default":"created","enum":["created","updated","comments"],"examples":["created","updated","comments"]},"state":{"type":"string","description":"Filters issues based on their state.","title":"State","default":"open","enum":["open","closed","all"],"examples":["open","closed","all"]}},"required":["owner","repo"],"title":"ListRepositoryIssuesRequest","description":"Defines the parameters for the `ListRepositoryIssues` action, used to filter and paginate issues from a GitHub repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Parsed JSON response from GitHub API, typically a list of issues.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListRepositoryIssuesResponseWrapper"}
+schema info of GITHUB_LIST_REPOSITORY_ISSUES ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_REPOSITORY_LANGUAGES
+
+Here is the input and output schema info of Tool GITHUB_LIST_REPOSITORY_LANGUAGES of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The account owner of the repository (username or organization name). This name is not case-sensitive.","title":"Owner","examples":["octocat","kubernetes"]},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. This name is not case-sensitive.","title":"Repo","examples":["Spoon-Knife","community"]}},"required":["owner","repo"],"title":"ListRepositoryLanguagesRequest","description":"Request schema for `ListRepositoryLanguages` action."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"A dictionary where keys are programming language names (e.g., 'Python', 'JavaScript') and values are the total number of bytes of code written in that language within the repository.","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListRepositoryLanguagesResponseWrapper"}
+schema info of GITHUB_LIST_REPOSITORY_LANGUAGES ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_REPOSITORY_NOTIFICATIONS_FOR_THE_AUTHENTICATED_USER
+
+Here is the input and output schema info of Tool GITHUB_LIST_REPOSITORY_NOTIFICATIONS_FOR_THE_AUTHENTICATED_USER of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"all":{"type":"boolean","description":"If `true`, shows notifications marked as read; otherwise, only unread notifications are returned.","title":"All","default":false},"before":{"type":"string","description":"Only includes notifications last updated before this ISO 8601 UTC timestamp (e.g., `YYYY-MM-DDTHH:MM:SSZ`).","title":"Before","examples":["2023-12-31T23:59:59Z","2024-04-01T00:00:00Z"]},"owner":{"type":"string","description":"The account owner of the repository. The name is not case sensitive.","title":"Owner","examples":["octocat","actions"]},"page":{"type":"integer","description":"The page number of the results to retrieve.","title":"Page","default":1},"participating":{"type":"boolean","description":"If `true`, shows only notifications in which the authenticated user is directly participating or was mentioned.","title":"Participating","default":false},"per_page":{"type":"integer","description":"The number of notifications to return per page. Maximum value is 100.","title":"Per Page","default":30},"repo":{"type":"string","description":"The name of the repository, without the `.git` extension. The name is not case sensitive.","title":"Repo","examples":["Spoon-Knife","docs"]},"since":{"type":"string","description":"Only includes notifications last updated on or after this ISO 8601 UTC timestamp (e.g., `YYYY-MM-DDTHH:MM:SSZ`).","title":"Since","examples":["2023-01-01T00:00:00Z","2024-03-15T10:30:00Z"]}},"required":["owner","repo"],"title":"ListRepositoryNotificationsForTheAuthenticatedUserRequest","description":"Request schema for `ListRepositoryNotificationsForTheAuthenticatedUser`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListRepositoryNotificationsForTheAuthenticatedUserResponseWrapper"}
+schema info of GITHUB_LIST_REPOSITORY_NOTIFICATIONS_FOR_THE_AUTHENTICATED_USER ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_REPOSITORY_ORGANIZATION_SECRETS
+
+Here is the input and output schema info of Tool GITHUB_LIST_REPOSITORY_ORGANIZATION_SECRETS of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"The username or organization name that owns the repository (case-insensitive).","title":"Owner","examples":["octocat","my-organization"]},"page":{"type":"integer","description":"Page number for paginated results.","title":"Page","default":1,"examples":["1","2","3"]},"per_page":{"type":"integer","description":"Number of secrets per page (max 100).","title":"Per Page","default":30,"examples":["30","50","100"]},"repo":{"type":"string","description":"Name of the repository, without the `.git` extension (case-insensitive).","title":"Repo","examples":["hello-world","my-awesome-project"]}},"required":["owner","repo"],"title":"ListRepositoryOrganizationSecretsRequest","description":"Request schema for `ListRepositoryOrganizationSecrets`"}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListRepositoryOrganizationSecretsResponseWrapper"}
+schema info of GITHUB_LIST_REPOSITORY_ORGANIZATION_SECRETS ends.
+
+
+Mcp name: "Github"
+Mcp id: "686de4e26fd1cae1afbb55bc"
+Mcp url: "https://backend.composio.dev/v3/mcp/4e4720cb-01e7-4e14-88f8-3567f0453182/mcp?user_id=69317a33ad50e9e8016841d9"
+Schema info:
+Tool Name: GITHUB_LIST_REPOSITORY_ORGANIZATION_VARIABLES
+
+Here is the input and output schema info of Tool GITHUB_LIST_REPOSITORY_ORGANIZATION_VARIABLES of Mcp Github (Mcp Id: 686de4e26fd1cae1afbb55bc):
+inputSchema:
+{"type":"object","properties":{"owner":{"type":"string","description":"Username of the account owning the repository (case-insensitive).","title":"Owner","examples":["octocat"]},"page":{"type":"integer","description":"Page number of results. For pagination details, see GitHub REST API docs.","title":"Page","default":1,"examples":[1]},"per_page":{"type":"integer","description":"Number of results per page (max 30). For pagination details, see GitHub REST API docs.","title":"Per Page","default":10,"examples":[20]},"repo":{"type":"string","description":"Name of the repository, without the `.git` extension (case-insensitive).","title":"Repo","examples":["hello-world"]}},"required":["owner","repo"],"title":"ListRepositoryOrganizationVariablesRequest","description":"Lists organization variables available to a specific repository."}
+outputSchema:
+{"type":"object","properties":{"data":{"type":"object","description":"Dictionary with total count and list of organization variables (each with name, value, created_at, updated_at).","title":"Data","additionalProperties":true},"error":{"type":"string","description":"Error if any occurred during the execution of the action","title":"Error","default":null,"nullable":true},"successful":{"type":"boolean","description":"Whether or not the action execution was successful or not","title":"Successful"}},"required":["data","successful"],"title":"ListRepositoryOrganizationVariablesResponseWrapper"}
+schema info of GITHUB_LIST_REPOSITORY_ORGANIZATION_VARIABLES ends.
