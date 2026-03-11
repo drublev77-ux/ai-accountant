@@ -115,7 +115,7 @@
     "@babel/plugin-transform-react-jsx-development": "^7.27.1",
     "@biomejs/biome": "2.3.1",
     "@capacitor/android": "^8.0.0",
-    "@capacitor/cli": "^8.0.0",
+    "@capacitor/cli": "^8.2.0",
     "@capacitor/core": "^8.0.0",
     "@capacitor/ios": "^8.0.0",
     "@capacitor/keyboard": "^8.0.0",
